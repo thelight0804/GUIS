@@ -3,42 +3,23 @@ package cse.team8.guis;
 
 import java.util.ArrayList;
 
-public class Staff {
-    public String ID; //ID
-    private String name;
-    private String PW; //비밀번호
+public class Staff extends Person {
+    boolean staffType; //true = 학사 담당자, false = 수업 담당자
 
-    private String myClass; //학과
-
-    public String getID() {
-        return ID;
+    public Staff() {
     }
 
-    public void setID(String ID) {
-        this.ID = ID;
+    public Staff(boolean staffType) {
+        this.staffType = staffType;
     }
 
-    public String getName() {
-        return name;
+    public Staff(boolean staffType, String ID, String name, String PW, String myClass, ArrayList<String> subject) {
+        super(ID, name, PW, myClass, subject);
+        this.staffType = staffType;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public boolean isStaffType() {
+        return staffType;
     }
-
-    public String getPW() {
-        return PW;
-    }
-
-    public void setPW(String PW) {
-        this.PW = PW;
-    }
-
-    public String getMyClass() {
-        return myClass;
-    }
-
-    public void setMyClass(String myClass) {
-        this.myClass = myClass;
-    }
+    
 }
