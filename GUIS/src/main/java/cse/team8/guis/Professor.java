@@ -8,8 +8,8 @@ public class Professor extends Person {
 
     public Professor() { }
 
-    public Professor(String RRN, String ID, String name, String PW, String myClass, ArrayList<String> subject) {
-        super(ID, name, PW, myClass, subject);
+    public Professor(String ID, String name, String PW, String myNum, String myClass, String RRN) {
+        super(ID, name, PW, myNum, myClass);
         this.RRN = RRN;
     }
 

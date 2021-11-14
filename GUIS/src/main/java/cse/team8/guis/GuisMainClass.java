@@ -11,10 +11,8 @@
 
 package cse.team8.guis;
 public class GuisMainClass {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
         SystemLogin a = new SystemLogin();
-        a.LoginPage();
-        a.print();
-        
+        a.run();
     } //main 종료
 }

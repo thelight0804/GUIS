@@ -13,8 +13,8 @@ public class Staff extends Person {
         this.staffType = staffType;
     }
 
-    public Staff(boolean staffType, String ID, String name, String PW, String myClass, ArrayList<String> subject) {
-        super(ID, name, PW, myClass, subject);
+    public Staff(String ID, String name, String PW, String myNum, String myClass, boolean staffType) {
+        super(ID, name, PW, myNum, myClass);
         this.staffType = staffType;
     }
 

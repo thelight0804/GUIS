@@ -4,7 +4,6 @@ import java.util.ArrayList;
 
 public class Student extends Person {
     private String RRN; //주민번호
-    private String myNum; //학번
     private String grade; //성적
     private String credit; //학점
     private ArrayList<String> subject; //수강 과목 (ArrayList)
@@ -12,21 +11,17 @@ public class Student extends Person {
 
     public Student() { }
 
-    public Student(String RRN, String myNum, String grade, String credit, ArrayList<String> subject, long money) {
+    public Student(String ID, String name, String PW, String myNum, String myClass, String RRN, String grade, String credit, ArrayList<String> subject1, long money) {
+        super(ID, name, PW, myNum, myClass);
         this.RRN = RRN;
-        this.myNum = myNum;
         this.grade = grade;
         this.credit = credit;
-        this.subject = subject;
+        this.subject = subject1;
         this.money = money;
     }
 
     public String getRRN() {
         return RRN;
-    }
-
-    public String getMyNum() {
-        return myNum;
     }
 
     public String getGrade() {
