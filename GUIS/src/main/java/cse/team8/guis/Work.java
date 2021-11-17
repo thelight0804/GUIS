@@ -22,6 +22,8 @@ public class Work {
         if(selectNum == 1){ //로그인
         }
         else if (selectNum == 2){ //회원가입
+            Register r = new Register();
+            r.signUp(); //Register.signUp()
         }
         else if (selectNum == 3){ //나가기
             System.exit(0); //프로그램 종료

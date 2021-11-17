@@ -8,4 +8,8 @@ public class Professor extends User {
         super(ID, name, PW, myNum, mySubject);
         this.RRN = RRN;
     }
+
+    public void info(){
+        System.out.printf("ID : %s, 학과 : %s, 주민번호 : %s", ID, mySubject, RRN);
+    }
 }
