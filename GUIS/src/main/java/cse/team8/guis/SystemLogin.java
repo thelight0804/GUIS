@@ -5,7 +5,7 @@ package cse.team8.guis;
 
 import java.util.ArrayList;
 import java.util.Scanner; //Scanner 사용
-import java.util.List;
+
 
 public class SystemLogin {
     String PW; //암호
@@ -26,7 +26,7 @@ public class SystemLogin {
         //객체 ArrayList 생성
         ArrayList<Student> student = new ArrayList<>(); //같은 프로젝트라 import 필요 X
         ArrayList<Professor> professor = new ArrayList<>();
-        ArrayList<Staff> staff = new ArrayList<>();
+        ArrayList<lessonStaff> staff = new ArrayList<>();
 
         //과목 ArrayList 초기화
         subject.add("전산학과");
@@ -35,7 +35,7 @@ public class SystemLogin {
         subject.add("기계공학과");
         subject.add("항공우주공학과");
 
-        firstInterface();
+        firstInterface(); //첫 실행 인터페이스
     }
 
     void firstInterface() throws InterruptedException { //첫 실행 인터페이스
@@ -97,6 +97,12 @@ public class SystemLogin {
             String inputID = input.nextLine();
             System.out.print("PW : "); //PW 입력
             String inputPW = input.nextLine();
+            System.out.print("주민번호 : "); //주민번호 입력
+            String RRN = input.nextLine();
+            System.out.println("학과 [0. 전산학과 1. 전자공학과 2.화학공학과 3.기계공학과 4.항공우주공학과]");
+            System.out.print("학과 번호를 입력해 주세요 : "); //주민번호 입력
+            int subjectNum = input.nextInt();
+            String mySubject = subject.get(subjectNum);
         }
         else if (selectNum==2) { //교수 가입
         }

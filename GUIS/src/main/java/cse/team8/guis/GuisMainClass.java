@@ -12,7 +12,7 @@
 package cse.team8.guis;
 public class GuisMainClass {
     public static void main(String[] args) throws InterruptedException {
-        SystemLogin a = new SystemLogin();
+        Work a = new Work();
         a.run();
     } //main 종료
 }
