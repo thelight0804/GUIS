@@ -1,5 +1,6 @@
 package cse.team8.guis;
 
+import cse.team8.userwork.Register;
 import java.util.Scanner;
 
 public class Work {

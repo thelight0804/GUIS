@@ -1,5 +1,5 @@
 //강의 생성자
-package cse.team8.guis;
+package cse.team8.user;
 
 public class Lesson {
     boolean lessonCreate;

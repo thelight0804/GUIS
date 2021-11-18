@@ -1,5 +1,5 @@
 //학생 데이터 객체
-package cse.team8.guis;
+package cse.team8.user;
 
 public class Student extends User {
     private String RRN; //주민번호

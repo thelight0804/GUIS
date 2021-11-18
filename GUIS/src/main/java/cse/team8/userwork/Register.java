@@ -1,5 +1,7 @@
-package cse.team8.guis;
+package cse.team8.userwork;
 
+import cse.team8.user.Subject;
+import cse.team8.user.Professor;
 import java.util.Scanner;
 
 public class Register extends userWork {

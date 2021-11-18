@@ -1,4 +1,4 @@
-package cse.team8.guis;
+package cse.team8.user;
 
 public class Subject {
     String subject;
