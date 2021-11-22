@@ -5,6 +5,13 @@
  */
 package cse.team8.gui;
 
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 
 /**
@@ -68,6 +75,11 @@ public class LoginGUI extends javax.swing.JFrame {
 
         jButton2.setFont(new java.awt.Font("맑은 고딕 Semilight", 0, 14)); // NOI18N
         jButton2.setText("종료");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -135,9 +147,25 @@ public class LoginGUI extends javax.swing.JFrame {
 
     private void loginButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginButtonActionPerformed
         //Login 버튼
-        if(jRadioButtonStudent.isSelected())
-            JOptionPane.showMessageDialog(null,jTextFieldID.getText());
+        if (jRadioButtonStudent.isSelected()){ //학생 선택 시
+            File studentData = new File("C:\\Temp\\GUIS\\StudentData.txt");
+            try {
+                BufferedReader readID = new BufferedReader(new FileReader(studentData));
+                String str = null;
+                String ID = null; 
+                //JOptionPane.showMessageDialog(null,str);
+            } catch (FileNotFoundException ex) {
+                Logger.getLogger(LoginGUI.class.getName()).log(Level.SEVERE, null, ex);
+            } catch (IOException ex) {
+                Logger.getLogger(LoginGUI.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        } //if (jRadioButtonStudent) 끝
     }//GEN-LAST:event_loginButtonActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+       //Exit 버튼
+       System.exit(0); //프로그램 종료
+    }//GEN-LAST:event_jButton2ActionPerformed
 
     /**
      * @param args the command line arguments

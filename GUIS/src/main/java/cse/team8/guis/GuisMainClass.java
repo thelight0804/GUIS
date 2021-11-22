@@ -10,8 +10,11 @@
  */
 
 package cse.team8.guis;
+
+import java.io.IOException;
+
 public class GuisMainClass {
-    public static void main(String[] args) throws InterruptedException {
+    public static void main(String[] args) throws InterruptedException, IOException {
         Work a = new Work();
         a.run();
     } //main 종료

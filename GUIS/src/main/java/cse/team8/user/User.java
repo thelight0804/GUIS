@@ -2,11 +2,10 @@ package cse.team8.user;
 import java.util.ArrayList;
 
 public class User {
-    public String ID; //ID
     protected String name; //이름
-    protected String PW; //비밀번호
-
-    protected String myNum; //학번, 교수번호, 직원번호
+    private String frontRRN; //앞 주민번호
+    private String backRRN; //뒷 주민번호 & PW
+    protected String myNum; //학번, 교수번호, 직원번호 & ID
     /*
     * 학생 학번 : 'S'로  시작하고  이어서  3자리  숫자 : S000, S001 ...
     * 교수 번호 : 'P'로 시작하고  이어서  3자리  숫자 : P000, P001 ...
@@ -16,12 +15,16 @@ public class User {
     protected String mySubject; //자신의 수강 과목
 
     public User() {  }
-
-    public User(String ID, String name, String PW, String myNum, String mySubject) {
-        this.ID = ID;
+    public User(String name, String frontRRN, String backRRN, String myNum, String mySubject) {
         this.name = name;
-        this.PW = PW;
+        this.frontRRN = frontRRN;
+        this.backRRN = backRRN;
         this.myNum = myNum;
         this.mySubject = mySubject;
     }
+
+    public String getName() {
+        return name;
+    }
+    
 }
