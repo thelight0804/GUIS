@@ -5,4 +5,17 @@ public class lessonStaff extends User {
     public lessonStaff(String name, String frontRRN, String backRRN, String myNum, String mySubject) {
         super(name, frontRRN, backRRN, myNum, mySubject);
     }
+
+    public String getName() {
+        return name;
+    }
+
+    public String getMyNum() {
+        return myNum;
+    }
+
+    public String getMySubject() {
+        return mySubject;
+    }
+    
 }

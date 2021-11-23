@@ -14,5 +14,35 @@ public class Student extends User {
         this.credit = credit;
         this.bill = bill;
         this.year = year;
+        
     }
+
+    public String getGrade() {
+        return grade;
+    }
+
+    public Float getCredit() {
+        return credit;
+    }
+
+    public long getBill() {
+        return bill;
+    }
+
+    public int getYear() {
+        return year;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public String getMyNum() {
+        return myNum;
+    }
+
+    public String getMySubject() {
+        return mySubject;
+    }
+    
 }

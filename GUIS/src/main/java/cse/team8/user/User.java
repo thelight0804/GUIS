@@ -26,5 +26,21 @@ public class User {
     public String getName() {
         return name;
     }
+
+    public String getFrontRRN() {
+        return frontRRN;
+    }
+
+    public String getBackRRN() {
+        return backRRN;
+    }
+
+    public String getMyNum() {
+        return myNum;
+    }
+
+    public String getMySubject() {
+        return mySubject;
+    }
     
 }

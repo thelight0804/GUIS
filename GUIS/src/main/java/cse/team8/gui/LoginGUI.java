@@ -1,24 +1,35 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+/**
+ * Date : 21.10.06~
+ * Title : 대학정보시스템
+ * Project : GUIS (가자미 University Information System)
+ * @author joonhee2 - 강준희 (20183203)
+ * @author thelight0804 - 박상현 (20183145)
+ * @author ssb3204 - 손성배 (20193116)
+ * @author SH1NJH - 신종훈 (20183197)
+ * @author dudgns0421 - 이영훈 (20173149)
  */
 package cse.team8.gui;
 
+import cse.team8.user.Student;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+
+import cse.team8.guis.Work;
+import cse.team8.user.*;
 import javax.swing.JOptionPane;
 
-/**
- *
- * @author Your Name <thelight0804>
- */
+
 public class LoginGUI extends javax.swing.JFrame {
+    Work work = new Work();
+    public ArrayList<Student> student = new ArrayList<>();
+    
+    
     public LoginGUI() {
         initComponents();
         jRadioButtonStudent.setSelected(true);
@@ -147,18 +158,26 @@ public class LoginGUI extends javax.swing.JFrame {
 
     private void loginButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginButtonActionPerformed
         //Login 버튼
+        try {
+            work.run();
+        } catch (IOException ex) {
+            Logger.getLogger(LoginGUI.class.getName()).log(Level.SEVERE, null, ex);
+        }
         if (jRadioButtonStudent.isSelected()){ //학생 선택 시
-            File studentData = new File("C:\\Temp\\GUIS\\StudentData.txt");
             try {
-                BufferedReader readID = new BufferedReader(new FileReader(studentData));
-                String str = null;
-                String ID = null; 
-                //JOptionPane.showMessageDialog(null,str);
-            } catch (FileNotFoundException ex) {
-                Logger.getLogger(LoginGUI.class.getName()).log(Level.SEVERE, null, ex);
+                student = work.getStudent(); //Work에서 생성한 student의 값을 LoginGUI의 student에 복사
             } catch (IOException ex) {
                 Logger.getLogger(LoginGUI.class.getName()).log(Level.SEVERE, null, ex);
             }
+            
+            ////로그인 확인
+            //ID, PW 입력 받음
+            String inputID = jTextFieldID.getText();
+            String inputPW = jTextFieldPW.getText();
+
+            loginDistinguish(inputID, inputPW);
+            
+           // JOptionPane.showMessageDialog(null,STR); //값 정확히 나오는지 확인 용            
         } //if (jRadioButtonStudent) 끝
         
         if (jRadioButtonProfessor.isSelected()){ //교수 선택 시
@@ -212,36 +231,11 @@ public class LoginGUI extends javax.swing.JFrame {
     /**
      * @param args the command line arguments
      */
+    
+    
+    
     public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(LoginGUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(LoginGUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(LoginGUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(LoginGUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
 
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new LoginGUI().setVisible(true);
-            }
-        });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -257,4 +251,24 @@ public class LoginGUI extends javax.swing.JFrame {
     private javax.swing.JTextField jTextFieldPW;
     private javax.swing.JButton loginButton;
     // End of variables declaration//GEN-END:variables
+
+    private void loginDistinguish(String inputID, String inputPW) { //로그인 성공 여부 확인
+        boolean pass = false; //로그인 성공 여부
+        for(int i=0;i<student.size();i++){
+            if(inputID.equals(student.get(i).getMyNum()) && inputPW.equals(student.get(i).getBackRRN())){
+                JOptionPane.showMessageDialog(null,student.get(i).getName()+" 로그인 성공");
+                pass = true;
+                break; //로그인 성공하면 for문을 빠져 나간다
+            } 
+        } //for문 종료
+        if(pass){ //로그인 성공 시
+            loginPass();
+        }
+        else{
+            JOptionPane.showMessageDialog(null,"ID 및 P/W를 다시 한번 확인해 주세요");
+        }
+    }
+    private void loginPass() { //로그인 성공 함수
+        //TODO 다음 창 출력
+    }
 }

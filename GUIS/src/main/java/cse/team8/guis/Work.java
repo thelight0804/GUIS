@@ -12,33 +12,20 @@ import cse.team8.user.*;
 import java.util.ArrayList;
 
 public class Work {
+    public ArrayList<Student> student;
+    public ArrayList<Professor> professor;
+    public ArrayList<academyStaff> academystaff;
+    public ArrayList<lessonStaff> lessonstaff;
+    
 
-    public Work() {
-    }
+    public Work() {   }
 
-    public void run() throws IOException {
+    public void run() throws IOException  {
         newFile(); //파일 생성
-        ArrayList<Student> student = inputStudent();
-        ArrayList<Professor> professor = inputProfessor();
-        ArrayList<academyStaff> academystaff = inputacademyStaff();
-        ArrayList<lessonStaff> lessonstaff = inputlessonStaff();
-        
-        for(int i=0;i<student.size();i++){
-            System.out.println(student.get(i).getName()); //학생 이름 불러오기 / 아우 드디어 됐다ㅠㅠㅠㅠㅠ흐어얼넣널
-        }
-        for(int i=0;i<professor.size();i++){
-            System.out.println(professor.get(i).getName());
-        }
-        for(int i=0;i<academystaff.size();i++){
-            System.out.println(academystaff.get(i).getName());
-        }
-        for(int i=0;i<lessonstaff.size();i++){
-            System.out.println(lessonstaff.get(i).getName());
-        }
-        
-        //로그인 창 출력
-        LoginGUI login = new LoginGUI();
-        login.setVisible(true);
+        student = inputStudent();
+        professor = inputProfessor();
+        academystaff = inputacademyStaff();
+        lessonstaff = inputlessonStaff();
     }
 
     public void newFile() throws IOException { //파일 생성
@@ -54,60 +41,60 @@ public class Work {
         if (!studentData.exists()) {  //만약 해당 경로에 파일이 없는 경우
             studentData.createNewFile(); //파일 생성
             BufferedWriter bw = new BufferedWriter(new FileWriter(studentData));
-            bw.write("강준희!S001!전산학과!11111111!00000000!E!0.0!0!4");
+            bw.write("강준희!S001!전산학과!111111!0000000!E!0.0!0!4");
             bw.newLine();
-            bw.write("박상현!S002!전자공학과!11111111!00000001!E!0.0!0!4");
+            bw.write("박상현!S002!전자공학과!111111!0000001!E!0.0!0!4");
             bw.newLine();
-            bw.write("손성배!S003!화학공학과!11111111!00000002!E!0.0!0!3");
+            bw.write("손성배!S003!화학공학과!111111!0000002!E!0.0!0!3");
             bw.newLine();
-            bw.write("신종훈!S004!기계공학과!11111111!00000003!E!0.0!0!2");
+            bw.write("신종훈!S004!기계공학과!111111!0000003!E!0.0!0!2");
             bw.newLine();
-            bw.write("이영훈!S005!항공우주공학과!11111111!00000004!E!0.0!0!1");
+            bw.write("이영훈!S005!항공우주공학과!111111!0000004!E!0.0!0!1");
             bw.newLine();
             bw.close(); //파일을 닫아주어야 갱신이 된다
         }
         if (!professorData.exists()) {  //만약 해당 경로에 파일이 없는 경우
             professorData.createNewFile(); //파일 생성
             BufferedWriter bw = new BufferedWriter(new FileWriter(professorData));
-            bw.write("풍성현!P001!전산학과!11111111!00000005");
+            bw.write("풍성현!P001!전산학과!111111!0000005");
             bw.newLine();
-            bw.write("설지수!P002!전자공학과!11111111!00000006");
+            bw.write("설지수!P002!전자공학과!111111!0000006");
             bw.newLine();
-            bw.write("서효기!P003!화학공학과!11111111!00000007");
+            bw.write("서효기!P003!화학공학과!111111!0000007");
             bw.newLine();
-            bw.write("송선옥!P004!기계공학과!11111111!00000008");
+            bw.write("송선옥!P004!기계공학과!111111!0000008");
             bw.newLine();
-            bw.write("오재우!P005!항공우주공학과!11111111!00000009");
+            bw.write("오재우!P005!항공우주공학과!111111!0000009");
             bw.newLine();
             bw.close(); //파일을 닫아주어야 갱신이 된다
         }
         if (!academystaffData.exists()) {  //만약 해당 경로에 파일이 없는 경우
             academystaffData.createNewFile(); //파일 생성
             BufferedWriter bw = new BufferedWriter(new FileWriter(academystaffData));
-            bw.write("이범준!H001!전산학과!11111111!00000010");
+            bw.write("이범준!H001!전산학과!111111!0000010");
             bw.newLine();
-            bw.write("한준수!H002!전자공학과!11111111!00000011");
+            bw.write("한준수!H002!전자공학과!111111!0000011");
             bw.newLine();
-            bw.write("설수빈!H003!화학공학과!11111111!00000012");
+            bw.write("설수빈!H003!화학공학과!111111!0000012");
             bw.newLine();
-            bw.write("허재현!H004!기계공학과!11111111!00000013");
+            bw.write("허재현!H004!기계공학과!111111!0000013");
             bw.newLine();
-            bw.write("풍태은!H005!항공우주공학과!11111111!00000014");
+            bw.write("풍태은!H005!항공우주공학과!111111!0000014");
             bw.newLine();
             bw.close(); //파일을 닫아주어야 갱신이 된다
         }
         if (!lessonstaffData.exists()) {  //만약 해당 경로에 파일이 없는 경우
             lessonstaffData.createNewFile(); //파일 생성
             BufferedWriter bw = new BufferedWriter(new FileWriter(lessonstaffData));
-            bw.write("노성숙!G001!전산학과!11111111!00000015");
+            bw.write("노성숙!G001!전산학과!111111!0000015");
             bw.newLine();
-            bw.write("복원웅!G002!전자공학과!11111111!00000016");
+            bw.write("복원웅!G002!전자공학과!111111!0000016");
             bw.newLine();
-            bw.write("예채영!G003!화학공학과!11111111!00000017");
+            bw.write("예채영!G003!화학공학과!111111!0000017");
             bw.newLine();
-            bw.write("고경옥!G004!기계공학과!11111111!00000018");
+            bw.write("고경옥!G004!기계공학과!111111!0000018");
             bw.newLine();
-            bw.write("서상학!G005!항공우주공학과!11111111!00000019");
+            bw.write("서상학!G005!항공우주공학과!111111!0000019");
             bw.newLine();
             bw.close(); //파일을 닫아주어야 갱신이 된다
         }
@@ -136,7 +123,7 @@ public class Work {
         }
         return student;
     }
-    public ArrayList<Professor> inputProfessor() throws FileNotFoundException, IOException{ //학생 객체 생성
+    public ArrayList<Professor> inputProfessor() throws FileNotFoundException, IOException{ //교수 객체 생성
         FileReader professorData = new FileReader("C:\\Temp\\GUIS\\ProfessorData.txt");
         BufferedReader fr = new BufferedReader(professorData);
         String line ="";
@@ -153,7 +140,7 @@ public class Work {
         }
         return professor;
     }
-    public ArrayList<academyStaff> inputacademyStaff() throws FileNotFoundException, IOException{ //학생 객체 생성
+    public ArrayList<academyStaff> inputacademyStaff() throws FileNotFoundException, IOException{ //학사담당자 객체 생성
         FileReader academystaffData = new FileReader("C:\\Temp\\GUIS\\academyStaffData.txt");
         BufferedReader fr = new BufferedReader(academystaffData);
         String line ="";
@@ -170,7 +157,7 @@ public class Work {
         }
         return academystaff;
     }
-    public ArrayList<lessonStaff> inputlessonStaff() throws FileNotFoundException, IOException{ //학생 객체 생성
+    public ArrayList<lessonStaff> inputlessonStaff() throws FileNotFoundException, IOException{ //수업담당자 객체 생성
         FileReader lessonstaffData = new FileReader("C:\\Temp\\GUIS\\lessonStaffData.txt");
         BufferedReader fr = new BufferedReader(lessonstaffData);
         String line ="";
@@ -187,4 +174,21 @@ public class Work {
         }
         return lessonstaff;
     }
+
+    public ArrayList<Student> getStudent() throws IOException {
+        return student;
+    }
+
+    public ArrayList<Professor> getProfessor() {
+        return professor;
+    }
+
+    public ArrayList<academyStaff> getAcademystaff() {
+        return academystaff;
+    }
+
+    public ArrayList<lessonStaff> getLessonstaff() {
+        return lessonstaff;
+    }
+
 } //class Work 끝

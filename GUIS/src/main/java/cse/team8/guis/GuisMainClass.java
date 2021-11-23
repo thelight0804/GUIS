@@ -11,11 +11,14 @@
 
 package cse.team8.guis;
 
+import cse.team8.gui.LoginGUI;
 import java.io.IOException;
 
 public class GuisMainClass {
     public static void main(String[] args) throws InterruptedException, IOException {
-        Work a = new Work();
-        a.run();
+        //로그인 창 출력
+        LoginGUI login = new LoginGUI();
+        login.setDefaultCloseOperation(LoginGUI.EXIT_ON_CLOSE);
+        login.setVisible(true);
     } //main 종료
 }
