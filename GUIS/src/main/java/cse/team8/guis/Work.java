@@ -104,4 +104,24 @@ public class Work {
         }
         
     }
+    public ArrayList<Student> inputStudent() throws FileNotFoundException, IOException{ //학생 객체 생성
+        FileReader studentData = new FileReader("C:\\Temp\\GUIS\\StudentData.txt");
+        BufferedReader fr = new BufferedReader(studentData);
+        String line ="";
+       ArrayList<Student> student = new ArrayList<Student>();
+       
+        while((line = fr.readLine()) != null){
+            String data = line;
+            String[] array = data.split("!"); //split : 문자열 구분
+            //String 형식의 bill, year, credit 형 변환
+            float temp_credit = Float.parseFloat(array[6]);
+            long temp_bill = Long.parseLong(array[7]);
+            int temp_year = Integer.parseInt(array[8]);
+            
+            //ArrayList 객체 생성
+            //Student(String grade, float credit, long bill, int year, String name, String frontRRN, String backRRN, String myNum, String mySubject)
+            student.add(new Student(array[5], temp_credit, temp_bill, temp_year, array[0], array[3], array[4], array[1], array[2]));
+        }
+        return student;
+    }
 } //class Work 끝
