@@ -8,6 +8,7 @@
  * @author SH1NJH - 신종훈 (20183197)
  * @author dudgns0421 - 이영훈 (20173149)
  */
+// JOptionPane.showMessageDialog(null,STR); //값 정확히 나오는지 확인 용 
 package cse.team8.gui;
 
 import cse.team8.user.Student;
@@ -21,13 +22,14 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 import cse.team8.guis.Work;
-import cse.team8.user.*;
-import javax.swing.JOptionPane;
+import cse.team8.userwork.*;
 
 
 public class LoginGUI extends javax.swing.JFrame {
     Work work = new Work();
+    SystemLogin login = new SystemLogin(); //SystemLogin 클래스 사용
     public ArrayList<Student> student = new ArrayList<>();
+    boolean pass = false; //로그인 성공 여부
     
     
     public LoginGUI() {
@@ -174,10 +176,14 @@ public class LoginGUI extends javax.swing.JFrame {
             //ID, PW 입력 받음
             String inputID = jTextFieldID.getText();
             String inputPW = jTextFieldPW.getText();
-
-            loginDistinguish(inputID, inputPW);
+            pass = login.loginStudentDistinguish(inputID, inputPW, student); //SystemLogin.loginDistinguish 함수 호출
             
-           // JOptionPane.showMessageDialog(null,STR); //값 정확히 나오는지 확인 용            
+            if (pass) //로그인 성공 시
+                dispose(); //LoginGUI 창 닫음
+            else {
+                jTextFieldID.setText(""); //칸 지움
+                jTextFieldPW.setText("");
+            }
         } //if (jRadioButtonStudent) 끝
         
         if (jRadioButtonProfessor.isSelected()){ //교수 선택 시
@@ -252,23 +258,4 @@ public class LoginGUI extends javax.swing.JFrame {
     private javax.swing.JButton loginButton;
     // End of variables declaration//GEN-END:variables
 
-    private void loginDistinguish(String inputID, String inputPW) { //로그인 성공 여부 확인
-        boolean pass = false; //로그인 성공 여부
-        for(int i=0;i<student.size();i++){
-            if(inputID.equals(student.get(i).getMyNum()) && inputPW.equals(student.get(i).getBackRRN())){
-                JOptionPane.showMessageDialog(null,student.get(i).getName()+" 로그인 성공");
-                pass = true;
-                break; //로그인 성공하면 for문을 빠져 나간다
-            } 
-        } //for문 종료
-        if(pass){ //로그인 성공 시
-            loginPass();
-        }
-        else{
-            JOptionPane.showMessageDialog(null,"ID 및 P/W를 다시 한번 확인해 주세요");
-        }
-    }
-    private void loginPass() { //로그인 성공 함수
-        //TODO 다음 창 출력
-    }
 }
