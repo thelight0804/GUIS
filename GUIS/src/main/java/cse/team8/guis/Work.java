@@ -19,9 +19,21 @@ public class Work {
     public void run() throws IOException {
         newFile(); //파일 생성
         ArrayList<Student> student = inputStudent();
+        ArrayList<Professor> professor = inputProfessor();
+        ArrayList<academyStaff> academystaff = inputacademyStaff();
+        ArrayList<lessonStaff> lessonstaff = inputlessonStaff();
         
         for(int i=0;i<student.size();i++){
             System.out.println(student.get(i).getName()); //학생 이름 불러오기 / 아우 드디어 됐다ㅠㅠㅠㅠㅠ흐어얼넣널
+        }
+        for(int i=0;i<professor.size();i++){
+            System.out.println(professor.get(i).getName());
+        }
+        for(int i=0;i<academystaff.size();i++){
+            System.out.println(academystaff.get(i).getName());
+        }
+        for(int i=0;i<lessonstaff.size();i++){
+            System.out.println(lessonstaff.get(i).getName());
         }
         
         //로그인 창 출력
@@ -35,9 +47,9 @@ public class Work {
             newDir.mkdirs(); //폴더 생성
         }
         File studentData = new File("C:\\Temp\\GUIS\\StudentData.txt"); //파일 읽기
-        File proffesorData = new File("C:\\Temp\\GUIS\\proffesorData.txt");
-        File academystaffData = new File("C:\\Temp\\GUIS\\academystaffData.txt");
-        File lessonstaffData = new File("C:\\Temp\\GUIS\\lessonstaffData.txt");
+        File professorData = new File("C:\\Temp\\GUIS\\ProfessorData.txt");
+        File academystaffData = new File("C:\\Temp\\GUIS\\academyStaffData.txt");
+        File lessonstaffData = new File("C:\\Temp\\GUIS\\lessonStaffData.txt");
         
         if (!studentData.exists()) {  //만약 해당 경로에 파일이 없는 경우
             studentData.createNewFile(); //파일 생성
@@ -54,9 +66,9 @@ public class Work {
             bw.newLine();
             bw.close(); //파일을 닫아주어야 갱신이 된다
         }
-        if (!proffesorData.exists()) {  //만약 해당 경로에 파일이 없는 경우
-            proffesorData.createNewFile(); //파일 생성
-            BufferedWriter bw = new BufferedWriter(new FileWriter(proffesorData));
+        if (!professorData.exists()) {  //만약 해당 경로에 파일이 없는 경우
+            professorData.createNewFile(); //파일 생성
+            BufferedWriter bw = new BufferedWriter(new FileWriter(professorData));
             bw.write("풍성현!P001!전산학과!11111111!00000005");
             bw.newLine();
             bw.write("설지수!P002!전자공학과!11111111!00000006");
@@ -108,7 +120,7 @@ public class Work {
         FileReader studentData = new FileReader("C:\\Temp\\GUIS\\StudentData.txt");
         BufferedReader fr = new BufferedReader(studentData);
         String line ="";
-       ArrayList<Student> student = new ArrayList<Student>();
+        ArrayList<Student> student = new ArrayList<Student>();
        
         while((line = fr.readLine()) != null){
             String data = line;
@@ -123,5 +135,56 @@ public class Work {
             student.add(new Student(array[5], temp_credit, temp_bill, temp_year, array[0], array[3], array[4], array[1], array[2]));
         }
         return student;
+    }
+    public ArrayList<Professor> inputProfessor() throws FileNotFoundException, IOException{ //학생 객체 생성
+        FileReader professorData = new FileReader("C:\\Temp\\GUIS\\ProfessorData.txt");
+        BufferedReader fr = new BufferedReader(professorData);
+        String line ="";
+        ArrayList<Professor> professor = new ArrayList<Professor>();
+       
+        while((line = fr.readLine()) != null){
+            String data = line;
+            String[] array = data.split("!"); //split : 문자열 구분
+            //String 형식의 bill, year, credit 형 변환
+            
+            //ArrayList 객체 생성
+            //Professor(String name, String frontRRN, String backRRN, String myNum, String mySubject)
+            professor.add(new Professor(array[0], array[3], array[4], array[1], array[2]));
+        }
+        return professor;
+    }
+    public ArrayList<academyStaff> inputacademyStaff() throws FileNotFoundException, IOException{ //학생 객체 생성
+        FileReader academystaffData = new FileReader("C:\\Temp\\GUIS\\academyStaffData.txt");
+        BufferedReader fr = new BufferedReader(academystaffData);
+        String line ="";
+        ArrayList<academyStaff> academystaff = new ArrayList<academyStaff>();
+       
+        while((line = fr.readLine()) != null){
+            String data = line;
+            String[] array = data.split("!"); //split : 문자열 구분
+            //String 형식의 bill, year, credit 형 변환
+            
+            //ArrayList 객체 생성
+            //academyStaff(String name, String frontRRN, String backRRN, String myNum, String mySubject)
+            academystaff.add(new academyStaff( array[0], array[3], array[4], array[1], array[2]));
+        }
+        return academystaff;
+    }
+    public ArrayList<lessonStaff> inputlessonStaff() throws FileNotFoundException, IOException{ //학생 객체 생성
+        FileReader lessonstaffData = new FileReader("C:\\Temp\\GUIS\\lessonStaffData.txt");
+        BufferedReader fr = new BufferedReader(lessonstaffData);
+        String line ="";
+        ArrayList<lessonStaff> lessonstaff = new ArrayList<lessonStaff>();
+       
+        while((line = fr.readLine()) != null){
+            String data = line;
+            String[] array = data.split("!"); //split : 문자열 구분
+            //String 형식의 bill, year, credit 형 변환
+            
+            //ArrayList 객체 생성
+            //lessonStaff(String name, String frontRRN, String backRRN, String myNum, String mySubject)
+            lessonstaff.add(new lessonStaff(array[0], array[3], array[4], array[1], array[2]));
+        }
+        return lessonstaff;
     }
 } //class Work 끝

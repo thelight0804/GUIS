@@ -160,6 +160,48 @@ public class LoginGUI extends javax.swing.JFrame {
                 Logger.getLogger(LoginGUI.class.getName()).log(Level.SEVERE, null, ex);
             }
         } //if (jRadioButtonStudent) 끝
+        
+        if (jRadioButtonProfessor.isSelected()){ //교수 선택 시
+            File professorData = new File("C:\\Temp\\GUIS\\ProfessorData.txt");
+            try {
+                BufferedReader readID = new BufferedReader(new FileReader(professorData));
+                String str = null;
+                String ID = null; 
+                //JOptionPane.showMessageDialog(null,str);
+            } catch (FileNotFoundException ex) {
+                Logger.getLogger(LoginGUI.class.getName()).log(Level.SEVERE, null, ex);
+            } catch (IOException ex) {
+                Logger.getLogger(LoginGUI.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
+        
+        if (jRadioButtonAcademyStaff.isSelected()){ // 학사 담장자 선택 시
+            File academyStaffData = new File("C:\\Temp\\GUIS\\academyStaffData.txt");
+            try {
+                BufferedReader readID = new BufferedReader(new FileReader(academyStaffData));
+                String str = null;
+                String ID = null; 
+                //JOptionPane.showMessageDialog(null,str);
+            } catch (FileNotFoundException ex) {
+                Logger.getLogger(LoginGUI.class.getName()).log(Level.SEVERE, null, ex);
+            } catch (IOException ex) {
+                Logger.getLogger(LoginGUI.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
+        
+        if (jRadioButtonLessonStaff.isSelected()){ //수업 담당자 선택 시
+            File lessonStaffData = new File("C:\\Temp\\GUIS\\lessonStaffData.txt");
+            try {
+                BufferedReader readID = new BufferedReader(new FileReader(lessonStaffData));
+                String str = null;
+                String ID = null; 
+                //JOptionPane.showMessageDialog(null,str);
+            } catch (FileNotFoundException ex) {
+                Logger.getLogger(LoginGUI.class.getName()).log(Level.SEVERE, null, ex);
+            } catch (IOException ex) {
+                Logger.getLogger(LoginGUI.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
     }//GEN-LAST:event_loginButtonActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
