@@ -18,6 +18,7 @@ public class changePW extends javax.swing.JFrame {
     SystemLogin login = new SystemLogin();
     public ArrayList<Student> student = new ArrayList<>();
     FileIO fileIO = new FileIO();
+
     public changePW() {
         initComponents();
     }
@@ -84,24 +85,17 @@ public class changePW extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
        //확인 버튼
-      //학생 값 불러오기
-/*        try {
-            fileIO.run();
-        } catch (IOException ex) {
-            Logger.getLogger(LoginGUI.class.getName()).log(Level.SEVERE, null, ex);
-        }*/
-        //TODO 파일처리 문제 해결
         try {
-            student = fileIO.getStudent();
+            student = fileIO.getStudent(); //Arraylist student 복사
         } catch (IOException ex) {
             Logger.getLogger(changePW.class.getName()).log(Level.SEVERE, null, ex);
-            System.out.println("예외 발생했어요ㅠ");
+            System.out.println("예외가 발생했어요ㅠ");
         }
         //암호 변경
         for (int i = 0; i < student.size(); i++) {
             if (student.get(i).isNowLogin()) { //로그인 되어 있는 계정 확인
                 String inputPW = jTextFieldInputPW.getText();
-                login.changeStudentPW(inputPW, student, i);
+                login.changeStudentPW(inputPW, student, i); //changeStudentPW 함수 호출
             }
         }
     }//GEN-LAST:event_jButton1ActionPerformed

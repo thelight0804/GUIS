@@ -15,8 +15,6 @@ public class Student extends User {
         this.bill = bill;
     }
 
-
-
     public String getGrade() {
         return grade;
     }
@@ -27,10 +25,6 @@ public class Student extends User {
 
     public long getBill() {
         return bill;
-    }
-
-    public int getYear() {
-        return year;
     }
 
     public String getName() {

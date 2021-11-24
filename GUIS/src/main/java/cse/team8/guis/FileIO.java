@@ -7,19 +7,41 @@ import cse.team8.user.lessonStaff;
 
 import java.io.*;
 import java.util.ArrayList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
-public class FileIO extends Work{
-    public ArrayList<Student> student;
-    public ArrayList<Professor> professor;
-    public ArrayList<cse.team8.user.academyStaff> academyStaff;
-    public ArrayList<cse.team8.user.lessonStaff> lessonStaff;
-
-    public void run() throws IOException {
-        newFile(); //파일 생성
-        student = inputStudent();
-        professor = inputProfessor();
-        academyStaff = inputAcademyStaff();
-        lessonStaff = inputLessonStaff();
+public class FileIO implements Work{
+    static public ArrayList<Student> student;
+    static public ArrayList<Professor> professor;
+    static public ArrayList<academyStaff> academyStaff;
+    static public ArrayList<lessonStaff> lessonStaff;
+    
+    public void fileWork() {
+        try {
+            newFile();
+        } catch (IOException ex) {
+            Logger.getLogger(FileIO.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        try {
+            student = inputStudent();
+        } catch (IOException ex) {
+            Logger.getLogger(FileIO.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        try {
+            professor = inputProfessor();
+        } catch (IOException ex) {
+            Logger.getLogger(FileIO.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        try {
+            academyStaff = inputAcademyStaff();
+        } catch (IOException ex) {
+            Logger.getLogger(FileIO.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        try {
+            lessonStaff = inputLessonStaff();
+        } catch (IOException ex) {
+            Logger.getLogger(FileIO.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 
     public void newFile() throws IOException { //파일 생성
@@ -35,18 +57,67 @@ public class FileIO extends Work{
         if (!studentData.exists()) {  //만약 해당 경로에 파일이 없는 경우
             studentData.createNewFile(); //파일 생성
             BufferedWriter bw = new BufferedWriter(new FileWriter(studentData));
-            bw.write("강준희!S001!전산학과!111111!0000000!E!0.0!0");
-            bw.newLine();
-            bw.write("박상현!S002!전자공학과!111111!0000001!E!0.0!0");
-            bw.newLine();
-            bw.write("손성배!S003!화학공학과!111111!0000002!E!0.0!0");
-            bw.newLine();
-            bw.write("신종훈!S004!기계공학과!111111!0000003!E!0.0!0");
-            bw.newLine();
-            bw.write("이영훈!S005!항공우주공학과!111111!0000004!E!0.0!0");
-            bw.newLine();
-            bw.write("Name!1!test학과!1!1!E!0.0!0");
-            bw.newLine();
+            bw.write("TestName!1!전산학과!111111!1!E!0.0!0"); //테스트용 학생
+            for(int i=1;i<10;i++){
+                String name = "이름" + i ;
+                String myNum = "!S00" + i;
+                String mySubject = "!전산학과";
+                String frontRRN = "!111111";
+                String backRRN = "!0000000" + i;
+                String grade = "!E";
+                String credit = "!0.0";
+                String bill = "!0";
+                bw.write(name + myNum + mySubject + frontRRN + backRRN + grade + credit + bill);
+                bw.newLine();
+            }
+            for(int i=10;i<20;i++){
+                String name = "이름" + i ;
+                String myNum = "!S0" + i;
+                String mySubject = "!전자공학과";
+                String frontRRN = "!111111";
+                String backRRN = "!000000" + i;
+                String grade = "!E";
+                String credit = "!0.0";
+                String bill = "!0";
+                bw.write(name + myNum + mySubject + frontRRN + backRRN + grade + credit + bill);
+                bw.newLine();
+            }
+            for(int i=20;i<30;i++){
+                String name = "이름" + i ;
+                String myNum = "!S0" + i;
+                String mySubject = "!화학공학과";
+                String frontRRN = "!111111";
+                String backRRN = "!000000" + i;
+                String grade = "!E";
+                String credit = "!0.0";
+                String bill = "!0";
+                bw.write(name + myNum + mySubject + frontRRN + backRRN + grade + credit + bill);
+                bw.newLine();
+            }
+            for(int i=30;i<40;i++){
+                String name = "이름" + i ;
+                String myNum = "!S0" + i;
+                String mySubject = "!기계공학과";
+                String frontRRN = "!111111";
+                String backRRN = "!000000" + i;
+                String grade = "!E";
+                String credit = "!0.0";
+                String bill = "!0";
+                bw.write(name + myNum + mySubject + frontRRN + backRRN + grade + credit + bill);
+                bw.newLine();
+            }
+            for(int i=40;i<50;i++){
+                String name = "이름" + i ;
+                String myNum = "!S0" + i;
+                String mySubject = "!항공우주공학과";
+                String frontRRN = "!111111";
+                String backRRN = "!000000" + i;
+                String grade = "!E";
+                String credit = "!0.0";
+                String bill = "!0";
+                bw.write(name + myNum + mySubject + frontRRN + backRRN + grade + credit + bill);
+                bw.newLine();
+            }
             bw.close(); //파일을 닫아주어야 갱신이 된다
         }
         if (!professorData.exists()) {  //만약 해당 경로에 파일이 없는 경우
@@ -100,8 +171,7 @@ public class FileIO extends Work{
 
     }
     public ArrayList<Student> inputStudent() throws FileNotFoundException, IOException{ //학생 객체 생성
-        FileReader studentData = new FileReader("C:\\Temp\\GUIS\\StudentData.txt");
-        BufferedReader fr = new BufferedReader(studentData);
+        BufferedReader fr = new BufferedReader(new FileReader("C:\\Temp\\GUIS\\StudentData.txt"));
         String line ="";
         ArrayList<Student> student = new ArrayList<Student>();
 
@@ -119,8 +189,7 @@ public class FileIO extends Work{
         return student;
     }
     public ArrayList<Professor> inputProfessor() throws FileNotFoundException, IOException{ //교수 객체 생성
-        FileReader professorData = new FileReader("C:\\Temp\\GUIS\\ProfessorData.txt");
-        BufferedReader fr = new BufferedReader(professorData);
+        BufferedReader fr = new BufferedReader(new FileReader("C:\\Temp\\GUIS\\ProfessorData.txt"));
         String line ="";
         ArrayList<Professor> professor = new ArrayList<Professor>();
 
@@ -136,8 +205,7 @@ public class FileIO extends Work{
         return professor;
     }
     public ArrayList<academyStaff> inputAcademyStaff() throws FileNotFoundException, IOException{ //학사담당자 객체 생성
-        FileReader academystaffData = new FileReader("C:\\Temp\\GUIS\\academyStaffData.txt");
-        BufferedReader fr = new BufferedReader(academystaffData);
+        BufferedReader fr = new BufferedReader(new FileReader("C:\\Temp\\GUIS\\academyStaffData.txt"));
         String line ="";
         ArrayList<academyStaff> academystaff = new ArrayList<academyStaff>();
 
@@ -152,8 +220,7 @@ public class FileIO extends Work{
         return academystaff;
     }
     public ArrayList<lessonStaff> inputLessonStaff() throws FileNotFoundException, IOException{ //수업담당자 객체 생성
-        FileReader lessonstaffData = new FileReader("C:\\Temp\\GUIS\\lessonStaffData.txt");
-        BufferedReader fr = new BufferedReader(lessonstaffData);
+        BufferedReader fr = new BufferedReader(new FileReader("C:\\Temp\\GUIS\\lessonStaffData.txt"));
         String line ="";
         ArrayList<lessonStaff> lessonstaff = new ArrayList<lessonStaff>();
 
@@ -171,15 +238,15 @@ public class FileIO extends Work{
         return student;
     }
 
-    public ArrayList<Professor> getProfessor() {
+    public ArrayList<Professor> getProfessor() throws IOException {
         return professor;
     }
 
-    public ArrayList<cse.team8.user.academyStaff> getAcademyStaff() {
+    public ArrayList<cse.team8.user.academyStaff> getAcademyStaff() throws IOException {
         return academyStaff;
     }
 
-    public ArrayList<cse.team8.user.lessonStaff> getLessonStaff() {
+    public ArrayList<cse.team8.user.lessonStaff> getLessonStaff() throws IOException {
         return lessonStaff;
     }
 }

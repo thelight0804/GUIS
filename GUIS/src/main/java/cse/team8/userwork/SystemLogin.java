@@ -21,9 +21,9 @@ public class SystemLogin extends userWork{
                 JOptionPane.showMessageDialog(null, student.get(i).getName() + " 로그인 성공");
                 pass = true;
                 student.get(i).setNowLogin(true); //로그인 한 계정 분류
-                break; //로그인 성공하면 for문을 빠져 나간다
+                break;
             }
-        } //for문 종료
+        }
         if (pass) { //로그인 성공 시
             loginStudentPass();
         } else {

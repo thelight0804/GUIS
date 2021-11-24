@@ -160,11 +160,7 @@ public class LoginGUI extends javax.swing.JFrame {
 
     private void loginButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginButtonActionPerformed
         if (jRadioButtonStudent.isSelected()){
-            try {
-                fileIO.run();
-            } catch (IOException ex) {
-                Logger.getLogger(LoginGUI.class.getName()).log(Level.SEVERE, null, ex);
-            }
+            fileIO.fileWork();
         try {
             //Login 버튼
             student = fileIO.getStudent();
@@ -178,6 +174,7 @@ public class LoginGUI extends javax.swing.JFrame {
             String inputPW = jTextFieldPW.getText();
 
             pass = login.loginStudentDistinguish(inputID, inputPW, student); //SystemLogin.loginDistinguish 함수 호출
+ 
             if (pass) //로그인 성공 시
                 dispose(); //LoginGUI 창 닫음
             else {

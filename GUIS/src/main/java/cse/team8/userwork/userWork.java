@@ -8,6 +8,6 @@ public abstract class userWork { //추상 클래스
     public abstract void loginStudentPass(); //학생 로그인 성공
     public void changeStudentPW(String inputPW, ArrayList <Student> student, int i){ //학생 비밀번호 변경
         student.get(i).setPW(inputPW);
-        System.out.println(student.get(i).getPW());
+        System.out.println(student.get(i).getName());
     }
 }

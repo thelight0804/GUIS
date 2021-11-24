@@ -17,6 +17,7 @@ import java.io.IOException;
 public class GuisMainClass {
     public static void main(String[] args) throws InterruptedException, IOException {
         //로그인 창 출력
+        
         LoginGUI login = new LoginGUI();
         login.setDefaultCloseOperation(LoginGUI.EXIT_ON_CLOSE);
         login.setVisible(true);
