@@ -27,24 +27,24 @@ public class ProfessorWork extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jButtclassStudentlist = new javax.swing.JButton();
-        jButtgradeInput = new javax.swing.JButton();
+        jButtClassStudentList = new javax.swing.JButton();
+        jButtGradeInput = new javax.swing.JButton();
         jButtRoll = new javax.swing.JButton();
-        jButtPWchange = new javax.swing.JButton();
+        jButtPWChange = new javax.swing.JButton();
         jButtExit = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jButtclassStudentlist.setFont(new java.awt.Font("맑은 고딕 Semilight", 0, 12)); // NOI18N
-        jButtclassStudentlist.setText("강좌 학생 명단 확인");
-        jButtclassStudentlist.addActionListener(new java.awt.event.ActionListener() {
+        jButtClassStudentList.setFont(new java.awt.Font("맑은 고딕 Semilight", 0, 12)); // NOI18N
+        jButtClassStudentList.setText("강좌 학생 명단 확인");
+        jButtClassStudentList.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtclassStudentlistActionPerformed(evt);
+                jButtClassStudentListActionPerformed(evt);
             }
         });
 
-        jButtgradeInput.setFont(new java.awt.Font("맑은 고딕 Semilight", 0, 12)); // NOI18N
-        jButtgradeInput.setText("성적 입력");
+        jButtGradeInput.setFont(new java.awt.Font("맑은 고딕 Semilight", 0, 12)); // NOI18N
+        jButtGradeInput.setText("성적 입력");
 
         jButtRoll.setFont(new java.awt.Font("맑은 고딕 Semilight", 0, 12)); // NOI18N
         jButtRoll.setText(" 출석부 조회");
@@ -54,11 +54,11 @@ public class ProfessorWork extends javax.swing.JFrame {
             }
         });
 
-        jButtPWchange.setFont(new java.awt.Font("맑은 고딕 Semilight", 0, 12)); // NOI18N
-        jButtPWchange.setText("암호 변경");
-        jButtPWchange.addActionListener(new java.awt.event.ActionListener() {
+        jButtPWChange.setFont(new java.awt.Font("맑은 고딕 Semilight", 0, 12)); // NOI18N
+        jButtPWChange.setText("암호 변경");
+        jButtPWChange.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtPWchangeActionPerformed(evt);
+                jButtPWChangeActionPerformed(evt);
             }
         });
 
@@ -71,15 +71,15 @@ public class ProfessorWork extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jButtPWchange)
+                .addComponent(jButtPWChange)
                 .addGap(87, 87, 87)
                 .addComponent(jButtExit)
                 .addContainerGap())
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap(113, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                    .addComponent(jButtclassStudentlist, javax.swing.GroupLayout.DEFAULT_SIZE, 164, Short.MAX_VALUE)
-                    .addComponent(jButtgradeInput, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jButtClassStudentList, javax.swing.GroupLayout.DEFAULT_SIZE, 164, Short.MAX_VALUE)
+                    .addComponent(jButtGradeInput, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jButtRoll, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap(118, Short.MAX_VALUE))
         );
@@ -87,15 +87,15 @@ public class ProfessorWork extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(62, 62, 62)
-                .addComponent(jButtclassStudentlist, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jButtClassStudentList, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(34, 34, 34)
-                .addComponent(jButtgradeInput)
+                .addComponent(jButtGradeInput)
                 .addGap(34, 34, 34)
                 .addComponent(jButtRoll, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 48, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButtExit)
-                    .addComponent(jButtPWchange, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jButtPWChange, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap())
         );
 
@@ -106,13 +106,13 @@ public class ProfessorWork extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jButtRollActionPerformed
 
-    private void jButtPWchangeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtPWchangeActionPerformed
+    private void jButtPWChangeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtPWChangeActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButtPWchangeActionPerformed
+    }//GEN-LAST:event_jButtPWChangeActionPerformed
 
-    private void jButtclassStudentlistActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtclassStudentlistActionPerformed
+    private void jButtClassStudentListActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtClassStudentListActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButtclassStudentlistActionPerformed
+    }//GEN-LAST:event_jButtClassStudentListActionPerformed
 
     /**
      * @param args the command line arguments
@@ -151,10 +151,10 @@ public class ProfessorWork extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton jButtClassStudentList;
     private javax.swing.JButton jButtExit;
-    private javax.swing.JButton jButtPWchange;
+    private javax.swing.JButton jButtGradeInput;
+    private javax.swing.JButton jButtPWChange;
     private javax.swing.JButton jButtRoll;
-    private javax.swing.JButton jButtclassStudentlist;
-    private javax.swing.JButton jButtgradeInput;
     // End of variables declaration//GEN-END:variables
 }

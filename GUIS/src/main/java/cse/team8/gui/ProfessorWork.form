@@ -25,7 +25,7 @@
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
               <EmptySpace max="32767" attributes="0"/>
-              <Component id="jButtPWchange" min="-2" max="-2" attributes="0"/>
+              <Component id="jButtPWChange" min="-2" max="-2" attributes="0"/>
               <EmptySpace min="-2" pref="87" max="-2" attributes="0"/>
               <Component id="jButtExit" min="-2" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
@@ -33,8 +33,8 @@
           <Group type="102" attributes="0">
               <EmptySpace pref="113" max="32767" attributes="0"/>
               <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                  <Component id="jButtclassStudentlist" pref="164" max="32767" attributes="0"/>
-                  <Component id="jButtgradeInput" max="32767" attributes="0"/>
+                  <Component id="jButtClassStudentList" pref="164" max="32767" attributes="0"/>
+                  <Component id="jButtGradeInput" max="32767" attributes="0"/>
                   <Component id="jButtRoll" max="32767" attributes="0"/>
               </Group>
               <EmptySpace pref="118" max="32767" attributes="0"/>
@@ -45,15 +45,15 @@
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" attributes="0">
               <EmptySpace min="-2" pref="62" max="-2" attributes="0"/>
-              <Component id="jButtclassStudentlist" min="-2" pref="23" max="-2" attributes="0"/>
+              <Component id="jButtClassStudentList" min="-2" pref="23" max="-2" attributes="0"/>
               <EmptySpace min="-2" pref="34" max="-2" attributes="0"/>
-              <Component id="jButtgradeInput" min="-2" max="-2" attributes="0"/>
+              <Component id="jButtGradeInput" min="-2" max="-2" attributes="0"/>
               <EmptySpace min="-2" pref="34" max="-2" attributes="0"/>
               <Component id="jButtRoll" min="-2" pref="23" max="-2" attributes="0"/>
               <EmptySpace pref="48" max="32767" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="jButtExit" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="jButtPWchange" alignment="3" min="-2" pref="23" max="-2" attributes="0"/>
+                  <Component id="jButtPWChange" alignment="3" min="-2" pref="23" max="-2" attributes="0"/>
               </Group>
               <EmptySpace min="-2" max="-2" attributes="0"/>
           </Group>
@@ -61,7 +61,7 @@
     </DimensionLayout>
   </Layout>
   <SubComponents>
-    <Component class="javax.swing.JButton" name="jButtclassStudentlist">
+    <Component class="javax.swing.JButton" name="jButtClassStudentList">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="&#xb9d1;&#xc740; &#xace0;&#xb515; Semilight" size="12" style="0"/>
@@ -69,10 +69,10 @@
         <Property name="text" type="java.lang.String" value="&#xac15;&#xc88c; &#xd559;&#xc0dd; &#xba85;&#xb2e8; &#xd655;&#xc778;"/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButtclassStudentlistActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButtClassStudentListActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JButton" name="jButtgradeInput">
+    <Component class="javax.swing.JButton" name="jButtGradeInput">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="&#xb9d1;&#xc740; &#xace0;&#xb515; Semilight" size="12" style="0"/>
@@ -91,7 +91,7 @@
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButtRollActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JButton" name="jButtPWchange">
+    <Component class="javax.swing.JButton" name="jButtPWChange">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="&#xb9d1;&#xc740; &#xace0;&#xb515; Semilight" size="12" style="0"/>
@@ -99,7 +99,7 @@
         <Property name="text" type="java.lang.String" value="&#xc554;&#xd638; &#xbcc0;&#xacbd;"/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButtPWchangeActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButtPWChangeActionPerformed"/>
       </Events>
     </Component>
     <Component class="javax.swing.JButton" name="jButtExit">
