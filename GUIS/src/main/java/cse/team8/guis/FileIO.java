@@ -58,6 +58,7 @@ public class FileIO implements Work{
             studentData.createNewFile(); //파일 생성
             BufferedWriter bw = new BufferedWriter(new FileWriter(studentData));
             bw.write("TestName!1!전산학과!111111!1!E!0.0!0"); //테스트용 학생
+            bw.newLine();
             for(int i=1;i<10;i++){
                 String name = "이름" + i ;
                 String myNum = "!S00" + i;

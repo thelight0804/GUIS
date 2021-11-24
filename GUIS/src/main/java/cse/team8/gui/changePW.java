@@ -95,7 +95,11 @@ public class changePW extends javax.swing.JFrame {
         for (int i = 0; i < student.size(); i++) {
             if (student.get(i).isNowLogin()) { //로그인 되어 있는 계정 확인
                 String inputPW = jTextFieldInputPW.getText();
-                login.changeStudentPW(inputPW, student, i); //changeStudentPW 함수 호출
+                try {
+                    login.changeStudentPW(inputPW, student, i); //changeStudentPW 함수 호출
+                } catch (IOException ex) {
+                    Logger.getLogger(changePW.class.getName()).log(Level.SEVERE, null, ex);
+                }
             }
         }
     }//GEN-LAST:event_jButton1ActionPerformed

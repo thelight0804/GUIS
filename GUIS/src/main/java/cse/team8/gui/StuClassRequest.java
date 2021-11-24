@@ -30,7 +30,7 @@ public class StuClassRequest extends javax.swing.JFrame {
         jComboBoxClassList = new javax.swing.JComboBox<>();
         jLabel1 = new javax.swing.JLabel();
         jTextFieldCredit = new javax.swing.JTextField();
-        jButtExit = new javax.swing.JButton();
+        jButtCancel = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
         jButtSignUp = new javax.swing.JButton();
 
@@ -50,11 +50,11 @@ public class StuClassRequest extends javax.swing.JFrame {
 
         jTextFieldCredit.setFont(new java.awt.Font("맑은 고딕 Semilight", 0, 12)); // NOI18N
 
-        jButtExit.setFont(new java.awt.Font("맑은 고딕 Semilight", 0, 12)); // NOI18N
-        jButtExit.setText("종료");
-        jButtExit.addActionListener(new java.awt.event.ActionListener() {
+        jButtCancel.setFont(new java.awt.Font("맑은 고딕 Semilight", 0, 12)); // NOI18N
+        jButtCancel.setText("종료");
+        jButtCancel.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtExitActionPerformed(evt);
+                jButtCancelActionPerformed(evt);
             }
         });
 
@@ -83,7 +83,7 @@ public class StuClassRequest extends javax.swing.JFrame {
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(jTextFieldCredit, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jButtExit))
+                                .addComponent(jButtCancel))
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(jComboBoxClassList, javax.swing.GroupLayout.PREFERRED_SIZE, 231, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(0, 41, Short.MAX_VALUE)))))
@@ -102,7 +102,7 @@ public class StuClassRequest extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1)
                     .addComponent(jTextFieldCredit, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButtExit))
+                    .addComponent(jButtCancel))
                 .addGap(9, 9, 9))
         );
 
@@ -113,9 +113,9 @@ public class StuClassRequest extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jComboBoxClassListActionPerformed
 
-    private void jButtExitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtExitActionPerformed
+    private void jButtCancelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtCancelActionPerformed
         //취소 버튼
-    }//GEN-LAST:event_jButtExitActionPerformed
+    }//GEN-LAST:event_jButtCancelActionPerformed
 
     /**
      * @param args the command line arguments
@@ -153,7 +153,7 @@ public class StuClassRequest extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButtExit;
+    private javax.swing.JButton jButtCancel;
     private javax.swing.JButton jButtSignUp;
     private javax.swing.JComboBox<String> jComboBoxClassList;
     private javax.swing.JLabel jLabel1;

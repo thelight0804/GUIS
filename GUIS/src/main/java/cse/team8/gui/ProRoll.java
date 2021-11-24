@@ -31,7 +31,7 @@ public class ProRoll extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         jListRoll = new javax.swing.JList<>();
         jLabel1 = new javax.swing.JLabel();
-        jButtExit = new javax.swing.JButton();
+        jButtCancel = new javax.swing.JButton();
         jButtSearch = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -51,8 +51,8 @@ public class ProRoll extends javax.swing.JFrame {
         jLabel1.setFont(new java.awt.Font("맑은 고딕 Semilight", 0, 12)); // NOI18N
         jLabel1.setText("강의 선택");
 
-        jButtExit.setFont(new java.awt.Font("맑은 고딕 Semilight", 0, 12)); // NOI18N
-        jButtExit.setText("종료");
+        jButtCancel.setFont(new java.awt.Font("맑은 고딕 Semilight", 0, 12)); // NOI18N
+        jButtCancel.setText("취소");
 
         jButtSearch.setFont(new java.awt.Font("맑은 고딕 Semilight", 0, 12)); // NOI18N
         jButtSearch.setText("조회하기");
@@ -64,7 +64,7 @@ public class ProRoll extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGap(24, 24, 24)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jButtExit)
+                    .addComponent(jButtCancel)
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                         .addGroup(layout.createSequentialGroup()
                             .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -86,7 +86,7 @@ public class ProRoll extends javax.swing.JFrame {
                 .addGap(13, 13, 13)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 184, Short.MAX_VALUE)
                 .addGap(18, 18, 18)
-                .addComponent(jButtExit)
+                .addComponent(jButtCancel)
                 .addContainerGap())
         );
 
@@ -129,7 +129,7 @@ public class ProRoll extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButtExit;
+    private javax.swing.JButton jButtCancel;
     private javax.swing.JButton jButtSearch;
     private javax.swing.JComboBox<String> jComboBoxClassList;
     private javax.swing.JLabel jLabel1;
