@@ -20,6 +20,7 @@ public class SystemLogin extends userWork{
             if (inputID.equals(student.get(i).getMyNum()) && inputPW.equals(student.get(i).getBackRRN())) {
                 JOptionPane.showMessageDialog(null, student.get(i).getName() + " 로그인 성공");
                 pass = true;
+                student.get(i).setNowLogin(true); //로그인 한 계정 분류
                 break; //로그인 성공하면 for문을 빠져 나간다
             }
         } //for문 종료
@@ -34,5 +35,8 @@ public class SystemLogin extends userWork{
         StudentWork StudentWork = new StudentWork();
         StudentWork.setDefaultCloseOperation(StudentWork.EXIT_ON_CLOSE);
         StudentWork.setVisible(true);
+    }
+    public void changeStudentPW(ArrayList <Student> student){
+        
     }
 } //class SystemLogin 끝

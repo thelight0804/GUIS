@@ -21,22 +21,22 @@ import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-import cse.team8.guis.Work;
+import cse.team8.guis.FileIO;
 import cse.team8.userwork.*;
 
 
 public class LoginGUI extends javax.swing.JFrame {
-    Work work = new Work();
     SystemLogin login = new SystemLogin(); //SystemLogin 클래스 사용
+    FileIO fileIO = new FileIO();
     public ArrayList<Student> student = new ArrayList<>();
     boolean pass = false; //로그인 성공 여부
-    
-    
+
+
     public LoginGUI() {
         initComponents();
         jRadioButtonStudent.setSelected(true);
     }
-    
+
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -159,25 +159,25 @@ public class LoginGUI extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void loginButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginButtonActionPerformed
-        //Login 버튼
-        try {
-            work.run();
-        } catch (IOException ex) {
-            Logger.getLogger(LoginGUI.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        if (jRadioButtonStudent.isSelected()){ //학생 선택 시
+        if (jRadioButtonStudent.isSelected()){
             try {
-                student = work.getStudent(); //Work에서 생성한 student의 값을 LoginGUI의 student에 복사
+                fileIO.run();
             } catch (IOException ex) {
                 Logger.getLogger(LoginGUI.class.getName()).log(Level.SEVERE, null, ex);
             }
-            
+        try {
+            //Login 버튼
+            student = fileIO.getStudent();
+        } catch (IOException ex) {
+            Logger.getLogger(LoginGUI.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
             ////로그인 확인
             //ID, PW 입력 받음
             String inputID = jTextFieldID.getText();
             String inputPW = jTextFieldPW.getText();
+
             pass = login.loginStudentDistinguish(inputID, inputPW, student); //SystemLogin.loginDistinguish 함수 호출
-            
             if (pass) //로그인 성공 시
                 dispose(); //LoginGUI 창 닫음
             else {
@@ -191,7 +191,7 @@ public class LoginGUI extends javax.swing.JFrame {
             try {
                 BufferedReader readID = new BufferedReader(new FileReader(professorData));
                 String str = null;
-                String ID = null; 
+                String ID = null;
                 //JOptionPane.showMessageDialog(null,str);
             } catch (FileNotFoundException ex) {
                 Logger.getLogger(LoginGUI.class.getName()).log(Level.SEVERE, null, ex);
@@ -205,7 +205,7 @@ public class LoginGUI extends javax.swing.JFrame {
             try {
                 BufferedReader readID = new BufferedReader(new FileReader(academyStaffData));
                 String str = null;
-                String ID = null; 
+                String ID = null;
                 //JOptionPane.showMessageDialog(null,str);
             } catch (FileNotFoundException ex) {
                 Logger.getLogger(LoginGUI.class.getName()).log(Level.SEVERE, null, ex);
@@ -219,7 +219,7 @@ public class LoginGUI extends javax.swing.JFrame {
             try {
                 BufferedReader readID = new BufferedReader(new FileReader(lessonStaffData));
                 String str = null;
-                String ID = null; 
+                String ID = null;
                 //JOptionPane.showMessageDialog(null,str);
             } catch (FileNotFoundException ex) {
                 Logger.getLogger(LoginGUI.class.getName()).log(Level.SEVERE, null, ex);

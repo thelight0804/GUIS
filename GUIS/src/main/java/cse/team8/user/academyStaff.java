@@ -2,8 +2,8 @@
 package cse.team8.user;
 
 public class academyStaff  extends User{
-    public academyStaff(String name, String frontRRN, String backRRN, String myNum, String mySubject) {
-        super(name, frontRRN, backRRN, myNum, mySubject);
+    public academyStaff(String name, String frontRRN, String backRRN, String myNum, String mySubject, boolean nowLogin, String PW) {
+        super(name, frontRRN, backRRN, myNum, mySubject, nowLogin, PW);
     }
 
     public String getName() {
