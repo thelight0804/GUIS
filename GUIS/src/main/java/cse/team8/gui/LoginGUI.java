@@ -8,6 +8,7 @@
  * @author SH1NJH - 신종훈 (20183197)
  * @author dudgns0421 - 이영훈 (20173149)
  */
+// JOptionPane.showMessageDialog(null,STR); //값 정확히 나오는지 확인 용 
 package cse.team8.gui;
 
 import cse.team8.user.Student;
@@ -20,21 +21,22 @@ import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-import cse.team8.guis.Work;
-import cse.team8.user.*;
-import javax.swing.JOptionPane;
+import cse.team8.guis.FileIO;
+import cse.team8.userwork.*;
 
 
 public class LoginGUI extends javax.swing.JFrame {
-    Work work = new Work();
+    SystemLogin login = new SystemLogin(); //SystemLogin 클래스 사용
+    FileIO fileIO = new FileIO();
     public ArrayList<Student> student = new ArrayList<>();
-    
-    
+    boolean pass = false; //로그인 성공 여부
+
+
     public LoginGUI() {
         initComponents();
         jRadioButtonStudent.setSelected(true);
     }
-    
+
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -157,27 +159,31 @@ public class LoginGUI extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void loginButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginButtonActionPerformed
-        //Login 버튼
-        try {
-            work.run();
-        } catch (IOException ex) {
-            Logger.getLogger(LoginGUI.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        if (jRadioButtonStudent.isSelected()){ //학생 선택 시
+        if (jRadioButtonStudent.isSelected()){
             try {
-                student = work.getStudent(); //Work에서 생성한 student의 값을 LoginGUI의 student에 복사
+                fileIO.run();
             } catch (IOException ex) {
                 Logger.getLogger(LoginGUI.class.getName()).log(Level.SEVERE, null, ex);
             }
-            
+        try {
+            //Login 버튼
+            student = fileIO.getStudent();
+        } catch (IOException ex) {
+            Logger.getLogger(LoginGUI.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
             ////로그인 확인
             //ID, PW 입력 받음
             String inputID = jTextFieldID.getText();
             String inputPW = jTextFieldPW.getText();
 
-            loginDistinguish(inputID, inputPW);
-            
-           // JOptionPane.showMessageDialog(null,STR); //값 정확히 나오는지 확인 용            
+            pass = login.loginStudentDistinguish(inputID, inputPW, student); //SystemLogin.loginDistinguish 함수 호출
+            if (pass) //로그인 성공 시
+                dispose(); //LoginGUI 창 닫음
+            else {
+                jTextFieldID.setText(""); //칸 지움
+                jTextFieldPW.setText("");
+            }
         } //if (jRadioButtonStudent) 끝
         
         if (jRadioButtonProfessor.isSelected()){ //교수 선택 시
@@ -185,7 +191,7 @@ public class LoginGUI extends javax.swing.JFrame {
             try {
                 BufferedReader readID = new BufferedReader(new FileReader(professorData));
                 String str = null;
-                String ID = null; 
+                String ID = null;
                 //JOptionPane.showMessageDialog(null,str);
             } catch (FileNotFoundException ex) {
                 Logger.getLogger(LoginGUI.class.getName()).log(Level.SEVERE, null, ex);
@@ -199,7 +205,7 @@ public class LoginGUI extends javax.swing.JFrame {
             try {
                 BufferedReader readID = new BufferedReader(new FileReader(academyStaffData));
                 String str = null;
-                String ID = null; 
+                String ID = null;
                 //JOptionPane.showMessageDialog(null,str);
             } catch (FileNotFoundException ex) {
                 Logger.getLogger(LoginGUI.class.getName()).log(Level.SEVERE, null, ex);
@@ -213,7 +219,7 @@ public class LoginGUI extends javax.swing.JFrame {
             try {
                 BufferedReader readID = new BufferedReader(new FileReader(lessonStaffData));
                 String str = null;
-                String ID = null; 
+                String ID = null;
                 //JOptionPane.showMessageDialog(null,str);
             } catch (FileNotFoundException ex) {
                 Logger.getLogger(LoginGUI.class.getName()).log(Level.SEVERE, null, ex);
@@ -252,23 +258,4 @@ public class LoginGUI extends javax.swing.JFrame {
     private javax.swing.JButton loginButton;
     // End of variables declaration//GEN-END:variables
 
-    private void loginDistinguish(String inputID, String inputPW) { //로그인 성공 여부 확인
-        boolean pass = false; //로그인 성공 여부
-        for(int i=0;i<student.size();i++){
-            if(inputID.equals(student.get(i).getMyNum()) && inputPW.equals(student.get(i).getBackRRN())){
-                JOptionPane.showMessageDialog(null,student.get(i).getName()+" 로그인 성공");
-                pass = true;
-                break; //로그인 성공하면 for문을 빠져 나간다
-            } 
-        } //for문 종료
-        if(pass){ //로그인 성공 시
-            loginPass();
-        }
-        else{
-            JOptionPane.showMessageDialog(null,"ID 및 P/W를 다시 한번 확인해 주세요");
-        }
-    }
-    private void loginPass() { //로그인 성공 함수
-        //TODO 다음 창 출력
-    }
 }
