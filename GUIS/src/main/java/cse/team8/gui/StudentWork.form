@@ -29,6 +29,7 @@
                   <Component id="jButtClassRequest" alignment="2" min="-2" pref="161" max="-2" attributes="0"/>
                   <Component id="jButtGradeCheck" alignment="2" min="-2" pref="162" max="-2" attributes="0"/>
                   <Component id="jButtBillGet" alignment="2" min="-2" max="-2" attributes="0"/>
+                  <Component id="jButtonChangePW" alignment="2" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace pref="56" max="32767" attributes="0"/>
               <Component id="jButtExit" min="-2" max="-2" attributes="0"/>
@@ -45,7 +46,9 @@
               <Component id="jButtGradeCheck" min="-2" max="-2" attributes="0"/>
               <EmptySpace min="-2" pref="34" max="-2" attributes="0"/>
               <Component id="jButtBillGet" min="-2" max="-2" attributes="0"/>
-              <EmptySpace min="22" pref="95" max="32767" attributes="0"/>
+              <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
+              <Component id="jButtonChangePW" min="-2" max="-2" attributes="0"/>
+              <EmptySpace pref="41" max="32767" attributes="0"/>
           </Group>
           <Group type="102" alignment="1" attributes="0">
               <EmptySpace max="32767" attributes="0"/>
@@ -89,6 +92,14 @@
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButtExitActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="jButtonChangePW">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="&#xc554;&#xd638;&#xbcc0;&#xacbd;"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButtonChangePWActionPerformed"/>
       </Events>
     </Component>
   </SubComponents>

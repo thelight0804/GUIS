@@ -170,7 +170,7 @@ public class FileIO implements Work{
         }
 
     }
-    public ArrayList<Student> inputStudent() throws FileNotFoundException, IOException{ //학생 객체 생성
+    public ArrayList<Student> inputStudent() throws  IOException{ //학생 객체 생성
         BufferedReader fr = new BufferedReader(new FileReader("C:\\Temp\\GUIS\\StudentData.txt"));
         String line ="";
         ArrayList<Student> student = new ArrayList<Student>();
@@ -188,7 +188,7 @@ public class FileIO implements Work{
         }
         return student;
     }
-    public ArrayList<Professor> inputProfessor() throws FileNotFoundException, IOException{ //교수 객체 생성
+    public ArrayList<Professor> inputProfessor() throws  IOException{ //교수 객체 생성
         BufferedReader fr = new BufferedReader(new FileReader("C:\\Temp\\GUIS\\ProfessorData.txt"));
         String line ="";
         ArrayList<Professor> professor = new ArrayList<Professor>();
@@ -204,7 +204,7 @@ public class FileIO implements Work{
         }
         return professor;
     }
-    public ArrayList<academyStaff> inputAcademyStaff() throws FileNotFoundException, IOException{ //학사담당자 객체 생성
+    public ArrayList<academyStaff> inputAcademyStaff() throws  IOException{ //학사담당자 객체 생성
         BufferedReader fr = new BufferedReader(new FileReader("C:\\Temp\\GUIS\\academyStaffData.txt"));
         String line ="";
         ArrayList<academyStaff> academystaff = new ArrayList<academyStaff>();
@@ -219,7 +219,7 @@ public class FileIO implements Work{
         }
         return academystaff;
     }
-    public ArrayList<lessonStaff> inputLessonStaff() throws FileNotFoundException, IOException{ //수업담당자 객체 생성
+    public ArrayList<lessonStaff> inputLessonStaff() throws  IOException{ //수업담당자 객체 생성
         BufferedReader fr = new BufferedReader(new FileReader("C:\\Temp\\GUIS\\lessonStaffData.txt"));
         String line ="";
         ArrayList<lessonStaff> lessonstaff = new ArrayList<lessonStaff>();

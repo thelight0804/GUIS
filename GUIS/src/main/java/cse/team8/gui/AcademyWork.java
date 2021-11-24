@@ -56,6 +56,11 @@ public class AcademyWork extends javax.swing.JFrame {
 
         jButtExit.setFont(new java.awt.Font("맑은 고딕 Semilight", 0, 12)); // NOI18N
         jButtExit.setText("종료");
+        jButtExit.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtExitActionPerformed(evt);
+            }
+        });
 
         jRadioButtStudent.setFont(new java.awt.Font("맑은 고딕 Semilight", 0, 12)); // NOI18N
         jRadioButtStudent.setText("학생");
@@ -87,7 +92,6 @@ public class AcademyWork extends javax.swing.JFrame {
                             .addComponent(jRadioButtProfessor))
                         .addGap(0, 49, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jButtPWchange)
                         .addGap(26, 26, 26)
                         .addComponent(jButtExit)))
@@ -123,6 +127,11 @@ public class AcademyWork extends javax.swing.JFrame {
     private void jRadioButtProfessorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButtProfessorActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jRadioButtProfessorActionPerformed
+
+    private void jButtExitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtExitActionPerformed
+        // TODO add your handling code here:
+        System.exit(0); //프로그램 종료
+    }//GEN-LAST:event_jButtExitActionPerformed
 
     /**
      * @param args the command line arguments

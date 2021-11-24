@@ -31,6 +31,7 @@ public class StudentWork extends javax.swing.JFrame {
         jButtGradeCheck = new javax.swing.JButton();
         jButtBillGet = new javax.swing.JButton();
         jButtExit = new javax.swing.JButton();
+        jButtonChangePW = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -51,6 +52,13 @@ public class StudentWork extends javax.swing.JFrame {
             }
         });
 
+        jButtonChangePW.setText("암호변경");
+        jButtonChangePW.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonChangePWActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -60,7 +68,8 @@ public class StudentWork extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
                     .addComponent(jButtClassRequest, javax.swing.GroupLayout.PREFERRED_SIZE, 161, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButtGradeCheck, javax.swing.GroupLayout.PREFERRED_SIZE, 162, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButtBillGet))
+                    .addComponent(jButtBillGet)
+                    .addComponent(jButtonChangePW))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 56, Short.MAX_VALUE)
                 .addComponent(jButtExit)
                 .addContainerGap())
@@ -74,7 +83,9 @@ public class StudentWork extends javax.swing.JFrame {
                 .addComponent(jButtGradeCheck)
                 .addGap(34, 34, 34)
                 .addComponent(jButtBillGet)
-                .addGap(22, 95, Short.MAX_VALUE))
+                .addGap(31, 31, 31)
+                .addComponent(jButtonChangePW)
+                .addContainerGap(41, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jButtExit)
@@ -85,8 +96,16 @@ public class StudentWork extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButtExitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtExitActionPerformed
-        // TODO add your handling code here:
+        //종료 버튼
+        System.exit(0); //프로그램 종료
     }//GEN-LAST:event_jButtExitActionPerformed
+
+    private void jButtonChangePWActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonChangePWActionPerformed
+        //암호 변경 버튼
+        changePW a = new changePW(); //changePW 창 호출
+        a.setDefaultCloseOperation(changePW.EXIT_ON_CLOSE);
+        a.setVisible(true);
+    }//GEN-LAST:event_jButtonChangePWActionPerformed
 
     /**
      * @param args the command line arguments
@@ -129,5 +148,6 @@ public class StudentWork extends javax.swing.JFrame {
     private javax.swing.JButton jButtClassRequest;
     private javax.swing.JButton jButtExit;
     private javax.swing.JButton jButtGradeCheck;
+    private javax.swing.JButton jButtonChangePW;
     // End of variables declaration//GEN-END:variables
 }

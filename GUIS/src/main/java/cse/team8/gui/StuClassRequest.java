@@ -52,6 +52,11 @@ public class StuClassRequest extends javax.swing.JFrame {
 
         jButtExit.setFont(new java.awt.Font("맑은 고딕 Semilight", 0, 12)); // NOI18N
         jButtExit.setText("종료");
+        jButtExit.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtExitActionPerformed(evt);
+            }
+        });
 
         jLabel2.setFont(new java.awt.Font("맑은 고딕 Semilight", 0, 12)); // NOI18N
         jLabel2.setText("강의 목록");
@@ -107,6 +112,10 @@ public class StuClassRequest extends javax.swing.JFrame {
     private void jComboBoxClassListActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBoxClassListActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jComboBoxClassListActionPerformed
+
+    private void jButtExitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtExitActionPerformed
+        //취소 버튼
+    }//GEN-LAST:event_jButtExitActionPerformed
 
     /**
      * @param args the command line arguments
