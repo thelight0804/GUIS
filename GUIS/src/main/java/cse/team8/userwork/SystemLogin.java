@@ -3,7 +3,7 @@ ID와 P/W를 비교할 시스템 로그인 class(객체 형식)
  */
 package cse.team8.userwork;
 import cse.team8.gui.LoginGUI;
-import cse.team8.gui.StudentWork;
+import cse.team8.gui.StudentUI;
 import cse.team8.user.Student;
 import cse.team8.userwork.userWork;
 import java.util.ArrayList;
@@ -32,7 +32,7 @@ public class SystemLogin extends userWork{
         return pass;
     }
     public void loginStudentPass(){ //학생 로그인 성공
-        StudentWork StudentWork = new StudentWork();
+        StudentUI StudentWork = new StudentUI();
         StudentWork.setDefaultCloseOperation(StudentWork.EXIT_ON_CLOSE);
         StudentWork.setVisible(true);
     }

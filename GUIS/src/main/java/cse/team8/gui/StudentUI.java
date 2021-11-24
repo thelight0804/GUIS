@@ -1,20 +1,13 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package cse.team8.gui;
 
-/**
- *
- * @author User
- */
-public class StudentWork extends javax.swing.JFrame {
+import cse.team8.classwork.*;
+public class StudentUI extends javax.swing.JFrame {
+     StudentWork studentWork = new StudentWork(); //학생 관리
 
     /**
      * Creates new form StuLogin
      */
-    public StudentWork() {
+    public StudentUI() {
         initComponents();
     }
 
@@ -40,9 +33,19 @@ public class StudentWork extends javax.swing.JFrame {
 
         jButtGradeCheck.setFont(new java.awt.Font("맑은 고딕 Semilight", 0, 12)); // NOI18N
         jButtGradeCheck.setText("성적확인");
+        jButtGradeCheck.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtGradeCheckActionPerformed(evt);
+            }
+        });
 
         jButtBillGet.setFont(new java.awt.Font("맑은 고딕 Semilight", 0, 12)); // NOI18N
-        jButtBillGet.setText("수강료 청구서 발급 받기");
+        jButtBillGet.setText("수강료 청구서 확인");
+        jButtBillGet.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtBillGetActionPerformed(evt);
+            }
+        });
 
         jButtExit.setFont(new java.awt.Font("맑은 고딕 Semilight", 0, 12)); // NOI18N
         jButtExit.setText("종료");
@@ -107,6 +110,16 @@ public class StudentWork extends javax.swing.JFrame {
         a.setVisible(true);
     }//GEN-LAST:event_jButtonChangePWActionPerformed
 
+    private void jButtGradeCheckActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtGradeCheckActionPerformed
+        //성적 확인 버튼
+        studentWork.gradeInfo();
+    }//GEN-LAST:event_jButtGradeCheckActionPerformed
+
+    private void jButtBillGetActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtBillGetActionPerformed
+        //수강료 청구서 확인 버튼
+        studentWork.billInfo();
+    }//GEN-LAST:event_jButtBillGetActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -124,21 +137,23 @@ public class StudentWork extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(StudentWork.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(StudentUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(StudentWork.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(StudentUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(StudentWork.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(StudentUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(StudentWork.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(StudentUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new StudentWork().setVisible(true);
+                new StudentUI().setVisible(true);
             }
         });
     }
