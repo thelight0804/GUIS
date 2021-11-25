@@ -204,7 +204,7 @@ public class StuSearchUI extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jTextFieldRRNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldRRNActionPerformed
-        // TODO add your handling code here:
+
     }//GEN-LAST:event_jTextFieldRRNActionPerformed
 
     private void jButtonSearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonSearchActionPerformed

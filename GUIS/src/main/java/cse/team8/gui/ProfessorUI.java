@@ -129,8 +129,12 @@ public class ProfessorUI extends javax.swing.JFrame {
     }//GEN-LAST:event_jButtExitActionPerformed
 
     private void jButtGradeInputActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtGradeInputActionPerformed
-    // 성적 입력 버튼        
-    // TODO 교수 성적입력
+        // 성적 입력 버튼        
+        GradeInputUI gradeInput = new GradeInputUI();
+        gradeInput.setDefaultCloseOperation(LoginGUI.EXIT_ON_CLOSE);
+        gradeInput.pack();
+        gradeInput.setLocationRelativeTo(null);
+        gradeInput.setVisible(true);
     }//GEN-LAST:event_jButtGradeInputActionPerformed
 
     /**
