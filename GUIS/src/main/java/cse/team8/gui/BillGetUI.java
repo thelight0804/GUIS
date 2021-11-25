@@ -160,11 +160,11 @@ public class BillGetUI extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jTextFieldStuNumActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldStuNumActionPerformed
-        // TODO add your handling code here:
+
     }//GEN-LAST:event_jTextFieldStuNumActionPerformed
 
     private void jTextFieldStuSubjectActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldStuSubjectActionPerformed
-        // TODO add your handling code here:
+
     }//GEN-LAST:event_jTextFieldStuSubjectActionPerformed
 
     /**

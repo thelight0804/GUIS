@@ -217,11 +217,11 @@ public class LessonEditUI extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jTextFieldLesNumActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldLesNumActionPerformed
-        // TODO add your handling code here:
+
     }//GEN-LAST:event_jTextFieldLesNumActionPerformed
 
     private void jRadioButtProNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButtProNameActionPerformed
-        // TODO add your handling code here:
+
     }//GEN-LAST:event_jRadioButtProNameActionPerformed
 
     /**

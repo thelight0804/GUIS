@@ -100,7 +100,7 @@ public class ClassRequestUI extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jComboBoxClassListActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBoxClassListActionPerformed
-        // TODO add your handling code here:
+
     }//GEN-LAST:event_jComboBoxClassListActionPerformed
 
     /**

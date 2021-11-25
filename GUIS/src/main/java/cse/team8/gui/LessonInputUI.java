@@ -200,11 +200,11 @@ public class LessonInputUI extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jRadioButtProNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButtProNameActionPerformed
-        // TODO add your handling code here:
+
     }//GEN-LAST:event_jRadioButtProNameActionPerformed
 
     private void jTextFieldLesMinActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldLesMinActionPerformed
-        // TODO add your handling code here:
+
     }//GEN-LAST:event_jTextFieldLesMinActionPerformed
 
     /**

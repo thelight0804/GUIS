@@ -77,7 +77,7 @@ public class ClassStudentListUI extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButtExitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtExitActionPerformed
-        // TODO add your handling code here:
+
     }//GEN-LAST:event_jButtExitActionPerformed
 
     /**

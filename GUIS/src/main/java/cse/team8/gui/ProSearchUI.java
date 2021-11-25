@@ -194,7 +194,7 @@ public class ProSearchUI extends javax.swing.JFrame {
     }//GEN-LAST:event_jButtonSearchActionPerformed
 
     private void jTextFieldRRNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldRRNActionPerformed
-        // TODO add your handling code here:
+
     }//GEN-LAST:event_jTextFieldRRNActionPerformed
 
     /**
