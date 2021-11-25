@@ -302,7 +302,6 @@ public class FileIO implements Work {
     public ArrayList<Professor> getProfessor() throws IOException {
         return professor;
     }
-//TODO cse.team8.user? 제거
     public ArrayList<academyStaff> getAcademyStaff() throws IOException {
         return academyStaff;
     }

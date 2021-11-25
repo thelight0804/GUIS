@@ -23,9 +23,6 @@ public class Search implements AcademyWork {
             Logger.getLogger(Search.class.getName()).log(Level.SEVERE, null, ex);
         }
         ArrayList<String> result = new ArrayList<>(); //배열은 크기가 고정이기 때문에 임시로 arraylist에 저장
-        //TODO netbeans 한글출력 오류
-        System.out.println("가나다");
-        System.out.println(student.get(10).getName());
 
         if (base == "이름") { //이름으로 검색
             for (int i = 0; i < student.size(); i++) {
