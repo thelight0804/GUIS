@@ -2,6 +2,7 @@
  * Date : 21.10.06~
  * Title : 대학정보시스템
  * Project : GUIS (가자미 University Information System)
+ *
  * @author joonhee2 - 강준희 (20183203)
  * @author thelight0804 - 박상현 (20183145)
  * @author ssb3204 - 손성배 (20193116)
@@ -22,19 +23,22 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 import cse.team8.guis.FileIO;
+import cse.team8.user.*;
 import cse.team8.userwork.*;
 
-
 public class LoginGUI extends javax.swing.JFrame {
+
     SystemLogin login = new SystemLogin(); //SystemLogin 클래스 사용
     FileIO fileIO = new FileIO();
     public ArrayList<Student> student = new ArrayList<>();
+    public ArrayList<Professor> professor;
+    public ArrayList<academyStaff> academyStaff;
+    public ArrayList<lessonStaff> lessonStaff;
     boolean pass = false; //로그인 성공 여부
-
 
     public LoginGUI() {
         initComponents();
-        jRadioButtonStudent.setSelected(true);
+        jRadioButtonStudent.setSelected(true); //학생을 기본 선택으로
     }
 
     @SuppressWarnings("unchecked")
@@ -159,14 +163,14 @@ public class LoginGUI extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void loginButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginButtonActionPerformed
-        if (jRadioButtonStudent.isSelected()){ //학생 선택 시
+        if (jRadioButtonStudent.isSelected()) { //학생 선택 시
             fileIO.fileWork();
-        try {
-            //Login 버튼
-            student = fileIO.getStudent();
-        } catch (IOException ex) {
-            Logger.getLogger(LoginGUI.class.getName()).log(Level.SEVERE, null, ex);
-        }
+            try {
+                //Login 버튼
+                student = fileIO.getStudent();
+            } catch (IOException ex) {
+                Logger.getLogger(LoginGUI.class.getName()).log(Level.SEVERE, null, ex);
+            }
 
             ////로그인 확인
             //ID, PW 입력 받음
@@ -174,69 +178,79 @@ public class LoginGUI extends javax.swing.JFrame {
             String inputPW = jTextFieldPW.getText();
 
             pass = login.loginStudentDistinguish(inputID, inputPW, student); //SystemLogin.loginDistinguish 함수 호출
- 
+
             if (pass) //로그인 성공 시
+            {
                 dispose(); //LoginGUI 창 닫음
-            else {
+            } else {
                 jTextFieldID.setText(""); //칸 지움
                 jTextFieldPW.setText("");
             }
         } //if (jRadioButtonStudent) 끝
-        
-        if (jRadioButtonProfessor.isSelected()){ //교수 선택 시
-            File professorData = new File("C:\\Temp\\GUIS\\ProfessorData.txt");
+
+        if (jRadioButtonProfessor.isSelected()) { //교수 선택 시
+            fileIO.fileWork();
             try {
-                BufferedReader readID = new BufferedReader(new FileReader(professorData));
-                String str = null;
-                String ID = null;
-                //JOptionPane.showMessageDialog(null,str);
-            } catch (FileNotFoundException ex) {
-                Logger.getLogger(LoginGUI.class.getName()).log(Level.SEVERE, null, ex);
+                //Login 버튼
+                professor = fileIO.getProfessor();
             } catch (IOException ex) {
                 Logger.getLogger(LoginGUI.class.getName()).log(Level.SEVERE, null, ex);
             }
-        }
-        
-        if (jRadioButtonAcademyStaff.isSelected()){ // 학사 담장자 선택 시
-            File academyStaffData = new File("C:\\Temp\\GUIS\\academyStaffData.txt");
+
+            ////로그인 확인
+            //ID, PW 입력 받음
+            String inputID = jTextFieldID.getText();
+            String inputPW = jTextFieldPW.getText();
+
+            pass = login.loginProfessorDistinguish(inputID, inputPW, professor); //SystemLogin.loginDistinguish 함수 호출
+
+            if (pass) //로그인 성공 시
+            {
+                dispose(); //LoginGUI 창 닫음
+            } else {
+                jTextFieldID.setText(""); //칸 지움
+                jTextFieldPW.setText("");
+            }
+        }//if (jRadioButtonProfessor.isSelected()) 끝
+
+        if (jRadioButtonAcademyStaff.isSelected()) { // 학사 담장자 선택 시
+            fileIO.fileWork();
             try {
-                BufferedReader readID = new BufferedReader(new FileReader(academyStaffData));
-                String str = null;
-                String ID = null;
-                //JOptionPane.showMessageDialog(null,str);
-            } catch (FileNotFoundException ex) {
-                Logger.getLogger(LoginGUI.class.getName()).log(Level.SEVERE, null, ex);
+                //Login 버튼
+                academyStaff = fileIO.getAcademyStaff();
             } catch (IOException ex) {
                 Logger.getLogger(LoginGUI.class.getName()).log(Level.SEVERE, null, ex);
             }
-        }
-        
-        if (jRadioButtonLessonStaff.isSelected()){ //수업 담당자 선택 시
-            File lessonStaffData = new File("C:\\Temp\\GUIS\\lessonStaffData.txt");
-            try {
-                BufferedReader readID = new BufferedReader(new FileReader(lessonStaffData));
-                String str = null;
-                String ID = null;
-                //JOptionPane.showMessageDialog(null,str);
-            } catch (FileNotFoundException ex) {
-                Logger.getLogger(LoginGUI.class.getName()).log(Level.SEVERE, null, ex);
-            } catch (IOException ex) {
-                Logger.getLogger(LoginGUI.class.getName()).log(Level.SEVERE, null, ex);
+
+            ////로그인 확인
+            //ID, PW 입력 받음
+            String inputID = jTextFieldID.getText();
+            String inputPW = jTextFieldPW.getText();
+
+            pass = login.loginAcademyStaffDistinguish(inputID, inputPW, academyStaff); //SystemLogin.loginDistinguish 함수 호출
+
+            if (pass) //로그인 성공 시
+            {
+                dispose(); //LoginGUI 창 닫음
+            } else {
+                jTextFieldID.setText(""); //칸 지움
+                jTextFieldPW.setText("");
             }
+        } //if (jRadioButtonAcademyStaff.isSelected()) 끝
+
+        if (jRadioButtonLessonStaff.isSelected()) { //수업 담당자 선택 시
+            //TODO 수업 담당자 로그인 화면 구현
         }
     }//GEN-LAST:event_loginButtonActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-       //Exit 버튼
-       System.exit(0); //프로그램 종료
+        //Exit 버튼
+        System.exit(0); //프로그램 종료
     }//GEN-LAST:event_jButton2ActionPerformed
 
     /**
      * @param args the command line arguments
      */
-    
-    
-    
     public static void main(String args[]) {
 
     }

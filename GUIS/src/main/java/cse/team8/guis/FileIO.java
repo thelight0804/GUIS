@@ -57,7 +57,7 @@ public class FileIO implements Work{
         if (!studentData.exists()) {  //만약 해당 경로에 파일이 없는 경우
             studentData.createNewFile(); //파일 생성
             BufferedWriter bw = new BufferedWriter(new FileWriter(studentData));
-            bw.write("TestName!1!전산학과!111111!1!E!0.0!0"); //테스트용 학생
+            bw.write("TestStudent!1!전산학과!111111!1!E!0.0!0"); //테스트용 학생 ID 1, PW 1
             bw.newLine();
             for(int i=1;i<10;i++){
                 String name = "이름" + i ;
@@ -124,6 +124,8 @@ public class FileIO implements Work{
         if (!professorData.exists()) {  //만약 해당 경로에 파일이 없는 경우
             professorData.createNewFile(); //파일 생성
             BufferedWriter bw = new BufferedWriter(new FileWriter(professorData));
+            bw.write("TestProfessor!2!전자공학과!111111!2!E!0.0!0"); //테스트용 교수 ID 2, PW 2
+            bw.newLine();
             bw.write("풍성현!P001!전산학과!111111!0000005");
             bw.newLine();
             bw.write("설지수!P002!전자공학과!111111!0000006");
@@ -139,6 +141,8 @@ public class FileIO implements Work{
         if (!academystaffData.exists()) {  //만약 해당 경로에 파일이 없는 경우
             academystaffData.createNewFile(); //파일 생성
             BufferedWriter bw = new BufferedWriter(new FileWriter(academystaffData));
+            bw.write("TestAcademyStaff!3!화학공학과!111111!3!E!0.0!0"); //학사담당자용 교수 ID 3, PW 3
+            bw.newLine();
             bw.write("이범준!H001!전산학과!111111!0000010");
             bw.newLine();
             bw.write("한준수!H002!전자공학과!111111!0000011");
@@ -154,6 +158,8 @@ public class FileIO implements Work{
         if (!lessonstaffData.exists()) {  //만약 해당 경로에 파일이 없는 경우
             lessonstaffData.createNewFile(); //파일 생성
             BufferedWriter bw = new BufferedWriter(new FileWriter(lessonstaffData));
+            bw.write("TestlessonStaff!4!기계공학과!111111!4!E!0.0!0"); //수업담당자용 교수 ID 3, PW 3
+            bw.newLine();
             bw.write("노성숙!G001!전산학과!111111!0000015");
             bw.newLine();
             bw.write("복원웅!G002!전자공학과!111111!0000016");

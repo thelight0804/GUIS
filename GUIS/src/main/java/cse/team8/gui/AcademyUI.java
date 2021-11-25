@@ -5,17 +5,16 @@
  */
 package cse.team8.gui;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author User
  */
-public class AcademyWork extends javax.swing.JFrame {
-
-    /**
-     * Creates new form AcaLogin
-     */
-    public AcademyWork() {
+public class AcademyUI extends javax.swing.JFrame {
+    public AcademyUI() {
         initComponents();
+        jRadioButtStudent.setSelected(true); //학생을 기본 선택으로
     }
 
     /**
@@ -27,6 +26,7 @@ public class AcademyWork extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        buttonGroup1 = new javax.swing.ButtonGroup();
         jButtCreate = new javax.swing.JButton();
         jButtEdit = new javax.swing.JButton();
         jButtSearch = new javax.swing.JButton();
@@ -46,7 +46,12 @@ public class AcademyWork extends javax.swing.JFrame {
         jButtEdit.setText("수정");
 
         jButtSearch.setFont(new java.awt.Font("맑은 고딕 Semilight", 0, 12)); // NOI18N
-        jButtSearch.setText("조회");
+        jButtSearch.setText("검색");
+        jButtSearch.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtSearchActionPerformed(evt);
+            }
+        });
 
         jButtDel.setFont(new java.awt.Font("맑은 고딕 Semilight", 0, 12)); // NOI18N
         jButtDel.setText("삭제");
@@ -62,9 +67,11 @@ public class AcademyWork extends javax.swing.JFrame {
             }
         });
 
+        buttonGroup1.add(jRadioButtStudent);
         jRadioButtStudent.setFont(new java.awt.Font("맑은 고딕 Semilight", 0, 12)); // NOI18N
         jRadioButtStudent.setText("학생");
 
+        buttonGroup1.add(jRadioButtProfessor);
         jRadioButtProfessor.setFont(new java.awt.Font("맑은 고딕 Semilight", 0, 12)); // NOI18N
         jRadioButtProfessor.setText("교수");
         jRadioButtProfessor.addActionListener(new java.awt.event.ActionListener() {
@@ -89,13 +96,12 @@ public class AcademyWork extends javax.swing.JFrame {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(jButtEdit, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(jButtDel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jRadioButtProfessor))
-                        .addGap(0, 49, Short.MAX_VALUE))
+                            .addComponent(jRadioButtProfessor)))
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jButtPWchange)
                         .addGap(26, 26, 26)
                         .addComponent(jButtExit)))
-                .addContainerGap())
+                .addContainerGap(49, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -133,6 +139,18 @@ public class AcademyWork extends javax.swing.JFrame {
         System.exit(0); //프로그램 종료
     }//GEN-LAST:event_jButtExitActionPerformed
 
+    private void jButtSearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtSearchActionPerformed
+        //조회 버튼
+        if (jRadioButtStudent.isSelected()) { //학생 선택 시
+        StuSearchUI StuSearchUIWork = new StuSearchUI();
+        StuSearchUIWork.setDefaultCloseOperation(StuSearchUIWork.EXIT_ON_CLOSE);
+        StuSearchUIWork.setVisible(true);
+        }
+       if (jRadioButtProfessor.isSelected()) { //학생 선택 시
+            JOptionPane.showMessageDialog(null, "교수 선택");
+        }
+    }//GEN-LAST:event_jButtSearchActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -150,26 +168,29 @@ public class AcademyWork extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(AcademyWork.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(AcademyUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(AcademyWork.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(AcademyUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(AcademyWork.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(AcademyUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(AcademyWork.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(AcademyUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new AcademyWork().setVisible(true);
+                new AcademyUI().setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.JButton jButtCreate;
     private javax.swing.JButton jButtDel;
     private javax.swing.JButton jButtEdit;

@@ -86,12 +86,12 @@ public class StudentUI extends javax.swing.JFrame {
                 .addComponent(jButtGradeCheck)
                 .addGap(34, 34, 34)
                 .addComponent(jButtBillGet)
-                .addGap(31, 31, 31)
-                .addComponent(jButtonChangePW)
-                .addContainerGap(41, Short.MAX_VALUE))
+                .addContainerGap(95, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jButtExit)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jButtExit)
+                    .addComponent(jButtonChangePW))
                 .addContainerGap())
         );
 
