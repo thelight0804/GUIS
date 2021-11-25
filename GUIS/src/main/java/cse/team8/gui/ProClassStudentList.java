@@ -30,7 +30,7 @@ public class ProClassStudentList extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         jListClassStuList = new javax.swing.JList<>();
         jLabel1 = new javax.swing.JLabel();
-        jButtCancel = new javax.swing.JButton();
+        jButtExit = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setPreferredSize(new java.awt.Dimension(400, 300));
@@ -46,11 +46,11 @@ public class ProClassStudentList extends javax.swing.JFrame {
         jLabel1.setFont(new java.awt.Font("맑은 고딕 Semilight", 0, 12)); // NOI18N
         jLabel1.setText("이번 학기 강좌 신청 학생 명단");
 
-        jButtCancel.setFont(new java.awt.Font("맑은 고딕 Semilight", 0, 12)); // NOI18N
-        jButtCancel.setText("취소");
-        jButtCancel.addActionListener(new java.awt.event.ActionListener() {
+        jButtExit.setFont(new java.awt.Font("맑은 고딕 Semilight", 0, 12)); // NOI18N
+        jButtExit.setText("종료");
+        jButtExit.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtCancelActionPerformed(evt);
+                jButtExitActionPerformed(evt);
             }
         });
 
@@ -61,7 +61,7 @@ public class ProClassStudentList extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGap(24, 24, 24)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jButtCancel)
+                    .addComponent(jButtExit)
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 310, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.LEADING))
                 .addContainerGap(24, Short.MAX_VALUE))
@@ -74,16 +74,16 @@ public class ProClassStudentList extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 209, Short.MAX_VALUE)
                 .addGap(18, 18, 18)
-                .addComponent(jButtCancel)
+                .addComponent(jButtExit)
                 .addContainerGap())
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButtCancelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtCancelActionPerformed
-  
-    }//GEN-LAST:event_jButtCancelActionPerformed
+    private void jButtExitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtExitActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButtExitActionPerformed
 
     /**
      * @param args the command line arguments
@@ -111,6 +111,7 @@ public class ProClassStudentList extends javax.swing.JFrame {
             java.util.logging.Logger.getLogger(ProClassStudentList.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
+        //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
@@ -121,7 +122,7 @@ public class ProClassStudentList extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButtCancel;
+    private javax.swing.JButton jButtExit;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JList<String> jListClassStuList;
     private javax.swing.JScrollPane jScrollPane1;

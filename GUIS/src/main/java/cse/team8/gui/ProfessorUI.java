@@ -64,11 +64,6 @@ public class ProfessorUI extends javax.swing.JFrame {
 
         jButtExit.setFont(new java.awt.Font("맑은 고딕 Semilight", 0, 12)); // NOI18N
         jButtExit.setText("종료");
-        jButtExit.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtExitActionPerformed(evt);
-            }
-        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -108,20 +103,16 @@ public class ProfessorUI extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButtRollActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtRollActionPerformed
-
+        // TODO add your handling code here:
     }//GEN-LAST:event_jButtRollActionPerformed
 
     private void jButtPWChangeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtPWChangeActionPerformed
-
+        // TODO add your handling code here:
     }//GEN-LAST:event_jButtPWChangeActionPerformed
 
     private void jButtClassStudentListActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtClassStudentListActionPerformed
-
+        // TODO add your handling code here:
     }//GEN-LAST:event_jButtClassStudentListActionPerformed
-
-    private void jButtExitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtExitActionPerformed
-        System.exit(0); //프로그램 종료
-    }//GEN-LAST:event_jButtExitActionPerformed
 
     /**
      * @param args the command line arguments
@@ -148,6 +139,10 @@ public class ProfessorUI extends javax.swing.JFrame {
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
             java.util.logging.Logger.getLogger(ProfessorUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
         //</editor-fold>
         //</editor-fold>

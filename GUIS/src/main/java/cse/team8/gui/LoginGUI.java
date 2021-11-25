@@ -239,7 +239,6 @@ public class LoginGUI extends javax.swing.JFrame {
         } //if (jRadioButtonAcademyStaff.isSelected()) 끝
 
         if (jRadioButtonLessonStaff.isSelected()) { //수업 담당자 선택 시
-            //TODO 수업 담당자 로그인 화면 구현
         }
     }//GEN-LAST:event_loginButtonActionPerformed
 
