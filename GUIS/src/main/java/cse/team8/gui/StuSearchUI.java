@@ -62,6 +62,11 @@ public class StuSearchUI extends javax.swing.JFrame {
             }
         });
 
+        jTextFieldNum.setEnabled(false);
+
+        jTextFieldName.setEnabled(false);
+
+        jTextFieldRRN.setEnabled(false);
         jTextFieldRRN.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextFieldRRNActionPerformed(evt);
@@ -102,6 +107,8 @@ public class StuSearchUI extends javax.swing.JFrame {
         jScrollPane1.setViewportView(jListResult);
 
         jLabel7.setText("검색 결과");
+
+        jTextFieldSub.setEnabled(false);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -207,7 +214,6 @@ public class StuSearchUI extends javax.swing.JFrame {
 
         Search search = new Search();
 
-        ArrayList<String> Result = new ArrayList<>();
         Result = search.stuSearch(base, word); //검색 메소드
         String listData[] = new String[Result.size()];
 
@@ -260,14 +266,26 @@ public class StuSearchUI extends javax.swing.JFrame {
         String mySubject;
         String frontRRN;
         String backRRN;
+        if (select == 0) {
+            name = Result.get(0);
+            myNum = Result.get(1);
+            mySubject = Result.get(2);
+            frontRRN = Result.get(3);
+            backRRN = Result.get(4);
+        }
+        else{
+            name = Result.get(select*5);
+            myNum = Result.get((select*5) + 1);
+            mySubject = Result.get((select*5) + 2);
+            frontRRN = Result.get((select*5) + 3);
+            backRRN = Result.get((select*5) + 4);
+        }
 
-
-//       //Text Field 갱신
-//        jTextFieldName.setText(name);
-//        jTextFieldName.setText(myNum);
-//        jTextFieldName.setText(mySubject);
-//        jTextFieldName.setText(frontRRN);
-//        jTextFieldName.setText(backRRN);
+       //Text Field 갱신
+        jTextFieldName.setText(name);
+        jTextFieldNum.setText(myNum);
+        jTextFieldSub.setText(mySubject);
+        jTextFieldRRN.setText(frontRRN + "-" + backRRN);
     }//GEN-LAST:event_jListResultMouseClicked
 
     /**
