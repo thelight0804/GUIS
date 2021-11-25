@@ -30,7 +30,7 @@ public class StuGradeCheck extends javax.swing.JFrame {
         jScrollPane2 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
         jLabel2 = new javax.swing.JLabel();
-        jButtExit = new javax.swing.JButton();
+        jButtCancel = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         jListLessonGrade = new javax.swing.JList<>();
 
@@ -50,8 +50,8 @@ public class StuGradeCheck extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setPreferredSize(new java.awt.Dimension(400, 300));
 
-        jButtExit.setFont(new java.awt.Font("맑은 고딕 Semilight", 0, 12)); // NOI18N
-        jButtExit.setText("종료");
+        jButtCancel.setFont(new java.awt.Font("맑은 고딕 Semilight", 0, 12)); // NOI18N
+        jButtCancel.setText("취소");
 
         jListLessonGrade.setFont(new java.awt.Font("맑은 고딕 Semilight", 0, 12)); // NOI18N
         jListLessonGrade.setModel(new javax.swing.AbstractListModel<String>() {
@@ -75,7 +75,7 @@ public class StuGradeCheck extends javax.swing.JFrame {
                 .addGap(50, 50, 50))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jButtExit)
+                .addComponent(jButtCancel)
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -86,7 +86,7 @@ public class StuGradeCheck extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel2)
                 .addGap(15, 15, 15)
-                .addComponent(jButtExit)
+                .addComponent(jButtCancel)
                 .addContainerGap())
         );
 
@@ -119,7 +119,6 @@ public class StuGradeCheck extends javax.swing.JFrame {
             java.util.logging.Logger.getLogger(StuGradeCheck.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
-        //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
@@ -130,7 +129,7 @@ public class StuGradeCheck extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButtExit;
+    private javax.swing.JButton jButtCancel;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JList<String> jListLessonGrade;
     private javax.swing.JScrollPane jScrollPane1;

@@ -31,8 +31,8 @@ public class LessonUI extends javax.swing.JFrame {
         jButtLessonEdit = new javax.swing.JButton();
         jButtLessonDel = new javax.swing.JButton();
         jButtLessonClass = new javax.swing.JButton();
-        jButtBillIssue = new javax.swing.JButton();
-        jButtPWChange = new javax.swing.JButton();
+        jButtBillissue = new javax.swing.JButton();
+        jButtPWchange = new javax.swing.JButton();
         jButtExit = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -49,19 +49,24 @@ public class LessonUI extends javax.swing.JFrame {
         jButtLessonClass.setFont(new java.awt.Font("맑은 고딕 Semilight", 0, 12)); // NOI18N
         jButtLessonClass.setText("강의 개설");
 
-        jButtBillIssue.setFont(new java.awt.Font("맑은 고딕 Semilight", 0, 12)); // NOI18N
-        jButtBillIssue.setText("수강료 청구서 발급 하기");
+        jButtBillissue.setFont(new java.awt.Font("맑은 고딕 Semilight", 0, 12)); // NOI18N
+        jButtBillissue.setText("수강료 청구서 발급 하기");
 
-        jButtPWChange.setFont(new java.awt.Font("맑은 고딕 Semilight", 0, 12)); // NOI18N
-        jButtPWChange.setText("암호 변경");
-        jButtPWChange.addActionListener(new java.awt.event.ActionListener() {
+        jButtPWchange.setFont(new java.awt.Font("맑은 고딕 Semilight", 0, 12)); // NOI18N
+        jButtPWchange.setText("암호 변경");
+        jButtPWchange.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtPWChangeActionPerformed(evt);
+                jButtPWchangeActionPerformed(evt);
             }
         });
 
         jButtExit.setFont(new java.awt.Font("맑은 고딕 Semilight", 0, 12)); // NOI18N
         jButtExit.setText("종료");
+        jButtExit.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtExitActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -75,14 +80,14 @@ public class LessonUI extends javax.swing.JFrame {
                     .addComponent(jButtLessonInput, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(38, 38, 38)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jButtBillIssue, javax.swing.GroupLayout.PREFERRED_SIZE, 172, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButtBillissue, javax.swing.GroupLayout.PREFERRED_SIZE, 172, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(39, 39, 39)
                         .addComponent(jButtLessonClass, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(layout.createSequentialGroup()
                 .addGap(151, 151, 151)
-                .addComponent(jButtPWChange)
+                .addComponent(jButtPWchange)
                 .addGap(91, 91, 91)
                 .addComponent(jButtExit)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -97,22 +102,26 @@ public class LessonUI extends javax.swing.JFrame {
                 .addGap(32, 32, 32)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jButtLessonEdit, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jButtBillIssue, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(jButtBillissue, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(32, 32, 32)
                 .addComponent(jButtLessonDel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGap(48, 48, 48)
+                .addGap(66, 66, 66)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButtExit)
-                    .addComponent(jButtPWChange, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(jButtPWchange, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButtPWChangeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtPWChangeActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButtPWChangeActionPerformed
+    private void jButtPWchangeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtPWchangeActionPerformed
+
+    }//GEN-LAST:event_jButtPWchangeActionPerformed
+
+    private void jButtExitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtExitActionPerformed
+        System.exit(0); //프로그램 종료
+    }//GEN-LAST:event_jButtExitActionPerformed
 
     /**
      * @param args the command line arguments
@@ -143,10 +152,6 @@ public class LessonUI extends javax.swing.JFrame {
         //</editor-fold>
         //</editor-fold>
         //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
@@ -157,12 +162,12 @@ public class LessonUI extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButtBillIssue;
+    private javax.swing.JButton jButtBillissue;
     private javax.swing.JButton jButtExit;
     private javax.swing.JButton jButtLessonClass;
     private javax.swing.JButton jButtLessonDel;
     private javax.swing.JButton jButtLessonEdit;
     private javax.swing.JButton jButtLessonInput;
-    private javax.swing.JButton jButtPWChange;
+    private javax.swing.JButton jButtPWchange;
     // End of variables declaration//GEN-END:variables
 }

@@ -1,15 +1,8 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package cse.team8.gui;
 
-/**
- *
- * @author User
- */
+import cse.team8.classwork.*;
 public class StudentUI extends javax.swing.JFrame {
+     StudentWork studentWork = new StudentWork(); //학생 관리
 
     /**
      * Creates new form StuLogin
@@ -31,23 +24,46 @@ public class StudentUI extends javax.swing.JFrame {
         jButtGradeCheck = new javax.swing.JButton();
         jButtBillGet = new javax.swing.JButton();
         jButtExit = new javax.swing.JButton();
+        jButtonChangePW = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jButtClassRequest.setFont(new java.awt.Font("맑은 고딕 Semilight", 0, 12)); // NOI18N
         jButtClassRequest.setText("수강신청");
+        jButtClassRequest.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtClassRequestActionPerformed(evt);
+            }
+        });
 
         jButtGradeCheck.setFont(new java.awt.Font("맑은 고딕 Semilight", 0, 12)); // NOI18N
         jButtGradeCheck.setText("성적확인");
+        jButtGradeCheck.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtGradeCheckActionPerformed(evt);
+            }
+        });
 
         jButtBillGet.setFont(new java.awt.Font("맑은 고딕 Semilight", 0, 12)); // NOI18N
-        jButtBillGet.setText("수강료 청구서 발급 받기");
+        jButtBillGet.setText("수강료 청구서 확인");
+        jButtBillGet.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtBillGetActionPerformed(evt);
+            }
+        });
 
         jButtExit.setFont(new java.awt.Font("맑은 고딕 Semilight", 0, 12)); // NOI18N
         jButtExit.setText("종료");
         jButtExit.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButtExitActionPerformed(evt);
+            }
+        });
+
+        jButtonChangePW.setText("암호변경");
+        jButtonChangePW.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonChangePWActionPerformed(evt);
             }
         });
 
@@ -60,7 +76,8 @@ public class StudentUI extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
                     .addComponent(jButtClassRequest, javax.swing.GroupLayout.PREFERRED_SIZE, 161, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButtGradeCheck, javax.swing.GroupLayout.PREFERRED_SIZE, 162, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButtBillGet))
+                    .addComponent(jButtBillGet)
+                    .addComponent(jButtonChangePW))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 56, Short.MAX_VALUE)
                 .addComponent(jButtExit)
                 .addContainerGap())
@@ -74,10 +91,12 @@ public class StudentUI extends javax.swing.JFrame {
                 .addComponent(jButtGradeCheck)
                 .addGap(34, 34, 34)
                 .addComponent(jButtBillGet)
-                .addGap(22, 95, Short.MAX_VALUE))
+                .addContainerGap(95, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jButtExit)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jButtExit)
+                    .addComponent(jButtonChangePW))
                 .addContainerGap())
         );
 
@@ -85,8 +104,31 @@ public class StudentUI extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButtExitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtExitActionPerformed
-        // TODO add your handling code here:
+        //종료 버튼
+        System.exit(0); //프로그램 종료
     }//GEN-LAST:event_jButtExitActionPerformed
+
+    private void jButtonChangePWActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonChangePWActionPerformed
+        //암호 변경 버튼
+        changePW a = new changePW(); //changePW 창 호출
+        a.setDefaultCloseOperation(changePW.EXIT_ON_CLOSE);
+        a.setVisible(true);
+    }//GEN-LAST:event_jButtonChangePWActionPerformed
+
+    private void jButtGradeCheckActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtGradeCheckActionPerformed
+        //성적 확인 버튼
+        studentWork.gradeInfo();
+    }//GEN-LAST:event_jButtGradeCheckActionPerformed
+
+    private void jButtBillGetActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtBillGetActionPerformed
+        //수강료 청구서 확인 버튼
+        studentWork.billInfo();
+    }//GEN-LAST:event_jButtBillGetActionPerformed
+
+    private void jButtClassRequestActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtClassRequestActionPerformed
+        //수강신청
+        //TODO 학생은 수강신청만 하면 끝! (+_+)
+    }//GEN-LAST:event_jButtClassRequestActionPerformed
 
     /**
      * @param args the command line arguments
@@ -117,10 +159,6 @@ public class StudentUI extends javax.swing.JFrame {
         //</editor-fold>
         //</editor-fold>
         //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
@@ -135,5 +173,6 @@ public class StudentUI extends javax.swing.JFrame {
     private javax.swing.JButton jButtClassRequest;
     private javax.swing.JButton jButtExit;
     private javax.swing.JButton jButtGradeCheck;
+    private javax.swing.JButton jButtonChangePW;
     // End of variables declaration//GEN-END:variables
 }

@@ -30,7 +30,7 @@ public class StuClassRequest extends javax.swing.JFrame {
         jComboBoxClassList = new javax.swing.JComboBox<>();
         jLabel1 = new javax.swing.JLabel();
         jTextFieldCredit = new javax.swing.JTextField();
-        jButtExit = new javax.swing.JButton();
+        jButtCancel = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
         jButtSignUp = new javax.swing.JButton();
 
@@ -50,8 +50,13 @@ public class StuClassRequest extends javax.swing.JFrame {
 
         jTextFieldCredit.setFont(new java.awt.Font("맑은 고딕 Semilight", 0, 12)); // NOI18N
 
-        jButtExit.setFont(new java.awt.Font("맑은 고딕 Semilight", 0, 12)); // NOI18N
-        jButtExit.setText("종료");
+        jButtCancel.setFont(new java.awt.Font("맑은 고딕 Semilight", 0, 12)); // NOI18N
+        jButtCancel.setText("종료");
+        jButtCancel.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtCancelActionPerformed(evt);
+            }
+        });
 
         jLabel2.setFont(new java.awt.Font("맑은 고딕 Semilight", 0, 12)); // NOI18N
         jLabel2.setText("강의 목록");
@@ -64,21 +69,24 @@ public class StuClassRequest extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(20, 20, 20)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jLabel2)
-                    .addComponent(jLabel1))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jButtSignUp))
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jTextFieldCredit, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jButtSignUp)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButtExit))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jComboBoxClassList, javax.swing.GroupLayout.PREFERRED_SIZE, 231, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 41, Short.MAX_VALUE)))
+                        .addGap(20, 20, 20)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jLabel2)
+                            .addComponent(jLabel1))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jTextFieldCredit, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jButtCancel))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jComboBoxClassList, javax.swing.GroupLayout.PREFERRED_SIZE, 231, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(0, 41, Short.MAX_VALUE)))))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -88,12 +96,13 @@ public class StuClassRequest extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
                     .addComponent(jComboBoxClassList, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 214, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 179, Short.MAX_VALUE)
+                .addComponent(jButtSignUp)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1)
                     .addComponent(jTextFieldCredit, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButtExit)
-                    .addComponent(jButtSignUp))
+                    .addComponent(jButtCancel))
                 .addGap(9, 9, 9))
         );
 
@@ -101,8 +110,12 @@ public class StuClassRequest extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jComboBoxClassListActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBoxClassListActionPerformed
-        // TODO add your handling code here:
+
     }//GEN-LAST:event_jComboBoxClassListActionPerformed
+
+    private void jButtCancelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtCancelActionPerformed
+        //취소 버튼
+    }//GEN-LAST:event_jButtCancelActionPerformed
 
     /**
      * @param args the command line arguments
@@ -130,7 +143,6 @@ public class StuClassRequest extends javax.swing.JFrame {
             java.util.logging.Logger.getLogger(StuClassRequest.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
-        //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
@@ -141,7 +153,7 @@ public class StuClassRequest extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButtExit;
+    private javax.swing.JButton jButtCancel;
     private javax.swing.JButton jButtSignUp;
     private javax.swing.JComboBox<String> jComboBoxClassList;
     private javax.swing.JLabel jLabel1;

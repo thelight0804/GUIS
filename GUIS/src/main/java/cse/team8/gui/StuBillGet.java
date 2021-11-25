@@ -40,7 +40,7 @@ public class StuBillGet extends javax.swing.JFrame {
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         jTextFieldCost = new javax.swing.JTextField();
-        jButtExit = new javax.swing.JButton();
+        jButtCancel = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -82,8 +82,8 @@ public class StuBillGet extends javax.swing.JFrame {
         jLabel6.setFont(new java.awt.Font("맑은 고딕 Semilight", 0, 12)); // NOI18N
         jLabel6.setText("수강료");
 
-        jButtExit.setFont(new java.awt.Font("맑은 고딕 Semilight", 0, 12)); // NOI18N
-        jButtExit.setText("종료");
+        jButtCancel.setFont(new java.awt.Font("맑은 고딕 Semilight", 0, 12)); // NOI18N
+        jButtCancel.setText("취소");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -119,7 +119,7 @@ public class StuBillGet extends javax.swing.JFrame {
                                 .addGap(18, 18, 18)
                                 .addComponent(jTextFieldCost, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jButtExit))
+                                .addComponent(jButtCancel))
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                                 .addComponent(jLabel1)
                                 .addGap(18, 18, 18)
@@ -157,7 +157,7 @@ public class StuBillGet extends javax.swing.JFrame {
                 .addGap(30, 30, 30))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jButtExit)
+                .addComponent(jButtCancel)
                 .addContainerGap())
         );
 
@@ -165,11 +165,11 @@ public class StuBillGet extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jTextFieldStuNumActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldStuNumActionPerformed
-        // TODO add your handling code here:
+
     }//GEN-LAST:event_jTextFieldStuNumActionPerformed
 
     private void jTextFieldStuSubjectActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldStuSubjectActionPerformed
-        // TODO add your handling code here:
+
     }//GEN-LAST:event_jTextFieldStuSubjectActionPerformed
 
     /**
@@ -198,7 +198,6 @@ public class StuBillGet extends javax.swing.JFrame {
             java.util.logging.Logger.getLogger(StuBillGet.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
-        //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
@@ -209,7 +208,7 @@ public class StuBillGet extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButtExit;
+    private javax.swing.JButton jButtCancel;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
