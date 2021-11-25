@@ -129,52 +129,157 @@ public class FileIO implements Work {
         if (!professorData.exists()) {  //만약 해당 경로에 파일이 없는 경우
             professorData.createNewFile(); //파일 생성
             BufferedWriter bw = new BufferedWriter(new FileWriter(professorData));
-            bw.write("TestProfessor!2!전자공학과!111111!2!E!0.0!0"); //테스트용 교수 ID 2, PW 2
+            bw.write("TestProfessor!2!전자공학과!111111!2"); //테스트용 교수 ID 2, PW 2
             bw.newLine();
-            bw.write("풍성현!P001!전산학과!111111!0000005");
-            bw.newLine();
-            bw.write("설지수!P002!전자공학과!111111!0000006");
-            bw.newLine();
-            bw.write("서효기!P003!화학공학과!111111!0000007");
-            bw.newLine();
-            bw.write("송선옥!P004!기계공학과!111111!0000008");
-            bw.newLine();
-            bw.write("오재우!P005!항공우주공학과!111111!0000009");
-            bw.newLine();
+            for (int i = 1; i < 10; i++) {
+                String name = "이름" + i;
+                String myNum = "!P00" + i;
+                String mySubject = "!전산학과";
+                String frontRRN = "!111111";
+                String backRRN = "!0000000" + i;
+                bw.write(name + myNum + mySubject + frontRRN + backRRN);
+                bw.newLine();
+            }
+            for (int i = 10; i < 20; i++) {
+                String name = "이름" + i;
+                String myNum = "!P0" + i;
+                String mySubject = "!전자공학과";
+                String frontRRN = "!111111";
+                String backRRN = "!000000" + i;
+                bw.write(name + myNum + mySubject + frontRRN + backRRN);
+                bw.newLine();
+            }
+            for (int i = 20; i < 30; i++) {
+                String name = "이름" + i;
+                String myNum = "!P0" + i;
+                String mySubject = "!화학공학과";
+                String frontRRN = "!111111";
+                String backRRN = "!000000" + i;
+                bw.write(name + myNum + mySubject + frontRRN + backRRN);
+                bw.newLine();
+            }
+            for (int i = 30; i < 40; i++) {
+                String name = "이름" + i;
+                String myNum = "!P0" + i;
+                String mySubject = "!기계공학과";
+                String frontRRN = "!111111";
+                String backRRN = "!000000" + i;
+                bw.write(name + myNum + mySubject + frontRRN + backRRN);
+                bw.newLine();
+            }
+            for (int i = 40; i < 50; i++) {
+                String name = "이름" + i;
+                String myNum = "!P0" + i;
+                String mySubject = "!항공우주공학과";
+                String frontRRN = "!111111";
+                String backRRN = "!000000" + i;
+                bw.write(name + myNum + mySubject + frontRRN + backRRN);
+                bw.newLine();
+            }
             bw.close(); //파일을 닫아주어야 갱신이 된다
         }
         if (!academystaffData.exists()) {  //만약 해당 경로에 파일이 없는 경우
             academystaffData.createNewFile(); //파일 생성
             BufferedWriter bw = new BufferedWriter(new FileWriter(academystaffData));
-            bw.write("TestAcademyStaff!3!화학공학과!111111!3!E!0.0!0"); //학사담당자용 교수 ID 3, PW 3
+            bw.write("TestAcademyStaff!3!화학공학과!111111!3"); //학사담당자용 교수 ID 3, PW 3
             bw.newLine();
-            bw.write("이범준!H001!전산학과!111111!0000010");
-            bw.newLine();
-            bw.write("한준수!H002!전자공학과!111111!0000011");
-            bw.newLine();
-            bw.write("설수빈!H003!화학공학과!111111!0000012");
-            bw.newLine();
-            bw.write("허재현!H004!기계공학과!111111!0000013");
-            bw.newLine();
-            bw.write("풍태은!H005!항공우주공학과!111111!0000014");
-            bw.newLine();
+            for (int i = 1; i < 10; i++) {
+                String name = "이름" + i;
+                String myNum = "!H00" + i;
+                String mySubject = "!전산학과";
+                String frontRRN = "!111111";
+                String backRRN = "!0000000" + i;
+                bw.write(name + myNum + mySubject + frontRRN + backRRN);
+                bw.newLine();
+            }
+            for (int i = 10; i < 20; i++) {
+                String name = "이름" + i;
+                String myNum = "!H0" + i;
+                String mySubject = "!전자공학과";
+                String frontRRN = "!111111";
+                String backRRN = "!000000" + i;
+                bw.write(name + myNum + mySubject + frontRRN + backRRN);
+                bw.newLine();
+            }
+            for (int i = 20; i < 30; i++) {
+                String name = "이름" + i;
+                String myNum = "!H0" + i;
+                String mySubject = "!화학공학과";
+                String frontRRN = "!111111";
+                String backRRN = "!000000" + i;
+                bw.write(name + myNum + mySubject + frontRRN + backRRN);
+                bw.newLine();
+            }
+            for (int i = 30; i < 40; i++) {
+                String name = "이름" + i;
+                String myNum = "!H0" + i;
+                String mySubject = "!기계공학과";
+                String frontRRN = "!111111";
+                String backRRN = "!000000" + i;
+                bw.write(name + myNum + mySubject + frontRRN + backRRN);
+                bw.newLine();
+            }
+            for (int i = 40; i < 50; i++) {
+                String name = "이름" + i;
+                String myNum = "!H0" + i;
+                String mySubject = "!항공우주공학과";
+                String frontRRN = "!111111";
+                String backRRN = "!000000" + i;
+                bw.write(name + myNum + mySubject + frontRRN + backRRN);
+                bw.newLine();
+            }
             bw.close(); //파일을 닫아주어야 갱신이 된다
         }
         if (!lessonstaffData.exists()) {  //만약 해당 경로에 파일이 없는 경우
             lessonstaffData.createNewFile(); //파일 생성
             BufferedWriter bw = new BufferedWriter(new FileWriter(lessonstaffData));
-            bw.write("TestlessonStaff!4!기계공학과!111111!4!E!0.0!0"); //수업담당자용 교수 ID 3, PW 3
+            bw.write("TestlessonStaff!4!기계공학과!111111!4"); //수업담당자용 교수 ID 3, PW 3
             bw.newLine();
-            bw.write("노성숙!G001!전산학과!111111!0000015");
-            bw.newLine();
-            bw.write("복원웅!G002!전자공학과!111111!0000016");
-            bw.newLine();
-            bw.write("예채영!G003!화학공학과!111111!0000017");
-            bw.newLine();
-            bw.write("고경옥!G004!기계공학과!111111!0000018");
-            bw.newLine();
-            bw.write("서상학!G005!항공우주공학과!111111!0000019");
-            bw.newLine();
+            for (int i = 1; i < 10; i++) {
+                String name = "이름" + i;
+                String myNum = "!G00" + i;
+                String mySubject = "!전산학과";
+                String frontRRN = "!111111";
+                String backRRN = "!0000000" + i;
+                bw.write(name + myNum + mySubject + frontRRN + backRRN);
+                bw.newLine();
+            }
+            for (int i = 10; i < 20; i++) {
+                String name = "이름" + i;
+                String myNum = "!G0" + i;
+                String mySubject = "!전자공학과";
+                String frontRRN = "!111111";
+                String backRRN = "!000000" + i;
+                bw.write(name + myNum + mySubject + frontRRN + backRRN);
+                bw.newLine();
+            }
+            for (int i = 20; i < 30; i++) {
+                String name = "이름" + i;
+                String myNum = "!G0" + i;
+                String mySubject = "!화학공학과";
+                String frontRRN = "!111111";
+                String backRRN = "!000000" + i;
+                bw.write(name + myNum + mySubject + frontRRN + backRRN);
+                bw.newLine();
+            }
+            for (int i = 30; i < 40; i++) {
+                String name = "이름" + i;
+                String myNum = "!G0" + i;
+                String mySubject = "!기계공학과";
+                String frontRRN = "!111111";
+                String backRRN = "!000000" + i;
+                bw.write(name + myNum + mySubject + frontRRN + backRRN);
+                bw.newLine();
+            }
+            for (int i = 40; i < 50; i++) {
+                String name = "이름" + i;
+                String myNum = "!G0" + i;
+                String mySubject = "!항공우주공학과";
+                String frontRRN = "!111111";
+                String backRRN = "!000000" + i;
+                bw.write(name + myNum + mySubject + frontRRN + backRRN);
+                bw.newLine();
+            }
             bw.close(); //파일을 닫아주어야 갱신이 된다
         }
         if (!lessonData.exists()) {
