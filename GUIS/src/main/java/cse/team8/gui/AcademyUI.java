@@ -131,11 +131,11 @@ public class AcademyUI extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jRadioButtProfessorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButtProfessorActionPerformed
-        // TODO add your handling code here:
+
     }//GEN-LAST:event_jRadioButtProfessorActionPerformed
 
     private void jButtExitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtExitActionPerformed
-        // TODO add your handling code here:
+
         System.exit(0); //프로그램 종료
     }//GEN-LAST:event_jButtExitActionPerformed
 

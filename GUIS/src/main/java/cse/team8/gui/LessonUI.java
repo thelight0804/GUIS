@@ -116,7 +116,7 @@ public class LessonUI extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButtPWchangeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtPWchangeActionPerformed
-        // TODO add your handling code here:
+
     }//GEN-LAST:event_jButtPWchangeActionPerformed
 
     private void jButtExitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtExitActionPerformed

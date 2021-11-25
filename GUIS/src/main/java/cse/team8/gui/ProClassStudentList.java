@@ -82,7 +82,7 @@ public class ProClassStudentList extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButtCancelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtCancelActionPerformed
-        // TODO add your handling code here:
+  
     }//GEN-LAST:event_jButtCancelActionPerformed
 
     /**
