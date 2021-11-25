@@ -189,8 +189,8 @@ public class ProSearchUI extends javax.swing.JFrame {
         String word = jTextFieldWord.getText(); //검색어 추출
 
         Search search = new Search();
-        String result[] = search.stuSearch(base, word); //검색
-        jListResult.setListData(result); //List 갱신
+//        String result[] = search.stuSearch(base, word); //검색
+//        jListResult.setListData(result); //List 갱신
     }//GEN-LAST:event_jButtonSearchActionPerformed
 
     private void jTextFieldRRNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldRRNActionPerformed

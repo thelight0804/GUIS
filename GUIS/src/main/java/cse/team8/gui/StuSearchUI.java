@@ -6,12 +6,18 @@
 package cse.team8.gui;
 
 import cse.team8.academywork.Search;
+import cse.team8.guis.FileIO;
+import cse.team8.user.Student;
+import java.util.ArrayList;
 
 /**
  *
  * @author User
  */
 public class StuSearchUI extends javax.swing.JFrame {
+
+    ArrayList<Student> studentResult = new ArrayList<>();
+    ArrayList<String> Result = new ArrayList<>();
 
     /**
      * Creates new form AcaStuSearch
@@ -29,7 +35,7 @@ public class StuSearchUI extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jButton1 = new javax.swing.JButton();
+        jButtonExit = new javax.swing.JButton();
         jTextFieldNum = new javax.swing.JTextField();
         jTextFieldName = new javax.swing.JTextField();
         jTextFieldRRN = new javax.swing.JTextField();
@@ -45,11 +51,16 @@ public class StuSearchUI extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         jListResult = new javax.swing.JList<>();
         jLabel7 = new javax.swing.JLabel();
-        jComboBoxSubList = new javax.swing.JComboBox<>();
+        jTextFieldSub = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jButton1.setText("종료");
+        jButtonExit.setText("닫기");
+        jButtonExit.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonExitActionPerformed(evt);
+            }
+        });
 
         jTextFieldRRN.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -82,6 +93,11 @@ public class StuSearchUI extends javax.swing.JFrame {
             String[] strings = { "검색 버튼을 클릭하세요" };
             public int getSize() { return strings.length; }
             public String getElementAt(int i) { return strings[i]; }
+        });
+        jListResult.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jListResultMouseClicked(evt);
+            }
         });
         jScrollPane1.setViewportView(jListResult);
 
@@ -116,19 +132,19 @@ public class StuSearchUI extends javax.swing.JFrame {
                             .addGroup(layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(layout.createSequentialGroup()
-                                        .addComponent(jLabel2)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(jTextFieldName, javax.swing.GroupLayout.PREFERRED_SIZE, 198, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addGroup(layout.createSequentialGroup()
                                         .addComponent(jLabel1)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                         .addComponent(jTextFieldNum, javax.swing.GroupLayout.PREFERRED_SIZE, 198, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(jLabel2)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(jTextFieldName, javax.swing.GroupLayout.PREFERRED_SIZE, 198, javax.swing.GroupLayout.PREFERRED_SIZE))
                                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 485, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                                         .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
                                             .addComponent(jLabel3)
                                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                            .addComponent(jComboBoxSubList, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                            .addComponent(jTextFieldSub))
                                         .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
                                             .addComponent(jLabel4)
                                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -137,7 +153,7 @@ public class StuSearchUI extends javax.swing.JFrame {
                         .addContainerGap())))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jButton1)
+                .addComponent(jButtonExit)
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -156,24 +172,24 @@ public class StuSearchUI extends javax.swing.JFrame {
                 .addComponent(jLabel7)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 28, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 25, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextFieldNum, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel1))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jTextFieldName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel2))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jTextFieldNum, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel1))
+                .addGap(15, 15, 15)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3)
-                    .addComponent(jComboBoxSubList, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jTextFieldSub, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jTextFieldRRN, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel4))
                 .addGap(30, 30, 30)
-                .addComponent(jButton1)
+                .addComponent(jButtonExit)
                 .addContainerGap())
         );
 
@@ -190,9 +206,69 @@ public class StuSearchUI extends javax.swing.JFrame {
         String word = jTextFieldWord.getText(); //검색어 추출
 
         Search search = new Search();
-        String result[] = search.stuSearch(base, word); //검색
-        jListResult.setListData(result); //List 갱신
+
+        ArrayList<String> Result = new ArrayList<>();
+        Result = search.stuSearch(base, word); //검색 메소드
+        String listData[] = new String[Result.size()];
+
+        if (base == "이름") {
+            for (int i = 0; i < Result.size(); i++) { //이름만 추출
+                if (i == 0) {
+                    listData[0] = Result.get(0) + " / " + Result.get(1) + " / " + Result.get(2);
+                } else if (i * 5 < Result.size()) {
+                    listData[i] = Result.get(i * 5) + " / " + Result.get((i * 5)+1) + " / " + Result.get((i * 5)+2);
+                }
+            }
+        }
+        if (base == "학번") {
+            for (int i = 0; i < Result.size(); i++) { //학번만 추출
+                if (i == 0) {
+                    listData[0] = Result.get(0) + " / " + Result.get(1) + " / " + Result.get(2);
+                }
+                else if ((i*5)+1 < Result.size()) {
+                    //listData[i] = Result.get((i*5)+1) + " / " + Result.get((i * 5)+2) + " / " + Result.get((i * 5)+3);
+                    listData[i] = Result.get(i * 5) + " / " + Result.get((i * 5)+1) + " / " + Result.get((i * 5)+2);
+                }
+            }
+        }
+        if (base == "학과") {
+            for (int i = 0; i < Result.size(); i++) { //학과만 추출
+                if (i == 0) {
+                    listData[0] = Result.get(0) + " / " + Result.get(1) + " / " + Result.get(2);
+                }
+                else if ((i*5)+1 < Result.size()) {
+                    //listData[i] = Result.get((i*5)+1) + " / " + Result.get((i * 5)+2) + " / " + Result.get((i * 5)+3);
+                    listData[i] = Result.get(i * 5) + " / " + Result.get((i * 5)+1) + " / " + Result.get((i * 5)+2);
+                }
+            }
+        }
+
+        jListResult.setListData(listData); //List 갱신
+
     }//GEN-LAST:event_jButtonSearchActionPerformed
+
+    private void jButtonExitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonExitActionPerformed
+        //취소 버튼
+        dispose(); //창 닫기
+    }//GEN-LAST:event_jButtonExitActionPerformed
+
+    private void jListResultMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jListResultMouseClicked
+        //List 클릭 이벤트
+        int select = jListResult.getSelectedIndex();
+        String name;
+        String myNum;
+        String mySubject;
+        String frontRRN;
+        String backRRN;
+
+
+//       //Text Field 갱신
+//        jTextFieldName.setText(name);
+//        jTextFieldName.setText(myNum);
+//        jTextFieldName.setText(mySubject);
+//        jTextFieldName.setText(frontRRN);
+//        jTextFieldName.setText(backRRN);
+    }//GEN-LAST:event_jListResultMouseClicked
 
     /**
      * @param args the command line arguments
@@ -237,10 +313,9 @@ public class StuSearchUI extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButtonExit;
     private javax.swing.JButton jButtonSearch;
     private javax.swing.JComboBox<String> jComboBoxBase;
-    private javax.swing.JComboBox<String> jComboBoxSubList;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -253,6 +328,7 @@ public class StuSearchUI extends javax.swing.JFrame {
     private javax.swing.JTextField jTextFieldName;
     private javax.swing.JTextField jTextFieldNum;
     private javax.swing.JTextField jTextFieldRRN;
+    private javax.swing.JTextField jTextFieldSub;
     private javax.swing.JTextField jTextFieldWord;
     // End of variables declaration//GEN-END:variables
 }

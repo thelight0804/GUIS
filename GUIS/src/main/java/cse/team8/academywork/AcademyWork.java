@@ -1,6 +1,8 @@
 package cse.team8.academywork;
 
+import java.util.ArrayList;
+
 
 public interface AcademyWork {
-    public String[] stuSearch(String base, String word); //학생 검색
+    public ArrayList<String> stuSearch(String base, String word); //학생 검색
 }
