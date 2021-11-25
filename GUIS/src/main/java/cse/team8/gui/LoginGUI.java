@@ -237,6 +237,28 @@ public class LoginGUI extends javax.swing.JFrame {
         } //if (jRadioButtonAcademyStaff.isSelected()) 끝
 
         if (jRadioButtonLessonStaff.isSelected()) { //수업 담당자 선택 시
+            fileIO.fileWork();
+            try {
+                //Login 버튼
+                lessonStaff = fileIO.getLessonStaff();
+            } catch (IOException ex) {
+                Logger.getLogger(LoginGUI.class.getName()).log(Level.SEVERE, null, ex);
+            }
+
+            ////로그인 확인
+            //ID, PW 입력 받음
+            String inputID = jTextFieldID.getText();
+            String inputPW = jTextFieldPW.getText();
+
+            pass = login.loginLessonStaffDistinguish(inputID, inputPW, lessonStaff); //SystemLogin.loginDistinguish 함수 호출
+
+            if (pass) //로그인 성공 시
+            {
+                dispose(); //LoginGUI 창 닫음
+            } else {
+                jTextFieldID.setText(""); //칸 지움
+                jTextFieldPW.setText("");
+            }
         }
     }//GEN-LAST:event_loginButtonActionPerformed
 

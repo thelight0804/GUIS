@@ -71,12 +71,38 @@ public class SystemLogin extends userWork {
         return pass;
     }
     
+    public boolean loginLessonStaffDistinguish (String inputID, String inputPW, ArrayList<lessonStaff> lessonStaff){ //수업 담당자 로그인 성공 여부 확인
+        boolean pass = false; //로그인 성공 여부
+        for (int i = 0; i < lessonStaff.size(); i++) {
+            if (inputID.equals(lessonStaff.get(i).getMyNum()) && inputPW.equals(lessonStaff.get(i).getBackRRN())) { //교수 로그인 성공 여부 확인
+                JOptionPane.showMessageDialog(null, lessonStaff.get(i).getName() + " 로그인 성공");
+                pass = true;
+                lessonStaff.get(i).setNowLogin(true); //로그인 한 계정 분류
+                break;
+            }
+        }
+        if (pass) { //로그인 성공 시
+            loginLessonStaffPass();
+        } else {
+            JOptionPane.showMessageDialog(null, "ID 및 P/W를 다시 한번 확인해 주세요");
+        }
+        return pass;
+    }
+    
     public void loginAcademyStaffPass(){ //학사담당자 로그인 성공
         AcademyUI AcademyWork = new AcademyUI();
         AcademyWork.setDefaultCloseOperation(AcademyWork.EXIT_ON_CLOSE);
         AcademyWork.pack();
         AcademyWork.setLocationRelativeTo(null);
         AcademyWork.setVisible(true);
+    }
+    
+     public void loginLessonStaffPass(){ //수업담당자 로그인 성공
+        LessonUI LessonWork = new LessonUI();
+        LessonWork.setDefaultCloseOperation(LessonWork.EXIT_ON_CLOSE);
+        LessonWork.pack();
+        LessonWork.setLocationRelativeTo(null);
+        LessonWork.setVisible(true);
     }
 
     @Override
