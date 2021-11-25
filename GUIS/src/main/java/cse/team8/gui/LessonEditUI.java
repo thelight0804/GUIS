@@ -49,10 +49,10 @@ public class LessonEditUI extends javax.swing.JFrame {
         jLabel9 = new javax.swing.JLabel();
         jButton3 = new javax.swing.JButton();
         jTextFieldLesNum = new javax.swing.JTextField();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        jListLesInfo = new javax.swing.JList<>();
         jTextFieldProCharge = new javax.swing.JTextField();
         jLabel10 = new javax.swing.JLabel();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        jTextAreaLesInfo = new javax.swing.JTextArea();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -98,9 +98,11 @@ public class LessonEditUI extends javax.swing.JFrame {
             }
         });
 
-        jScrollPane1.setViewportView(jListLesInfo);
-
         jLabel10.setText(" * 검색 방법을 선택한 후 입력");
+
+        jTextAreaLesInfo.setColumns(20);
+        jTextAreaLesInfo.setRows(5);
+        jScrollPane2.setViewportView(jTextAreaLesInfo);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -138,12 +140,12 @@ public class LessonEditUI extends javax.swing.JFrame {
                                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                                     .addComponent(jLabel10)
-                                                    .addComponent(jTextFieldProCharge)))
+                                                    .addComponent(jTextFieldProCharge, javax.swing.GroupLayout.DEFAULT_SIZE, 178, Short.MAX_VALUE)))
                                             .addComponent(jTextFieldGradeNum)
                                             .addComponent(jComboBoxLesSub, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                             .addComponent(jTextFieldLesName)
                                             .addComponent(jTextFieldLesNum)
-                                            .addComponent(jScrollPane1)))
+                                            .addComponent(jScrollPane2)))
                                     .addGroup(layout.createSequentialGroup()
                                         .addComponent(jLabel6)
                                         .addGap(18, 18, 18)
@@ -187,8 +189,8 @@ public class LessonEditUI extends javax.swing.JFrame {
                     .addComponent(jLabel4))
                 .addGap(9, 9, 9)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel5)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel5))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 8, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jRadioButtProNum, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -289,10 +291,10 @@ public class LessonEditUI extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
-    private javax.swing.JList<String> jListLesInfo;
     private javax.swing.JRadioButton jRadioButtProName;
     private javax.swing.JRadioButton jRadioButtProNum;
-    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JTextArea jTextAreaLesInfo;
     private javax.swing.JTextField jTextFieldGradeNum;
     private javax.swing.JTextField jTextFieldLesMax;
     private javax.swing.JTextField jTextFieldLesMin;
