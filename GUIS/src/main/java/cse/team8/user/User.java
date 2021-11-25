@@ -1,5 +1,4 @@
 package cse.team8.user;
-import java.util.ArrayList;
 
 public class User {
     protected String name; //이름

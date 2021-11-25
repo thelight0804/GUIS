@@ -13,10 +13,6 @@
 package cse.team8.gui;
 
 import cse.team8.user.Student;
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.logging.Level;
@@ -31,9 +27,10 @@ public class LoginGUI extends javax.swing.JFrame {
     SystemLogin login = new SystemLogin(); //SystemLogin 클래스 사용
     FileIO fileIO = new FileIO();
     public ArrayList<Student> student = new ArrayList<>();
-    public ArrayList<Professor> professor;
-    public ArrayList<academyStaff> academyStaff;
-    public ArrayList<lessonStaff> lessonStaff;
+    public ArrayList<Professor> professor = new ArrayList<>();
+    public ArrayList<academyStaff> academyStaff = new ArrayList<>();
+    public ArrayList<lessonStaff> lessonStaff = new ArrayList<>();
+    public ArrayList<Lesson> lesson = new ArrayList<>();
     boolean pass = false; //로그인 성공 여부
 
     public LoginGUI() {
@@ -163,8 +160,9 @@ public class LoginGUI extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void loginButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginButtonActionPerformed
-        if (jRadioButtonStudent.isSelected()) { //학생 선택 시
-            fileIO.fileWork();
+        if (jRadioButtonStudent.isSelected()) { 
+           fileIO.fileWork();
+           //학생 선택 시
             try {
                 //Login 버튼
                 student = fileIO.getStudent();

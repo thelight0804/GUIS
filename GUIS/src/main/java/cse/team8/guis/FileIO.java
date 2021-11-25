@@ -1,21 +1,20 @@
 package cse.team8.guis;
 
-import cse.team8.user.Professor;
-import cse.team8.user.Student;
-import cse.team8.user.academyStaff;
-import cse.team8.user.lessonStaff;
+import cse.team8.user.*;
 
 import java.io.*;
 import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-public class FileIO implements Work{
+public class FileIO implements Work {
+
     static public ArrayList<Student> student;
     static public ArrayList<Professor> professor;
     static public ArrayList<academyStaff> academyStaff;
     static public ArrayList<lessonStaff> lessonStaff;
-    
+    static public ArrayList<Lesson> lesson;
+
     public void fileWork() {
         try {
             newFile();
@@ -42,6 +41,11 @@ public class FileIO implements Work{
         } catch (IOException ex) {
             Logger.getLogger(FileIO.class.getName()).log(Level.SEVERE, null, ex);
         }
+        try {
+            lesson = inputLesson();
+        } catch (IOException ex) {
+            Logger.getLogger(FileIO.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 
     public void newFile() throws IOException { //파일 생성
@@ -51,16 +55,17 @@ public class FileIO implements Work{
         }
         File studentData = new File("C:\\Temp\\GUIS\\StudentData.txt"); //파일 읽기
         File professorData = new File("C:\\Temp\\GUIS\\ProfessorData.txt");
-        File academystaffData = new File("C:\\Temp\\GUIS\\academyStaffData.txt");
-        File lessonstaffData = new File("C:\\Temp\\GUIS\\lessonStaffData.txt");
+        File academystaffData = new File("C:\\Temp\\GUIS\\AcadeMyStaffData.txt");
+        File lessonstaffData = new File("C:\\Temp\\GUIS\\LessonStaffData.txt");
+        File lessonData = new File("C:\\Temp\\GUIS\\LessonData.txt");
 
         if (!studentData.exists()) {  //만약 해당 경로에 파일이 없는 경우
             studentData.createNewFile(); //파일 생성
             BufferedWriter bw = new BufferedWriter(new FileWriter(studentData));
             bw.write("TestStudent!1!전산학과!111111!1!E!0.0!0"); //테스트용 학생 ID 1, PW 1
             bw.newLine();
-            for(int i=1;i<10;i++){
-                String name = "이름" + i ;
+            for (int i = 1; i < 10; i++) {
+                String name = "이름" + i;
                 String myNum = "!S00" + i;
                 String mySubject = "!전산학과";
                 String frontRRN = "!111111";
@@ -71,8 +76,8 @@ public class FileIO implements Work{
                 bw.write(name + myNum + mySubject + frontRRN + backRRN + grade + credit + bill);
                 bw.newLine();
             }
-            for(int i=10;i<20;i++){
-                String name = "이름" + i ;
+            for (int i = 10; i < 20; i++) {
+                String name = "이름" + i;
                 String myNum = "!S0" + i;
                 String mySubject = "!전자공학과";
                 String frontRRN = "!111111";
@@ -83,8 +88,8 @@ public class FileIO implements Work{
                 bw.write(name + myNum + mySubject + frontRRN + backRRN + grade + credit + bill);
                 bw.newLine();
             }
-            for(int i=20;i<30;i++){
-                String name = "이름" + i ;
+            for (int i = 20; i < 30; i++) {
+                String name = "이름" + i;
                 String myNum = "!S0" + i;
                 String mySubject = "!화학공학과";
                 String frontRRN = "!111111";
@@ -95,8 +100,8 @@ public class FileIO implements Work{
                 bw.write(name + myNum + mySubject + frontRRN + backRRN + grade + credit + bill);
                 bw.newLine();
             }
-            for(int i=30;i<40;i++){
-                String name = "이름" + i ;
+            for (int i = 30; i < 40; i++) {
+                String name = "이름" + i;
                 String myNum = "!S0" + i;
                 String mySubject = "!기계공학과";
                 String frontRRN = "!111111";
@@ -107,8 +112,8 @@ public class FileIO implements Work{
                 bw.write(name + myNum + mySubject + frontRRN + backRRN + grade + credit + bill);
                 bw.newLine();
             }
-            for(int i=40;i<50;i++){
-                String name = "이름" + i ;
+            for (int i = 40; i < 50; i++) {
+                String name = "이름" + i;
                 String myNum = "!S0" + i;
                 String mySubject = "!항공우주공학과";
                 String frontRRN = "!111111";
@@ -172,17 +177,43 @@ public class FileIO implements Work{
             bw.newLine();
             bw.close(); //파일을 닫아주어야 갱신이 된다
         }
-        else{ //파일이 있다면 = 프로그램을 한 번 이상 실행했다면
-
+        if (!lessonData.exists()) {
+            lessonData.createNewFile();
+            BufferedWriter bw = new BufferedWriter(new FileWriter(lessonData));
+            String mySubject = "";
+            for (int i = 0; i < 26; i++) {
+                String name = "강좌" + i;
+                String myNum = "!L0" + i; //Lesson의 L
+                if(i < 5)
+                    mySubject = "!전산학과";
+                else if (i < 10)
+                    mySubject = "!전자공학과";
+                else if (i < 15)
+                    mySubject = "!화학공학과";
+                else if (i < 20)
+                    mySubject = "!기계공학과";
+                else if (i < 26)
+                    mySubject = "!항공우주공학과";
+                String credit = "!0";
+                String maxPeople = "!100";
+                String minPeople = "!5";
+                String explain = "![강좌설명]";
+                String create = "!false";
+                String pastCreate = "!false";
+                bw.write(name + myNum + mySubject + credit + maxPeople + minPeople + explain + create + pastCreate);
+                bw.newLine();
+            }
+            bw.close();
         }
-
+        else {   } //파일이 있다면 = 프로그램을 한 번 이상 실행했다면
     }
-    public ArrayList<Student> inputStudent() throws  IOException{ //학생 객체 생성
+
+    public ArrayList<Student> inputStudent() throws IOException { //학생 객체 생성
         BufferedReader fr = new BufferedReader(new FileReader("C:\\Temp\\GUIS\\StudentData.txt"));
-        String line ="";
+        String line = "";
         ArrayList<Student> student = new ArrayList<Student>();
 
-        while((line = fr.readLine()) != null){
+        while ((line = fr.readLine()) != null) {
             String data = line;
             String[] array = data.split("!"); //split : 문자열 구분
             //String 형식의 bill, year, credit 형 변환
@@ -195,12 +226,13 @@ public class FileIO implements Work{
         }
         return student;
     }
-    public ArrayList<Professor> inputProfessor() throws  IOException{ //교수 객체 생성
+
+    public ArrayList<Professor> inputProfessor() throws IOException { //교수 객체 생성
         BufferedReader fr = new BufferedReader(new FileReader("C:\\Temp\\GUIS\\ProfessorData.txt"));
-        String line ="";
+        String line = "";
         ArrayList<Professor> professor = new ArrayList<Professor>();
 
-        while((line = fr.readLine()) != null){
+        while ((line = fr.readLine()) != null) {
             String data = line;
             String[] array = data.split("!"); //split : 문자열 구분
             //String 형식의 bill, year, credit 형 변환
@@ -211,12 +243,13 @@ public class FileIO implements Work{
         }
         return professor;
     }
-    public ArrayList<academyStaff> inputAcademyStaff() throws  IOException{ //학사담당자 객체 생성
-        BufferedReader fr = new BufferedReader(new FileReader("C:\\Temp\\GUIS\\academyStaffData.txt"));
-        String line ="";
+
+    public ArrayList<academyStaff> inputAcademyStaff() throws IOException { //학사담당자 객체 생성
+        BufferedReader fr = new BufferedReader(new FileReader("C:\\Temp\\GUIS\\AcadeMyStaffData.txt"));
+        String line = "";
         ArrayList<academyStaff> academystaff = new ArrayList<academyStaff>();
 
-        while((line = fr.readLine()) != null){
+        while ((line = fr.readLine()) != null) {
             String data = line;
             String[] array = data.split("!");
 
@@ -226,12 +259,13 @@ public class FileIO implements Work{
         }
         return academystaff;
     }
-    public ArrayList<lessonStaff> inputLessonStaff() throws  IOException{ //수업담당자 객체 생성
-        BufferedReader fr = new BufferedReader(new FileReader("C:\\Temp\\GUIS\\lessonStaffData.txt"));
-        String line ="";
+
+    public ArrayList<lessonStaff> inputLessonStaff() throws IOException { //수업담당자 객체 생성
+        BufferedReader fr = new BufferedReader(new FileReader("C:\\Temp\\GUIS\\LessonStaffData.txt"));
+        String line = "";
         ArrayList<lessonStaff> lessonstaff = new ArrayList<lessonStaff>();
 
-        while((line = fr.readLine()) != null){
+        while ((line = fr.readLine()) != null) {
             String data = line;
             String[] array = data.split("!"); //split : 문자열 구분
 
@@ -241,6 +275,26 @@ public class FileIO implements Work{
         return lessonstaff;
     }
 
+    public ArrayList<Lesson> inputLesson() throws IOException { //수업담당자 객체 생성
+        BufferedReader fr = new BufferedReader(new FileReader("C:\\Temp\\GUIS\\LessonData.txt"));
+        String line = "";
+        ArrayList<Lesson> lesson = new ArrayList<Lesson>();
+
+        while ((line = fr.readLine()) != null) {
+            String data = line;
+            String[] array = data.split("!"); //split : 문자열 구분
+            //boolean 7, boolean 8
+            float temp_credit = Float.parseFloat(array[3]);
+            int temp_maxPeople = Integer.parseInt(array[4]);
+            int temp_minPeople = Integer.parseInt(array[5]);
+            boolean temp_create = Boolean.parseBoolean(array[7]);
+            boolean temp_pastCreate = Boolean.parseBoolean(array[8]);
+            //Lesson(String name, String myNum, String mySubject, float credit, int maxPeople, int minPeople, String explain, boolean Create, boolean pastCreate) {
+            lesson.add(new Lesson(array[0], array[1], array[2], temp_credit, temp_maxPeople, temp_minPeople, array[6], temp_create, temp_pastCreate));
+        }
+        return lesson;
+    }
+
     public ArrayList<Student> getStudent() throws IOException {
         return student;
     }
@@ -248,12 +302,17 @@ public class FileIO implements Work{
     public ArrayList<Professor> getProfessor() throws IOException {
         return professor;
     }
-
-    public ArrayList<cse.team8.user.academyStaff> getAcademyStaff() throws IOException {
+//TODO cse.team8.user? 제거
+    public ArrayList<academyStaff> getAcademyStaff() throws IOException {
         return academyStaff;
     }
 
-    public ArrayList<cse.team8.user.lessonStaff> getLessonStaff() throws IOException {
+    public ArrayList<lessonStaff> getLessonStaff() throws IOException {
         return lessonStaff;
     }
+
+    public static ArrayList<Lesson> getLesson() throws IOException {
+        return lesson;
+    }
+
 }
