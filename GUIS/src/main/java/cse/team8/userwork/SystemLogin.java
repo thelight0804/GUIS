@@ -74,6 +74,8 @@ public class SystemLogin extends userWork {
     public void loginAcademyStaffPass(){ //학사담당자 로그인 성공
         AcademyUI AcademyWork = new AcademyUI();
         AcademyWork.setDefaultCloseOperation(AcademyWork.EXIT_ON_CLOSE);
+        AcademyWork.pack();
+        AcademyWork.setLocationRelativeTo(null);
         AcademyWork.setVisible(true);
     }
 
@@ -81,12 +83,16 @@ public class SystemLogin extends userWork {
     public void loginStudentPass() { //학생 로그인 성공
         StudentUI StudentWork = new StudentUI();
         StudentWork.setDefaultCloseOperation(StudentWork.EXIT_ON_CLOSE);
+        StudentWork.pack();
+        StudentWork.setLocationRelativeTo(null);
         StudentWork.setVisible(true);
     }
 
     public void loginProfessorPass() { //교수 로그인 성공
         ProfessorUI professorWork = new ProfessorUI();
         professorWork.setDefaultCloseOperation(professorWork.EXIT_ON_CLOSE);
+        professorWork.pack();
+        professorWork.setLocationRelativeTo(null);        
         professorWork.setVisible(true);
     }
 

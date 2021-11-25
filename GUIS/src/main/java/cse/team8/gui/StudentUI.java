@@ -112,6 +112,8 @@ public class StudentUI extends javax.swing.JFrame {
         //암호 변경 버튼
         changePW a = new changePW(); //changePW 창 호출
         a.setDefaultCloseOperation(changePW.EXIT_ON_CLOSE);
+        a.pack();
+        a.setLocationRelativeTo(null);
         a.setVisible(true);
     }//GEN-LAST:event_jButtonChangePWActionPerformed
 

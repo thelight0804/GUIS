@@ -147,6 +147,8 @@ public class AcademyUI extends javax.swing.JFrame {
         if (jRadioButtStudent.isSelected()) { //학생 선택 시
         StuSearchUI StuSearchUIWork = new StuSearchUI();
         StuSearchUIWork.setDefaultCloseOperation(StuSearchUIWork.EXIT_ON_CLOSE);
+        StuSearchUIWork.pack();
+        StuSearchUIWork.setLocationRelativeTo(null);
         StuSearchUIWork.setVisible(true);
         }
        if (jRadioButtProfessor.isSelected()) { //학생 선택 시
