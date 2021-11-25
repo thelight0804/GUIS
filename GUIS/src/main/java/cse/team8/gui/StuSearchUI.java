@@ -6,7 +6,6 @@
 package cse.team8.gui;
 
 import cse.team8.academywork.Search;
-import cse.team8.guis.FileIO;
 import cse.team8.user.Student;
 import java.util.ArrayList;
 
@@ -221,8 +220,8 @@ public class StuSearchUI extends javax.swing.JFrame {
             for (int i = 0; i < Result.size(); i++) { //이름만 추출
                 if (i == 0) {
                     listData[0] = Result.get(0) + " / " + Result.get(1) + " / " + Result.get(2);
-                } else if (i * 5 < Result.size()) {
-                    listData[i] = Result.get(i * 5) + " / " + Result.get((i * 5)+1) + " / " + Result.get((i * 5)+2);
+                } else if (i * 6 < Result.size()) {
+                    listData[i] = Result.get(i * 6) + " / " + Result.get((i * 6)+1) + " / " + Result.get((i * 6)+2);
                 }
             }
         }
@@ -231,9 +230,9 @@ public class StuSearchUI extends javax.swing.JFrame {
                 if (i == 0) {
                     listData[0] = Result.get(0) + " / " + Result.get(1) + " / " + Result.get(2);
                 }
-                else if ((i*5)+1 < Result.size()) {
+                else if ((i*6)+1 < Result.size()) {
                     //listData[i] = Result.get((i*5)+1) + " / " + Result.get((i * 5)+2) + " / " + Result.get((i * 5)+3);
-                    listData[i] = Result.get(i * 5) + " / " + Result.get((i * 5)+1) + " / " + Result.get((i * 5)+2);
+                    listData[i] = Result.get(i * 6) + " / " + Result.get((i * 6)+1) + " / " + Result.get((i * 6)+2);
                 }
             }
         }
@@ -242,9 +241,9 @@ public class StuSearchUI extends javax.swing.JFrame {
                 if (i == 0) {
                     listData[0] = Result.get(0) + " / " + Result.get(1) + " / " + Result.get(2);
                 }
-                else if ((i*5)+1 < Result.size()) {
+                else if ((i*6)+1 < Result.size()) {
                     //listData[i] = Result.get((i*5)+1) + " / " + Result.get((i * 5)+2) + " / " + Result.get((i * 5)+3);
-                    listData[i] = Result.get(i * 5) + " / " + Result.get((i * 5)+1) + " / " + Result.get((i * 5)+2);
+                    listData[i] = Result.get(i * 6) + " / " + Result.get((i * 6)+1) + " / " + Result.get((i * 6)+2);
                 }
             }
         }
@@ -274,11 +273,11 @@ public class StuSearchUI extends javax.swing.JFrame {
             backRRN = Result.get(4);
         }
         else{
-            name = Result.get(select*5);
-            myNum = Result.get((select*5) + 1);
-            mySubject = Result.get((select*5) + 2);
-            frontRRN = Result.get((select*5) + 3);
-            backRRN = Result.get((select*5) + 4);
+            name = Result.get(select*6);
+            myNum = Result.get((select*6) + 1);
+            mySubject = Result.get((select*6) + 2);
+            frontRRN = Result.get((select*6) + 3);
+            backRRN = Result.get((select*6) + 4);
         }
 
        //Text Field 갱신

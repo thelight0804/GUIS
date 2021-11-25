@@ -32,31 +32,35 @@ public class Search implements AcademyWork {
                     result.add(student.get(i).getMySubject());
                     result.add(student.get(i).getFrontRRN());
                     result.add(student.get(i).getBackRRN());
+                    result.add(Float.toString(student.get(i).getCredit())); //Float to String
                 }
             }
         }
         if (base == "학번") { //학번으로 검색
             for (int i = 0; i < student.size(); i++) {
-                if (student.get(i).getMyNum().contains(word)) { //검색 결과가 동일하다면
+                if (student.get(i).getMyNum().contains(word)) {
                     result.add(student.get(i).getName());
                     result.add(student.get(i).getMyNum());
                     result.add(student.get(i).getMySubject());
                     result.add(student.get(i).getFrontRRN());
                     result.add(student.get(i).getBackRRN());
+                    result.add(Float.toString(student.get(i).getCredit()));
                 }
             }
         }
         if (base == "학과") { //학번으로 검색
             for (int i = 0; i < student.size(); i++) {
-                if (student.get(i).getMySubject().contains(word)) { //검색 결과가 동일하다면
+                if (student.get(i).getMySubject().contains(word)) {
                     result.add(student.get(i).getName());
                     result.add(student.get(i).getMyNum());
                     result.add(student.get(i).getMySubject());
                     result.add(student.get(i).getFrontRRN());
                     result.add(student.get(i).getBackRRN());
+                    result.add(Float.toString(student.get(i).getCredit()));
                 }
             }
         }
         return result;
     }
+    //TODO 교수 검색
 }

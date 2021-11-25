@@ -39,5 +39,9 @@ public class Student extends User {
         return mySubject;
     }
 
+    public void setCredit(Float credit) {
+        this.credit = credit;
+    }
+
 
 }

@@ -1,6 +1,6 @@
 package cse.team8.gui;
 
-import cse.team8.classwork.*;
+import cse.team8.classwork.StudentWork;
 public class StudentUI extends javax.swing.JFrame {
      StudentWork studentWork = new StudentWork(); //학생 관리
 
