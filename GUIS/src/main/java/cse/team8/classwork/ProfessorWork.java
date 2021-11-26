@@ -24,8 +24,12 @@ public class ProfessorWork {
             if (student.get(i).getName().equals(name)) {
                 //System.out.println(student.get(i).getCredit());
                 student.get(i).setCredit(Grade);
-                System.out.println(student.get(i).getCredit());
             }
+        }
+        try { //파일 업데이트
+            fileIO.updateStudent();
+        } catch (IOException ex) {
+            System.out.println("fileIO.updateStudent() 오류");
         }
     }
 }

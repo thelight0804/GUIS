@@ -284,7 +284,8 @@ public class GradeInputUI extends javax.swing.JFrame {
             } else {
                 input.gradeInput(Result.get(jListResult.getSelectedIndex() * 6), Float.parseFloat(jTextFieldGrade.getText()));
             }
-            //TODO 성적 변경 완료 창 생성
+            jButtonSearchActionPerformed(evt); //List 갱신
+            JOptionPane.showMessageDialog(null, "변경이 완료되었습니다");
         }
         else{
             JOptionPane.showMessageDialog(null, "성적은 0.0~4.0 까지만 입력이 가능합니다");

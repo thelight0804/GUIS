@@ -160,9 +160,10 @@ public class LoginGUI extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void loginButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginButtonActionPerformed
+
         if (jRadioButtonStudent.isSelected()) { 
-           fileIO.fileWork();
-           //학생 선택 시
+            fileIO.fileWork();
+            //학생 선택 시
             try {
                 //Login 버튼
                 student = fileIO.getStudent();
@@ -188,6 +189,11 @@ public class LoginGUI extends javax.swing.JFrame {
 
         if (jRadioButtonProfessor.isSelected()) { //교수 선택 시
             fileIO.fileWork();
+            try {
+                fileIO.updateProfessor();
+            } catch (IOException ex) {
+                Logger.getLogger(LoginGUI.class.getName()).log(Level.SEVERE, null, ex);
+            }
             try {
                 //Login 버튼
                 professor = fileIO.getProfessor();

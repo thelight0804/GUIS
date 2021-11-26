@@ -43,5 +43,9 @@ public class Student extends User {
         this.credit = credit;
     }
 
+    public boolean isNowLogin() {
+        return nowLogin;
+    }
+
 
 }

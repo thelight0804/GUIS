@@ -300,12 +300,13 @@ public class FileIO implements Work {
                 else if (i < 26)
                     mySubject = "!항공우주공학과";
                 String credit = "!0";
+                String nowPeople = "!0";
                 String maxPeople = "!100";
                 String minPeople = "!5";
                 String explain = "![강좌설명]";
                 String create = "!false";
                 String pastCreate = "!false";
-                bw.write(name + myNum + mySubject + credit + maxPeople + minPeople + explain + create + pastCreate);
+                bw.write(name + myNum + mySubject + credit + nowPeople + maxPeople + minPeople + explain + create + pastCreate);
                 bw.newLine();
             }
             bw.close();
@@ -331,7 +332,6 @@ public class FileIO implements Work {
         }
         return student;
     }
-
     public ArrayList<Professor> inputProfessor() throws IOException { //교수 객체 생성
         BufferedReader fr = new BufferedReader(new FileReader("C:\\Temp\\GUIS\\ProfessorData.txt"));
         String line = "";
@@ -348,7 +348,6 @@ public class FileIO implements Work {
         }
         return professor;
     }
-
     public ArrayList<academyStaff> inputAcademyStaff() throws IOException { //학사담당자 객체 생성
         BufferedReader fr = new BufferedReader(new FileReader("C:\\Temp\\GUIS\\AcadeMyStaffData.txt"));
         String line = "";
@@ -364,7 +363,6 @@ public class FileIO implements Work {
         }
         return academystaff;
     }
-
     public ArrayList<lessonStaff> inputLessonStaff() throws IOException { //수업담당자 객체 생성
         BufferedReader fr = new BufferedReader(new FileReader("C:\\Temp\\GUIS\\LessonStaffData.txt"));
         String line = "";
@@ -379,8 +377,7 @@ public class FileIO implements Work {
         }
         return lessonstaff;
     }
-
-    public ArrayList<Lesson> inputLesson() throws IOException { //수업담당자 객체 생성
+    public ArrayList<Lesson> inputLesson() throws IOException { //수업 객체 생성
         BufferedReader fr = new BufferedReader(new FileReader("C:\\Temp\\GUIS\\LessonData.txt"));
         String line = "";
         ArrayList<Lesson> lesson = new ArrayList<Lesson>();
@@ -390,14 +387,146 @@ public class FileIO implements Work {
             String[] array = data.split("!"); //split : 문자열 구분
             //boolean 7, boolean 8
             float temp_credit = Float.parseFloat(array[3]);
-            int temp_maxPeople = Integer.parseInt(array[4]);
-            int temp_minPeople = Integer.parseInt(array[5]);
-            boolean temp_create = Boolean.parseBoolean(array[7]);
-            boolean temp_pastCreate = Boolean.parseBoolean(array[8]);
-            //Lesson(String name, String myNum, String mySubject, float credit, int maxPeople, int minPeople, String explain, boolean Create, boolean pastCreate) {
-            lesson.add(new Lesson(array[0], array[1], array[2], temp_credit, temp_maxPeople, temp_minPeople, array[6], temp_create, temp_pastCreate));
+            int temp_nowPeople = Integer.parseInt(array[4]);
+            int temp_maxPeople = Integer.parseInt(array[5]);
+            int temp_minPeople = Integer.parseInt(array[6]);
+            boolean temp_create = Boolean.parseBoolean(array[8]);
+            boolean temp_pastCreate = Boolean.parseBoolean(array[9]);
+            //Lesson(String name, String myNum, String mySubject, float credit, int maxPeople, int minPeople, int nowPeople, String explain, boolean Create, boolean pastCreate) {
+            lesson.add(new Lesson(array[0], array[1], array[2], temp_credit, temp_nowPeople, temp_maxPeople, temp_minPeople, array[7], temp_create, temp_pastCreate));
         }
         return lesson;
+    }
+    
+    public void updateStudent() throws IOException{ //학생 객체 업데이트
+        File studentData = new File("C:\\Temp\\GUIS\\StudentData.txt"); //파일 읽기
+        
+        BufferedWriter bw = new BufferedWriter(new FileWriter(studentData));
+
+        for(int i = 0;i<student.size();i++){
+            String grade = student.get(i).getGrade();
+            String credit = Float.toString(student.get(i).getCredit()); //Float to String
+            String bill = Long.toString(student.get(i).getBill()); //long to string
+            String name = student.get(i).getName();
+            String frontRRN = student.get(i).getFrontRRN();
+            String backRRN = student.get(i).getBackRRN();
+            String myNum = student.get(i).getMyNum();
+            String mySubject = student.get(i).getMySubject();
+            String nowLogin = String.valueOf(student.get(i).isNowLogin()); //bool to string
+            String PW = student.get(i).getPW();
+        bw.write(name + "!" + myNum + "!" + mySubject + "!" + frontRRN + "!" + backRRN + "!" + grade + "!" + credit + "!" + bill);
+        bw.newLine();
+        }
+        bw.close();
+        
+        //갱신된 파일 다시 읽기
+        try {
+            student = inputStudent();
+        } catch (IOException ex) {
+            Logger.getLogger(FileIO.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+    public void updateProfessor() throws IOException{ //교수 객체 업데이트
+        File ProfessorData = new File("C:\\Temp\\GUIS\\ProfessorData.txt"); //파일 읽기
+        
+        BufferedWriter bw = new BufferedWriter(new FileWriter(ProfessorData));
+
+        for(int i = 0;i<professor.size();i++){
+            String name = professor.get(i).getName();
+            String frontRRN = professor.get(i).getFrontRRN();
+            String backRRN = professor.get(i).getBackRRN();
+            String myNum = professor.get(i).getMyNum();
+            String mySubject = professor.get(i).getMySubject();
+        bw.write(name + "!" + myNum + "!" + mySubject + "!" + frontRRN + "!" + backRRN);
+        bw.newLine();
+        }
+        bw.close();
+        
+        //갱신된 파일 다시 읽기
+        try {
+            professor = inputProfessor();
+        } catch (IOException ex) {
+            System.out.println("updateProfessor().professor = inputProfessor()오류");
+        }
+    }
+    public void updateAcademyStaff() throws IOException{ //학과담당자 객체 업데이트
+        File AcadeMyStaffData = new File("C:\\Temp\\GUIS\\AcadeMyStaffData.txt"); //파일 읽기
+        
+        BufferedWriter bw = new BufferedWriter(new FileWriter(AcadeMyStaffData));
+
+        for(int i = 0;i<academyStaff.size();i++){
+            String name = academyStaff.get(i).getName();
+            String frontRRN = academyStaff.get(i).getFrontRRN();
+            String backRRN = academyStaff.get(i).getBackRRN();
+            String myNum = academyStaff.get(i).getMyNum();
+            String mySubject = academyStaff.get(i).getMySubject();
+        bw.write(name + "!" + myNum + "!" + mySubject + "!" + frontRRN + "!" + backRRN);
+        bw.newLine();
+        }
+        bw.close();
+        
+        //갱신된 파일 다시 읽기
+        try {
+            academyStaff = inputAcademyStaff();
+        } catch (IOException ex) {
+            System.out.println("updateAcademyStaff()오류");
+        }
+    }
+    public void updateLessonStaff() throws IOException { //수업담당자 객체 업데이트
+        File LessonStaffData = new File("C:\\Temp\\GUIS\\LessonStaffData.txt"); //파일 읽기
+
+        BufferedWriter bw = new BufferedWriter(new FileWriter(LessonStaffData));
+
+        for (int i = 0; i < lessonStaff.size(); i++) {
+            String name = lessonStaff.get(i).getName();
+            String frontRRN = lessonStaff.get(i).getFrontRRN();
+            String backRRN = lessonStaff.get(i).getBackRRN();
+            String myNum = lessonStaff.get(i).getMyNum();
+            String mySubject = lessonStaff.get(i).getMySubject();
+            bw.write(name + "!" + myNum + "!" + mySubject + "!" + frontRRN + "!" + backRRN);
+            bw.newLine();
+        }
+        bw.close();
+
+        //갱신된 파일 다시 읽기
+        try {
+            lessonStaff = inputLessonStaff();
+        } catch (IOException ex) {
+            System.out.println("updateLessonStaff()오류");
+        }
+        System.out.println(lessonStaff.get(1).getMyNum());
+    }
+    public void updateLesson() throws IOException { //강좌 객체 업데이트
+        File LessonData = new File("C:\\Temp\\GUIS\\LessonData.txt"); //파일 읽기
+
+        BufferedWriter bw = new BufferedWriter(new FileWriter(LessonData));
+
+        //Lesson(String name, String myNum, String mySubject, float credit, int nowPeople, int maxPeople, int minPeople, 
+        //String explain, boolean Create, boolean pastCreate) {
+        //lesson.add(new Lesson(array[0], array[1], array[2], temp_credit, temp_nowPeople, temp_maxPeople, temp_minPeople, array[7], temp_create, temp_pastCreate));
+        for (int i = 0; i < lesson.size(); i++) {
+            String name = lesson.get(i).getName();
+            String myNum = lesson.get(i).getMyNum();
+            String mySubject = lesson.get(i).getMySubject();
+            String credit = Float.toString(lesson.get(i).getCredit());
+            String nowPeople = Integer.toString(lesson.get(i).getNowPeople()); //int to string
+            String maxPeople = Integer.toString(lesson.get(i).getMaxPeople());
+            String minPeople = Integer.toString(lesson.get(i).getMinPeople());
+            String explain = lesson.get(i).getExplain();
+            String Create = String.valueOf(lesson.get(i).isCreate());
+            String pastCreate = String.valueOf(lesson.get(i).isPastCreate());
+            bw.write(name + "!" + myNum + "!" + mySubject + "!" + credit + "!" + nowPeople + "!" + maxPeople + "!" + minPeople + "!" + explain + "!" + Create + "!" + pastCreate);
+            bw.newLine();
+        }
+        bw.close();
+
+        //갱신된 파일 다시 읽기
+        try {
+            lesson = inputLesson();
+        } catch (IOException ex) {
+            System.out.println("updateLesson() 오류");
+        }
+        System.out.println(lesson.get(1).getMaxPeople());
     }
 
     public ArrayList<Student> getStudent() throws IOException {
@@ -418,5 +547,4 @@ public class FileIO implements Work {
     public static ArrayList<Lesson> getLesson() throws IOException {
         return lesson;
     }
-
 }
