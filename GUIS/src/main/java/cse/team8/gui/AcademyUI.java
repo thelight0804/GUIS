@@ -163,7 +163,11 @@ public class AcademyUI extends javax.swing.JFrame {
 
     private void jButtPWchangeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtPWchangeActionPerformed
          //암호 변경 버튼
-        //TODO 수업담당자 암호 변경
+        changePW a = new changePW(); //changePW 창 호출
+        a.setDefaultCloseOperation(changePW.EXIT_ON_CLOSE);
+        a.pack();
+        a.setLocationRelativeTo(null);
+        a.setVisible(true);
     }//GEN-LAST:event_jButtPWchangeActionPerformed
 
     /**

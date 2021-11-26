@@ -124,11 +124,29 @@ public class SystemLogin extends userWork {
     }
 
     @Override
-    public void changeStudentPW(String inputPW, ArrayList<Student> student, int count) throws IOException {
+    public void changeStudentPW(String inputPW, ArrayList<Student> student, int count) throws IOException { //학생 암호 변경
         //count : 해당 번호의 arraylist 데이터
         student.get(count).setPW(inputPW); //객체 PW 변경
         FileIO a = new FileIO();
         a.updateStudent(); //변경된 객체를 파일에 저장
+    }
+        public void changeProfessorPW(String inputPW, ArrayList<Professor> professor, int count) throws IOException { //교수 암호 변경
+        //count : 해당 번호의 arraylist 데이터
+        professor.get(count).setPW(inputPW); //객체 PW 변경
+        FileIO a = new FileIO();
+        a.updateProfessor();//변경된 객체를 파일에 저장
+    }
+        public void changeAcademyStafftPW(String inputPW, ArrayList<academyStaff> academyStafft, int count) throws IOException { //학사담당자 암호 변경
+        //count : 해당 번호의 arraylist 데이터
+        academyStafft.get(count).setPW(inputPW); //객체 PW 변경
+        FileIO a = new FileIO();
+        a.updateAcademyStaff();//변경된 객체를 파일에 저장
+    }
+        public void changeLessonStafftPW(String inputPW, ArrayList<lessonStaff> lessonStaff, int count) throws IOException { //수업담당자 암호 변경
+        //count : 해당 번호의 arraylist 데이터
+        lessonStaff.get(count).setPW(inputPW); //객체 PW 변경
+        FileIO a = new FileIO();
+        a.updateLessonStaff();//변경된 객체를 파일에 저장
     }
 
 } //class SystemLogin 끝

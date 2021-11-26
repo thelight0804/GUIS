@@ -497,7 +497,6 @@ public class FileIO implements Work {
         } catch (IOException ex) {
             System.out.println("updateLessonStaff()오류");
         }
-        System.out.println(lessonStaff.get(1).getMyNum());
     }
     public void updateLesson() throws IOException { //강좌 객체 업데이트
         File LessonData = new File("C:\\Temp\\GUIS\\LessonData.txt"); //파일 읽기

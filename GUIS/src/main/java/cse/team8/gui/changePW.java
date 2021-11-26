@@ -6,7 +6,7 @@
 package cse.team8.gui;
 
 import cse.team8.guis.FileIO;
-import cse.team8.user.Student;
+import cse.team8.user.*;
 import cse.team8.userwork.SystemLogin;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -18,6 +18,9 @@ import javax.swing.JOptionPane;
 public class changePW extends javax.swing.JFrame {
     SystemLogin login = new SystemLogin();
     public ArrayList<Student> student = new ArrayList<>();
+    public ArrayList<Professor> professor = new ArrayList<>();
+    public ArrayList<academyStaff> academyStafft = new ArrayList<>();
+    public ArrayList<lessonStaff> lessonStafft = new ArrayList<>();
     FileIO fileIO = new FileIO();
 
     public changePW() {
@@ -92,7 +95,22 @@ public class changePW extends javax.swing.JFrame {
             Logger.getLogger(changePW.class.getName()).log(Level.SEVERE, null, ex);
             System.out.println("fileIO.getStudent() 예외 발생");
         }
-        //암호 변경
+        try {
+            professor = fileIO.getProfessor();
+        } catch (IOException ex) {
+            Logger.getLogger(changePW.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        try {
+            academyStafft = fileIO.getAcademyStaff();
+        } catch (IOException ex) {
+            Logger.getLogger(changePW.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        try {
+            lessonStafft = fileIO.getLessonStaff();
+        } catch (IOException ex) {
+            Logger.getLogger(changePW.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        //학생 암호 변경
         for (int i = 0; i < student.size(); i++) {
             if (student.get(i).isNowLogin()) { //로그인 되어 있는 계정 확인
                 String inputPW = jTextFieldInputPW.getText();
@@ -105,6 +123,43 @@ public class changePW extends javax.swing.JFrame {
                 dispose(); //창 닫기
             }
         }
+        //교수 암호 변경
+        for (int i = 0; i < professor.size(); i++) {
+            if (professor.get(i).isNowLogin()) { //로그인 되어 있는 계정 확인
+                String inputPW = jTextFieldInputPW.getText();
+                try {
+                    login.changeProfessorPW(inputPW, professor, i); //changeStudentPW 함수 호출
+                } catch (IOException ex) {
+                    Logger.getLogger(changePW.class.getName()).log(Level.SEVERE, null, ex);
+                }
+                JOptionPane.showMessageDialog(null, "암호 변경 완료");
+                dispose(); //창 닫기
+            }
+        }
+        for (int i = 0; i < academyStafft.size(); i++) {
+            if (academyStafft.get(i).isNowLogin()) { //로그인 되어 있는 계정 확인
+                String inputPW = jTextFieldInputPW.getText();
+                try {
+                    login.changeAcademyStafftPW(inputPW, academyStafft, i); //changeStudentPW 함수 호출
+                } catch (IOException ex) {
+                    Logger.getLogger(changePW.class.getName()).log(Level.SEVERE, null, ex);
+                }
+                JOptionPane.showMessageDialog(null, "암호 변경 완료");
+                dispose(); //창 닫기
+            }
+        }     
+        for (int i = 0; i < lessonStafft.size(); i++) {
+            if (lessonStafft.get(i).isNowLogin()) { //로그인 되어 있는 계정 확인
+                String inputPW = jTextFieldInputPW.getText();
+                try {
+                    login.changeLessonStafftPW(inputPW, lessonStafft, i); //changeStudentPW 함수 호출
+                } catch (IOException ex) {
+                    Logger.getLogger(changePW.class.getName()).log(Level.SEVERE, null, ex);
+                }
+                JOptionPane.showMessageDialog(null, "암호 변경 완료");
+                dispose(); //창 닫기
+            }
+        }       
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButtonExitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonExitActionPerformed

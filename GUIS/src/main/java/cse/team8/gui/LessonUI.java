@@ -116,9 +116,12 @@ public class LessonUI extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButtPWchangeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtPWchangeActionPerformed
-
-         //암호 변경 버튼
-        //TODO 수업담당자 암호 변경
+        //암호 변경 버튼
+        changePW a = new changePW(); //changePW 창 호출
+        a.setDefaultCloseOperation(changePW.EXIT_ON_CLOSE);
+        a.pack();
+        a.setLocationRelativeTo(null);
+        a.setVisible(true);
     }//GEN-LAST:event_jButtPWchangeActionPerformed
 
     private void jButtExitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtExitActionPerformed

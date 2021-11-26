@@ -118,7 +118,11 @@ public class ProfessorUI extends javax.swing.JFrame {
 
     private void jButtPWChangeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtPWChangeActionPerformed
         //암호 변경 버튼
-        //TODO 교수 암호 변경
+        changePW a = new changePW(); //changePW 창 호출
+        a.setDefaultCloseOperation(changePW.EXIT_ON_CLOSE);
+        a.pack();
+        a.setLocationRelativeTo(null);
+        a.setVisible(true);
     }//GEN-LAST:event_jButtPWChangeActionPerformed
 
     private void jButtClassStudentListActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtClassStudentListActionPerformed
