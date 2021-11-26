@@ -160,7 +160,7 @@ public class LoginGUI extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void loginButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginButtonActionPerformed
-
+        
         if (jRadioButtonStudent.isSelected()) { 
             fileIO.fileWork();
             //학생 선택 시
