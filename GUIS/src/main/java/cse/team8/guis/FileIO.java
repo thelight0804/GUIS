@@ -129,7 +129,7 @@ public class FileIO implements Work {
         if (!professorData.exists()) {  //만약 해당 경로에 파일이 없는 경우
             professorData.createNewFile(); //파일 생성
             BufferedWriter bw = new BufferedWriter(new FileWriter(professorData));
-            bw.write("TestProfessor!2!전자공학과!111111!2"); //테스트용 교수 ID 2, PW 2
+            bw.write("TestProfessor!2!전자공학과!111111!2!2"); //테스트용 교수 ID 2, PW 2
             bw.newLine();
             for (int i = 1; i < 10; i++) {
                 String name = "이름" + i;
@@ -137,7 +137,7 @@ public class FileIO implements Work {
                 String mySubject = "!전산학과";
                 String frontRRN = "!111111";
                 String backRRN = "!0000000" + i;
-                bw.write(name + myNum + mySubject + frontRRN + backRRN);
+                bw.write(name + myNum + mySubject + frontRRN + backRRN + backRRN);
                 bw.newLine();
             }
             for (int i = 10; i < 20; i++) {
@@ -146,7 +146,7 @@ public class FileIO implements Work {
                 String mySubject = "!전자공학과";
                 String frontRRN = "!111111";
                 String backRRN = "!000000" + i;
-                bw.write(name + myNum + mySubject + frontRRN + backRRN);
+                bw.write(name + myNum + mySubject + frontRRN + backRRN + backRRN);
                 bw.newLine();
             }
             for (int i = 20; i < 30; i++) {
@@ -155,7 +155,7 @@ public class FileIO implements Work {
                 String mySubject = "!화학공학과";
                 String frontRRN = "!111111";
                 String backRRN = "!000000" + i;
-                bw.write(name + myNum + mySubject + frontRRN + backRRN);
+                bw.write(name + myNum + mySubject + frontRRN + backRRN + backRRN);
                 bw.newLine();
             }
             for (int i = 30; i < 40; i++) {
@@ -164,7 +164,7 @@ public class FileIO implements Work {
                 String mySubject = "!기계공학과";
                 String frontRRN = "!111111";
                 String backRRN = "!000000" + i;
-                bw.write(name + myNum + mySubject + frontRRN + backRRN);
+                bw.write(name + myNum + mySubject + frontRRN + backRRN + backRRN);
                 bw.newLine();
             }
             for (int i = 40; i < 50; i++) {
@@ -173,7 +173,7 @@ public class FileIO implements Work {
                 String mySubject = "!항공우주공학과";
                 String frontRRN = "!111111";
                 String backRRN = "!000000" + i;
-                bw.write(name + myNum + mySubject + frontRRN + backRRN);
+                bw.write(name + myNum + mySubject + frontRRN + backRRN + backRRN);
                 bw.newLine();
             }
             bw.close(); //파일을 닫아주어야 갱신이 된다
@@ -181,7 +181,7 @@ public class FileIO implements Work {
         if (!academystaffData.exists()) {  //만약 해당 경로에 파일이 없는 경우
             academystaffData.createNewFile(); //파일 생성
             BufferedWriter bw = new BufferedWriter(new FileWriter(academystaffData));
-            bw.write("TestAcademyStaff!3!화학공학과!111111!3"); //학사담당자용 교수 ID 3, PW 3
+            bw.write("TestAcademyStaff!3!화학공학과!111111!3!3"); //학사담당자용 교수 ID 3, PW 3
             bw.newLine();
             for (int i = 1; i < 10; i++) {
                 String name = "이름" + i;
@@ -189,7 +189,7 @@ public class FileIO implements Work {
                 String mySubject = "!전산학과";
                 String frontRRN = "!111111";
                 String backRRN = "!0000000" + i;
-                bw.write(name + myNum + mySubject + frontRRN + backRRN);
+                bw.write(name + myNum + mySubject + frontRRN + backRRN + backRRN);
                 bw.newLine();
             }
             for (int i = 10; i < 20; i++) {
@@ -198,7 +198,7 @@ public class FileIO implements Work {
                 String mySubject = "!전자공학과";
                 String frontRRN = "!111111";
                 String backRRN = "!000000" + i;
-                bw.write(name + myNum + mySubject + frontRRN + backRRN);
+                bw.write(name + myNum + mySubject + frontRRN + backRRN + backRRN);
                 bw.newLine();
             }
             for (int i = 20; i < 30; i++) {
@@ -207,7 +207,7 @@ public class FileIO implements Work {
                 String mySubject = "!화학공학과";
                 String frontRRN = "!111111";
                 String backRRN = "!000000" + i;
-                bw.write(name + myNum + mySubject + frontRRN + backRRN);
+                bw.write(name + myNum + mySubject + frontRRN + backRRN + backRRN);
                 bw.newLine();
             }
             for (int i = 30; i < 40; i++) {
@@ -216,7 +216,7 @@ public class FileIO implements Work {
                 String mySubject = "!기계공학과";
                 String frontRRN = "!111111";
                 String backRRN = "!000000" + i;
-                bw.write(name + myNum + mySubject + frontRRN + backRRN);
+                bw.write(name + myNum + mySubject + frontRRN + backRRN + backRRN);
                 bw.newLine();
             }
             for (int i = 40; i < 50; i++) {
@@ -225,7 +225,7 @@ public class FileIO implements Work {
                 String mySubject = "!항공우주공학과";
                 String frontRRN = "!111111";
                 String backRRN = "!000000" + i;
-                bw.write(name + myNum + mySubject + frontRRN + backRRN);
+                bw.write(name + myNum + mySubject + frontRRN + backRRN + backRRN);
                 bw.newLine();
             }
             bw.close(); //파일을 닫아주어야 갱신이 된다
@@ -233,7 +233,7 @@ public class FileIO implements Work {
         if (!lessonstaffData.exists()) {  //만약 해당 경로에 파일이 없는 경우
             lessonstaffData.createNewFile(); //파일 생성
             BufferedWriter bw = new BufferedWriter(new FileWriter(lessonstaffData));
-            bw.write("TestlessonStaff!4!기계공학과!111111!4"); //수업담당자용 교수 ID 3, PW 3
+            bw.write("TestlessonStaff!4!기계공학과!111111!4!4"); //수업담당자용 교수 ID 3, PW 3
             bw.newLine();
             for (int i = 1; i < 10; i++) {
                 String name = "이름" + i;
@@ -241,7 +241,7 @@ public class FileIO implements Work {
                 String mySubject = "!전산학과";
                 String frontRRN = "!111111";
                 String backRRN = "!0000000" + i;
-                bw.write(name + myNum + mySubject + frontRRN + backRRN);
+                bw.write(name + myNum + mySubject + frontRRN + backRRN + backRRN);
                 bw.newLine();
             }
             for (int i = 10; i < 20; i++) {
@@ -250,7 +250,7 @@ public class FileIO implements Work {
                 String mySubject = "!전자공학과";
                 String frontRRN = "!111111";
                 String backRRN = "!000000" + i;
-                bw.write(name + myNum + mySubject + frontRRN + backRRN);
+                bw.write(name + myNum + mySubject + frontRRN + backRRN + backRRN);
                 bw.newLine();
             }
             for (int i = 20; i < 30; i++) {
@@ -259,7 +259,7 @@ public class FileIO implements Work {
                 String mySubject = "!화학공학과";
                 String frontRRN = "!111111";
                 String backRRN = "!000000" + i;
-                bw.write(name + myNum + mySubject + frontRRN + backRRN);
+                bw.write(name + myNum + mySubject + frontRRN + backRRN + backRRN);
                 bw.newLine();
             }
             for (int i = 30; i < 40; i++) {
@@ -268,7 +268,7 @@ public class FileIO implements Work {
                 String mySubject = "!기계공학과";
                 String frontRRN = "!111111";
                 String backRRN = "!000000" + i;
-                bw.write(name + myNum + mySubject + frontRRN + backRRN);
+                bw.write(name + myNum + mySubject + frontRRN + backRRN + backRRN);
                 bw.newLine();
             }
             for (int i = 40; i < 50; i++) {
@@ -277,7 +277,7 @@ public class FileIO implements Work {
                 String mySubject = "!항공우주공학과";
                 String frontRRN = "!111111";
                 String backRRN = "!000000" + i;
-                bw.write(name + myNum + mySubject + frontRRN + backRRN);
+                bw.write(name + myNum + mySubject + frontRRN + backRRN + backRRN);
                 bw.newLine();
             }
             bw.close(); //파일을 닫아주어야 갱신이 된다
@@ -344,7 +344,7 @@ public class FileIO implements Work {
 
             //ArrayList 객체 생성
             //Professor(String name, String frontRRN, String backRRN, String myNum, String mySubject, boolean nowLogin, String PW) {
-            professor.add(new Professor(array[0], array[3], array[4], array[1], array[2], false, array[4]));
+            professor.add(new Professor(array[0], array[3], array[4], array[1], array[2], false, array[5]));
         }
         return professor;
     }
@@ -359,7 +359,7 @@ public class FileIO implements Work {
 
             //ArrayList 객체 생성
             //academyStaff(String name, String frontRRN, String backRRN, String myNum, String mySubject, boolean nowLogin, String PW) {
-            academystaff.add(new academyStaff(array[0], array[3], array[4], array[1], array[2], false, array[4]));
+            academystaff.add(new academyStaff(array[0], array[3], array[4], array[1], array[2], false, array[5]));
         }
         return academystaff;
     }
@@ -373,7 +373,7 @@ public class FileIO implements Work {
             String[] array = data.split("!"); //split : 문자열 구분
 
             //lessonStaff(String name, String frontRRN, String backRRN, String myNum, String mySubject, boolean nowLogin, String PW)
-            lessonstaff.add(new lessonStaff(array[0], array[3], array[4], array[1], array[2], false, array[4]));
+            lessonstaff.add(new lessonStaff(array[0], array[3], array[4], array[1], array[2], false, array[5]));
         }
         return lessonstaff;
     }
@@ -437,7 +437,8 @@ public class FileIO implements Work {
             String backRRN = professor.get(i).getBackRRN();
             String myNum = professor.get(i).getMyNum();
             String mySubject = professor.get(i).getMySubject();
-        bw.write(name + "!" + myNum + "!" + mySubject + "!" + frontRRN + "!" + backRRN);
+            String PW = professor.get(i).getPW();
+        bw.write(name + "!" + myNum + "!" + mySubject + "!" + frontRRN + "!" + backRRN + "!" + PW);
         bw.newLine();
         }
         bw.close();
@@ -460,7 +461,8 @@ public class FileIO implements Work {
             String backRRN = academyStaff.get(i).getBackRRN();
             String myNum = academyStaff.get(i).getMyNum();
             String mySubject = academyStaff.get(i).getMySubject();
-        bw.write(name + "!" + myNum + "!" + mySubject + "!" + frontRRN + "!" + backRRN);
+            String PW = academyStaff.get(i).getPW();
+            bw.write(name + "!" + myNum + "!" + mySubject + "!" + frontRRN + "!" + backRRN + "!" + PW);
         bw.newLine();
         }
         bw.close();
@@ -483,7 +485,8 @@ public class FileIO implements Work {
             String backRRN = lessonStaff.get(i).getBackRRN();
             String myNum = lessonStaff.get(i).getMyNum();
             String mySubject = lessonStaff.get(i).getMySubject();
-            bw.write(name + "!" + myNum + "!" + mySubject + "!" + frontRRN + "!" + backRRN);
+            String PW = lessonStaff.get(i).getPW();
+            bw.write(name + "!" + myNum + "!" + mySubject + "!" + frontRRN + "!" + backRRN + "!" + PW);
             bw.newLine();
         }
         bw.close();
