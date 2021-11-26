@@ -16,7 +16,6 @@ public class Search implements AcademyWork {
     public ArrayList<String> stuSearch(String base, String word) {
         //학생 검색
         //base = 검색 분류, word = 검색어
-        int count = 0; //검색 수
         try {
             student = fileIO.getStudent();
         } catch (IOException ex) {

@@ -12,6 +12,7 @@
 package cse.team8.guis;
 
 import cse.team8.gui.LoginGUI;
+import cse.team8.gui.ClassRequestUI;
 import java.io.IOException;
 
 public class GuisMainClass {

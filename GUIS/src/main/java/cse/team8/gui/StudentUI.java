@@ -128,8 +128,12 @@ public class StudentUI extends javax.swing.JFrame {
     }//GEN-LAST:event_jButtBillGetActionPerformed
 
     private void jButtClassRequestActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtClassRequestActionPerformed
-        //수강신청
-        //TODO 학생은 수강신청만 하면 끝! (+_+)
+
+        ClassRequestUI classRequest = new ClassRequestUI();
+        classRequest.setDefaultCloseOperation(LoginGUI.EXIT_ON_CLOSE);
+        classRequest.pack();
+        classRequest.setLocationRelativeTo(null);
+        classRequest.setVisible(true);
     }//GEN-LAST:event_jButtClassRequestActionPerformed
 
     /**

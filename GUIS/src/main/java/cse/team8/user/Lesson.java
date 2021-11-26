@@ -6,7 +6,7 @@ import java.util.ArrayList;
 public class Lesson {
     private String name; //이름
     private String myNum; //번호
-    private String mySubject; //과목
+    private String mySubject; //학과
     private float credit; //학점
     private int maxPeople; //최대 학생 수
     private int minPeople; //최소 학생 수

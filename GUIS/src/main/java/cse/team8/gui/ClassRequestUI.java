@@ -5,12 +5,20 @@
  */
 package cse.team8.gui;
 
+import cse.team8.lessonwork.LessonWork;
+import cse.team8.user.Lesson;
+import java.util.ArrayList;
+
 /**
  *
  * @author User
  */
 public class ClassRequestUI extends javax.swing.JFrame {
 
+    ArrayList<Lesson> chooseLesson = new ArrayList<>();
+    ArrayList<String> Result = new ArrayList<>();
+    LessonWork lessonWork = new LessonWork();
+    int count;
     /**
      * Creates new form StuClassRequest
      */
@@ -27,30 +35,45 @@ public class ClassRequestUI extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jComboBoxClassList = new javax.swing.JComboBox<>();
         jLabel1 = new javax.swing.JLabel();
         jTextFieldCredit = new javax.swing.JTextField();
         jButtExit = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
         jButtSignUp = new javax.swing.JButton();
+        jLabel3 = new javax.swing.JLabel();
+        jComboBoxClassList = new javax.swing.JComboBox<>();
+        jComboBoxSubject = new javax.swing.JComboBox<>();
+        jLabel4 = new javax.swing.JLabel();
+        jTextFieldName = new javax.swing.JTextField();
+        jLabel5 = new javax.swing.JLabel();
+        jTextFieldMyNum = new javax.swing.JTextField();
+        jLabel6 = new javax.swing.JLabel();
+        jTextFieldNowPeople = new javax.swing.JTextField();
+        jLabel7 = new javax.swing.JLabel();
+        jTextFieldMaxPeople = new javax.swing.JTextField();
+        jTextFieldMinPoeple = new javax.swing.JTextField();
+        jLabel8 = new javax.swing.JLabel();
+        jLabel9 = new javax.swing.JLabel();
+        jTextFieldProName = new javax.swing.JTextField();
+        jLabel10 = new javax.swing.JLabel();
+        jTextFieldReCredit = new javax.swing.JTextField();
+        jTextFieldExplain = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-
-        jComboBoxClassList.setBackground(new java.awt.Color(240, 240, 240));
-        jComboBoxClassList.setFont(new java.awt.Font("맑은 고딕 Semilight", 0, 12)); // NOI18N
-        jComboBoxClassList.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jComboBoxClassListActionPerformed(evt);
-            }
-        });
 
         jLabel1.setFont(new java.awt.Font("맑은 고딕 Semilight", 0, 12)); // NOI18N
         jLabel1.setText("신청 가능 학점");
 
         jTextFieldCredit.setFont(new java.awt.Font("맑은 고딕 Semilight", 0, 12)); // NOI18N
+        jTextFieldCredit.setEnabled(false);
 
         jButtExit.setFont(new java.awt.Font("맑은 고딕 Semilight", 0, 12)); // NOI18N
-        jButtExit.setText("종료");
+        jButtExit.setText("취소");
+        jButtExit.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtExitActionPerformed(evt);
+            }
+        });
 
         jLabel2.setFont(new java.awt.Font("맑은 고딕 Semilight", 0, 12)); // NOI18N
         jLabel2.setText("강의 목록");
@@ -58,39 +81,158 @@ public class ClassRequestUI extends javax.swing.JFrame {
         jButtSignUp.setFont(new java.awt.Font("맑은 고딕 Semilight", 0, 12)); // NOI18N
         jButtSignUp.setText("신청 하기");
 
+        jLabel3.setText("학과");
+
+        jComboBoxClassList.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "학과를 선택해 주세요" }));
+        jComboBoxClassList.setEnabled(false);
+        jComboBoxClassList.setName(""); // NOI18N
+        jComboBoxClassList.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jComboBoxClassListActionPerformed(evt);
+            }
+        });
+
+        jComboBoxSubject.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "전산학과", "전자공학과", "화학공학과", "기계공학과", "항공우주공학과" }));
+        jComboBoxSubject.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jComboBoxSubjectActionPerformed(evt);
+            }
+        });
+
+        jLabel4.setText("강의 제목");
+
+        jTextFieldName.setEnabled(false);
+
+        jLabel5.setText("번호");
+
+        jTextFieldMyNum.setEnabled(false);
+
+        jLabel6.setText("현재 인원수");
+
+        jTextFieldNowPeople.setEnabled(false);
+
+        jLabel7.setText("최대 인원");
+
+        jTextFieldMaxPeople.setEnabled(false);
+
+        jTextFieldMinPoeple.setEnabled(false);
+
+        jLabel8.setText("최소 인원");
+
+        jLabel9.setText("담당 교수");
+
+        jTextFieldProName.setEnabled(false);
+
+        jLabel10.setText("신청 학점");
+
+        jTextFieldReCredit.setEnabled(false);
+
+        jTextFieldExplain.setEnabled(false);
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(20, 20, 20)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jLabel2)
-                    .addComponent(jLabel1))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jTextFieldCredit, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jButtSignUp)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jButtExit))
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jComboBoxClassList, javax.swing.GroupLayout.PREFERRED_SIZE, 231, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 41, Short.MAX_VALUE)))
-                .addContainerGap())
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addContainerGap()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addGap(12, 12, 12)
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                            .addComponent(jLabel6)
+                                            .addComponent(jLabel7)
+                                            .addComponent(jLabel8)
+                                            .addComponent(jLabel10))
+                                        .addGap(18, 18, 18)
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(jTextFieldMinPoeple, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(jTextFieldNowPeople, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                        .addComponent(jTextFieldMaxPeople, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                                            .addComponent(jLabel1)
+                                            .addGap(18, 18, 18)
+                                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                                .addComponent(jTextFieldCredit, javax.swing.GroupLayout.PREFERRED_SIZE, 1, Short.MAX_VALUE)
+                                                .addComponent(jTextFieldReCredit, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE))))))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(26, 26, 26)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(jLabel3)
+                                    .addComponent(jLabel2)
+                                    .addComponent(jLabel4)
+                                    .addComponent(jLabel9)
+                                    .addComponent(jLabel5))
+                                .addGap(18, 18, 18)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jTextFieldMyNum, javax.swing.GroupLayout.PREFERRED_SIZE, 154, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                        .addComponent(jComboBoxClassList, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(jComboBoxSubject, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(jTextFieldName)
+                                        .addComponent(jTextFieldProName, javax.swing.GroupLayout.PREFERRED_SIZE, 154, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                        .addGap(18, 18, 18)
+                        .addComponent(jTextFieldExplain, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(14, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(30, 30, 30)
+                .addContainerGap()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel3)
+                    .addComponent(jComboBoxSubject, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
                     .addComponent(jComboBoxClassList, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 212, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(25, 25, 25)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel4)
+                            .addComponent(jTextFieldName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(18, 18, 18)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel9)
+                            .addComponent(jTextFieldProName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jTextFieldMyNum, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel5))
+                        .addGap(29, 29, 29)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel6)
+                            .addComponent(jTextFieldNowPeople, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel7)
+                            .addComponent(jTextFieldMaxPeople, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jTextFieldMinPoeple, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel8))
+                        .addGap(21, 21, 21)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jTextFieldReCredit, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel10))
+                        .addGap(9, 9, 9)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel1)
+                            .addComponent(jTextFieldCredit, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(27, 27, 27)
+                        .addComponent(jTextFieldExplain)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel1)
-                    .addComponent(jTextFieldCredit, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButtExit)
                     .addComponent(jButtSignUp))
                 .addGap(9, 9, 9))
@@ -99,8 +241,39 @@ public class ClassRequestUI extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jComboBoxClassListActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBoxClassListActionPerformed
+    private void jButtExitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtExitActionPerformed
+        //취소 버튼
+        dispose();
+    }//GEN-LAST:event_jButtExitActionPerformed
 
+    private void jComboBoxSubjectActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBoxSubjectActionPerformed
+        //학과 선택 시
+        jComboBoxClassList.setEnabled(true);
+        jComboBoxClassList.removeAllItems();
+        String subject = jComboBoxSubject.getSelectedItem().toString();
+ 
+        chooseLesson = lessonWork.chooseLesson(subject); //학과에 맞는 강좌 처리
+        count = lessonWork.chooseLessonCount(subject); //해당되는 강좌 수
+
+        for (int i = 0; i < chooseLesson.size(); i++) 
+            jComboBoxClassList.addItem(chooseLesson.get(i).getName()); //ConboBox에 적용
+
+        //TODO comboBox 오름차순 정렬
+    }//GEN-LAST:event_jComboBoxSubjectActionPerformed
+
+    private void jComboBoxClassListActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBoxClassListActionPerformed
+        //정보 표시
+        if (jComboBoxClassList.getItemCount() > 0) {
+            int num = jComboBoxClassList.getSelectedIndex();
+            jTextFieldName.setText(chooseLesson.get(num).getName());
+            jTextFieldProName.setText(chooseLesson.get(num).getProName());
+            jTextFieldMyNum.setText(chooseLesson.get(num).getMyNum());
+            jTextFieldNowPeople.setText(Integer.toString(chooseLesson.get(num).getNowPeople()));
+            jTextFieldMaxPeople.setText(Integer.toString(chooseLesson.get(num).getMaxPeople()));
+            jTextFieldMinPoeple.setText(Integer.toString(chooseLesson.get(num).getMinPeople()));
+            jTextFieldReCredit.setText(Float.toString(chooseLesson.get(num).getCredit()));
+            jTextFieldExplain.setText(chooseLesson.get(num).getExplain());
+        }
     }//GEN-LAST:event_jComboBoxClassListActionPerformed
 
     /**
@@ -149,8 +322,25 @@ public class ClassRequestUI extends javax.swing.JFrame {
     private javax.swing.JButton jButtExit;
     private javax.swing.JButton jButtSignUp;
     private javax.swing.JComboBox<String> jComboBoxClassList;
+    private javax.swing.JComboBox<String> jComboBoxSubject;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JTextField jTextFieldCredit;
+    private javax.swing.JTextField jTextFieldExplain;
+    private javax.swing.JTextField jTextFieldMaxPeople;
+    private javax.swing.JTextField jTextFieldMinPoeple;
+    private javax.swing.JTextField jTextFieldMyNum;
+    private javax.swing.JTextField jTextFieldName;
+    private javax.swing.JTextField jTextFieldNowPeople;
+    private javax.swing.JTextField jTextFieldProName;
+    private javax.swing.JTextField jTextFieldReCredit;
     // End of variables declaration//GEN-END:variables
 }
