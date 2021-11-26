@@ -62,7 +62,7 @@ public class FileIO implements Work {
         if (!studentData.exists()) {  //만약 해당 경로에 파일이 없는 경우
             studentData.createNewFile(); //파일 생성
             BufferedWriter bw = new BufferedWriter(new FileWriter(studentData));
-            bw.write("TestStudent!1!전산학과!111111!1!E!0.0!0"); //테스트용 학생 ID 1, PW 1
+            bw.write("TestStudent!1!전산학과!111111!1!E!0.0!0!1"); //테스트용 학생 ID 1, PW 1
             bw.newLine();
             for (int i = 1; i < 10; i++) {
                 String name = "이름" + i;
@@ -73,7 +73,7 @@ public class FileIO implements Work {
                 String grade = "!E";
                 String credit = "!0.0";
                 String bill = "!0";
-                bw.write(name + myNum + mySubject + frontRRN + backRRN + grade + credit + bill);
+                bw.write(name + myNum + mySubject + frontRRN + backRRN + grade + credit + bill + backRRN);
                 bw.newLine();
             }
             for (int i = 10; i < 20; i++) {
@@ -85,7 +85,7 @@ public class FileIO implements Work {
                 String grade = "!E";
                 String credit = "!0.0";
                 String bill = "!0";
-                bw.write(name + myNum + mySubject + frontRRN + backRRN + grade + credit + bill);
+                bw.write(name + myNum + mySubject + frontRRN + backRRN + grade + credit + bill + backRRN);
                 bw.newLine();
             }
             for (int i = 20; i < 30; i++) {
@@ -97,7 +97,7 @@ public class FileIO implements Work {
                 String grade = "!E";
                 String credit = "!0.0";
                 String bill = "!0";
-                bw.write(name + myNum + mySubject + frontRRN + backRRN + grade + credit + bill);
+                bw.write(name + myNum + mySubject + frontRRN + backRRN + grade + credit + bill + backRRN);
                 bw.newLine();
             }
             for (int i = 30; i < 40; i++) {
@@ -109,7 +109,7 @@ public class FileIO implements Work {
                 String grade = "!E";
                 String credit = "!0.0";
                 String bill = "!0";
-                bw.write(name + myNum + mySubject + frontRRN + backRRN + grade + credit + bill);
+                bw.write(name + myNum + mySubject + frontRRN + backRRN + grade + credit + bill + backRRN);
                 bw.newLine();
             }
             for (int i = 40; i < 50; i++) {
@@ -121,7 +121,7 @@ public class FileIO implements Work {
                 String grade = "!E";
                 String credit = "!0.0";
                 String bill = "!0";
-                bw.write(name + myNum + mySubject + frontRRN + backRRN + grade + credit + bill);
+                bw.write(name + myNum + mySubject + frontRRN + backRRN + grade + credit + bill + backRRN);
                 bw.newLine();
             }
             bw.close(); //파일을 닫아주어야 갱신이 된다
@@ -328,7 +328,7 @@ public class FileIO implements Work {
 
             //ArrayList 객체 생성
             //Student(String grade, Float credit, long bill, String name, String frontRRN, String backRRN, String myNum, String mySubject, boolean nowLogin, String PW) {
-            student.add(new Student(array[5], temp_credit, temp_bill, array[0], array[3], array[4], array[1], array[2], false, array[4]));
+            student.add(new Student(array[5], temp_credit, temp_bill, array[0], array[3], array[4], array[1], array[2], false, array[8]));
         }
         return student;
     }
@@ -414,7 +414,7 @@ public class FileIO implements Work {
             String mySubject = student.get(i).getMySubject();
             String nowLogin = String.valueOf(student.get(i).isNowLogin()); //bool to string
             String PW = student.get(i).getPW();
-        bw.write(name + "!" + myNum + "!" + mySubject + "!" + frontRRN + "!" + backRRN + "!" + grade + "!" + credit + "!" + bill);
+        bw.write(name + "!" + myNum + "!" + mySubject + "!" + frontRRN + "!" + backRRN + "!" + grade + "!" + credit + "!" + bill + "!" + PW);
         bw.newLine();
         }
         bw.close();

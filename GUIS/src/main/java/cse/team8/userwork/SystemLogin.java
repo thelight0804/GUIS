@@ -5,6 +5,7 @@ package cse.team8.userwork;
 
 import cse.team8.gui.*;
 import cse.team8.user.*;
+import cse.team8.guis.FileIO;
 import cse.team8.userwork.userWork;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -19,7 +20,7 @@ public class SystemLogin extends userWork {
     public boolean loginStudentDistinguish(String inputID, String inputPW, ArrayList<Student> student) { //학생 로그인 성공 여부 확인
         boolean pass = false; //로그인 성공 여부
         for (int i = 0; i < student.size(); i++) {
-            if (inputID.equals(student.get(i).getMyNum()) && inputPW.equals(student.get(i).getBackRRN())) { //교수 로그인 성공 여부 확인
+            if (inputID.equals(student.get(i).getMyNum()) && inputPW.equals(student.get(i).getPW())) { //교수 로그인 성공 여부 확인
                 JOptionPane.showMessageDialog(null, student.get(i).getName() + " 로그인 성공");
                 pass = true;
                 student.get(i).setNowLogin(true); //로그인 한 계정 분류
@@ -38,7 +39,7 @@ public class SystemLogin extends userWork {
     public boolean loginProfessorDistinguish(String inputID, String inputPW, ArrayList<Professor> professor) { //교수 로그인 성공 여부 확인
         boolean pass = false; //로그인 성공 여부
         for (int i = 0; i < professor.size(); i++) {
-            if (inputID.equals(professor.get(i).getMyNum()) && inputPW.equals(professor.get(i).getBackRRN())) { //교수 로그인 성공 여부 확인
+            if (inputID.equals(professor.get(i).getMyNum()) && inputPW.equals(professor.get(i).getPW())) { //교수 로그인 성공 여부 확인
                 JOptionPane.showMessageDialog(null, professor.get(i).getName() + " 로그인 성공");
                 pass = true;
                 professor.get(i).setNowLogin(true); //로그인 한 계정 분류
@@ -56,7 +57,7 @@ public class SystemLogin extends userWork {
     public boolean loginAcademyStaffDistinguish (String inputID, String inputPW, ArrayList<academyStaff> academyStaff){ //학사 담당자 로그인 성공 여부 확인
         boolean pass = false; //로그인 성공 여부
         for (int i = 0; i < academyStaff.size(); i++) {
-            if (inputID.equals(academyStaff.get(i).getMyNum()) && inputPW.equals(academyStaff.get(i).getBackRRN())) { //교수 로그인 성공 여부 확인
+            if (inputID.equals(academyStaff.get(i).getMyNum()) && inputPW.equals(academyStaff.get(i).getPW())) { //교수 로그인 성공 여부 확인
                 JOptionPane.showMessageDialog(null, academyStaff.get(i).getName() + " 로그인 성공");
                 pass = true;
                 academyStaff.get(i).setNowLogin(true); //로그인 한 계정 분류
@@ -74,7 +75,7 @@ public class SystemLogin extends userWork {
     public boolean loginLessonStaffDistinguish (String inputID, String inputPW, ArrayList<lessonStaff> lessonStaff){ //수업 담당자 로그인 성공 여부 확인
         boolean pass = false; //로그인 성공 여부
         for (int i = 0; i < lessonStaff.size(); i++) {
-            if (inputID.equals(lessonStaff.get(i).getMyNum()) && inputPW.equals(lessonStaff.get(i).getBackRRN())) { //교수 로그인 성공 여부 확인
+            if (inputID.equals(lessonStaff.get(i).getMyNum()) && inputPW.equals(lessonStaff.get(i).getPW())) { //교수 로그인 성공 여부 확인
                 JOptionPane.showMessageDialog(null, lessonStaff.get(i).getName() + " 로그인 성공");
                 pass = true;
                 lessonStaff.get(i).setNowLogin(true); //로그인 한 계정 분류
@@ -125,28 +126,9 @@ public class SystemLogin extends userWork {
     @Override
     public void changeStudentPW(String inputPW, ArrayList<Student> student, int count) throws IOException {
         //count : 해당 번호의 arraylist 데이터
-        /*
         student.get(count).setPW(inputPW); //객체 PW 변경
-        
-        //TODO PW 변경 보류..
-        BufferedReader fr = new BufferedReader(new FileReader("C:\\Temp\\GUIS\\StudentData.txt")); //파일 읽기 용
-        File studentData = new File("C:\\Temp\\GUIS\\StudentData.txt"); //파일 쓰기 용
-        BufferedWriter bw = new BufferedWriter(new FileWriter(studentData)); //파일 쓰기 용
-        FileWriter fw = new FileWriter("C:\\Temp\\GUIS\\StudentData.txt", false);
-        String input_data = null; //덮어 쓸 데이터 
-        
-        String line ="";
-        int i = 0;
-        while((line = fr.readLine()) != null){
-            i++;
-            String data = line;
-            String[] array = data.split("!"); //split : 문자열 구분
-            
-            input_data = array[0] + "!" + array[1] + "!" + array[2] + "!" + array[3] + "!" +array[4] + "!" + array[5] + "!" + array[6] + "!" + array[7];
-        }
-        fw.write(input_data);
-        fw.close();
-         */
+        FileIO a = new FileIO();
+        a.updateStudent(); //변경된 객체를 파일에 저장
     }
 
 } //class SystemLogin 끝

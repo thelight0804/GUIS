@@ -117,6 +117,8 @@ public class LessonUI extends javax.swing.JFrame {
 
     private void jButtPWchangeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtPWchangeActionPerformed
 
+         //암호 변경 버튼
+        //TODO 수업담당자 암호 변경
     }//GEN-LAST:event_jButtPWchangeActionPerformed
 
     private void jButtExitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtExitActionPerformed

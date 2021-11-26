@@ -58,6 +58,11 @@ public class AcademyUI extends javax.swing.JFrame {
 
         jButtPWchange.setFont(new java.awt.Font("맑은 고딕 Semilight", 0, 12)); // NOI18N
         jButtPWchange.setText("암호 변경");
+        jButtPWchange.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtPWchangeActionPerformed(evt);
+            }
+        });
 
         jButtExit.setFont(new java.awt.Font("맑은 고딕 Semilight", 0, 12)); // NOI18N
         jButtExit.setText("종료");
@@ -155,6 +160,11 @@ public class AcademyUI extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "교수 선택");
         }
     }//GEN-LAST:event_jButtSearchActionPerformed
+
+    private void jButtPWchangeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtPWchangeActionPerformed
+         //암호 변경 버튼
+        //TODO 수업담당자 암호 변경
+    }//GEN-LAST:event_jButtPWchangeActionPerformed
 
     /**
      * @param args the command line arguments

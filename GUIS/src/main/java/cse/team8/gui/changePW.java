@@ -12,6 +12,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JOptionPane;
 
 
 public class changePW extends javax.swing.JFrame {
@@ -89,7 +90,7 @@ public class changePW extends javax.swing.JFrame {
             student = fileIO.getStudent(); //Arraylist student 복사
         } catch (IOException ex) {
             Logger.getLogger(changePW.class.getName()).log(Level.SEVERE, null, ex);
-            System.out.println("예외가 발생했어요ㅠ");
+            System.out.println("fileIO.getStudent() 예외 발생");
         }
         //암호 변경
         for (int i = 0; i < student.size(); i++) {
@@ -100,6 +101,8 @@ public class changePW extends javax.swing.JFrame {
                 } catch (IOException ex) {
                     Logger.getLogger(changePW.class.getName()).log(Level.SEVERE, null, ex);
                 }
+                JOptionPane.showMessageDialog(null, "암호 변경 완료");
+                dispose(); //창 닫기
             }
         }
     }//GEN-LAST:event_jButton1ActionPerformed

@@ -117,7 +117,8 @@ public class ProfessorUI extends javax.swing.JFrame {
     }//GEN-LAST:event_jButtRollActionPerformed
 
     private void jButtPWChangeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtPWChangeActionPerformed
-
+        //암호 변경 버튼
+        //TODO 교수 암호 변경
     }//GEN-LAST:event_jButtPWChangeActionPerformed
 
     private void jButtClassStudentListActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtClassStudentListActionPerformed
