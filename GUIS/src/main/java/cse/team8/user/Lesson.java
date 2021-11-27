@@ -87,7 +87,15 @@ public class Lesson {
         return stuName;
     }
 
-    public void setStuName(ArrayList<String> stuName) {
-        this.stuName = stuName;
+    public void setStuName(String stuName) {
+        this.stuName.add(stuName);
+    }
+
+    public void setNowPeople(int nowPeople) {
+        this.nowPeople = nowPeople;
+    }
+
+    public void updateNowPeople(){
+        this.nowPeople = nowPeople +1;
     }
 }

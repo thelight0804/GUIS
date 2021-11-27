@@ -5,9 +5,15 @@
  */
 package cse.team8.gui;
 
+import cse.team8.academywork.Search;
+import cse.team8.guis.FileIO;
 import cse.team8.lessonwork.LessonWork;
 import cse.team8.user.Lesson;
+import cse.team8.user.Student;
+import java.io.IOException;
 import java.util.ArrayList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -16,9 +22,15 @@ import java.util.ArrayList;
 public class ClassRequestUI extends javax.swing.JFrame {
 
     ArrayList<Lesson> chooseLesson = new ArrayList<>();
+    ArrayList<Lesson> lesson = new ArrayList<>();
+    ArrayList<Student> student = new ArrayList<>();
     ArrayList<String> Result = new ArrayList<>();
     LessonWork lessonWork = new LessonWork();
+    FileIO fileIO = new FileIO();
+
     int count;
+    int classNum;
+
     /**
      * Creates new form StuClassRequest
      */
@@ -80,6 +92,11 @@ public class ClassRequestUI extends javax.swing.JFrame {
 
         jButtSignUp.setFont(new java.awt.Font("맑은 고딕 Semilight", 0, 12)); // NOI18N
         jButtSignUp.setText("신청 하기");
+        jButtSignUp.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtSignUpActionPerformed(evt);
+            }
+        });
 
         jLabel3.setText("학과");
 
@@ -251,30 +268,63 @@ public class ClassRequestUI extends javax.swing.JFrame {
         jComboBoxClassList.setEnabled(true);
         jComboBoxClassList.removeAllItems();
         String subject = jComboBoxSubject.getSelectedItem().toString();
- 
+
         chooseLesson = lessonWork.chooseLesson(subject); //학과에 맞는 강좌 처리
         count = lessonWork.chooseLessonCount(subject); //해당되는 강좌 수
 
-        for (int i = 0; i < chooseLesson.size(); i++) 
+        for (int i = 0; i < chooseLesson.size(); i++) {
             jComboBoxClassList.addItem(chooseLesson.get(i).getName()); //ConboBox에 적용
-
-        //TODO comboBox 오름차순 정렬
+        }        //TODO comboBox 오름차순 정렬
     }//GEN-LAST:event_jComboBoxSubjectActionPerformed
 
     private void jComboBoxClassListActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBoxClassListActionPerformed
         //정보 표시
+        classNum = jComboBoxClassList.getSelectedIndex();
+        try {
+            lesson = fileIO.getLesson();
+        } catch (IOException ex) {
+            Logger.getLogger(ClassRequestUI.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        System.out.println(chooseLesson.get(classNum));
+//        for (int i = 0; i < lesson.size(); i++) {
+//            if (chooseLesson.get(classNum).getName().equals(lesson.get(i).getName()))//선택한 강의
+//                chooseLesson.get(classNum).setNowPeople(lesson.get(i).getNowPeople());
+//        }
+//TODO 현재 인원 수 업데이트 오류
+ 
+
         if (jComboBoxClassList.getItemCount() > 0) {
-            int num = jComboBoxClassList.getSelectedIndex();
-            jTextFieldName.setText(chooseLesson.get(num).getName());
-            jTextFieldProName.setText(chooseLesson.get(num).getProName());
-            jTextFieldMyNum.setText(chooseLesson.get(num).getMyNum());
-            jTextFieldNowPeople.setText(Integer.toString(chooseLesson.get(num).getNowPeople()));
-            jTextFieldMaxPeople.setText(Integer.toString(chooseLesson.get(num).getMaxPeople()));
-            jTextFieldMinPoeple.setText(Integer.toString(chooseLesson.get(num).getMinPeople()));
-            jTextFieldReCredit.setText(Float.toString(chooseLesson.get(num).getCredit()));
-            jTextFieldExplain.setText(chooseLesson.get(num).getExplain());
+            jTextFieldName.setText(chooseLesson.get(classNum).getName());
+            jTextFieldProName.setText(chooseLesson.get(classNum).getProName());
+            jTextFieldMyNum.setText(chooseLesson.get(classNum).getMyNum());
+            jTextFieldNowPeople.setText(Integer.toString(chooseLesson.get(classNum).getNowPeople()));
+            jTextFieldMaxPeople.setText(Integer.toString(chooseLesson.get(classNum).getMaxPeople()));
+            jTextFieldMinPoeple.setText(Integer.toString(chooseLesson.get(classNum).getMinPeople()));
+            jTextFieldReCredit.setText(Float.toString(chooseLesson.get(classNum).getCredit()));
+            jTextFieldExplain.setText(chooseLesson.get(classNum).getExplain());
         }
     }//GEN-LAST:event_jComboBoxClassListActionPerformed
+
+    private void jButtSignUpActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtSignUpActionPerformed
+        // 신청하기 버튼
+        try {
+            student = fileIO.getStudent();
+        } catch (IOException ex) {
+            Logger.getLogger(Search.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        for (int i = 0; i < student.size(); i++) {
+            if (student.get(i).isNowLogin()) //로그인 되어 있는 계정 확인
+            {
+                lessonWork.inputClass(i, classNum, chooseLesson, student.get(i).getName()); //수강 신청 반영
+            }
+        } //for문 끝
+        try {
+            lesson = fileIO.getLesson();
+        } catch (IOException ex) {
+            Logger.getLogger(ClassRequestUI.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        jComboBoxClassListActionPerformed(evt);
+    }//GEN-LAST:event_jButtSignUpActionPerformed
 
     /**
      * @param args the command line arguments

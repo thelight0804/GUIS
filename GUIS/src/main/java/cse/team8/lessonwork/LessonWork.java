@@ -4,6 +4,8 @@ import cse.team8.guis.FileIO;
 import cse.team8.user.Lesson;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 public class LessonWork {
 
@@ -39,5 +41,26 @@ public class LessonWork {
             }
         }
         return count;
+    }
+    
+    public void inputClass(int count, int classNum, ArrayList<Lesson> chooseLesson ,String name){ //수강 신청 반영
+        try {
+            lesson = fileIO.getLesson();
+        } catch (IOException ex) {
+            Logger.getLogger(LessonWork.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        //System.out.println(chooseLesson.get(classNum).getName());
+        for(int i=0;i<lesson.size();i++){
+                    if(chooseLesson.get(classNum).getName().equals(lesson.get(i).getName())){ //선택한 강의만 변경
+                        lesson.get(i).updateNowPeople(); //현재 인원수 +1
+                        lesson.get(i).setStuName(name);
+                    }
+        }
+        //강좌 파일 적용
+        try {
+            fileIO.updateLesson();
+        } catch (IOException ex) {
+            Logger.getLogger(LessonWork.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 }

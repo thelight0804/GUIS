@@ -312,7 +312,7 @@ public class FileIO implements Work {
                 String pastCreate = "!false";
                 String proName = "!교수X";
                 stuName.add("!학생X");
-                bw.write(name + myNum + mySubject + credit + nowPeople + maxPeople + minPeople + explain + create + pastCreate + proName + stuName.get(0));
+                bw.write(name + myNum + mySubject + credit + maxPeople + minPeople  + nowPeople + explain + create + pastCreate + proName + stuName.get(0));
                 bw.newLine();
             }
             bw.close();
@@ -398,9 +398,9 @@ public class FileIO implements Work {
             String[] array = data.split("!"); //split : 문자열 구분
             //boolean 7, boolean 8
             float temp_credit = Float.parseFloat(array[3]);
-            int temp_nowPeople = Integer.parseInt(array[4]);
-            int temp_maxPeople = Integer.parseInt(array[5]);
-            int temp_minPeople = Integer.parseInt(array[6]);
+            int temp_maxPeople = Integer.parseInt(array[4]);
+            int temp_minPeople = Integer.parseInt(array[5]);
+            int temp_nowPeople = Integer.parseInt(array[6]);
             boolean temp_create = Boolean.parseBoolean(array[8]);
             boolean temp_pastCreate = Boolean.parseBoolean(array[9]);
             if(array.length > 11){
@@ -411,7 +411,7 @@ public class FileIO implements Work {
             else
                 students.add(array[11]); //초기값 학생 이름 추가
 
-            lesson.add(new Lesson(array[0], array[1], array[2], temp_credit, temp_nowPeople, temp_maxPeople, temp_minPeople, array[7], temp_create, temp_pastCreate, array[10], students));
+            lesson.add(new Lesson(array[0], array[1], array[2], temp_credit, temp_maxPeople, temp_minPeople, temp_nowPeople, array[7], temp_create, temp_pastCreate, array[10], students));
         }
         return lesson;
     }
@@ -540,13 +540,10 @@ public class FileIO implements Work {
             String pastCreate = String.valueOf(lesson.get(i).isPastCreate());
             String proName = lesson.get(i).getProName();
             String stuName = String.join("!", lesson.get(i).getStuName());
-            bw.write(name + "!" + myNum + "!" + mySubject + "!" + credit + "!" + nowPeople + "!" + maxPeople + "!" + minPeople + "!" + explain + "!" + Create + "!" + pastCreate + "!" + proName + "!" + stuName);
+            bw.write(name + "!" + myNum + "!" + mySubject + "!" + credit + "!" +  maxPeople + "!" + minPeople  + "!" + nowPeople + "!" + explain + "!" + Create + "!" + pastCreate + "!" + proName + "!" + stuName);
             bw.newLine();
         }
         bw.close();
-        for(int i=0;i<lesson.size();i++){
-            System.out.println(lesson.get(i).getStuName());
-        }
 
         //갱신된 파일 다시 읽기
         try {
