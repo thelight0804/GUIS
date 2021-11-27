@@ -29,13 +29,16 @@ public class ClassRequestUI extends javax.swing.JFrame {
     FileIO fileIO = new FileIO();
 
     int count;
-    int classNum;
+    int classNum=0;
+    int nowStu = 0; //현재 학생 수 반영
+    boolean request = false; //신청하기 버튼 클릭 여부
 
     /**
      * Creates new form StuClassRequest
      */
     public ClassRequestUI() {
         initComponents();
+        jLabelNo.setVisible(false);
     }
 
     /**
@@ -70,6 +73,7 @@ public class ClassRequestUI extends javax.swing.JFrame {
         jLabel10 = new javax.swing.JLabel();
         jTextFieldReCredit = new javax.swing.JTextField();
         jTextFieldExplain = new javax.swing.JTextField();
+        jLabelNo = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -146,16 +150,14 @@ public class ClassRequestUI extends javax.swing.JFrame {
 
         jTextFieldExplain.setEnabled(false);
 
+        jLabelNo.setText("인원이 가득찼습니다");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jButtSignUp)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButtExit))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
@@ -196,9 +198,15 @@ public class ClassRequestUI extends javax.swing.JFrame {
                                         .addComponent(jComboBoxSubject, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                         .addComponent(jTextFieldName)
                                         .addComponent(jTextFieldProName, javax.swing.GroupLayout.PREFERRED_SIZE, 154, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jTextFieldExplain, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(jLabelNo)
                         .addGap(18, 18, 18)
-                        .addComponent(jTextFieldExplain, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(14, Short.MAX_VALUE))
+                        .addComponent(jButtSignUp)
+                        .addGap(18, 18, 18)
+                        .addComponent(jButtExit)))
+                .addContainerGap(43, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -251,7 +259,8 @@ public class ClassRequestUI extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButtExit)
-                    .addComponent(jButtSignUp))
+                    .addComponent(jButtSignUp)
+                    .addComponent(jLabelNo))
                 .addGap(9, 9, 9))
         );
 
@@ -285,14 +294,8 @@ public class ClassRequestUI extends javax.swing.JFrame {
         } catch (IOException ex) {
             Logger.getLogger(ClassRequestUI.class.getName()).log(Level.SEVERE, null, ex);
         }
-        System.out.println(chooseLesson.get(classNum));
-//        for (int i = 0; i < lesson.size(); i++) {
-//            if (chooseLesson.get(classNum).getName().equals(lesson.get(i).getName()))//선택한 강의
-//                chooseLesson.get(classNum).setNowPeople(lesson.get(i).getNowPeople());
-//        }
 //TODO 현재 인원 수 업데이트 오류
  
-
         if (jComboBoxClassList.getItemCount() > 0) {
             jTextFieldName.setText(chooseLesson.get(classNum).getName());
             jTextFieldProName.setText(chooseLesson.get(classNum).getProName());
@@ -302,11 +305,22 @@ public class ClassRequestUI extends javax.swing.JFrame {
             jTextFieldMinPoeple.setText(Integer.toString(chooseLesson.get(classNum).getMinPeople()));
             jTextFieldReCredit.setText(Float.toString(chooseLesson.get(classNum).getCredit()));
             jTextFieldExplain.setText(chooseLesson.get(classNum).getExplain());
+            
+            //수강인원이 꽉 차면 버튼 비활성화
+            if (chooseLesson.get(classNum).getNowPeople() >= lesson.get(classNum).getMaxPeople()) {
+                jLabelNo.setVisible(true);
+                jButtSignUp.setEnabled(false); //버튼 비활성화
+            } 
+            else {
+                jLabelNo.setVisible(false);
+                jButtSignUp.setEnabled(true); //버튼 활성화
+            }
         }
     }//GEN-LAST:event_jComboBoxClassListActionPerformed
 
     private void jButtSignUpActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtSignUpActionPerformed
         // 신청하기 버튼
+        request = true;
         try {
             student = fileIO.getStudent();
         } catch (IOException ex) {
@@ -315,7 +329,7 @@ public class ClassRequestUI extends javax.swing.JFrame {
         for (int i = 0; i < student.size(); i++) {
             if (student.get(i).isNowLogin()) //로그인 되어 있는 계정 확인
             {
-                lessonWork.inputClass(i, classNum, chooseLesson, student.get(i).getName()); //수강 신청 반영
+                nowStu = lessonWork.inputClass(i, classNum, chooseLesson, student.get(i).getName()); //수강 신청 반영
             }
         } //for문 끝
         try {
@@ -383,6 +397,7 @@ public class ClassRequestUI extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
+    private javax.swing.JLabel jLabelNo;
     private javax.swing.JTextField jTextFieldCredit;
     private javax.swing.JTextField jTextFieldExplain;
     private javax.swing.JTextField jTextFieldMaxPeople;

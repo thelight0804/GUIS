@@ -42,19 +42,21 @@ public class LessonWork {
         }
         return count;
     }
-    
-    public void inputClass(int count, int classNum, ArrayList<Lesson> chooseLesson ,String name){ //수강 신청 반영
+
+    public int inputClass(int count, int classNum, ArrayList<Lesson> chooseLesson, String name) { //수강 신청 반영
+        int nowStu = 0;
         try {
             lesson = fileIO.getLesson();
         } catch (IOException ex) {
             Logger.getLogger(LessonWork.class.getName()).log(Level.SEVERE, null, ex);
         }
         //System.out.println(chooseLesson.get(classNum).getName());
-        for(int i=0;i<lesson.size();i++){
-                    if(chooseLesson.get(classNum).getName().equals(lesson.get(i).getName())){ //선택한 강의만 변경
-                        lesson.get(i).updateNowPeople(); //현재 인원수 +1
-                        lesson.get(i).setStuName(name);
-                    }
+        for (int i = 0; i < lesson.size(); i++) {
+            if (chooseLesson.get(classNum).getName().equals(lesson.get(i).getName())) { //선택한 강의만 변경
+                lesson.get(i).updateNowPeople(); //현재 인원수 +1
+                lesson.get(i).setStuName(name);
+                nowStu = lesson.get(i).getNowPeople();
+            }
         }
         //강좌 파일 적용
         try {
@@ -62,5 +64,6 @@ public class LessonWork {
         } catch (IOException ex) {
             Logger.getLogger(LessonWork.class.getName()).log(Level.SEVERE, null, ex);
         }
+        return nowStu;
     }
 }

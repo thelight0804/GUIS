@@ -249,7 +249,6 @@ public class StuSearchUI extends javax.swing.JFrame {
         }
 
         jListResult.setListData(listData); //List 갱신
-
     }//GEN-LAST:event_jButtonSearchActionPerformed
 
     private void jButtonExitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonExitActionPerformed

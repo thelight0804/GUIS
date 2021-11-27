@@ -23,13 +23,8 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Group type="102" alignment="0" attributes="0">
-              <Group type="103" groupAlignment="1" attributes="0">
-                  <Group type="102" attributes="0">
-                      <Component id="jButtSignUp" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Component id="jButtExit" min="-2" max="-2" attributes="0"/>
-                  </Group>
+          <Group type="102" attributes="0">
+              <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" attributes="0">
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" alignment="0" attributes="0">
@@ -83,11 +78,18 @@
                               </Group>
                           </Group>
                       </Group>
-                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Component id="jTextFieldExplain" min="-2" pref="250" max="-2" attributes="0"/>
                   </Group>
+                  <Group type="102" alignment="1" attributes="0">
+                      <Component id="jLabelNo" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Component id="jButtSignUp" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Component id="jButtExit" min="-2" max="-2" attributes="0"/>
+                  </Group>
               </Group>
-              <EmptySpace pref="14" max="32767" attributes="0"/>
+              <EmptySpace pref="43" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -156,6 +158,7 @@
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="jButtExit" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="jButtSignUp" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jLabelNo" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace min="-2" pref="9" max="-2" attributes="0"/>
           </Group>
@@ -323,6 +326,11 @@
     <Component class="javax.swing.JTextField" name="jTextFieldExplain">
       <Properties>
         <Property name="enabled" type="boolean" value="false"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="jLabelNo">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="&#xc778;&#xc6d0;&#xc774; &#xac00;&#xb4dd;&#xcc3c;&#xc2b5;&#xb2c8;&#xb2e4;"/>
       </Properties>
     </Component>
   </SubComponents>
