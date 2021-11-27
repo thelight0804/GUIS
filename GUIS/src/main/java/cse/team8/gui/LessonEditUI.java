@@ -5,17 +5,36 @@
  */
 package cse.team8.gui;
 
+import cse.team8.guis.FileIO;
+import cse.team8.lessonwork.LessonWork;
+import cse.team8.user.Lesson;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author User
  */
 public class LessonEditUI extends javax.swing.JFrame {
 
+    ArrayList<Lesson> chooseLesson = new ArrayList<>();
+    ArrayList<Lesson> lesson = new ArrayList<>();
+    LessonWork lessonWork = new LessonWork();
+    FileIO fileIO = new FileIO();
+    String subject;
+
+    int count;
+    int classNum = 0;
+
     /**
      * Creates new form LesLessonDel
      */
     public LessonEditUI() {
         initComponents();
+        //jLabelSel.setVisible(true);
     }
 
     /**
@@ -28,201 +47,317 @@ public class LessonEditUI extends javax.swing.JFrame {
     private void initComponents() {
 
         buttonGroup1 = new javax.swing.ButtonGroup();
+        jButtExit = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
-        jButtEdit = new javax.swing.JButton();
-        jLabel5 = new javax.swing.JLabel();
-        jButtExit = new javax.swing.JButton();
-        jLabel6 = new javax.swing.JLabel();
-        jLabel7 = new javax.swing.JLabel();
-        jTextFieldLesMin = new javax.swing.JTextField();
-        jLabel8 = new javax.swing.JLabel();
-        jTextFieldLesName = new javax.swing.JTextField();
-        jTextFieldLesMax = new javax.swing.JTextField();
-        jRadioButtProNum = new javax.swing.JRadioButton();
-        jComboBoxLesSub = new javax.swing.JComboBox<>();
-        jRadioButtProName = new javax.swing.JRadioButton();
-        jTextFieldGradeNum = new javax.swing.JTextField();
-        jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        jComboBoxLesList = new javax.swing.JComboBox<>();
-        jLabel9 = new javax.swing.JLabel();
-        jButton3 = new javax.swing.JButton();
         jTextFieldLesNum = new javax.swing.JTextField();
+        jLabel5 = new javax.swing.JLabel();
+        jTextFieldLesName = new javax.swing.JTextField();
+        jLabel6 = new javax.swing.JLabel();
+        jComboBoxLesSub = new javax.swing.JComboBox<>();
+        jLabel7 = new javax.swing.JLabel();
+        jButtonEdit = new javax.swing.JButton();
+        jLabel8 = new javax.swing.JLabel();
         jTextFieldProCharge = new javax.swing.JTextField();
-        jLabel10 = new javax.swing.JLabel();
+        jTextFieldLesMin = new javax.swing.JTextField();
         jScrollPane2 = new javax.swing.JScrollPane();
         jTextAreaLesInfo = new javax.swing.JTextArea();
+        jTextFieldLesMax = new javax.swing.JTextField();
+        jLabel1 = new javax.swing.JLabel();
+        jComboBoxCredit = new javax.swing.JComboBox<>();
+        jLabel2 = new javax.swing.JLabel();
+        jComboBoxSubject = new javax.swing.JComboBox<>();
+        jLabel9 = new javax.swing.JLabel();
+        jComboBoxClassList = new javax.swing.JComboBox<>();
+        jLabel10 = new javax.swing.JLabel();
+        jSeparator1 = new javax.swing.JSeparator();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        jButtExit.setText("취소");
+        jButtExit.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtExitActionPerformed(evt);
+            }
+        });
 
         jLabel3.setText("담당 학과");
 
         jLabel4.setText("학점 수");
 
-        jButtEdit.setText("변경 완료");
+        jTextFieldLesNum.setEnabled(false);
 
         jLabel5.setText("강좌 설명");
 
-        jButtExit.setText("종료");
+        jTextFieldLesName.setEnabled(false);
 
-        jLabel6.setText("최소/최대 학생 수");
+        jLabel6.setText("최대/최소 학생 수");
+
+        jComboBoxLesSub.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "전산학과", "전자공학과", "화학공학과", "기계공학과", "항공우주공학과" }));
+        jComboBoxLesSub.setEnabled(false);
 
         jLabel7.setText("/");
 
+        jButtonEdit.setText("변경");
+        jButtonEdit.setEnabled(false);
+        jButtonEdit.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonEditActionPerformed(evt);
+            }
+        });
+
         jLabel8.setText("담당 교수");
 
-        buttonGroup1.add(jRadioButtProNum);
-        jRadioButtProNum.setText("교수 번호");
+        jTextFieldProCharge.setEnabled(false);
 
-        buttonGroup1.add(jRadioButtProName);
-        jRadioButtProName.setText("이름");
-        jRadioButtProName.addActionListener(new java.awt.event.ActionListener() {
+        jTextFieldLesMin.setEnabled(false);
+        jTextFieldLesMin.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jRadioButtProNameActionPerformed(evt);
+                jTextFieldLesMinActionPerformed(evt);
             }
         });
-
-        jLabel1.setText("강좌 번호");
-
-        jLabel2.setText("강좌 이름");
-
-        jLabel9.setText("정보를 변경할 강의를 선택해주세요");
-
-        jButton3.setText("검색");
-
-        jTextFieldLesNum.setEnabled(false);
-        jTextFieldLesNum.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextFieldLesNumActionPerformed(evt);
-            }
-        });
-
-        jLabel10.setText(" * 검색 방법을 선택한 후 입력");
 
         jTextAreaLesInfo.setColumns(20);
         jTextAreaLesInfo.setRows(5);
+        jTextAreaLesInfo.setEnabled(false);
         jScrollPane2.setViewportView(jTextAreaLesInfo);
+
+        jTextFieldLesMax.setEnabled(false);
+
+        jLabel1.setText("강좌 번호");
+
+        jComboBoxCredit.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "4.5", "4.0", "3.5", "3.0", "2.5", "2.0", "1.5", "1.0", "0.5", "0.0" }));
+        jComboBoxCredit.setEnabled(false);
+
+        jLabel2.setText("강좌 이름");
+
+        jComboBoxSubject.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "전산학과", "전자공학과", "화학공학과", "기계공학과", "항공우주공학과" }));
+        jComboBoxSubject.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jComboBoxSubjectActionPerformed(evt);
+            }
+        });
+
+        jLabel9.setText("학과");
+
+        jComboBoxClassList.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "학과를 선택해 주세요" }));
+        jComboBoxClassList.setEnabled(false);
+        jComboBoxClassList.setName(""); // NOI18N
+        jComboBoxClassList.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jComboBoxClassListActionPerformed(evt);
+            }
+        });
+
+        jLabel10.setText("변경할 강의");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jSeparator1)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jButtEdit)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButtExit)
-                .addGap(10, 10, 10))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jLabel9)
+                    .addComponent(jLabel10))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jComboBoxClassList, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jComboBoxSubject, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(150, 150, 150))
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jComboBoxLesList, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                                    .addComponent(jLabel2)
+                                    .addGap(18, 18, 18)
+                                    .addComponent(jTextFieldLesName))
+                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(jLabel8)
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                .addComponent(jLabel1)
+                                                .addComponent(jLabel3)
+                                                .addComponent(jLabel4))
+                                            .addComponent(jLabel5)))
+                                    .addGap(18, 18, 18)
+                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                        .addComponent(jTextFieldLesNum)
+                                        .addComponent(jComboBoxLesSub, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(jScrollPane2)
+                                        .addComponent(jTextFieldProCharge, javax.swing.GroupLayout.PREFERRED_SIZE, 258, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(jComboBoxCredit, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE))))
                             .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel4)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                                .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                                .addComponent(jLabel2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                                .addComponent(jLabel3, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                                .addComponent(jLabel5, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                                            .addComponent(jLabel8))
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                            .addGroup(layout.createSequentialGroup()
-                                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                    .addComponent(jRadioButtProNum)
-                                                    .addComponent(jRadioButtProName, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                    .addComponent(jLabel10)
-                                                    .addComponent(jTextFieldProCharge, javax.swing.GroupLayout.DEFAULT_SIZE, 178, Short.MAX_VALUE)))
-                                            .addComponent(jTextFieldGradeNum)
-                                            .addComponent(jComboBoxLesSub, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                            .addComponent(jTextFieldLesName)
-                                            .addComponent(jTextFieldLesNum)
-                                            .addComponent(jScrollPane2)))
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addComponent(jLabel6)
-                                        .addGap(18, 18, 18)
-                                        .addComponent(jTextFieldLesMin, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 6, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(jTextFieldLesMax, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                .addGap(0, 0, Short.MAX_VALUE)))
-                        .addGap(18, 18, 18)
-                        .addComponent(jButton3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel9)
-                        .addGap(0, 0, Short.MAX_VALUE)))
-                .addContainerGap())
+                                .addComponent(jLabel6)
+                                .addGap(18, 18, 18)
+                                .addComponent(jTextFieldLesMax, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jLabel7)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jTextFieldLesMin, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(43, 43, 43))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(jButtonEdit)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jButtExit)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel9)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel9)
+                    .addComponent(jComboBoxSubject, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jComboBoxLesList, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton3))
-                .addGap(30, 30, 30)
+                    .addComponent(jLabel10)
+                    .addComponent(jComboBoxClassList, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel1)
-                    .addComponent(jTextFieldLesNum, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(9, 9, 9)
+                    .addComponent(jLabel2)
+                    .addComponent(jTextFieldLesName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextFieldLesName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel2))
+                    .addComponent(jTextFieldLesNum, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel1))
                 .addGap(9, 9, 9)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jComboBoxLesSub, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel3))
                 .addGap(9, 9, 9)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextFieldGradeNum, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel4))
+                    .addComponent(jLabel4)
+                    .addComponent(jComboBoxCredit, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(9, 9, 9)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel5))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 8, Short.MAX_VALUE)
+                    .addComponent(jLabel5)
+                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jRadioButtProNum, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel8)
-                    .addComponent(jLabel10))
-                .addGap(0, 0, 0)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jRadioButtProName, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jTextFieldProCharge, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 8, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel6)
                     .addComponent(jTextFieldLesMin, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel7)
-                    .addComponent(jTextFieldLesMax, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(30, 30, 30)
+                    .addComponent(jTextFieldLesMax, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel7))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButtEdit)
+                    .addComponent(jButtonEdit)
                     .addComponent(jButtExit))
-                .addContainerGap())
+                .addGap(10, 10, 10))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jTextFieldLesNumActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldLesNumActionPerformed
+    private void jButtExitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtExitActionPerformed
+        dispose();
+    }//GEN-LAST:event_jButtExitActionPerformed
 
-    }//GEN-LAST:event_jTextFieldLesNumActionPerformed
+    private void jButtonEditActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonEditActionPerformed
+        //변경 버튼
+        String myNum = jTextFieldLesNum.getText();
+        String name = jTextFieldLesName.getText();
+        String mySubject = jComboBoxLesSub.getSelectedItem().toString();
+        float credit = Float.parseFloat(jComboBoxCredit.getSelectedItem().toString());
+        String explain = jTextAreaLesInfo.getText();
+        String proName = jTextFieldProCharge.getText();
+        int minPeople = Integer.parseInt(jTextFieldLesMin.getText()); //string to int
+        int maxPeople = Integer.parseInt(jTextFieldLesMax.getText());
+        
+        int select = JOptionPane.showConfirmDialog(null, "변경 하시겠습니까?", "Confirm", JOptionPane.OK_CANCEL_OPTION); //확인, 취소 버튼 출력
+        if (select == 0) { //확인 버튼 클릭 시
+            lessonWork.delClass(count, classNum, chooseLesson);
+            lessonWork.inputLesson(myNum, name, mySubject, credit, explain, proName, minPeople, maxPeople); //강좌 추가
+            JOptionPane.showMessageDialog(null, "변경을 완료하였습니다");
+        }
+        //jLabelSel.setVisible(true);
 
-    private void jRadioButtProNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButtProNameActionPerformed
+        jTextFieldLesNum.setText("");
+        jTextFieldLesName.setText("");
+        jTextAreaLesInfo.setText("");
+        jTextFieldProCharge.setText("");
+        jTextFieldLesMin.setText("");
+        jTextFieldLesMax.setText("");
+        jComboBoxLesSub.setSelectedItem(jComboBoxSubject.getSelectedItem().toString());
+        jComboBoxCredit.setSelectedItem(jComboBoxCredit.getItemAt(0));
 
-    }//GEN-LAST:event_jRadioButtProNameActionPerformed
+        //활성화 -> 비활성화
+        jComboBoxLesSub.setEnabled(false); //ComboBox
+        jComboBoxCredit.setEnabled(false);
+        jButtonEdit.setEnabled(false); //Button
+        jTextFieldLesName.setEnabled(false);//TextField
+        jTextFieldLesNum.setEnabled(false);
+        jTextAreaLesInfo.setEnabled(false);
+        jTextFieldProCharge.setEnabled(false);
+        jTextFieldLesMin.setEnabled(false);
+        jTextFieldLesMax.setEnabled(false);
+        
+        jComboBoxSubjectActionPerformed(evt);
+    }//GEN-LAST:event_jButtonEditActionPerformed
+
+    private void jTextFieldLesMinActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldLesMinActionPerformed
+
+    }//GEN-LAST:event_jTextFieldLesMinActionPerformed
+
+    private void jComboBoxSubjectActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBoxSubjectActionPerformed
+        //학과 선택 시
+        jComboBoxClassList.setEnabled(true);
+        jComboBoxClassList.removeAllItems();
+        subject = jComboBoxSubject.getSelectedItem().toString();
+
+        chooseLesson = lessonWork.chooseDelLesson(subject); //학과에 맞는 강좌 처리
+        count = lessonWork.chooseLessonCount(subject); //해당되는 강좌 수
+
+        for (int i = 0; i < chooseLesson.size(); i++) {
+            jComboBoxClassList.addItem(chooseLesson.get(i).getName()); //ComboBox에 적용
+        }        //TODO comboBox 오름차순 정렬
+    }//GEN-LAST:event_jComboBoxSubjectActionPerformed
+
+    private void jComboBoxClassListActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBoxClassListActionPerformed
+        //강의 선택 시
+        //TODO 학과 선택시 변경 학과도 선택 학과로 변경
+
+        //비활성화 -> 활성화
+        jComboBoxLesSub.setEnabled(true); //ComboBox
+        jComboBoxCredit.setEnabled(true);
+        jButtonEdit.setEnabled(true); //Button
+        jTextFieldLesName.setEnabled(true);//TextField
+        jTextFieldLesNum.setEnabled(true);
+        jTextAreaLesInfo.setEnabled(true);
+        jTextFieldProCharge.setEnabled(true);
+        jTextFieldLesMin.setEnabled(true);
+        jTextFieldLesMax.setEnabled(true);
+        //jLabelSel.setVisible(false); //Label
+
+        classNum = jComboBoxClassList.getSelectedIndex();
+        try {
+            lesson = fileIO.getLesson();
+        } catch (IOException ex) {
+            Logger.getLogger(DisableLessonUI.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        //정보 변경
+        if (jComboBoxClassList.getItemCount() > 0) {
+            jTextFieldLesName.setText(chooseLesson.get(classNum).getName());
+            jTextFieldProCharge.setText(chooseLesson.get(classNum).getProName());
+            jTextFieldLesNum.setText(chooseLesson.get(classNum).getMyNum());
+            //jTextFieldNowPeople.setText(Integer.toString(chooseLesson.get(classNum).getNowPeople())); 현재 인원 수 필요 X
+            jTextFieldLesMax.setText(Integer.toString(chooseLesson.get(classNum).getMaxPeople()));
+            jTextFieldLesMin.setText(Integer.toString(chooseLesson.get(classNum).getMinPeople()));
+            //TODO 학점 동기화
+            jTextAreaLesInfo.setText(chooseLesson.get(classNum).getExplain());
+        }
+    }//GEN-LAST:event_jComboBoxClassListActionPerformed
 
     /**
      * @param args the command line arguments
@@ -276,11 +411,12 @@ public class LessonEditUI extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.ButtonGroup buttonGroup1;
-    private javax.swing.JButton jButtEdit;
     private javax.swing.JButton jButtExit;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JComboBox<String> jComboBoxLesList;
+    private javax.swing.JButton jButtonEdit;
+    private javax.swing.JComboBox<String> jComboBoxClassList;
+    private javax.swing.JComboBox<String> jComboBoxCredit;
     private javax.swing.JComboBox<String> jComboBoxLesSub;
+    private javax.swing.JComboBox<String> jComboBoxSubject;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel2;
@@ -291,11 +427,9 @@ public class LessonEditUI extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
-    private javax.swing.JRadioButton jRadioButtProName;
-    private javax.swing.JRadioButton jRadioButtProNum;
     private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JSeparator jSeparator1;
     private javax.swing.JTextArea jTextAreaLesInfo;
-    private javax.swing.JTextField jTextFieldGradeNum;
     private javax.swing.JTextField jTextFieldLesMax;
     private javax.swing.JTextField jTextFieldLesMin;
     private javax.swing.JTextField jTextFieldLesName;

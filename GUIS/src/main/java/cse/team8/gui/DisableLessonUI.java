@@ -132,7 +132,7 @@ public class DisableLessonUI extends javax.swing.JFrame {
 
     private void jButtonDisableActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonDisableActionPerformed
         //폐지 버튼
-        int select = JOptionPane.showConfirmDialog(null, "강좌를 폐지 하시겠습니까?", "Confirm", JOptionPane.OK_CANCEL_OPTION); //확인, 취소 버튼 출력
+        int select = JOptionPane.showConfirmDialog(null, "강좌를 폐지 하시겠습니까?\n강의는 폐지되지만 삭제되지 않습니다", "Confirm", JOptionPane.OK_CANCEL_OPTION); //확인, 취소 버튼 출력
         if (select == 0) { //확인 버튼 클릭 시
             //lessonWork.lessonClass(count, classNum, chooseLesson);
             lessonWork.disableClass(count, classNum, chooseLesson);

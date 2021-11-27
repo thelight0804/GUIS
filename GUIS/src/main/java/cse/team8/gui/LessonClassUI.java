@@ -151,9 +151,8 @@ public class LessonClassUI extends javax.swing.JFrame {
 
     private void jButtonClassInputActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonClassInputActionPerformed
         //개설 버튼
-        int select = JOptionPane.showConfirmDialog(null, "강의를 개설 하시겠습니까?", "Confirm", JOptionPane.OK_CANCEL_OPTION); //확인, 취소 버튼 출력
+        int select = JOptionPane.showConfirmDialog(null, "강의를 개설 하시겠습니까?\n한번 개설되면 변경/삭제가 불가능합니다", "Confirm", JOptionPane.OK_CANCEL_OPTION); //확인, 취소 버튼 출력
         if (select == 0) { //확인 버튼 클릭 시
-            //lessonWork.disableClass(count, classNum, chooseLesson);
             lessonWork.lessonClass(count, classNum, chooseLesson);
             JOptionPane.showMessageDialog(null, "강의를 개설했습니다");
         }

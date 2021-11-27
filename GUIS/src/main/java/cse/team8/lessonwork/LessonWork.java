@@ -12,7 +12,8 @@ public class LessonWork {
     FileIO fileIO = new FileIO();
     ArrayList<Lesson> lesson = new ArrayList<>();
 
-    public ArrayList<Lesson> chooseLesson(String subject) {//학과에 맞는 강좌 처리 
+    public ArrayList<Lesson> chooseDelLesson(String subject) {//삭제가 가능한 강좌 처리
+        //
         ArrayList<Lesson> chooseLesson = new ArrayList<>();
         try {
             lesson = fileIO.getLesson();
@@ -22,12 +23,16 @@ public class LessonWork {
 
         for (int i = 0; i < lesson.size(); i++) {
             if (subject.equals(lesson.get(i).getMySubject())) {
+                if(lesson.get(i).isCreate() == false && lesson.get(i).isPastCreate() == false){
+                     chooseLesson.add(lesson.get(i));
+                }
             }
         }
         return chooseLesson;
     }
 
     public ArrayList<Lesson> chooseDisLesson(String subject) {//학과에 맞는 폐지된 강좌 처리 
+                //(LessonClassUI 에서 사용)
         ArrayList<Lesson> chooseLesson = new ArrayList<>();
         try {
             lesson = fileIO.getLesson();
@@ -47,7 +52,8 @@ public class LessonWork {
     }
 
 
-    public ArrayList<Lesson> chooseEnLesson(String subject) {//학과에 맞는 개설된 강좌 처리 
+    public ArrayList<Lesson> chooseEnLesson(String subject) {//학과에 맞는 개설된 강좌 처리
+        //(ClassRequestUI, DisableLessonUI 에서 사용)
         ArrayList<Lesson> chooseLesson = new ArrayList<>();
         try {
             lesson = fileIO.getLesson();
@@ -112,7 +118,7 @@ public class LessonWork {
             Logger.getLogger(LessonWork.class.getName()).log(Level.SEVERE, null, ex);
         }
         ArrayList<String> students = new ArrayList<String>();
-        students.add("!학생X");
+        students.add("학생X");
         lesson.add(new Lesson(name, myNum, mySubject, credit, maxPeople, minPeople, 0, explain, false, false, proName, students)); //강좌 객체 추가
 
         try { //강좌 객체 저장
@@ -152,6 +158,23 @@ public class LessonWork {
                 lesson.get(i).setCreate(false);
                 //lesson.get(i).setPastCreate(true);
                 //PastCreate : 강의를 한번 활성화 하면 변경 X
+            }
+        }
+        try {
+            fileIO.updateLesson();
+        } catch (IOException ex) {
+            Logger.getLogger(LessonWork.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+    public void delClass(int count, int classNum, ArrayList<Lesson> chooseLesson) { //강의 삭제
+        try {
+            lesson = fileIO.getLesson();
+        } catch (IOException ex) {
+            Logger.getLogger(LessonWork.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        for (int i = 0; i < lesson.size(); i++) {
+            if (chooseLesson.get(classNum).getName().equals(lesson.get(i).getName())) { //선택한 강의만 삭제
+                lesson.remove(i);
             }
         }
         try {

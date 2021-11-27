@@ -191,6 +191,11 @@ public class LessonUI extends javax.swing.JFrame {
 
     private void jButtLessonEditActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtLessonEditActionPerformed
         //강좌 변경 버튼
+        LessonEditUI call = new LessonEditUI(); //새 창 출력
+        call.setDefaultCloseOperation(LessonEditUI.EXIT_ON_CLOSE);
+        call.pack();
+        call.setLocationRelativeTo(null);
+        call.setVisible(true);
     }//GEN-LAST:event_jButtLessonEditActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
@@ -203,7 +208,12 @@ public class LessonUI extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButtLessonDelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtLessonDelActionPerformed
-        // TODO add your handling code here:
+        // 강의 삭제 버튼
+        LessonDelUI call = new LessonDelUI(); //새 창 출력
+        call.setDefaultCloseOperation(LessonDelUI.EXIT_ON_CLOSE);
+        call.pack();
+        call.setLocationRelativeTo(null);
+        call.setVisible(true);
     }//GEN-LAST:event_jButtLessonDelActionPerformed
 
     /**

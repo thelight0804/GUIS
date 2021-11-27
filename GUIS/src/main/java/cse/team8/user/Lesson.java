@@ -21,8 +21,7 @@ public class Lesson {
     */
     private String proName; //담당 교수
     public ArrayList<String> stuName; //수강 신청한 학생 이름
-
-
+  
     public Lesson(String name, String myNum, String mySubject, float credit, int maxPeople, int minPeople, int nowPeople, String explain, boolean Create, boolean pastCreate, String proName, ArrayList<String> stuName) {
         this.name = name;
         this.myNum = myNum;
