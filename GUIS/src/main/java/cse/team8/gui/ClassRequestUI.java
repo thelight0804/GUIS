@@ -122,7 +122,7 @@ public class ClassRequestUI extends javax.swing.JFrame {
             }
         });
 
-        jLabel4.setText("강의 제목");
+        jLabel4.setText("강의 명");
 
         jTextFieldName.setEnabled(false);
 
@@ -280,7 +280,7 @@ public class ClassRequestUI extends javax.swing.JFrame {
         jComboBoxClassList.removeAllItems();
         String subject = jComboBoxSubject.getSelectedItem().toString();
 
-        chooseLesson = lessonWork.chooseLesson(subject); //학과에 맞는 강좌 처리
+        chooseLesson = lessonWork.chooseEnLesson(subject); //학과에 맞는 강좌 처리
         count = lessonWork.chooseLessonCount(subject); //해당되는 강좌 수
 
         for (int i = 0; i < chooseLesson.size(); i++) {

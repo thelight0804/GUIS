@@ -197,7 +197,6 @@ public class LessonInputUI extends javax.swing.JFrame {
             jComboBoxLesSub.setSelectedItem(jComboBoxLesSub.getItemAt(0));
             jComboBoxCredit.setSelectedItem(jComboBoxCredit.getItemAt(0));
         }
-        
     }//GEN-LAST:event_jButtonInputActionPerformed
 
     private void jButtExitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtExitActionPerformed

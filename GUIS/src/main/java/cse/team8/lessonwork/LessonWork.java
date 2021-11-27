@@ -22,7 +22,45 @@ public class LessonWork {
 
         for (int i = 0; i < lesson.size(); i++) {
             if (subject.equals(lesson.get(i).getMySubject())) {
-                chooseLesson.add(lesson.get(i));
+            }
+        }
+        return chooseLesson;
+    }
+
+    public ArrayList<Lesson> chooseDisLesson(String subject) {//학과에 맞는 폐지된 강좌 처리 
+        ArrayList<Lesson> chooseLesson = new ArrayList<>();
+        try {
+            lesson = fileIO.getLesson();
+        } catch (IOException ex) {
+            System.out.println("fileIO.getLesson() 예외");
+        }
+
+        for (int i = 0; i < lesson.size(); i++) {
+            if (subject.equals(lesson.get(i).getMySubject())) {
+                if (!lesson.get(i).isCreate()) //폐지된 강의만 저장
+                {
+                    chooseLesson.add(lesson.get(i));
+                }
+            }
+        }
+        return chooseLesson;
+    }
+
+
+    public ArrayList<Lesson> chooseEnLesson(String subject) {//학과에 맞는 개설된 강좌 처리 
+        ArrayList<Lesson> chooseLesson = new ArrayList<>();
+        try {
+            lesson = fileIO.getLesson();
+        } catch (IOException ex) {
+            System.out.println("fileIO.getLesson() 예외");
+        }
+
+        for (int i = 0; i < lesson.size(); i++) {
+            if (subject.equals(lesson.get(i).getMySubject())) {
+                if (lesson.get(i).isCreate()) //개설된 강의만 저장
+                {
+                    chooseLesson.add(lesson.get(i));
+                }
             }
         }
         return chooseLesson;
@@ -66,7 +104,7 @@ public class LessonWork {
         }
         return nowStu;
     }
-    
+
     public void inputLesson(String myNum, String name, String mySubject, float credit, String explain, String proName, int minPeople, int maxPeople) { //강좌 추가
         try {
             lesson = fileIO.getLesson();
@@ -76,8 +114,47 @@ public class LessonWork {
         ArrayList<String> students = new ArrayList<String>();
         students.add("!학생X");
         lesson.add(new Lesson(name, myNum, mySubject, credit, maxPeople, minPeople, 0, explain, false, false, proName, students)); //강좌 객체 추가
-        
+
         try { //강좌 객체 저장
+            fileIO.updateLesson();
+        } catch (IOException ex) {
+            Logger.getLogger(LessonWork.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+
+    public void lessonClass(int count, int classNum, ArrayList<Lesson> chooseLesson) { //강좌 개설
+        try {
+            lesson = fileIO.getLesson();
+        } catch (IOException ex) {
+            Logger.getLogger(LessonWork.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        for (int i = 0; i < lesson.size(); i++) {
+            if (chooseLesson.get(classNum).getName().equals(lesson.get(i).getName())) { //선택한 강의만 변경
+                lesson.get(i).setCreate(true);
+                lesson.get(i).setPastCreate(true);
+            }
+        }
+        try {
+            fileIO.updateLesson();
+        } catch (IOException ex) {
+            Logger.getLogger(LessonWork.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+
+    public void disableClass(int count, int classNum, ArrayList<Lesson> chooseLesson) { //강의 폐지
+        try {
+            lesson = fileIO.getLesson();
+        } catch (IOException ex) {
+            Logger.getLogger(LessonWork.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        for (int i = 0; i < lesson.size(); i++) {
+            if (chooseLesson.get(classNum).getName().equals(lesson.get(i).getName())) { //선택한 강의만 변경
+                lesson.get(i).setCreate(false);
+                //lesson.get(i).setPastCreate(true);
+                //PastCreate : 강의를 한번 활성화 하면 변경 X
+            }
+        }
+        try {
             fileIO.updateLesson();
         } catch (IOException ex) {
             Logger.getLogger(LessonWork.class.getName()).log(Level.SEVERE, null, ex);

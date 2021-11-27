@@ -98,4 +98,13 @@ public class Lesson {
     public void updateNowPeople(){
         this.nowPeople = nowPeople +1;
     }
+
+    public void setCreate(boolean Create) {
+        this.Create = Create;
+    }
+
+    public void setPastCreate(boolean pastCreate) {
+        this.pastCreate = pastCreate;
+    }
+    
 }
