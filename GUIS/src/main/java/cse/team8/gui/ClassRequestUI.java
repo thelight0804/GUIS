@@ -14,6 +14,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -25,11 +26,12 @@ public class ClassRequestUI extends javax.swing.JFrame {
     ArrayList<Lesson> lesson = new ArrayList<>();
     ArrayList<Student> student = new ArrayList<>();
     ArrayList<String> Result = new ArrayList<>();
+    ArrayList<Boolean> classRequest = new ArrayList<>(); //해당 수업 신청 여부
     LessonWork lessonWork = new LessonWork();
     FileIO fileIO = new FileIO();
 
     int count;
-    int classNum=0;
+    int classNum = 0;
     int nowStu = 0; //현재 학생 수 반영
     boolean request = false; //신청하기 버튼 클릭 여부
 
@@ -294,8 +296,8 @@ public class ClassRequestUI extends javax.swing.JFrame {
         } catch (IOException ex) {
             Logger.getLogger(ClassRequestUI.class.getName()).log(Level.SEVERE, null, ex);
         }
-//TODO 현재 인원 수 업데이트 오류
- 
+//TODO 강의 신청 : 현재 인원 수 업데이트 오류, 신청 이후 신청 불가 기능
+
         if (jComboBoxClassList.getItemCount() > 0) {
             jTextFieldName.setText(chooseLesson.get(classNum).getName());
             jTextFieldProName.setText(chooseLesson.get(classNum).getProName());
@@ -305,13 +307,12 @@ public class ClassRequestUI extends javax.swing.JFrame {
             jTextFieldMinPoeple.setText(Integer.toString(chooseLesson.get(classNum).getMinPeople()));
             jTextFieldReCredit.setText(Float.toString(chooseLesson.get(classNum).getCredit()));
             jTextFieldExplain.setText(chooseLesson.get(classNum).getExplain());
-            
+
             //수강인원이 꽉 차면 버튼 비활성화
             if (chooseLesson.get(classNum).getNowPeople() >= lesson.get(classNum).getMaxPeople()) {
                 jLabelNo.setVisible(true);
                 jButtSignUp.setEnabled(false); //버튼 비활성화
-            } 
-            else {
+            } else {
                 jLabelNo.setVisible(false);
                 jButtSignUp.setEnabled(true); //버튼 활성화
             }
@@ -320,24 +321,29 @@ public class ClassRequestUI extends javax.swing.JFrame {
 
     private void jButtSignUpActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtSignUpActionPerformed
         // 신청하기 버튼
-        request = true;
-        try {
-            student = fileIO.getStudent();
-        } catch (IOException ex) {
-            Logger.getLogger(Search.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        for (int i = 0; i < student.size(); i++) {
-            if (student.get(i).isNowLogin()) //로그인 되어 있는 계정 확인
-            {
-                nowStu = lessonWork.inputClass(i, classNum, chooseLesson, student.get(i).getName()); //수강 신청 반영
+        int select = JOptionPane.showConfirmDialog(null, "신청 하시겠습니까?", "Confirm", JOptionPane.OK_CANCEL_OPTION); //확인, 취소 버튼 출력
+        if (select == 0) { //확인 버튼 클릭 시
+            request = true;
+            try {
+                student = fileIO.getStudent();
+            } catch (IOException ex) {
+                Logger.getLogger(Search.class.getName()).log(Level.SEVERE, null, ex);
             }
-        } //for문 끝
-        try {
-            lesson = fileIO.getLesson();
-        } catch (IOException ex) {
-            Logger.getLogger(ClassRequestUI.class.getName()).log(Level.SEVERE, null, ex);
+            for (int i = 0; i < student.size(); i++) {
+                if (student.get(i).isNowLogin()) //로그인 되어 있는 계정 확인
+                {
+                    nowStu = lessonWork.inputClass(i, classNum, chooseLesson, student.get(i).getName()); //수강 신청 반영
+                    classRequest.add(classNum, true);
+                }
+            } //for문 끝
+            try {
+                lesson = fileIO.getLesson();
+            } catch (IOException ex) {
+                Logger.getLogger(ClassRequestUI.class.getName()).log(Level.SEVERE, null, ex);
+            }
+            jComboBoxClassListActionPerformed(evt);
         }
-        jComboBoxClassListActionPerformed(evt);
+
     }//GEN-LAST:event_jButtSignUpActionPerformed
 
     /**

@@ -66,4 +66,21 @@ public class LessonWork {
         }
         return nowStu;
     }
+    
+    public void inputLesson(String myNum, String name, String mySubject, float credit, String explain, String proName, int minPeople, int maxPeople) { //강좌 추가
+        try {
+            lesson = fileIO.getLesson();
+        } catch (IOException ex) {
+            Logger.getLogger(LessonWork.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        ArrayList<String> students = new ArrayList<String>();
+        students.add("!학생X");
+        lesson.add(new Lesson(name, myNum, mySubject, credit, maxPeople, minPeople, 0, explain, false, false, proName, students)); //강좌 객체 추가
+        
+        try { //강좌 객체 저장
+            fileIO.updateLesson();
+        } catch (IOException ex) {
+            Logger.getLogger(LessonWork.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
 }

@@ -39,6 +39,11 @@ public class LessonUI extends javax.swing.JFrame {
 
         jButtLessonInput.setFont(new java.awt.Font("맑은 고딕 Semilight", 0, 12)); // NOI18N
         jButtLessonInput.setText("강좌 등록");
+        jButtLessonInput.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtLessonInputActionPerformed(evt);
+            }
+        });
 
         jButtLessonEdit.setFont(new java.awt.Font("맑은 고딕 Semilight", 0, 12)); // NOI18N
         jButtLessonEdit.setText("강좌 변경");
@@ -51,6 +56,11 @@ public class LessonUI extends javax.swing.JFrame {
 
         jButtBillissue.setFont(new java.awt.Font("맑은 고딕 Semilight", 0, 12)); // NOI18N
         jButtBillissue.setText("수강료 청구서 발급 하기");
+        jButtBillissue.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtBillissueActionPerformed(evt);
+            }
+        });
 
         jButtPWchange.setFont(new java.awt.Font("맑은 고딕 Semilight", 0, 12)); // NOI18N
         jButtPWchange.setText("암호 변경");
@@ -127,6 +137,23 @@ public class LessonUI extends javax.swing.JFrame {
     private void jButtExitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtExitActionPerformed
         System.exit(0); //프로그램 종료
     }//GEN-LAST:event_jButtExitActionPerformed
+
+    private void jButtBillissueActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtBillissueActionPerformed
+        BIillIssueUI call = new BIillIssueUI();
+        call.setDefaultCloseOperation(BIillIssueUI.EXIT_ON_CLOSE);
+        call.pack();
+        call.setLocationRelativeTo(null);
+        call.setVisible(true);
+    }//GEN-LAST:event_jButtBillissueActionPerformed
+
+    private void jButtLessonInputActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtLessonInputActionPerformed
+        //강좌 등록 버튼
+        LessonInputUI call = new LessonInputUI();
+        call.setDefaultCloseOperation(LessonInputUI.EXIT_ON_CLOSE);
+        call.pack();
+        call.setLocationRelativeTo(null);
+        call.setVisible(true);
+    }//GEN-LAST:event_jButtLessonInputActionPerformed
 
     /**
      * @param args the command line arguments
