@@ -118,7 +118,7 @@
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="&#xb9d1;&#xc740; &#xace0;&#xb515; Semilight" size="12" style="0"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="&#xcde8;&#xc18c;"/>
+        <Property name="text" type="java.lang.String" value="&#xd655;&#xc778;"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButtExitActionPerformed"/>
@@ -131,6 +131,7 @@
         </Property>
       </Properties>
       <Events>
+        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jComboBoxLessonMouseClicked"/>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jComboBoxLessonActionPerformed"/>
       </Events>
       <AuxValues>

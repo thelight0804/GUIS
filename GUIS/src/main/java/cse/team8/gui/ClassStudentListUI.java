@@ -7,6 +7,7 @@ import java.util.ArrayList;
 public class ClassStudentListUI extends javax.swing.JFrame {
     LessonWork lessonWork = new LessonWork();
     ArrayList<Lesson> lesson = new ArrayList<>(); //교수가 선택되어 있는 강의
+    ArrayList<Lesson> thisLesson = new ArrayList<>(); //교수가 선택되어 있는 강의    
     
     public ClassStudentListUI() {
         initComponents();
@@ -43,13 +44,18 @@ public class ClassStudentListUI extends javax.swing.JFrame {
         jLabel1.setText("학생 명단");
 
         jButtExit.setFont(new java.awt.Font("맑은 고딕 Semilight", 0, 12)); // NOI18N
-        jButtExit.setText("취소");
+        jButtExit.setText("확인");
         jButtExit.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButtExitActionPerformed(evt);
             }
         });
 
+        jComboBoxLesson.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jComboBoxLessonMouseClicked(evt);
+            }
+        });
         jComboBoxLesson.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jComboBoxLessonActionPerformed(evt);
@@ -112,9 +118,24 @@ public class ClassStudentListUI extends javax.swing.JFrame {
     }//GEN-LAST:event_jButtExitActionPerformed
 
     private void jComboBoxLessonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBoxLessonActionPerformed
-        //강의 선택 시
-        
+                        //강의 선택 시
+        String selLesson = jComboBoxLesson.getSelectedItem().toString();
+        for (int i = 0; i < lesson.size(); i++) {
+            if(lesson.get(i).getName().equals(selLesson))
+                thisLesson.add(0, lesson.get(i));
+        }
+        int count = thisLesson.get(0).getStuName().size();
+        String[] selStu = new String [count];
+
+        for (int i = 0; i < thisLesson.get(0).getStuName().size(); i++) {
+            selStu[i] = thisLesson.get(0).getStuName().get(i);
+        }
+        jListClassStuList.setListData(selStu); //List 갱신
     }//GEN-LAST:event_jComboBoxLessonActionPerformed
+
+    private void jComboBoxLessonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jComboBoxLessonMouseClicked
+
+    }//GEN-LAST:event_jComboBoxLessonMouseClicked
 
     public static void main(String args[]) {
         java.awt.EventQueue.invokeLater(new Runnable() {
