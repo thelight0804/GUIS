@@ -10,11 +10,11 @@ import java.util.logging.Logger;
 public class LessonWork {
 
     FileIO fileIO = new FileIO();
-    ArrayList<Lesson> lesson = new ArrayList<>();
 
     public ArrayList<Lesson> chooseDelLesson(String subject) {//삭제가 가능한 강좌 처리
         //
         ArrayList<Lesson> chooseLesson = new ArrayList<>();
+        ArrayList<Lesson> lesson = new ArrayList<>();
         try {
             lesson = fileIO.getLesson();
         } catch (IOException ex) {
@@ -23,7 +23,7 @@ public class LessonWork {
 
         for (int i = 0; i < lesson.size(); i++) {
             if (subject.equals(lesson.get(i).getMySubject())) {
-                if(lesson.get(i).isCreate() == false && lesson.get(i).isPastCreate() == false){
+                if (lesson.get(i).isCreate() == false && lesson.get(i).isPastCreate() == false){
                      chooseLesson.add(lesson.get(i));
                 }
             }
@@ -34,6 +34,7 @@ public class LessonWork {
     public ArrayList<Lesson> chooseDisLesson(String subject) {//학과에 맞는 폐지된 강좌 처리 
                 //(LessonClassUI 에서 사용)
         ArrayList<Lesson> chooseLesson = new ArrayList<>();
+                ArrayList<Lesson> lesson = new ArrayList<>();
         try {
             lesson = fileIO.getLesson();
         } catch (IOException ex) {
@@ -54,6 +55,7 @@ public class LessonWork {
     public ArrayList<Lesson> chooseEnLesson(String subject) {//학과에 맞는 개설된 강좌 처리
         //(ClassRequestUI, DisableLessonUI 에서 사용)
         ArrayList<Lesson> chooseLesson = new ArrayList<>();
+                ArrayList<Lesson> lesson = new ArrayList<>();
         try {
             lesson = fileIO.getLesson();
         } catch (IOException ex) {
@@ -73,6 +75,7 @@ public class LessonWork {
 
     public int chooseLessonCount(String subject) { //해당되는 강좌 수
         int count = 0;
+                ArrayList<Lesson> lesson = new ArrayList<>();
         try {
             lesson = fileIO.getLesson();
         } catch (IOException ex) {
@@ -88,6 +91,7 @@ public class LessonWork {
 
     public int inputClass(int count, int classNum, ArrayList<Lesson> chooseLesson, String name) { //수강 신청 반영
         int nowStu = 0;
+                ArrayList<Lesson> lesson = new ArrayList<>();
         try {
             lesson = fileIO.getLesson();
         } catch (IOException ex) {
@@ -111,6 +115,7 @@ public class LessonWork {
     }
 
     public void inputLesson(String myNum, String name, String mySubject, float credit, long bill, String explain, String proName, int minPeople, int maxPeople) { //강좌 추가
+                ArrayList<Lesson> lesson = new ArrayList<>();
         try {
             lesson = fileIO.getLesson();
         } catch (IOException ex) {
@@ -128,6 +133,7 @@ public class LessonWork {
     }
 
     public void lessonClass(int count, int classNum, ArrayList<Lesson> chooseLesson) { //강좌 개설
+                ArrayList<Lesson> lesson = new ArrayList<>();
         try {
             lesson = fileIO.getLesson();
         } catch (IOException ex) {
@@ -147,6 +153,7 @@ public class LessonWork {
     }
 
     public void disableClass(int count, int classNum, ArrayList<Lesson> chooseLesson) { //강의 폐지
+                ArrayList<Lesson> lesson = new ArrayList<>();
         try {
             lesson = fileIO.getLesson();
         } catch (IOException ex) {
@@ -166,6 +173,7 @@ public class LessonWork {
         }
     }
     public void delClass(int count, int classNum, ArrayList<Lesson> chooseLesson) { //강의 삭제
+                ArrayList<Lesson> lesson = new ArrayList<>();
         try {
             lesson = fileIO.getLesson();
         } catch (IOException ex) {
@@ -184,6 +192,7 @@ public class LessonWork {
     }
     public ArrayList<Lesson> myClass(String name) { //자신이 수강한 강의 리턴
         ArrayList<Lesson> resultLesson = new ArrayList<>();
+                ArrayList<Lesson> lesson = new ArrayList<>();
         try {
             lesson = fileIO.getLesson();
         } catch (IOException ex) {
@@ -199,7 +208,7 @@ public class LessonWork {
         return resultLesson;
     }
         public void billSend(String name, long bill){ //수업담당자가 학생에게 수강료 청구
-        ArrayList<Lesson> resultLesson = new ArrayList<>();
+                ArrayList<Lesson> lesson = new ArrayList<>();
         try {
             lesson = fileIO.getLesson();
         } catch (IOException ex) {
@@ -227,10 +236,13 @@ public class LessonWork {
         }
     }
         
-        public String[] proLesson(){
+        public ArrayList<Lesson> proLesson(){
             String proName = "교수X";
-            String[] resultLesson = {"담당된 강의가 없습니다"};
+
             ArrayList<Professor> professor = new ArrayList<Professor>();
+                    ArrayList<Lesson> lesson = new ArrayList<>();
+        ArrayList<Lesson> resultLesson = new ArrayList<>();
+        
             try {
                 professor = fileIO.getProfessor();
             } catch (IOException ex) {
@@ -249,10 +261,9 @@ public class LessonWork {
         }
         for(int i=0;i<lesson.size();i++){
             if(lesson.get(i).getProName().equals(proName)){ //선택된 교수 중 강좌 이름과 같은 것 검색
-                resultLesson[i] = lesson.get(i).getName();
+                resultLesson.add(lesson.get(i));
             }
         }
             return resultLesson;
         }
 }
-

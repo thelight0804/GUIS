@@ -1,11 +1,20 @@
 package cse.team8.gui;
 
 import cse.team8.lessonwork.LessonWork;
+import cse.team8.user.Lesson;
+import java.util.ArrayList;
 
 public class ClassStudentListUI extends javax.swing.JFrame {
     LessonWork lessonWork = new LessonWork();
+    ArrayList<Lesson> lesson = new ArrayList<>(); //교수가 선택되어 있는 강의
+    
     public ClassStudentListUI() {
         initComponents();
+        //강의 초기값
+        lesson = lessonWork.proLesson();
+        for (int i = 0; i < lesson.size(); i++) {
+            jComboBoxLesson.addItem(lesson.get(i).getName());
+        }
     }
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -100,18 +109,10 @@ public class ClassStudentListUI extends javax.swing.JFrame {
 
     private void jButtExitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtExitActionPerformed
         dispose();
-        System.out.println("adsf");
-        
-        //강의 초기값
-        String lesson[] = lessonWork.proLesson();
-        for(int i=0;i<lesson.length;i++){
-            System.out.println(lesson[i]);
-            jComboBoxLesson.addItem(lesson[i]);
-        }
     }//GEN-LAST:event_jButtExitActionPerformed
 
     private void jComboBoxLessonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBoxLessonActionPerformed
-        //강좌 선택 시
+        //강의 선택 시
         
     }//GEN-LAST:event_jComboBoxLessonActionPerformed
 
