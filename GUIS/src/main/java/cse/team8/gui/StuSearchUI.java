@@ -64,6 +64,11 @@ public class StuSearchUI extends javax.swing.JFrame {
         jTextFieldNum.setEnabled(false);
 
         jTextFieldName.setEnabled(false);
+        jTextFieldName.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextFieldNameActionPerformed(evt);
+            }
+        });
 
         jTextFieldRRN.setEnabled(false);
         jTextFieldRRN.addActionListener(new java.awt.event.ActionListener() {
@@ -294,6 +299,10 @@ public class StuSearchUI extends javax.swing.JFrame {
     private void jComboBoxBaseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBoxBaseActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jComboBoxBaseActionPerformed
+
+    private void jTextFieldNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldNameActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextFieldNameActionPerformed
 
     /**
      * @param args the command line arguments
