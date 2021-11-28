@@ -5,6 +5,7 @@
  */
 package cse.team8.gui;
 
+import cse.team8.user.Student;
 import java.io.FileWriter;
 import javax.swing.JOptionPane;
 
