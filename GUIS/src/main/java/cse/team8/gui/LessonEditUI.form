@@ -63,13 +63,15 @@
                                           </Group>
                                           <Component id="jLabel5" alignment="1" min="-2" max="-2" attributes="0"/>
                                       </Group>
+                                      <Component id="jLabelBill" alignment="1" min="-2" max="-2" attributes="0"/>
                                   </Group>
                                   <EmptySpace type="separate" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                      <Component id="jTextFieldBill" max="32767" attributes="0"/>
                                       <Component id="jTextFieldLesNum" alignment="0" max="32767" attributes="0"/>
                                       <Component id="jComboBoxLesSub" alignment="0" max="32767" attributes="0"/>
                                       <Component id="jScrollPane2" alignment="0" max="32767" attributes="0"/>
-                                      <Component id="jTextFieldProCharge" alignment="0" min="-2" pref="258" max="-2" attributes="0"/>
+                                      <Component id="jTextFieldProCharge" alignment="0" pref="258" max="32767" attributes="0"/>
                                       <Component id="jComboBoxCredit" alignment="0" min="-2" pref="83" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
@@ -136,10 +138,15 @@
                   <Component id="jLabel5" min="-2" max="-2" attributes="0"/>
                   <Component id="jScrollPane2" min="-2" pref="116" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace max="32767" attributes="0"/>
+              <EmptySpace type="unrelated" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="jLabel8" alignment="3" min="-2" pref="21" max="-2" attributes="0"/>
                   <Component id="jTextFieldProCharge" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace pref="10" max="32767" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="jLabelBill" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jTextFieldBill" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
@@ -346,6 +353,13 @@
       </Properties>
     </Component>
     <Component class="javax.swing.JSeparator" name="jSeparator1">
+    </Component>
+    <Component class="javax.swing.JTextField" name="jTextFieldBill">
+    </Component>
+    <Component class="javax.swing.JLabel" name="jLabelBill">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="&#xc218;&#xac15;&#xb8cc;"/>
+      </Properties>
     </Component>
   </SubComponents>
 </Form>

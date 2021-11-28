@@ -19,8 +19,8 @@ public class changePW extends javax.swing.JFrame {
     SystemLogin login = new SystemLogin();
     public ArrayList<Student> student = new ArrayList<>();
     public ArrayList<Professor> professor = new ArrayList<>();
-    public ArrayList<academyStaff> academyStafft = new ArrayList<>();
-    public ArrayList<lessonStaff> lessonStafft = new ArrayList<>();
+    public ArrayList<academyStaff> academyStaff = new ArrayList<>();
+    public ArrayList<lessonStaff> lessonStaff = new ArrayList<>();
     FileIO fileIO = new FileIO();
 
     public changePW() {
@@ -101,12 +101,12 @@ public class changePW extends javax.swing.JFrame {
             Logger.getLogger(changePW.class.getName()).log(Level.SEVERE, null, ex);
         }
         try {
-            academyStafft = fileIO.getAcademyStaff();
+            academyStaff = fileIO.getAcademyStaff();
         } catch (IOException ex) {
             Logger.getLogger(changePW.class.getName()).log(Level.SEVERE, null, ex);
         }
         try {
-            lessonStafft = fileIO.getLessonStaff();
+            lessonStaff = fileIO.getLessonStaff();
         } catch (IOException ex) {
             Logger.getLogger(changePW.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -136,11 +136,11 @@ public class changePW extends javax.swing.JFrame {
                 dispose(); //창 닫기
             }
         }
-        for (int i = 0; i < academyStafft.size(); i++) {
-            if (academyStafft.get(i).isNowLogin()) { //로그인 되어 있는 계정 확인
+        for (int i = 0; i < academyStaff.size(); i++) {
+            if (academyStaff.get(i).isNowLogin()) { //로그인 되어 있는 계정 확인
                 String inputPW = jTextFieldInputPW.getText();
                 try {
-                    login.changeAcademyStafftPW(inputPW, academyStafft, i); //changeStudentPW 함수 호출
+                    login.changeAcademyStaffPW(inputPW, academyStaff, i); //changeStudentPW 함수 호출
                 } catch (IOException ex) {
                     Logger.getLogger(changePW.class.getName()).log(Level.SEVERE, null, ex);
                 }
@@ -148,11 +148,11 @@ public class changePW extends javax.swing.JFrame {
                 dispose(); //창 닫기
             }
         }     
-        for (int i = 0; i < lessonStafft.size(); i++) {
-            if (lessonStafft.get(i).isNowLogin()) { //로그인 되어 있는 계정 확인
+        for (int i = 0; i < lessonStaff.size(); i++) {
+            if (lessonStaff.get(i).isNowLogin()) { //로그인 되어 있는 계정 확인
                 String inputPW = jTextFieldInputPW.getText();
                 try {
-                    login.changeLessonStafftPW(inputPW, lessonStafft, i); //changeStudentPW 함수 호출
+                    login.changeLessonStaffPW(inputPW, lessonStaff, i); //changeStudentPW 함수 호출
                 } catch (IOException ex) {
                     Logger.getLogger(changePW.class.getName()).log(Level.SEVERE, null, ex);
                 }

@@ -307,12 +307,13 @@ public class FileIO implements Work {
                 String nowPeople = "!0";
                 String maxPeople = "!100";
                 String minPeople = "!5";
+                String bill = "!10000";
                 String explain = "![강좌설명]";
                 String create = "!false";
                 String pastCreate = "!false";
                 String proName = "!교수X";
                 stuName.add("!학생X");
-                bw.write(name + myNum + mySubject + credit + maxPeople + minPeople  + nowPeople + explain + create + pastCreate + proName + stuName.get(0));
+                bw.write(name + myNum + mySubject + credit + maxPeople + minPeople  + nowPeople + bill + explain + create + pastCreate + proName + stuName.get(0));
                 bw.newLine();
             }
             bw.close();
@@ -401,17 +402,18 @@ public class FileIO implements Work {
             int temp_maxPeople = Integer.parseInt(array[4]);
             int temp_minPeople = Integer.parseInt(array[5]);
             int temp_nowPeople = Integer.parseInt(array[6]);
-            boolean temp_create = Boolean.parseBoolean(array[8]);
-            boolean temp_pastCreate = Boolean.parseBoolean(array[9]);
-            if(array.length > 11){
-                for(int i=11; i<array.length;i++){
+            long temp_bill = Long.parseLong(array[7]); //string to long
+            boolean temp_create = Boolean.parseBoolean(array[9]);
+            boolean temp_pastCreate = Boolean.parseBoolean(array[10]);
+            if(array.length > 12){
+                for(int i=12; i<array.length;i++){
                     students.add(array[i]);
                 }
             }
             else
-                students.add(array[11]); //초기값 학생 이름 추가
+                students.add(array[12]); //초기값 학생 이름 추가
 
-            lesson.add(new Lesson(array[0], array[1], array[2], temp_credit, temp_maxPeople, temp_minPeople, temp_nowPeople, array[7], temp_create, temp_pastCreate, array[10], students));
+            lesson.add(new Lesson(array[0], array[1], array[2], temp_credit, temp_maxPeople, temp_minPeople, temp_nowPeople, temp_bill, array[8], temp_create, temp_pastCreate, array[11], students));
         }
         return lesson;
     }
@@ -535,12 +537,13 @@ public class FileIO implements Work {
             String nowPeople = Integer.toString(lesson.get(i).getNowPeople()); //int to string
             String maxPeople = Integer.toString(lesson.get(i).getMaxPeople());
             String minPeople = Integer.toString(lesson.get(i).getMinPeople());
+            String bill = Long.toString(lesson.get(i).getBill()); //long to string
             String explain = lesson.get(i).getExplain();
             String Create = String.valueOf(lesson.get(i).isCreate());
             String pastCreate = String.valueOf(lesson.get(i).isPastCreate());
             String proName = lesson.get(i).getProName();
             String stuName = String.join("!", lesson.get(i).getStuName());
-            bw.write(name + "!" + myNum + "!" + mySubject + "!" + credit + "!" +  maxPeople + "!" + minPeople  + "!" + nowPeople + "!" + explain + "!" + Create + "!" + pastCreate + "!" + proName + "!" + stuName);
+            bw.write(name + "!" + myNum + "!" + mySubject + "!" + credit + "!" +  maxPeople + "!" + minPeople  + "!" + nowPeople + "!" + bill + "!" + explain + "!" + Create + "!" + pastCreate + "!" + proName + "!" + stuName);
             bw.newLine();
         }
         bw.close();

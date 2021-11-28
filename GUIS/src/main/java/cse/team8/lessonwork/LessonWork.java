@@ -51,7 +51,6 @@ public class LessonWork {
         return chooseLesson;
     }
 
-
     public ArrayList<Lesson> chooseEnLesson(String subject) {//학과에 맞는 개설된 강좌 처리
         //(ClassRequestUI, DisableLessonUI 에서 사용)
         ArrayList<Lesson> chooseLesson = new ArrayList<>();
@@ -111,7 +110,7 @@ public class LessonWork {
         return nowStu;
     }
 
-    public void inputLesson(String myNum, String name, String mySubject, float credit, String explain, String proName, int minPeople, int maxPeople) { //강좌 추가
+    public void inputLesson(String myNum, String name, String mySubject, float credit, long bill, String explain, String proName, int minPeople, int maxPeople) { //강좌 추가
         try {
             lesson = fileIO.getLesson();
         } catch (IOException ex) {
@@ -119,7 +118,7 @@ public class LessonWork {
         }
         ArrayList<String> students = new ArrayList<String>();
         students.add("학생X");
-        lesson.add(new Lesson(name, myNum, mySubject, credit, maxPeople, minPeople, 0, explain, false, false, proName, students)); //강좌 객체 추가
+        lesson.add(new Lesson(name, myNum, mySubject, credit, maxPeople, minPeople, 0, bill, explain, false, false, proName, students)); //강좌 객체 추가
 
         try { //강좌 객체 저장
             fileIO.updateLesson();
@@ -182,5 +181,21 @@ public class LessonWork {
         } catch (IOException ex) {
             Logger.getLogger(LessonWork.class.getName()).log(Level.SEVERE, null, ex);
         }
+    }
+    public ArrayList<Lesson> myClass(String name) {
+        ArrayList<Lesson> resultLesson = new ArrayList<>();
+        try {
+            lesson = fileIO.getLesson();
+        } catch (IOException ex) {
+            Logger.getLogger(LessonWork.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        for (int i = 0; i < lesson.size(); i++) { //lesson 중에서
+            for (int j = 0; j < lesson.get(i).getStuName().size(); j++) {
+                if (lesson.get(i).getStuName().get(j).equals(name)) { //lesson에 등록된 학생 이름과 로그인 된 이름이 같으면
+                    resultLesson.add(lesson.get(i)); //해당 lesson을 반환할 resultLesson에 저장
+                }
+            }
+        }
+        return resultLesson;
     }
 }

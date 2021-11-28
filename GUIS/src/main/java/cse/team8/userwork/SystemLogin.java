@@ -92,7 +92,7 @@ public class SystemLogin extends userWork {
     
     public void loginAcademyStaffPass(){ //학사담당자 로그인 성공
         AcademyUI AcademyWork = new AcademyUI();
-        AcademyWork.setDefaultCloseOperation(AcademyWork.EXIT_ON_CLOSE);
+        AcademyWork.setDefaultCloseOperation(AcademyUI.EXIT_ON_CLOSE);
         AcademyWork.pack();
         AcademyWork.setLocationRelativeTo(null);
         AcademyWork.setVisible(true);
@@ -100,7 +100,7 @@ public class SystemLogin extends userWork {
     
      public void loginLessonStaffPass(){ //수업담당자 로그인 성공
         LessonUI LessonWork = new LessonUI();
-        LessonWork.setDefaultCloseOperation(LessonWork.EXIT_ON_CLOSE);
+        LessonWork.setDefaultCloseOperation(LessonUI.EXIT_ON_CLOSE);
         LessonWork.pack();
         LessonWork.setLocationRelativeTo(null);
         LessonWork.setVisible(true);
@@ -108,16 +108,16 @@ public class SystemLogin extends userWork {
 
     @Override
     public void loginStudentPass() { //학생 로그인 성공
-        StudentUI StudentWork = new StudentUI();
-        StudentWork.setDefaultCloseOperation(StudentWork.EXIT_ON_CLOSE);
-        StudentWork.pack();
-        StudentWork.setLocationRelativeTo(null);
-        StudentWork.setVisible(true);
+        StudentUI call = new StudentUI();
+        call.setDefaultCloseOperation(StudentUI.EXIT_ON_CLOSE);
+        call.pack();
+        call.setLocationRelativeTo(null);
+        call.setVisible(true);
     }
 
     public void loginProfessorPass() { //교수 로그인 성공
         ProfessorUI professorWork = new ProfessorUI();
-        professorWork.setDefaultCloseOperation(professorWork.EXIT_ON_CLOSE);
+        professorWork.setDefaultCloseOperation(ProfessorUI.EXIT_ON_CLOSE);
         professorWork.pack();
         professorWork.setLocationRelativeTo(null);        
         professorWork.setVisible(true);
@@ -136,13 +136,13 @@ public class SystemLogin extends userWork {
         FileIO a = new FileIO();
         a.updateProfessor();//변경된 객체를 파일에 저장
     }
-        public void changeAcademyStafftPW(String inputPW, ArrayList<academyStaff> academyStafft, int count) throws IOException { //학사담당자 암호 변경
+        public void changeAcademyStaffPW(String inputPW, ArrayList<academyStaff> academyStaff, int count) throws IOException { //학사담당자 암호 변경
         //count : 해당 번호의 arraylist 데이터
-        academyStafft.get(count).setPW(inputPW); //객체 PW 변경
+        academyStaff.get(count).setPW(inputPW); //객체 PW 변경
         FileIO a = new FileIO();
         a.updateAcademyStaff();//변경된 객체를 파일에 저장
     }
-        public void changeLessonStafftPW(String inputPW, ArrayList<lessonStaff> lessonStaff, int count) throws IOException { //수업담당자 암호 변경
+        public void changeLessonStaffPW(String inputPW, ArrayList<lessonStaff> lessonStaff, int count) throws IOException { //수업담당자 암호 변경
         //count : 해당 번호의 arraylist 데이터
         lessonStaff.get(count).setPW(inputPW); //객체 PW 변경
         FileIO a = new FileIO();

@@ -124,13 +124,18 @@ public class StudentUI extends javax.swing.JFrame {
 
     private void jButtBillGetActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtBillGetActionPerformed
         //수강료 청구서 확인 버튼
-        studentWork.billInfo();
+        BillGetUI call = new BillGetUI();
+        call.setDefaultCloseOperation(BillGetUI.EXIT_ON_CLOSE);
+        call.pack();
+        call.setLocationRelativeTo(null);
+        call.setVisible(true);
+        //studentWork.billInfo();
     }//GEN-LAST:event_jButtBillGetActionPerformed
 
     private void jButtClassRequestActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtClassRequestActionPerformed
 
         ClassRequestUI classRequest = new ClassRequestUI();
-        classRequest.setDefaultCloseOperation(LoginGUI.EXIT_ON_CLOSE);
+        classRequest.setDefaultCloseOperation(ClassRequestUI.EXIT_ON_CLOSE);
         classRequest.pack();
         classRequest.setLocationRelativeTo(null);
         classRequest.setVisible(true);

@@ -1,21 +1,55 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package cse.team8.gui;
 
-/**
- *
- * @author User
- */
-public class BillGetUI extends javax.swing.JFrame {
+import cse.team8.guis.FileIO;
+import cse.team8.lessonwork.LessonWork;
+import cse.team8.user.Lesson;
+import cse.team8.user.Student;
+import java.io.IOException;
+import java.text.DecimalFormat;
+import java.util.ArrayList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
-    /**
-     * Creates new form StuBillGet
-     */
-    public BillGetUI() {
+public class BillGetUI extends javax.swing.JFrame {
+    ArrayList<Student> student = new ArrayList<>();
+    ArrayList<Lesson> resultLesson = new ArrayList<>();
+    FileIO fileIO = new FileIO();
+    LessonWork lessonWork = new LessonWork();
+    
+    public BillGetUI() { //창 초기화
         initComponents();
+        try {
+            student = fileIO.getStudent();
+        } catch (IOException ex) {
+            Logger.getLogger(BillGetUI.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        for (int i = 0; i < student.size(); i++) {
+            if (student.get(i).isNowLogin()) //로그인 되어 있는 계정 확인
+            {
+                resultLesson = lessonWork.myClass(student.get(i).getName()); //학생이 등록한 Lesson
+                
+                jTextFieldStuName.setText(student.get(i).getName());
+                jTextFieldStuSubject.setText(student.get(i).getMySubject());
+                jTextFieldStuNum.setText(student.get(i).getMyNum());
+                jTextFieldStuRRN.setText(student.get(i).getFrontRRN() + " *******");
+                jTextFieldCost.setText(Long.toString(student.get(i).getBill()));
+            }
+            //수강 신청 정보 출력
+            DecimalFormat formatter = new DecimalFormat("###,###"); //금액 콤마(,) 표시
+            
+            String [] lessonName = new String[resultLesson.size()]; //array와 arraylist
+            long resultBill = 0; //최종 수강료
+            
+            for(int j=0;j<resultLesson.size();j++){
+
+                //formatter.format : DecimalFormat에서 금액 콤마(,) 표시 [String형]
+                lessonName[j] = resultLesson.get(j).getName() + " / " + formatter.format(resultLesson.get(j).getBill()) + "\\";
+                resultBill = resultBill + resultLesson.get(j).getBill();
+            }
+            jListClassInfo.setListData(lessonName);
+            jTextFieldCost.setText(formatter.format(resultBill) + "\\");
+        }
+
     }
 
     /**
@@ -44,17 +78,23 @@ public class BillGetUI extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
+        jTextFieldStuNum.setEnabled(false);
         jTextFieldStuNum.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextFieldStuNumActionPerformed(evt);
             }
         });
 
+        jTextFieldStuName.setEnabled(false);
+
+        jTextFieldStuSubject.setEnabled(false);
         jTextFieldStuSubject.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextFieldStuSubjectActionPerformed(evt);
             }
         });
+
+        jTextFieldStuRRN.setEnabled(false);
 
         jLabel1.setFont(new java.awt.Font("맑은 고딕 Semilight", 0, 12)); // NOI18N
         jLabel1.setText("학번");
@@ -69,6 +109,7 @@ public class BillGetUI extends javax.swing.JFrame {
         jLabel4.setText("주민등록번호");
 
         jListClassInfo.setFont(new java.awt.Font("맑은 고딕 Semilight", 0, 12)); // NOI18N
+        jListClassInfo.setEnabled(false);
         jScrollPane1.setViewportView(jListClassInfo);
 
         jLabel5.setFont(new java.awt.Font("맑은 고딕 Semilight", 0, 12)); // NOI18N
@@ -77,8 +118,15 @@ public class BillGetUI extends javax.swing.JFrame {
         jLabel6.setFont(new java.awt.Font("맑은 고딕 Semilight", 0, 12)); // NOI18N
         jLabel6.setText("수강료");
 
+        jTextFieldCost.setEnabled(false);
+
         jButtExit.setFont(new java.awt.Font("맑은 고딕 Semilight", 0, 12)); // NOI18N
-        jButtExit.setText("종료");
+        jButtExit.setText("확인");
+        jButtExit.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtExitActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -88,48 +136,42 @@ public class BillGetUI extends javax.swing.JFrame {
                 .addGap(29, 29, 29)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel2)
-                                .addGap(18, 18, 18)
-                                .addComponent(jTextFieldStuName, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel4)
-                                    .addComponent(jLabel5))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 166, Short.MAX_VALUE)
-                                    .addComponent(jTextFieldStuRRN)))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addComponent(jLabel3)
-                                .addGap(18, 18, 18)
-                                .addComponent(jTextFieldStuSubject, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(191, 191, 191)))
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(34, 34, 34)
+                        .addComponent(jLabel6)
+                        .addGap(18, 18, 18)
+                        .addComponent(jTextFieldCost, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addComponent(jButtExit)
+                        .addGroup(layout.createSequentialGroup()
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(jLabel4)
+                                .addComponent(jLabel5))
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 166, Short.MAX_VALUE)
+                                .addComponent(jTextFieldStuRRN)))))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(80, 80, 80)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel6)
-                                .addGap(18, 18, 18)
-                                .addComponent(jTextFieldCost, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jButtExit))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addComponent(jLabel1)
-                                .addGap(18, 18, 18)
-                                .addComponent(jTextFieldStuNum, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(0, 0, Short.MAX_VALUE)))
-                        .addContainerGap())))
+                        .addComponent(jLabel2)
+                        .addGap(18, 18, 18)
+                        .addComponent(jTextFieldStuName, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jLabel3)
+                        .addGap(18, 18, 18)
+                        .addComponent(jTextFieldStuSubject, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(jLabel1)
+                        .addGap(18, 18, 18)
+                        .addComponent(jTextFieldStuNum, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(30, 30, 30)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextFieldStuNum, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel1))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jTextFieldStuName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel2))
@@ -137,6 +179,10 @@ public class BillGetUI extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jTextFieldStuSubject, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel3))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jTextFieldStuNum, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel1))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel4)
@@ -149,9 +195,7 @@ public class BillGetUI extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel6)
                     .addComponent(jTextFieldCost, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(30, 30, 30))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jButtExit)
                 .addContainerGap())
         );
@@ -166,6 +210,11 @@ public class BillGetUI extends javax.swing.JFrame {
     private void jTextFieldStuSubjectActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldStuSubjectActionPerformed
 
     }//GEN-LAST:event_jTextFieldStuSubjectActionPerformed
+
+    private void jButtExitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtExitActionPerformed
+        // 확인 버튼
+        dispose(); 
+    }//GEN-LAST:event_jButtExitActionPerformed
 
     /**
      * @param args the command line arguments

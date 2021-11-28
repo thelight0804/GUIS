@@ -136,7 +136,7 @@ public class ProfessorUI extends javax.swing.JFrame {
     private void jButtGradeInputActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtGradeInputActionPerformed
         // 성적 입력 버튼        
         GradeInputUI gradeInput = new GradeInputUI();
-        gradeInput.setDefaultCloseOperation(LoginGUI.EXIT_ON_CLOSE);
+        gradeInput.setDefaultCloseOperation(GradeInputUI.EXIT_ON_CLOSE);
         gradeInput.pack();
         gradeInput.setLocationRelativeTo(null);
         gradeInput.setVisible(true);

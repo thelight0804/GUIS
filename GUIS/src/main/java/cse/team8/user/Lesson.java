@@ -11,6 +11,7 @@ public class Lesson {
     private int maxPeople; //최대 학생 수
     private int minPeople; //최소 학생 수
     private int nowPeople; //현재 인원 수
+    private long bill; //수강료
     private String explain; //설명
     
     private boolean Create; //개설 여부
@@ -21,8 +22,8 @@ public class Lesson {
     */
     private String proName; //담당 교수
     public ArrayList<String> stuName; //수강 신청한 학생 이름
-  
-    public Lesson(String name, String myNum, String mySubject, float credit, int maxPeople, int minPeople, int nowPeople, String explain, boolean Create, boolean pastCreate, String proName, ArrayList<String> stuName) {
+
+    public Lesson(String name, String myNum, String mySubject, float credit, int maxPeople, int minPeople, int nowPeople, long bill, String explain, boolean Create, boolean pastCreate, String proName, ArrayList<String> stuName) {
         this.name = name;
         this.myNum = myNum;
         this.mySubject = mySubject;
@@ -30,12 +31,15 @@ public class Lesson {
         this.maxPeople = maxPeople;
         this.minPeople = minPeople;
         this.nowPeople = nowPeople;
+        this.bill = bill;
         this.explain = explain;
         this.Create = Create;
         this.pastCreate = pastCreate;
         this.proName = proName;
         this.stuName = stuName;
     }
+  
+
     
 
     public String getName() {
@@ -104,6 +108,10 @@ public class Lesson {
 
     public void setPastCreate(boolean pastCreate) {
         this.pastCreate = pastCreate;
+    }
+
+    public long getBill() {
+        return bill;
     }
     
 }

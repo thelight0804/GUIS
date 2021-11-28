@@ -71,6 +71,8 @@ public class LessonEditUI extends javax.swing.JFrame {
         jComboBoxClassList = new javax.swing.JComboBox<>();
         jLabel10 = new javax.swing.JLabel();
         jSeparator1 = new javax.swing.JSeparator();
+        jTextFieldBill = new javax.swing.JTextField();
+        jLabelBill = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -151,6 +153,8 @@ public class LessonEditUI extends javax.swing.JFrame {
 
         jLabel10.setText("변경할 강의");
 
+        jLabelBill.setText("수강료");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -184,13 +188,15 @@ public class LessonEditUI extends javax.swing.JFrame {
                                                 .addComponent(jLabel1)
                                                 .addComponent(jLabel3)
                                                 .addComponent(jLabel4))
-                                            .addComponent(jLabel5)))
+                                            .addComponent(jLabel5))
+                                        .addComponent(jLabelBill, javax.swing.GroupLayout.Alignment.TRAILING))
                                     .addGap(18, 18, 18)
                                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                        .addComponent(jTextFieldBill)
                                         .addComponent(jTextFieldLesNum)
                                         .addComponent(jComboBoxLesSub, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                         .addComponent(jScrollPane2)
-                                        .addComponent(jTextFieldProCharge, javax.swing.GroupLayout.PREFERRED_SIZE, 258, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(jTextFieldProCharge, javax.swing.GroupLayout.DEFAULT_SIZE, 258, Short.MAX_VALUE)
                                         .addComponent(jComboBoxCredit, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE))))
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(jLabel6)
@@ -240,10 +246,14 @@ public class LessonEditUI extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel5)
                     .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jTextFieldProCharge, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 10, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabelBill)
+                    .addComponent(jTextFieldBill, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel6)
@@ -274,11 +284,12 @@ public class LessonEditUI extends javax.swing.JFrame {
         String proName = jTextFieldProCharge.getText();
         int minPeople = Integer.parseInt(jTextFieldLesMin.getText()); //string to int
         int maxPeople = Integer.parseInt(jTextFieldLesMax.getText());
+        long bill = Long.parseLong(jTextFieldBill.getText());
         
         int select = JOptionPane.showConfirmDialog(null, "변경 하시겠습니까?", "Confirm", JOptionPane.OK_CANCEL_OPTION); //확인, 취소 버튼 출력
         if (select == 0) { //확인 버튼 클릭 시
             lessonWork.delClass(count, classNum, chooseLesson);
-            lessonWork.inputLesson(myNum, name, mySubject, credit, explain, proName, minPeople, maxPeople); //강좌 추가
+            lessonWork.inputLesson(myNum, name, mySubject, credit, bill, explain, proName, minPeople, maxPeople); //강좌 추가
             JOptionPane.showMessageDialog(null, "변경을 완료하였습니다");
         }
         //jLabelSel.setVisible(true);
@@ -427,9 +438,11 @@ public class LessonEditUI extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
+    private javax.swing.JLabel jLabelBill;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JTextArea jTextAreaLesInfo;
+    private javax.swing.JTextField jTextFieldBill;
     private javax.swing.JTextField jTextFieldLesMax;
     private javax.swing.JTextField jTextFieldLesMin;
     private javax.swing.JTextField jTextFieldLesName;
