@@ -113,7 +113,11 @@ public class ProfessorUI extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButtRollActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtRollActionPerformed
-
+        RollUI roll = new RollUI();
+        roll.setDefaultCloseOperation(RollUI.EXIT_ON_CLOSE);
+        roll.pack();
+        roll.setLocationRelativeTo(null);
+        roll.setVisible(true);
     }//GEN-LAST:event_jButtRollActionPerformed
 
     private void jButtPWChangeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtPWChangeActionPerformed
@@ -126,7 +130,11 @@ public class ProfessorUI extends javax.swing.JFrame {
     }//GEN-LAST:event_jButtPWChangeActionPerformed
 
     private void jButtClassStudentListActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtClassStudentListActionPerformed
-
+        ClassStudentListUI classStudentList = new ClassStudentListUI();
+        classStudentList.setDefaultCloseOperation(ClassStudentListUI.EXIT_ON_CLOSE);
+        classStudentList.pack();
+        classStudentList.setLocationRelativeTo(null);
+        classStudentList.setVisible(true);
     }//GEN-LAST:event_jButtClassStudentListActionPerformed
 
     private void jButtExitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtExitActionPerformed

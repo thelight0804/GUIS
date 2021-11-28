@@ -139,7 +139,7 @@
   <SubComponents>
     <Component class="javax.swing.JButton" name="jButtonExit">
       <Properties>
-        <Property name="text" type="java.lang.String" value="&#xb2eb;&#xae30;"/>
+        <Property name="text" type="java.lang.String" value="&#xcde8;&#xc18c;"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButtonExitActionPerformed"/>
@@ -208,6 +208,9 @@
           </StringArray>
         </Property>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jComboBoxBaseActionPerformed"/>
+      </Events>
       <AuxValues>
         <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
       </AuxValues>

@@ -96,6 +96,9 @@
         <Property name="text" type="java.lang.String" value="&#xb4f1;&#xb85d;"/>
         <Property name="toolTipText" type="java.lang.String" value=""/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButtCreateActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="jButtEdit">
       <Properties>
@@ -104,6 +107,9 @@
         </Property>
         <Property name="text" type="java.lang.String" value="&#xc218;&#xc815;"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButtEditActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="jButtSearch">
       <Properties>
@@ -123,6 +129,9 @@
         </Property>
         <Property name="text" type="java.lang.String" value="&#xc0ad;&#xc81c;"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButtDelActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="jButtPWchange">
       <Properties>

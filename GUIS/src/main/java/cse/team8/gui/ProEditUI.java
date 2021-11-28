@@ -46,7 +46,7 @@ public class ProEditUI extends javax.swing.JFrame {
         jComboBoxBase = new javax.swing.JComboBox<>();
         jLabel5 = new javax.swing.JLabel();
         jButtEdit = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
+        jButtExit = new javax.swing.JButton();
         jLabel6 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -83,7 +83,12 @@ public class ProEditUI extends javax.swing.JFrame {
 
         jButtEdit.setText("수정 완료");
 
-        jButton2.setText("종료");
+        jButtExit.setText("취소");
+        jButtExit.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtExitActionPerformed(evt);
+            }
+        });
 
         jLabel6.setText("수정할 부분을 입력해주세요");
 
@@ -97,7 +102,7 @@ public class ProEditUI extends javax.swing.JFrame {
                         .addGap(0, 0, Short.MAX_VALUE)
                         .addComponent(jButtEdit)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jButton2))
+                        .addComponent(jButtExit))
                     .addGroup(layout.createSequentialGroup()
                         .addContainerGap()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -171,7 +176,7 @@ public class ProEditUI extends javax.swing.JFrame {
                     .addComponent(jLabel5))
                 .addGap(30, 30, 30)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton2)
+                    .addComponent(jButtExit)
                     .addComponent(jButtEdit))
                 .addContainerGap())
         );
@@ -188,6 +193,11 @@ public class ProEditUI extends javax.swing.JFrame {
 //        String result[] = search.stuSearch(base, word); //검색
 //        jListResult.setListData(result); //List 갱신
     }//GEN-LAST:event_jButtonSearchActionPerformed
+
+    private void jButtExitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtExitActionPerformed
+        // TODO add your handling code here:
+        dispose();
+    }//GEN-LAST:event_jButtExitActionPerformed
 
     /**
      * @param args the command line arguments
@@ -233,7 +243,7 @@ public class ProEditUI extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButtEdit;
-    private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButtExit;
     private javax.swing.JButton jButtonSearch;
     private javax.swing.JComboBox<String> jComboBoxBase;
     private javax.swing.JComboBox<String> jComboBoxSubList;

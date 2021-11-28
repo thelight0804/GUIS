@@ -41,9 +41,19 @@ public class AcademyUI extends javax.swing.JFrame {
         jButtCreate.setFont(new java.awt.Font("맑은 고딕 Semilight", 0, 12)); // NOI18N
         jButtCreate.setText("등록");
         jButtCreate.setToolTipText("");
+        jButtCreate.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtCreateActionPerformed(evt);
+            }
+        });
 
         jButtEdit.setFont(new java.awt.Font("맑은 고딕 Semilight", 0, 12)); // NOI18N
         jButtEdit.setText("수정");
+        jButtEdit.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtEditActionPerformed(evt);
+            }
+        });
 
         jButtSearch.setFont(new java.awt.Font("맑은 고딕 Semilight", 0, 12)); // NOI18N
         jButtSearch.setText("검색");
@@ -55,6 +65,11 @@ public class AcademyUI extends javax.swing.JFrame {
 
         jButtDel.setFont(new java.awt.Font("맑은 고딕 Semilight", 0, 12)); // NOI18N
         jButtDel.setText("삭제");
+        jButtDel.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtDelActionPerformed(evt);
+            }
+        });
 
         jButtPWchange.setFont(new java.awt.Font("맑은 고딕 Semilight", 0, 12)); // NOI18N
         jButtPWchange.setText("암호 변경");
@@ -157,7 +172,11 @@ public class AcademyUI extends javax.swing.JFrame {
         StuSearchUIWork.setVisible(true);
         }
        if (jRadioButtProfessor.isSelected()) { //학생 선택 시
-            JOptionPane.showMessageDialog(null, "교수 선택");
+        ProSearchUI ProSearchUIWork = new ProSearchUI();
+        ProSearchUIWork.setDefaultCloseOperation(ProSearchUIWork.EXIT_ON_CLOSE);
+        ProSearchUIWork.pack();
+        ProSearchUIWork.setLocationRelativeTo(null);
+        ProSearchUIWork.setVisible(true);
         }
     }//GEN-LAST:event_jButtSearchActionPerformed
 
@@ -169,6 +188,60 @@ public class AcademyUI extends javax.swing.JFrame {
         a.setLocationRelativeTo(null);
         a.setVisible(true);
     }//GEN-LAST:event_jButtPWchangeActionPerformed
+
+    private void jButtCreateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtCreateActionPerformed
+        // TODO add your handling code here:
+        if (jRadioButtStudent.isSelected()) {
+        StuCreateUI StuCreateUIWork = new StuCreateUI();
+        StuCreateUIWork.setDefaultCloseOperation(StuCreateUIWork.EXIT_ON_CLOSE);
+        StuCreateUIWork.pack();
+        StuCreateUIWork.setLocationRelativeTo(null);
+        StuCreateUIWork.setVisible(true);
+        }
+        if (jRadioButtProfessor.isSelected()) {
+        ProCreateUI ProCreateUIWork = new ProCreateUI();
+        ProCreateUIWork.setDefaultCloseOperation(ProCreateUI.EXIT_ON_CLOSE);
+        ProCreateUIWork.pack();
+        ProCreateUIWork.setLocationRelativeTo(null);
+        ProCreateUIWork.setVisible(true);
+        }
+    }//GEN-LAST:event_jButtCreateActionPerformed
+
+    private void jButtEditActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtEditActionPerformed
+        // TODO add your handling code here:
+        if (jRadioButtStudent.isSelected()) { //학생 선택 시
+        StuEditUI StuEditUIWork = new StuEditUI();
+        StuEditUIWork.setDefaultCloseOperation(StuEditUIWork.EXIT_ON_CLOSE);
+        StuEditUIWork.pack();
+        StuEditUIWork.setLocationRelativeTo(null);
+        StuEditUIWork.setVisible(true);
+        }
+       if (jRadioButtProfessor.isSelected()) { //학생 선택 시
+        ProEditUI ProEditUIWork = new ProEditUI();
+        ProEditUIWork.setDefaultCloseOperation(ProEditUIWork.EXIT_ON_CLOSE);
+        ProEditUIWork.pack();
+        ProEditUIWork.setLocationRelativeTo(null);
+        ProEditUIWork.setVisible(true);
+        }
+    }//GEN-LAST:event_jButtEditActionPerformed
+
+    private void jButtDelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtDelActionPerformed
+        // TODO add your handling code here:
+        if (jRadioButtStudent.isSelected()) { //학생 선택 시
+        StuDelUI StuDelUIWork = new StuDelUI();
+        StuDelUIWork.setDefaultCloseOperation(StuDelUIWork.EXIT_ON_CLOSE);
+        StuDelUIWork.pack();
+        StuDelUIWork.setLocationRelativeTo(null);
+        StuDelUIWork.setVisible(true);
+        }
+       if (jRadioButtProfessor.isSelected()) { //학생 선택 시
+        ProDelUI ProDelUIWork = new ProDelUI();
+        ProDelUIWork.setDefaultCloseOperation(ProDelUIWork.EXIT_ON_CLOSE);
+        ProDelUIWork.pack();
+        ProDelUIWork.setLocationRelativeTo(null);
+        ProDelUIWork.setVisible(true);
+        }
+    }//GEN-LAST:event_jButtDelActionPerformed
 
     /**
      * @param args the command line arguments

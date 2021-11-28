@@ -5,6 +5,9 @@
  */
 package cse.team8.gui;
 
+import java.io.FileWriter;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author User
@@ -31,12 +34,14 @@ public class ProCreateUI extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
         jTextFieldNum = new javax.swing.JTextField();
         jTextFieldName = new javax.swing.JTextField();
-        jTextFieldRRN = new javax.swing.JTextField();
+        jTextFieldFrontRRN = new javax.swing.JTextField();
         jButtCreate = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
+        jButtExit = new javax.swing.JButton();
         jComboBoxSubList = new javax.swing.JComboBox<>();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        jTextFieldBackRRN = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -45,12 +50,24 @@ public class ProCreateUI extends javax.swing.JFrame {
         jLabel4.setText("주민등록번호");
 
         jButtCreate.setText("등록");
+        jButtCreate.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtCreateActionPerformed(evt);
+            }
+        });
 
-        jButton2.setText("종료");
+        jButtExit.setText("취소");
+        jButtExit.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtExitActionPerformed(evt);
+            }
+        });
 
         jLabel1.setText("교수 번호");
 
         jLabel2.setText("이름");
+
+        jLabel5.setText("-");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -63,21 +80,28 @@ public class ProCreateUI extends javax.swing.JFrame {
                         .addGap(0, 155, Short.MAX_VALUE)
                         .addComponent(jButtCreate)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton2))
+                        .addComponent(jButtExit))
                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                        .addComponent(jLabel4)
-                        .addGap(18, 18, 18)
-                        .addComponent(jTextFieldRRN))
-                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel1)
-                            .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jComboBoxSubList, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jTextFieldName)
-                            .addComponent(jTextFieldNum))))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel1)
+                                    .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                    .addComponent(jTextFieldNum, javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jComboBoxSubList, javax.swing.GroupLayout.Alignment.LEADING, 0, 172, Short.MAX_VALUE)
+                                    .addComponent(jTextFieldName, javax.swing.GroupLayout.Alignment.LEADING)))
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                                .addComponent(jLabel4)
+                                .addGap(18, 18, 18)
+                                .addComponent(jTextFieldFrontRRN, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jLabel5)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jTextFieldBackRRN, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -98,18 +122,47 @@ public class ProCreateUI extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel4)
-                    .addComponent(jTextFieldRRN, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jTextFieldFrontRRN, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel5)
+                    .addComponent(jTextFieldBackRRN, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(68, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton2)
+                    .addComponent(jButtExit)
                     .addComponent(jButtCreate))
                 .addContainerGap())
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jButtExitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtExitActionPerformed
+        // TODO add your handling code here:
+        dispose();
+    }//GEN-LAST:event_jButtExitActionPerformed
+
+    private void jButtCreateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtCreateActionPerformed
+        // TODO add your handling code here:
+        String myNum=jTextFieldNum.getText();
+        String name=jTextFieldName.getText();
+        String mySubject=jComboBoxSubList.getSelectedItem().toString();
+        String frontRRN=jTextFieldFrontRRN.getText();
+        String backRRN=jTextFieldBackRRN.getText();
+        
+        try
+        {
+            FileWriter Writer=new FileWriter("C:\\Temp\\GUIS\\ProfessorData.txt",true);
+            Writer.write(name + "!" + myNum + "!" + mySubject + "!" + frontRRN + "!" + backRRN+ "!" + backRRN);
+            Writer.write(System.getProperty("line.separator"));
+            Writer.close();
+            JOptionPane.showMessageDialog(null,"Success");
+        }
+        catch(Exception e)
+        {
+            JOptionPane.showMessageDialog(null,"Error");
+        }
+    }//GEN-LAST:event_jButtCreateActionPerformed
 
     /**
      * @param args the command line arguments
@@ -155,14 +208,16 @@ public class ProCreateUI extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButtCreate;
-    private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButtExit;
     private javax.swing.JComboBox<String> jComboBoxSubList;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JTextField jTextFieldBackRRN;
+    private javax.swing.JTextField jTextFieldFrontRRN;
     private javax.swing.JTextField jTextFieldName;
     private javax.swing.JTextField jTextFieldNum;
-    private javax.swing.JTextField jTextFieldRRN;
     // End of variables declaration//GEN-END:variables
 }

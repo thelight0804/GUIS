@@ -42,7 +42,7 @@ public class ClassStudentListUI extends javax.swing.JFrame {
         jLabel1.setText("이번 학기 강좌 신청 학생 명단");
 
         jButtExit.setFont(new java.awt.Font("맑은 고딕 Semilight", 0, 12)); // NOI18N
-        jButtExit.setText("종료");
+        jButtExit.setText("취소");
         jButtExit.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButtExitActionPerformed(evt);
@@ -77,7 +77,7 @@ public class ClassStudentListUI extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButtExitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtExitActionPerformed
-
+        dispose();
     }//GEN-LAST:event_jButtExitActionPerformed
 
     /**

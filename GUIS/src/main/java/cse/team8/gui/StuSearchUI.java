@@ -54,7 +54,7 @@ public class StuSearchUI extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jButtonExit.setText("닫기");
+        jButtonExit.setText("취소");
         jButtonExit.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButtonExitActionPerformed(evt);
@@ -90,6 +90,11 @@ public class StuSearchUI extends javax.swing.JFrame {
         jLabel5.setText("검색어");
 
         jComboBoxBase.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "이름", "학번", "학과" }));
+        jComboBoxBase.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jComboBoxBaseActionPerformed(evt);
+            }
+        });
 
         jLabel6.setText("검색 분류");
 
@@ -285,6 +290,10 @@ public class StuSearchUI extends javax.swing.JFrame {
         jTextFieldSub.setText(mySubject);
         jTextFieldRRN.setText(frontRRN + "-" + backRRN);
     }//GEN-LAST:event_jListResultMouseClicked
+
+    private void jComboBoxBaseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBoxBaseActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jComboBoxBaseActionPerformed
 
     /**
      * @param args the command line arguments
