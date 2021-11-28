@@ -41,6 +41,11 @@ public class ClassRequestUI extends javax.swing.JFrame {
     public ClassRequestUI() {
         initComponents();
         jLabelNo.setVisible(false);
+        try {
+            student = fileIO.getStudent();
+        } catch (IOException ex) {
+            Logger.getLogger(Search.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 
     /**
@@ -325,22 +330,11 @@ public class ClassRequestUI extends javax.swing.JFrame {
         if (select == 0) { //확인 버튼 클릭 시
             request = true;
             try {
-                student = fileIO.getStudent();
-            } catch (IOException ex) {
-                Logger.getLogger(Search.class.getName()).log(Level.SEVERE, null, ex);
-            }
-            for (int i = 0; i < student.size(); i++) {
-                if (student.get(i).isNowLogin()) //로그인 되어 있는 계정 확인
-                {
-                    nowStu = lessonWork.inputClass(i, classNum, chooseLesson, student.get(i).getName()); //수강 신청 반영
-                    classRequest.add(classNum, true);
-                }
-            } //for문 끝
-            try {
                 lesson = fileIO.getLesson();
             } catch (IOException ex) {
                 Logger.getLogger(ClassRequestUI.class.getName()).log(Level.SEVERE, null, ex);
             }
+            JOptionPane.showMessageDialog(null, "수강 신청이 완료되었습니다");
             jComboBoxClassListActionPerformed(evt);
         }
 

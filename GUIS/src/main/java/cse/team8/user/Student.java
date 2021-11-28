@@ -46,6 +46,8 @@ public class Student extends User {
     public boolean isNowLogin() {
         return nowLogin;
     }
-
-
+    
+    public void setBill(long bill) {
+        this.bill = bill;
+    }
 }

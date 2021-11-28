@@ -2,6 +2,7 @@ package cse.team8.lessonwork;
 
 import cse.team8.guis.FileIO;
 import cse.team8.user.Lesson;
+import cse.team8.user.Student;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.logging.Level;
@@ -182,7 +183,7 @@ public class LessonWork {
             Logger.getLogger(LessonWork.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
-    public ArrayList<Lesson> myClass(String name) {
+    public ArrayList<Lesson> myClass(String name) { //자신이 수강한 강의 리턴
         ArrayList<Lesson> resultLesson = new ArrayList<>();
         try {
             lesson = fileIO.getLesson();
@@ -198,4 +199,33 @@ public class LessonWork {
         }
         return resultLesson;
     }
+        public void billSend(String name, long bill){ //수업담당자가 학생에게 수강료 청구
+        ArrayList<Lesson> resultLesson = new ArrayList<>();
+        try {
+            lesson = fileIO.getLesson();
+        } catch (IOException ex) {
+            Logger.getLogger(LessonWork.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+        ArrayList<Student> student = new ArrayList<>();
+        try {
+            student = fileIO.getStudent();
+        } catch (IOException ex) {
+            Logger.getLogger(LessonWork.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+        for (int i = 0; i < lesson.size(); i++) { //lesson 중에서
+            for (int j = 0; j < lesson.get(i).getStuName().size(); j++) {
+                if (lesson.get(i).getStuName().get(j).equals(name)) { //lesson에 등록된 학생 이름과 로그인 된 이름이 같으면
+                    student.get(i).setBill(bill);
+                }
+            }
+        }
+        try { //변경 내용 파일에 저장
+            fileIO.updateStudent();
+        } catch (IOException ex) {
+            Logger.getLogger(LessonWork.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
 }
+

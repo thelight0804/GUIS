@@ -136,7 +136,7 @@ public class DisableLessonUI extends javax.swing.JFrame {
         if (select == 0) { //확인 버튼 클릭 시
             //lessonWork.lessonClass(count, classNum, chooseLesson);
             lessonWork.disableClass(count, classNum, chooseLesson);
-            JOptionPane.showMessageDialog(null, "강좌를 폐지했습니다");
+            JOptionPane.showMessageDialog(null, "강좌를 폐지했습니다"); //팝업 메세지 창
         }
     }//GEN-LAST:event_jButtonDisableActionPerformed
 
