@@ -201,14 +201,14 @@ public class LessonInputUI extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "강좌를 추가했습니다");
 
             //입력 부분 초기화
-            jTextFieldLesNum.setText("");
+            jTextFieldLesNum.setText(""); //textfield 추가
             jTextFieldLesName.setText("");
             jTextAreaLesInfo.setText("");
             jTextFieldProCharge.setText("");
             jTextFieldLesMin.setText("");
             jTextFieldLesMax.setText("");
             jTextFieldBill.setText("");
-            jComboBoxLesSub.setSelectedItem(jComboBoxLesSub.getItemAt(0));
+            jComboBoxLesSub.setSelectedItem(jComboBoxLesSub.getItemAt(0)); //combobox 추가
             jComboBoxCredit.setSelectedItem(jComboBoxCredit.getItemAt(0));
         }
     }//GEN-LAST:event_jButtonInputActionPerformed
