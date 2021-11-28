@@ -153,6 +153,8 @@ public class LessonEditUI extends javax.swing.JFrame {
 
         jLabel10.setText("변경할 강의");
 
+        jTextFieldBill.setEnabled(false);
+
         jLabelBill.setText("수강료");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -300,6 +302,7 @@ public class LessonEditUI extends javax.swing.JFrame {
         jTextFieldProCharge.setText("");
         jTextFieldLesMin.setText("");
         jTextFieldLesMax.setText("");
+        jTextFieldBill.setText("");
         jComboBoxLesSub.setSelectedItem(jComboBoxSubject.getSelectedItem().toString());
         jComboBoxCredit.setSelectedItem(jComboBoxCredit.getItemAt(0));
 
@@ -313,6 +316,7 @@ public class LessonEditUI extends javax.swing.JFrame {
         jTextFieldProCharge.setEnabled(false);
         jTextFieldLesMin.setEnabled(false);
         jTextFieldLesMax.setEnabled(false);
+        jTextFieldBill.setEnabled(false);
         
         jComboBoxSubjectActionPerformed(evt);
     }//GEN-LAST:event_jButtonEditActionPerformed
@@ -349,7 +353,7 @@ public class LessonEditUI extends javax.swing.JFrame {
         jTextFieldProCharge.setEnabled(true);
         jTextFieldLesMin.setEnabled(true);
         jTextFieldLesMax.setEnabled(true);
-        //jLabelSel.setVisible(false); //Label
+        jTextFieldBill.setEnabled(true);
 
         classNum = jComboBoxClassList.getSelectedIndex();
         try {
@@ -365,6 +369,7 @@ public class LessonEditUI extends javax.swing.JFrame {
             //jTextFieldNowPeople.setText(Integer.toString(chooseLesson.get(classNum).getNowPeople())); 현재 인원 수 필요 X
             jTextFieldLesMax.setText(Integer.toString(chooseLesson.get(classNum).getMaxPeople()));
             jTextFieldLesMin.setText(Integer.toString(chooseLesson.get(classNum).getMinPeople()));
+            jTextFieldBill.setText(Long.toString(chooseLesson.get(classNum).getBill()));
             //TODO 학점 동기화
             jTextAreaLesInfo.setText(chooseLesson.get(classNum).getExplain());
         }

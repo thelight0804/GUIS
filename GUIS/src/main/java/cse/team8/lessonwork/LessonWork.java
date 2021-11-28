@@ -1,8 +1,7 @@
 package cse.team8.lessonwork;
 
 import cse.team8.guis.FileIO;
-import cse.team8.user.Lesson;
-import cse.team8.user.Student;
+import cse.team8.user.*;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.logging.Level;
@@ -227,5 +226,33 @@ public class LessonWork {
             Logger.getLogger(LessonWork.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
+        
+        public String[] proLesson(){
+            String proName = "교수X";
+            String[] resultLesson = {"담당된 강의가 없습니다"};
+            ArrayList<Professor> professor = new ArrayList<Professor>();
+            try {
+                professor = fileIO.getProfessor();
+            } catch (IOException ex) {
+                Logger.getLogger(LessonWork.class.getName()).log(Level.SEVERE, null, ex);
+            }
+            try {
+                lesson = fileIO.getLesson();
+            } catch (IOException ex) {
+                Logger.getLogger(LessonWork.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        
+        for(int i=0;i<professor.size();i++){ //현재 로그인 된 교수 검색
+            if(professor.get(i).isNowLogin()){
+                proName = professor.get(i).getName();
+            }
+        }
+        for(int i=0;i<lesson.size();i++){
+            if(lesson.get(i).getProName().equals(proName)){ //선택된 교수 중 강좌 이름과 같은 것 검색
+                resultLesson[i] = lesson.get(i).getName();
+            }
+        }
+            return resultLesson;
+        }
 }
 

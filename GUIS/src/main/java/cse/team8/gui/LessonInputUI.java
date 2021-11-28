@@ -207,6 +207,7 @@ public class LessonInputUI extends javax.swing.JFrame {
             jTextFieldProCharge.setText("");
             jTextFieldLesMin.setText("");
             jTextFieldLesMax.setText("");
+            jTextFieldBill.setText("");
             jComboBoxLesSub.setSelectedItem(jComboBoxLesSub.getItemAt(0));
             jComboBoxCredit.setSelectedItem(jComboBoxCredit.getItemAt(0));
         }
