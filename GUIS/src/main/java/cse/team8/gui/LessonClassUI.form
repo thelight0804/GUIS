@@ -26,35 +26,11 @@
           <Group type="102" attributes="0">
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
-<<<<<<< HEAD
-                      <EmptySpace min="-2" pref="79" max="-2" attributes="0"/>
-=======
                       <EmptySpace max="32767" attributes="0"/>
->>>>>>> 973819ee6e6c4532a12a2cf02bb3527f415334b9
                       <Component id="jButtonClassInput" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="jButtExit" min="-2" max="-2" attributes="0"/>
                   </Group>
-<<<<<<< HEAD
-                  <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
-                      <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                      <Component id="jComboBoxSubject" min="-2" pref="151" max="-2" attributes="0"/>
-                  </Group>
-                  <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" pref="48" max="-2" attributes="0"/>
-                      <Component id="jComboBoxClassList" min="-2" max="-2" attributes="0"/>
-                  </Group>
-              </Group>
-              <EmptySpace max="32767" attributes="0"/>
-          </Group>
-          <Group type="102" alignment="1" attributes="0">
-              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-              <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
-              <EmptySpace min="-2" pref="17" max="-2" attributes="0"/>
-          </Group>
-=======
                   <Group type="102" attributes="0">
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" alignment="0" attributes="0">
@@ -86,7 +62,6 @@
               </Group>
               <EmptySpace max="-2" attributes="0"/>
           </Group>
->>>>>>> 973819ee6e6c4532a12a2cf02bb3527f415334b9
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
@@ -98,12 +73,6 @@
                   <Component id="jComboBoxSubject" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="separate" max="-2" attributes="0"/>
-<<<<<<< HEAD
-              <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
-              <EmptySpace max="-2" attributes="0"/>
-              <Component id="jComboBoxClassList" min="-2" max="-2" attributes="0"/>
-              <EmptySpace pref="166" max="32767" attributes="0"/>
-=======
               <Component id="jSeparator12" min="-2" pref="10" max="-2" attributes="0"/>
               <EmptySpace min="-2" pref="2" max="-2" attributes="0"/>
               <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
@@ -112,7 +81,6 @@
               <EmptySpace pref="118" max="32767" attributes="0"/>
               <Component id="jSeparator11" min="-2" pref="10" max="-2" attributes="0"/>
               <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
->>>>>>> 973819ee6e6c4532a12a2cf02bb3527f415334b9
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="jButtonClassInput" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="jButtExit" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -185,12 +153,9 @@
         <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
       </AuxValues>
     </Component>
-<<<<<<< HEAD
-=======
     <Component class="javax.swing.JSeparator" name="jSeparator11">
     </Component>
     <Component class="javax.swing.JSeparator" name="jSeparator12">
     </Component>
->>>>>>> 973819ee6e6c4532a12a2cf02bb3527f415334b9
   </SubComponents>
 </Form>

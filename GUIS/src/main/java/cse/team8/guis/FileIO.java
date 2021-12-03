@@ -11,13 +11,8 @@ public class FileIO implements Work {
 
     static public ArrayList<Student> student;
     static public ArrayList<Professor> professor;
-<<<<<<< HEAD
-    static public ArrayList<academyStaff> academyStaff;
-    static public ArrayList<lessonStaff> lessonStaff;
-=======
     static public ArrayList<AcademyStaff> academyStaff;
     static public ArrayList<LessonStaff> lessonStaff;
->>>>>>> 973819ee6e6c4532a12a2cf02bb3527f415334b9
     static public ArrayList<Lesson> lesson;
 
     public void fileWork() {
@@ -67,15 +62,9 @@ public class FileIO implements Work {
         if (!studentData.exists()) {  //만약 해당 경로에 파일이 없는 경우
             studentData.createNewFile(); //파일 생성
             BufferedWriter bw = new BufferedWriter(new FileWriter(studentData));
-<<<<<<< HEAD
-            bw.write("TestStudent!1!전산학과!111111!1!E!0.0!0!1"); //테스트용 학생 ID 1, PW 1
-            bw.newLine();
-            for (int i = 1; i < 10; i++) {
-=======
             bw.write("학생Admin!admin!전산학과!990421!1927385!E!0.0!0!admin"); //테스트용 학생 ID 1, PW 1
             bw.newLine();
             /*for (int i = 1; i < 10; i++) {
->>>>>>> 973819ee6e6c4532a12a2cf02bb3527f415334b9
                 String name = "이름" + i;
                 String myNum = "!S00" + i;
                 String mySubject = "!전산학과";
@@ -134,25 +123,15 @@ public class FileIO implements Work {
                 String bill = "!0";
                 bw.write(name + myNum + mySubject + frontRRN + backRRN + grade + credit + bill + backRRN);
                 bw.newLine();
-<<<<<<< HEAD
-            }
-=======
             }*/
->>>>>>> 973819ee6e6c4532a12a2cf02bb3527f415334b9
             bw.close(); //파일을 닫아주어야 갱신이 된다
         }
         if (!professorData.exists()) {  //만약 해당 경로에 파일이 없는 경우
             professorData.createNewFile(); //파일 생성
             BufferedWriter bw = new BufferedWriter(new FileWriter(professorData));
-<<<<<<< HEAD
-            bw.write("TestProfessor!2!전자공학과!111111!2!2"); //테스트용 교수 ID 2, PW 2
-            bw.newLine();
-            for (int i = 1; i < 10; i++) {
-=======
             bw.write("교수Admin!admin!전자공학과!961020!2784283!admin"); //테스트용 교수 ID 2, PW 2
             bw.newLine();
             /*for (int i = 1; i < 10; i++) {
->>>>>>> 973819ee6e6c4532a12a2cf02bb3527f415334b9
                 String name = "이름" + i;
                 String myNum = "!P00" + i;
                 String mySubject = "!전산학과";
@@ -196,25 +175,15 @@ public class FileIO implements Work {
                 String backRRN = "!000000" + i;
                 bw.write(name + myNum + mySubject + frontRRN + backRRN + backRRN);
                 bw.newLine();
-<<<<<<< HEAD
-            }
-=======
             }*/
->>>>>>> 973819ee6e6c4532a12a2cf02bb3527f415334b9
             bw.close(); //파일을 닫아주어야 갱신이 된다
         }
         if (!academystaffData.exists()) {  //만약 해당 경로에 파일이 없는 경우
             academystaffData.createNewFile(); //파일 생성
             BufferedWriter bw = new BufferedWriter(new FileWriter(academystaffData));
-<<<<<<< HEAD
-            bw.write("TestAcademyStaff!3!화학공학과!111111!3!3"); //학사담당자용 교수 ID 3, PW 3
-            bw.newLine();
-            for (int i = 1; i < 10; i++) {
-=======
             bw.write("학사담당자Admin!admin!화학공학과!940422!1283749!admin"); //학사담당자용 교수 ID 3, PW 3
             bw.newLine();
             /*for (int i = 1; i < 10; i++) {
->>>>>>> 973819ee6e6c4532a12a2cf02bb3527f415334b9
                 String name = "이름" + i;
                 String myNum = "!H00" + i;
                 String mySubject = "!전산학과";
@@ -258,25 +227,15 @@ public class FileIO implements Work {
                 String backRRN = "!000000" + i;
                 bw.write(name + myNum + mySubject + frontRRN + backRRN + backRRN);
                 bw.newLine();
-<<<<<<< HEAD
-            }
-=======
             }*/
->>>>>>> 973819ee6e6c4532a12a2cf02bb3527f415334b9
             bw.close(); //파일을 닫아주어야 갱신이 된다
         }
         if (!lessonstaffData.exists()) {  //만약 해당 경로에 파일이 없는 경우
             lessonstaffData.createNewFile(); //파일 생성
             BufferedWriter bw = new BufferedWriter(new FileWriter(lessonstaffData));
-<<<<<<< HEAD
-            bw.write("TestlessonStaff!4!기계공학과!111111!4!4"); //수업담당자용 교수 ID 3, PW 3
-            bw.newLine();
-            for (int i = 1; i < 10; i++) {
-=======
             bw.write("수업담당자Admin!admin!기계공학과!900621!2947385!admin"); //수업담당자용 교수 ID 3, PW 3
             bw.newLine();
             /*for (int i = 1; i < 10; i++) {
->>>>>>> 973819ee6e6c4532a12a2cf02bb3527f415334b9
                 String name = "이름" + i;
                 String myNum = "!G00" + i;
                 String mySubject = "!전산학과";
@@ -320,11 +279,7 @@ public class FileIO implements Work {
                 String backRRN = "!000000" + i;
                 bw.write(name + myNum + mySubject + frontRRN + backRRN + backRRN);
                 bw.newLine();
-<<<<<<< HEAD
-            }
-=======
             }*/
->>>>>>> 973819ee6e6c4532a12a2cf02bb3527f415334b9
             bw.close(); //파일을 닫아주어야 갱신이 된다
         }
         //Lesson(String name, String myNum, String mySubject, float credit, int maxPeople, int minPeople, int nowPeople, 
@@ -332,15 +287,9 @@ public class FileIO implements Work {
         if (!lessonData.exists()) {
             lessonData.createNewFile();
             BufferedWriter bw = new BufferedWriter(new FileWriter(lessonData));
-<<<<<<< HEAD
-            String mySubject = "";
-            ArrayList<String> stuName = new ArrayList<String>();
-            for (int i = 0; i < 26; i++) {
-=======
             //String mySubject = "";
             ArrayList<String> stuName = new ArrayList<String>();
             /*for (int i = 0; i < 26; i++) {
->>>>>>> 973819ee6e6c4532a12a2cf02bb3527f415334b9
                 String name = "강좌" + i;
                 String myNum = "!L0" + i; //Lesson의 L
                 if (i < 5) {
@@ -366,16 +315,12 @@ public class FileIO implements Work {
                 stuName.add("!학생X");
                 bw.write(name + myNum + mySubject + credit + maxPeople + minPeople  + nowPeople + bill + explain + create + pastCreate + proName + stuName.get(0));
                 bw.newLine();
-<<<<<<< HEAD
-            }
-=======
             }*/
             stuName.add("! ");
             bw.write("객체지향 프로그래밍Ⅱ Test" + "!L001" + "!전산학과" + "!3.0" + "!50" + "!10" + "!0" + "!200000" + "!JAVA 프로그래밍 언어의 기본적인 요소와 함께 아키텍처 모델링에 사용되는 클래스 다이어그램 활용법을 소개한다." + "!false" + "!false" + "!홍길동" + stuName.get(0));
             bw.newLine();
             bw.write("파일처리론 Test" + "!L001" + "!전자공학과" + "!2.0" + "!60" + "!5" + "!0" + "!300000" + "!데이터의 처리와 응용을 위한 파일의 기본 개념, 파일 저장 장치, 파일의 입출력 제어방법, 파일 구성 방법 등에 대해 알아본다." + "!true" + "!true" + "!고길동" + stuName.get(0));
             bw.newLine();
->>>>>>> 973819ee6e6c4532a12a2cf02bb3527f415334b9
             bw.close();
         } else {
         } //파일이 있다면 = 프로그램을 한 번 이상 실행했다면
@@ -417,17 +362,10 @@ public class FileIO implements Work {
         return professor;
     }
 
-<<<<<<< HEAD
-    public ArrayList<academyStaff> inputAcademyStaff() throws IOException { //학사담당자 객체 생성
-        BufferedReader fr = new BufferedReader(new FileReader("C:\\Temp\\GUIS\\AcadeMyStaffData.txt"));
-        String line = "";
-        ArrayList<academyStaff> academystaff = new ArrayList<academyStaff>();
-=======
     public ArrayList<AcademyStaff> inputAcademyStaff() throws IOException { //학사담당자 객체 생성
         BufferedReader fr = new BufferedReader(new FileReader("C:\\Temp\\GUIS\\AcadeMyStaffData.txt"));
         String line = "";
         ArrayList<AcademyStaff> academystaff = new ArrayList<AcademyStaff>();
->>>>>>> 973819ee6e6c4532a12a2cf02bb3527f415334b9
 
         while ((line = fr.readLine()) != null) {
             String data = line;
@@ -435,37 +373,22 @@ public class FileIO implements Work {
 
             //ArrayList 객체 생성
             //academyStaff(String name, String frontRRN, String backRRN, String myNum, String mySubject, boolean nowLogin, String PW) {
-<<<<<<< HEAD
-            academystaff.add(new academyStaff(array[0], array[3], array[4], array[1], array[2], false, array[5]));
-=======
             academystaff.add(new AcademyStaff(array[0], array[3], array[4], array[1], array[2], false, array[5]));
->>>>>>> 973819ee6e6c4532a12a2cf02bb3527f415334b9
         }
         return academystaff;
     }
 
-<<<<<<< HEAD
-    public ArrayList<lessonStaff> inputLessonStaff() throws IOException { //수업담당자 객체 생성
-        BufferedReader fr = new BufferedReader(new FileReader("C:\\Temp\\GUIS\\LessonStaffData.txt"));
-        String line = "";
-        ArrayList<lessonStaff> lessonstaff = new ArrayList<lessonStaff>();
-=======
     public ArrayList<LessonStaff> inputLessonStaff() throws IOException { //수업담당자 객체 생성
         BufferedReader fr = new BufferedReader(new FileReader("C:\\Temp\\GUIS\\LessonStaffData.txt"));
         String line = "";
         ArrayList<LessonStaff> lessonstaff = new ArrayList<LessonStaff>();
->>>>>>> 973819ee6e6c4532a12a2cf02bb3527f415334b9
 
         while ((line = fr.readLine()) != null) {
             String data = line;
             String[] array = data.split("!"); //split : 문자열 구분
 
             //lessonStaff(String name, String frontRRN, String backRRN, String myNum, String mySubject, boolean nowLogin, String PW)
-<<<<<<< HEAD
-            lessonstaff.add(new lessonStaff(array[0], array[3], array[4], array[1], array[2], false, array[5]));
-=======
             lessonstaff.add(new LessonStaff(array[0], array[3], array[4], array[1], array[2], false, array[5]));
->>>>>>> 973819ee6e6c4532a12a2cf02bb3527f415334b9
         }
         return lessonstaff;
     }
@@ -487,16 +410,6 @@ public class FileIO implements Work {
             long temp_bill = Long.parseLong(array[7]); //string to long
             boolean temp_create = Boolean.parseBoolean(array[9]);
             boolean temp_pastCreate = Boolean.parseBoolean(array[10]);
-<<<<<<< HEAD
-            if(array.length > 12){
-                for(int i=12; i<array.length;i++){
-                    students.add(array[i]);
-                }
-            }
-            else
-                students.add(array[12]); //초기값 학생 이름 추가
-
-=======
             if (array.length > 12) {
                 for (int i = 12; i < array.length; i++) {
                     students.add(array[i]);
@@ -504,7 +417,6 @@ public class FileIO implements Work {
             } else {
                 students.add(array[12]); //초기값 학생 이름 추가
             }
->>>>>>> 973819ee6e6c4532a12a2cf02bb3527f415334b9
             lesson.add(new Lesson(array[0], array[1], array[2], temp_credit, temp_maxPeople, temp_minPeople, temp_nowPeople, temp_bill, array[8], temp_create, temp_pastCreate, array[11], students));
         }
         return lesson;
@@ -635,11 +547,7 @@ public class FileIO implements Work {
             String pastCreate = String.valueOf(lesson.get(i).isPastCreate());
             String proName = lesson.get(i).getProName();
             String stuName = String.join("!", lesson.get(i).getStuName());
-<<<<<<< HEAD
-            bw.write(name + "!" + myNum + "!" + mySubject + "!" + credit + "!" +  maxPeople + "!" + minPeople  + "!" + nowPeople + "!" + bill + "!" + explain + "!" + Create + "!" + pastCreate + "!" + proName + "!" + stuName);
-=======
             bw.write(name + "!" + myNum + "!" + mySubject + "!" + credit + "!" + maxPeople + "!" + minPeople + "!" + nowPeople + "!" + bill + "!" + explain + "!" + Create + "!" + pastCreate + "!" + proName + "!" + stuName);
->>>>>>> 973819ee6e6c4532a12a2cf02bb3527f415334b9
             bw.newLine();
         }
         bw.close();
@@ -660,19 +568,11 @@ public class FileIO implements Work {
         return professor;
     }
 
-<<<<<<< HEAD
-    public ArrayList<academyStaff> getAcademyStaff() throws IOException {
-        return academyStaff;
-    }
-
-    public ArrayList<lessonStaff> getLessonStaff() throws IOException {
-=======
     public ArrayList<AcademyStaff> getAcademyStaff() throws IOException {
         return academyStaff;
     }
 
     public ArrayList<LessonStaff> getLessonStaff() throws IOException {
->>>>>>> 973819ee6e6c4532a12a2cf02bb3527f415334b9
         return lessonStaff;
     }
 

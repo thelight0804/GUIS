@@ -24,31 +24,6 @@
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="1" attributes="0">
-<<<<<<< HEAD
-              <Group type="103" groupAlignment="1" attributes="0">
-                  <Group type="102" attributes="0">
-                      <EmptySpace min="-2" pref="156" max="-2" attributes="0"/>
-                      <Component id="jButtPWchange" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace pref="72" max="32767" attributes="0"/>
-                      <Component id="jButtExit" min="-2" max="-2" attributes="0"/>
-                  </Group>
-                  <Group type="102" attributes="0">
-                      <EmptySpace max="32767" attributes="0"/>
-                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                          <Component id="jButtLessonInput" pref="172" max="32767" attributes="0"/>
-                          <Component id="jButtLessonClass" max="32767" attributes="0"/>
-                          <Component id="jButtLessonEdit" max="32767" attributes="0"/>
-                      </Group>
-                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                          <Component id="jButtBillissue" pref="172" max="32767" attributes="0"/>
-                          <Component id="jButtLessonDel" max="32767" attributes="0"/>
-                          <Component id="jButton1" alignment="0" max="32767" attributes="0"/>
-                      </Group>
-                  </Group>
-              </Group>
-              <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
-=======
               <EmptySpace max="32767" attributes="0"/>
               <Group type="103" groupAlignment="0" max="-2" attributes="0">
                   <Component id="jButtLessonInput" pref="172" max="32767" attributes="0"/>
@@ -82,20 +57,15 @@
                       <EmptySpace max="-2" attributes="0"/>
                   </Group>
               </Group>
->>>>>>> 973819ee6e6c4532a12a2cf02bb3527f415334b9
           </Group>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" attributes="0">
-<<<<<<< HEAD
-              <EmptySpace min="-2" pref="38" max="-2" attributes="0"/>
-=======
               <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
               <Component id="jSeparator9" min="-2" pref="10" max="-2" attributes="0"/>
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
->>>>>>> 973819ee6e6c4532a12a2cf02bb3527f415334b9
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="jButtLessonInput" alignment="3" max="32767" attributes="0"/>
                   <Component id="jButtLessonDel" alignment="3" max="32767" attributes="0"/>
@@ -111,13 +81,6 @@
                   <Component id="jButtLessonEdit" alignment="3" max="32767" attributes="0"/>
               </Group>
               <EmptySpace type="separate" max="-2" attributes="0"/>
-<<<<<<< HEAD
-              <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="jButtPWchange" alignment="3" max="32767" attributes="0"/>
-                  <Component id="jButtExit" alignment="3" min="-2" max="-2" attributes="0"/>
-              </Group>
-              <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
-=======
               <Component id="jSeparator10" min="-2" pref="10" max="-2" attributes="0"/>
               <EmptySpace pref="20" max="32767" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
@@ -126,7 +89,6 @@
                   <Component id="jButtRogOut" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
->>>>>>> 973819ee6e6c4532a12a2cf02bb3527f415334b9
           </Group>
       </Group>
     </DimensionLayout>
@@ -217,8 +179,6 @@
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton1ActionPerformed"/>
       </Events>
     </Component>
-<<<<<<< HEAD
-=======
     <Component class="javax.swing.JSeparator" name="jSeparator9">
     </Component>
     <Component class="javax.swing.JSeparator" name="jSeparator10">
@@ -234,6 +194,5 @@
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButtRogOutActionPerformed"/>
       </Events>
     </Component>
->>>>>>> 973819ee6e6c4532a12a2cf02bb3527f415334b9
   </SubComponents>
 </Form>

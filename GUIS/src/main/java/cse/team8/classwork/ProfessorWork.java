@@ -62,8 +62,6 @@ public class ProfessorWork {
         }
         return result;
     }
-<<<<<<< HEAD
-=======
 
     public void delProfessor(String name) { //교수 삭제
         try {
@@ -100,5 +98,4 @@ public class ProfessorWork {
             Logger.getLogger(ProfessorWork.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
->>>>>>> 973819ee6e6c4532a12a2cf02bb3527f415334b9
 }

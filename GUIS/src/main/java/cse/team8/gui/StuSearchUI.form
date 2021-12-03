@@ -66,16 +66,6 @@
                                   <Component id="jScrollPane1" alignment="0" min="-2" pref="485" max="-2" attributes="0"/>
                                   <Group type="103" alignment="0" groupAlignment="1" max="-2" attributes="0">
                                       <Group type="102" alignment="0" attributes="0">
-<<<<<<< HEAD
-                                          <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
-                                          <EmptySpace max="-2" attributes="0"/>
-                                          <Component id="jTextFieldSub" max="32767" attributes="0"/>
-                                      </Group>
-                                      <Group type="102" alignment="0" attributes="0">
-                                          <Component id="jLabel4" min="-2" max="-2" attributes="0"/>
-                                          <EmptySpace max="-2" attributes="0"/>
-                                          <Component id="jTextFieldRRN" min="-2" pref="150" max="-2" attributes="0"/>
-=======
                                           <Component id="jLabel4" min="-2" max="-2" attributes="0"/>
                                           <EmptySpace max="-2" attributes="0"/>
                                           <Component id="jTextFieldFrontRRN" min="-2" pref="65" max="-2" attributes="0"/>
@@ -88,7 +78,6 @@
                                           <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
                                           <EmptySpace max="-2" attributes="0"/>
                                           <Component id="jTextFieldSub" min="-2" pref="198" max="-2" attributes="0"/>
->>>>>>> 973819ee6e6c4532a12a2cf02bb3527f415334b9
                                       </Group>
                                   </Group>
                               </Group>
@@ -99,11 +88,6 @@
                   </Group>
               </Group>
           </Group>
-<<<<<<< HEAD
-          <Group type="102" alignment="1" attributes="0">
-              <EmptySpace max="32767" attributes="0"/>
-              <Component id="jButtonExit" min="-2" max="-2" attributes="0"/>
-=======
           <Group type="102" attributes="0">
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
@@ -115,7 +99,6 @@
                   <Component id="jSeparator5" alignment="0" max="32767" attributes="0"/>
                   <Component id="jSeparator6" alignment="1" max="32767" attributes="0"/>
               </Group>
->>>>>>> 973819ee6e6c4532a12a2cf02bb3527f415334b9
               <EmptySpace max="-2" attributes="0"/>
           </Group>
       </Group>
@@ -134,13 +117,6 @@
                   <Component id="jLabel5" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="jTextFieldWord" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
-<<<<<<< HEAD
-              <EmptySpace max="-2" attributes="0"/>
-              <Component id="jLabel7" min="-2" max="-2" attributes="0"/>
-              <EmptySpace max="-2" attributes="0"/>
-              <Component id="jScrollPane1" min="-2" max="-2" attributes="0"/>
-              <EmptySpace pref="25" max="32767" attributes="0"/>
-=======
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Component id="jSeparator4" min="-2" pref="10" max="-2" attributes="0"/>
               <EmptySpace min="-2" pref="2" max="-2" attributes="0"/>
@@ -150,7 +126,6 @@
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Component id="jSeparator5" min="-2" pref="10" max="-2" attributes="0"/>
               <EmptySpace max="32767" attributes="0"/>
->>>>>>> 973819ee6e6c4532a12a2cf02bb3527f415334b9
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="jTextFieldName" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="jLabel2" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -167,12 +142,6 @@
               </Group>
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
-<<<<<<< HEAD
-                  <Component id="jTextFieldRRN" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="jLabel4" alignment="3" min="-2" max="-2" attributes="0"/>
-              </Group>
-              <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
-=======
                   <Component id="jTextFieldFrontRRN" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="jLabel4" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="jLabel8" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -181,7 +150,6 @@
               <EmptySpace min="-2" pref="14" max="-2" attributes="0"/>
               <Component id="jSeparator6" min="-2" pref="10" max="-2" attributes="0"/>
               <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
->>>>>>> 973819ee6e6c4532a12a2cf02bb3527f415334b9
               <Component id="jButtonExit" min="-2" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
           </Group>
@@ -210,20 +178,12 @@
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTextFieldNameActionPerformed"/>
       </Events>
     </Component>
-<<<<<<< HEAD
-    <Component class="javax.swing.JTextField" name="jTextFieldRRN">
-=======
     <Component class="javax.swing.JTextField" name="jTextFieldFrontRRN">
->>>>>>> 973819ee6e6c4532a12a2cf02bb3527f415334b9
       <Properties>
         <Property name="enabled" type="boolean" value="false"/>
       </Properties>
       <Events>
-<<<<<<< HEAD
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTextFieldRRNActionPerformed"/>
-=======
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTextFieldFrontRRNActionPerformed"/>
->>>>>>> 973819ee6e6c4532a12a2cf02bb3527f415334b9
       </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel1">
@@ -317,8 +277,6 @@
         <Property name="enabled" type="boolean" value="false"/>
       </Properties>
     </Component>
-<<<<<<< HEAD
-=======
     <Component class="javax.swing.JSeparator" name="jSeparator4">
     </Component>
     <Component class="javax.swing.JSeparator" name="jSeparator5">
@@ -335,6 +293,5 @@
         <Property name="enabled" type="boolean" value="false"/>
       </Properties>
     </Component>
->>>>>>> 973819ee6e6c4532a12a2cf02bb3527f415334b9
   </SubComponents>
 </Form>

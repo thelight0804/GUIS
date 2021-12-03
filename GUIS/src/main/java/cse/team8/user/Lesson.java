@@ -4,10 +4,7 @@ package cse.team8.user;
 import java.util.ArrayList;
 
 public class Lesson {
-<<<<<<< HEAD
-=======
 
->>>>>>> 973819ee6e6c4532a12a2cf02bb3527f415334b9
     private String name; //이름
     private String myNum; //번호
     private String mySubject; //학과
@@ -17,21 +14,13 @@ public class Lesson {
     private int nowPeople; //현재 인원 수
     private long bill; //수강료
     private String explain; //설명
-<<<<<<< HEAD
-    
-=======
 
->>>>>>> 973819ee6e6c4532a12a2cf02bb3527f415334b9
     private boolean Create; //개설 여부
     private boolean pastCreate; //과거 개설 여부
     /*
     한 번이라도 강의가 개설되어 개설 여부(lesoonCreate)가 true가 된다면
     과거 개설 여부 (pastCreate)도 true가 되며 강좌 정보, 변경, 삭제가 불가하게 된다
-<<<<<<< HEAD
-    */
-=======
      */
->>>>>>> 973819ee6e6c4532a12a2cf02bb3527f415334b9
     private String proName; //담당 교수
     public ArrayList<String> stuName; //수강 신청한 학생 이름
 
@@ -50,12 +39,6 @@ public class Lesson {
         this.proName = proName;
         this.stuName = stuName;
     }
-<<<<<<< HEAD
-  
-
-    
-=======
->>>>>>> 973819ee6e6c4532a12a2cf02bb3527f415334b9
 
     public String getName() {
         return name;
@@ -113,13 +96,8 @@ public class Lesson {
         this.nowPeople = nowPeople;
     }
 
-<<<<<<< HEAD
-    public void updateNowPeople(){
-        this.nowPeople = nowPeople +1;
-=======
     public void updateNowPeople() {
         this.nowPeople = nowPeople + 1;
->>>>>>> 973819ee6e6c4532a12a2cf02bb3527f415334b9
     }
 
     public void setCreate(boolean Create) {
@@ -133,9 +111,5 @@ public class Lesson {
     public long getBill() {
         return bill;
     }
-<<<<<<< HEAD
-    
-=======
 
->>>>>>> 973819ee6e6c4532a12a2cf02bb3527f415334b9
 }

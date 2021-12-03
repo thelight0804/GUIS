@@ -21,10 +21,7 @@ import java.util.logging.Logger;
 import cse.team8.guis.FileIO;
 import cse.team8.user.*;
 import cse.team8.userwork.*;
-<<<<<<< HEAD
-=======
 import javax.swing.JOptionPane;
->>>>>>> 973819ee6e6c4532a12a2cf02bb3527f415334b9
 
 public class LoginGUI extends javax.swing.JFrame {
 
@@ -32,13 +29,8 @@ public class LoginGUI extends javax.swing.JFrame {
     FileIO fileIO = new FileIO();
     public ArrayList<Student> student = new ArrayList<>();
     public ArrayList<Professor> professor = new ArrayList<>();
-<<<<<<< HEAD
-    public ArrayList<academyStaff> academyStaff = new ArrayList<>();
-    public ArrayList<lessonStaff> lessonStaff = new ArrayList<>();
-=======
     public ArrayList<AcademyStaff> academyStaff = new ArrayList<>();
     public ArrayList<LessonStaff> lessonStaff = new ArrayList<>();
->>>>>>> 973819ee6e6c4532a12a2cf02bb3527f415334b9
     public ArrayList<Lesson> lesson = new ArrayList<>();
     boolean pass = false; //로그인 성공 여부
 
@@ -62,11 +54,8 @@ public class LoginGUI extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         loginButton = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
-<<<<<<< HEAD
-=======
         jSeparator8 = new javax.swing.JSeparator();
         jSeparator9 = new javax.swing.JSeparator();
->>>>>>> 973819ee6e6c4532a12a2cf02bb3527f415334b9
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("GUIS");
@@ -114,34 +103,6 @@ public class LoginGUI extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-<<<<<<< HEAD
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(41, 41, 41)
-                        .addComponent(jRadioButtonStudent, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(33, 33, 33)
-                        .addComponent(jRadioButtonProfessor, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jRadioButtonLessonStaff, javax.swing.GroupLayout.DEFAULT_SIZE, 113, Short.MAX_VALUE)
-                            .addComponent(jRadioButtonAcademyStaff, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(113, 113, 113)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jLabel2)
-                            .addComponent(jLabel1))
-                        .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addComponent(jTextFieldID, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jTextFieldPW, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addGap(0, 34, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(loginButton)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButton2)
-                .addContainerGap())
-=======
                 .addGap(113, 113, 113)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jLabel2)
@@ -172,7 +133,6 @@ public class LoginGUI extends javax.swing.JFrame {
                                     .addComponent(jRadioButtonLessonStaff, javax.swing.GroupLayout.DEFAULT_SIZE, 113, Short.MAX_VALUE)
                                     .addComponent(jRadioButtonAcademyStaff, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))))
                 .addContainerGap(40, Short.MAX_VALUE))
->>>>>>> 973819ee6e6c4532a12a2cf02bb3527f415334b9
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -188,13 +148,9 @@ public class LoginGUI extends javax.swing.JFrame {
                         .addComponent(jRadioButtonAcademyStaff)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jRadioButtonLessonStaff)))
-<<<<<<< HEAD
-                .addGap(30, 30, 30)
-=======
                 .addGap(14, 14, 14)
                 .addComponent(jSeparator8, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
->>>>>>> 973819ee6e6c4532a12a2cf02bb3527f415334b9
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jTextFieldID, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel1))
@@ -202,13 +158,6 @@ public class LoginGUI extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jTextFieldPW, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel2))
-<<<<<<< HEAD
-                .addGap(38, 38, 38)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(loginButton)
-                    .addComponent(jButton2))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-=======
                 .addGap(18, 18, 18)
                 .addComponent(jSeparator9, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -216,7 +165,6 @@ public class LoginGUI extends javax.swing.JFrame {
                     .addComponent(loginButton)
                     .addComponent(jButton2))
                 .addGap(0, 10, Short.MAX_VALUE))
->>>>>>> 973819ee6e6c4532a12a2cf02bb3527f415334b9
         );
 
         pack();
@@ -224,11 +172,7 @@ public class LoginGUI extends javax.swing.JFrame {
 
     private void loginButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginButtonActionPerformed
 
-<<<<<<< HEAD
-        if (jRadioButtonStudent.isSelected()) { 
-=======
         if (jRadioButtonStudent.isSelected()) {
->>>>>>> 973819ee6e6c4532a12a2cf02bb3527f415334b9
             fileIO.fileWork();
             //학생 선택 시
             try {
@@ -337,14 +281,10 @@ public class LoginGUI extends javax.swing.JFrame {
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         //Exit 버튼
-<<<<<<< HEAD
-        System.exit(0); //프로그램 종료
-=======
         int select = JOptionPane.showConfirmDialog(null, "프로그램을 종료하시겠습니까?", "Confirm", JOptionPane.OK_CANCEL_OPTION); //확인, 취소 버튼 출력
         if (select == 0) { //확인 버튼 클릭 시
             System.exit(0); //프로그램 종료
         }
->>>>>>> 973819ee6e6c4532a12a2cf02bb3527f415334b9
     }//GEN-LAST:event_jButton2ActionPerformed
 
     /**
@@ -363,11 +303,8 @@ public class LoginGUI extends javax.swing.JFrame {
     private javax.swing.JRadioButton jRadioButtonLessonStaff;
     private javax.swing.JRadioButton jRadioButtonProfessor;
     private javax.swing.JRadioButton jRadioButtonStudent;
-<<<<<<< HEAD
-=======
     private javax.swing.JSeparator jSeparator8;
     private javax.swing.JSeparator jSeparator9;
->>>>>>> 973819ee6e6c4532a12a2cf02bb3527f415334b9
     private javax.swing.JTextField jTextFieldID;
     private javax.swing.JTextField jTextFieldPW;
     private javax.swing.JButton loginButton;

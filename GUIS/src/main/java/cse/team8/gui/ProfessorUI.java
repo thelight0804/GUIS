@@ -5,13 +5,10 @@
  */
 package cse.team8.gui;
 
-<<<<<<< HEAD
-=======
 import cse.team8.userwork.SystemLogin;
 import java.io.IOException;
 import javax.swing.JOptionPane;
 
->>>>>>> 973819ee6e6c4532a12a2cf02bb3527f415334b9
 /**
  *
  * @author User
@@ -39,12 +36,9 @@ public class ProfessorUI extends javax.swing.JFrame {
         jButtRoll = new javax.swing.JButton();
         jButtPWChange = new javax.swing.JButton();
         jButtExit = new javax.swing.JButton();
-<<<<<<< HEAD
-=======
         jSeparator3 = new javax.swing.JSeparator();
         jSeparator4 = new javax.swing.JSeparator();
         jButtRogOut = new javax.swing.JButton();
->>>>>>> 973819ee6e6c4532a12a2cf02bb3527f415334b9
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -88,8 +82,6 @@ public class ProfessorUI extends javax.swing.JFrame {
             }
         });
 
-<<<<<<< HEAD
-=======
         jButtRogOut.setFont(new java.awt.Font("맑은 고딕 Semilight", 0, 12)); // NOI18N
         jButtRogOut.setText("로그아웃");
         jButtRogOut.addActionListener(new java.awt.event.ActionListener() {
@@ -98,26 +90,11 @@ public class ProfessorUI extends javax.swing.JFrame {
             }
         });
 
->>>>>>> 973819ee6e6c4532a12a2cf02bb3527f415334b9
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-<<<<<<< HEAD
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jButtPWChange)
-                .addGap(87, 87, 87)
-                .addComponent(jButtExit)
-                .addContainerGap())
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap(113, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                    .addComponent(jButtClassStudentList, javax.swing.GroupLayout.DEFAULT_SIZE, 164, Short.MAX_VALUE)
-                    .addComponent(jButtGradeInput, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jButtRoll, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(118, Short.MAX_VALUE))
-=======
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
@@ -136,29 +113,18 @@ public class ProfessorUI extends javax.swing.JFrame {
                     .addComponent(jSeparator3)
                     .addComponent(jSeparator4))
                 .addContainerGap())
->>>>>>> 973819ee6e6c4532a12a2cf02bb3527f415334b9
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-<<<<<<< HEAD
-                .addGap(62, 62, 62)
-=======
                 .addGap(34, 34, 34)
                 .addComponent(jSeparator3, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
->>>>>>> 973819ee6e6c4532a12a2cf02bb3527f415334b9
                 .addComponent(jButtClassStudentList, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(34, 34, 34)
                 .addComponent(jButtGradeInput)
                 .addGap(34, 34, 34)
                 .addComponent(jButtRoll, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
-<<<<<<< HEAD
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 48, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButtExit)
-                    .addComponent(jButtPWChange, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE))
-=======
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 28, Short.MAX_VALUE)
                 .addComponent(jSeparator4, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -166,7 +132,6 @@ public class ProfessorUI extends javax.swing.JFrame {
                     .addComponent(jButtExit)
                     .addComponent(jButtPWChange, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButtRogOut))
->>>>>>> 973819ee6e6c4532a12a2cf02bb3527f415334b9
                 .addContainerGap())
         );
 
@@ -183,13 +148,8 @@ public class ProfessorUI extends javax.swing.JFrame {
 
     private void jButtPWChangeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtPWChangeActionPerformed
         //암호 변경 버튼
-<<<<<<< HEAD
-        changePW a = new changePW(); //changePW 창 호출
-        a.setDefaultCloseOperation(changePW.EXIT_ON_CLOSE);
-=======
         ChangePW a = new ChangePW(); //changePW 창 호출
         a.setDefaultCloseOperation(ChangePW.EXIT_ON_CLOSE);
->>>>>>> 973819ee6e6c4532a12a2cf02bb3527f415334b9
         a.pack();
         a.setLocationRelativeTo(null);
         a.setVisible(true);
@@ -204,14 +164,10 @@ public class ProfessorUI extends javax.swing.JFrame {
     }//GEN-LAST:event_jButtClassStudentListActionPerformed
 
     private void jButtExitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtExitActionPerformed
-<<<<<<< HEAD
-        System.exit(0); //프로그램 종료
-=======
         int select = JOptionPane.showConfirmDialog(null, "프로그램을 종료하시겠습니까?", "Confirm", JOptionPane.OK_CANCEL_OPTION); //확인, 취소 버튼 출력
         if (select == 0) { //확인 버튼 클릭 시        
             System.exit(0); //프로그램 종료
         }
->>>>>>> 973819ee6e6c4532a12a2cf02bb3527f415334b9
     }//GEN-LAST:event_jButtExitActionPerformed
 
     private void jButtGradeInputActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtGradeInputActionPerformed
@@ -223,8 +179,6 @@ public class ProfessorUI extends javax.swing.JFrame {
         gradeInput.setVisible(true);
     }//GEN-LAST:event_jButtGradeInputActionPerformed
 
-<<<<<<< HEAD
-=======
     private void jButtRogOutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtRogOutActionPerformed
         //로그아웃 버튼
         int select = JOptionPane.showConfirmDialog(null, "로그아웃 하시겠습니까?", "Confirm", JOptionPane.OK_CANCEL_OPTION); //확인, 취소 버튼 출력
@@ -245,7 +199,6 @@ public class ProfessorUI extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_jButtRogOutActionPerformed
 
->>>>>>> 973819ee6e6c4532a12a2cf02bb3527f415334b9
     /**
      * @param args the command line arguments
      */
@@ -289,13 +242,9 @@ public class ProfessorUI extends javax.swing.JFrame {
     private javax.swing.JButton jButtExit;
     private javax.swing.JButton jButtGradeInput;
     private javax.swing.JButton jButtPWChange;
-<<<<<<< HEAD
-    private javax.swing.JButton jButtRoll;
-=======
     private javax.swing.JButton jButtRogOut;
     private javax.swing.JButton jButtRoll;
     private javax.swing.JSeparator jSeparator3;
     private javax.swing.JSeparator jSeparator4;
->>>>>>> 973819ee6e6c4532a12a2cf02bb3527f415334b9
     // End of variables declaration//GEN-END:variables
 }

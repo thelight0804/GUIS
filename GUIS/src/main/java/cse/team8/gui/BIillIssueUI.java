@@ -14,11 +14,7 @@ public class BIillIssueUI extends javax.swing.JFrame {
     ArrayList<String> Result = new ArrayList<>();
     ArrayList<Lesson> resultLesson = new ArrayList<>();
     LessonWork lessonWork = new LessonWork();
-<<<<<<< HEAD
-    
-=======
 
->>>>>>> 973819ee6e6c4532a12a2cf02bb3527f415334b9
     String name;
     long resultBill = 0; //최종 수강료
 
@@ -313,18 +309,6 @@ public class BIillIssueUI extends javax.swing.JFrame {
 
         for (int j = 0; j < resultLesson.size(); j++) {
             //formatter.format : DecimalFormat에서 금액 콤마(,) 표시 [String형]
-<<<<<<< HEAD
-            lessonName[j] = resultLesson.get(j).getName() + " / " + formatter.format(resultLesson.get(j).getBill()) + "\\";
-            resultBill = resultBill + resultLesson.get(j).getBill();
-        }
-        jListClassInfo.setListData(lessonName);
-        jTextFieldCost.setText(formatter.format(resultBill) + "\\");
-        
-    }//GEN-LAST:event_jListResultMouseClicked
-
-    private void jTextFieldNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldNameActionPerformed
-        // TODO add your handling code here:
-=======
             lessonName[j] = resultLesson.get(j).getName() + " / " + formatter.format(resultLesson.get(j).getBill()) + "원";
             resultBill = resultBill + resultLesson.get(j).getBill();
         }
@@ -335,16 +319,11 @@ public class BIillIssueUI extends javax.swing.JFrame {
 
     private void jTextFieldNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldNameActionPerformed
 
->>>>>>> 973819ee6e6c4532a12a2cf02bb3527f415334b9
     }//GEN-LAST:event_jTextFieldNameActionPerformed
 
     private void jButtBillIssueActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtBillIssueActionPerformed
         //청구하기 버튼        
-<<<<<<< HEAD
-        int select = JOptionPane.showConfirmDialog(null, name +"학생에게 "+"수강료를 청구하시겠습니까?", "Confirm", JOptionPane.OK_CANCEL_OPTION); //확인, 취소 버튼 출력
-=======
         int select = JOptionPane.showConfirmDialog(null, name + "학생에게 " + "수강료를 청구하시겠습니까?", "Confirm", JOptionPane.OK_CANCEL_OPTION); //확인, 취소 버튼 출력
->>>>>>> 973819ee6e6c4532a12a2cf02bb3527f415334b9
         if (select == 0) { //확인 버튼 클릭 시
             lessonWork.billSend(name, resultBill); //수업담당자가 학생에게 수강료 청구
             JOptionPane.showMessageDialog(null, "수강료를 청구하였습니다"); //팝업 메시지 창

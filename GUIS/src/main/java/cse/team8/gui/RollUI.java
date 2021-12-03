@@ -5,18 +5,11 @@ import cse.team8.user.Lesson;
 import java.util.ArrayList;
 
 public class RollUI extends javax.swing.JFrame {
-<<<<<<< HEAD
-    LessonWork lessonWork = new LessonWork();
-    ArrayList<Lesson> lesson = new ArrayList<>(); //교수가 선택되어 있는 강의
-    ArrayList<Lesson> thisLesson = new ArrayList<>(); //교수가 선택되어 있는 강의    
-    
-=======
 
     LessonWork lessonWork = new LessonWork();
     ArrayList<Lesson> lesson = new ArrayList<>(); //교수가 선택되어 있는 강의
     ArrayList<Lesson> thisLesson = new ArrayList<>(); //교수가 선택되어 있는 강의    
 
->>>>>>> 973819ee6e6c4532a12a2cf02bb3527f415334b9
     public RollUI() {
         initComponents();
         //강의 초기값
@@ -25,10 +18,7 @@ public class RollUI extends javax.swing.JFrame {
             jComboBoxLesson.addItem(lesson.get(i).getName());
         }
     }
-<<<<<<< HEAD
-=======
 
->>>>>>> 973819ee6e6c4532a12a2cf02bb3527f415334b9
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -40,10 +30,7 @@ public class RollUI extends javax.swing.JFrame {
         jComboBoxLesson = new javax.swing.JComboBox<>();
         jLabel2 = new javax.swing.JLabel();
         jSeparator1 = new javax.swing.JSeparator();
-<<<<<<< HEAD
-=======
         jSeparator2 = new javax.swing.JSeparator();
->>>>>>> 973819ee6e6c4532a12a2cf02bb3527f415334b9
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setPreferredSize(new java.awt.Dimension(400, 300));
@@ -85,30 +72,6 @@ public class RollUI extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-<<<<<<< HEAD
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jSeparator1))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(24, 24, 24)
-                        .addComponent(jLabel2)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jComboBoxLesson, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 146, Short.MAX_VALUE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(84, 84, 84)
-                                .addComponent(jLabel1)
-                                .addGap(0, 0, Short.MAX_VALUE))))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(jButtExit)))
-                .addContainerGap())
-=======
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
@@ -126,7 +89,6 @@ public class RollUI extends javax.swing.JFrame {
                             .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 345, Short.MAX_VALUE)
                             .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.LEADING))
                         .addContainerGap(30, Short.MAX_VALUE))))
->>>>>>> 973819ee6e6c4532a12a2cf02bb3527f415334b9
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -135,15 +97,6 @@ public class RollUI extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jComboBoxLesson, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-<<<<<<< HEAD
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-=======
                 .addGap(18, 18, 18)
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(2, 2, 2)
@@ -153,7 +106,6 @@ public class RollUI extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(10, 10, 10)
->>>>>>> 973819ee6e6c4532a12a2cf02bb3527f415334b9
                 .addComponent(jButtExit)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
@@ -166,16 +118,6 @@ public class RollUI extends javax.swing.JFrame {
     }//GEN-LAST:event_jButtExitActionPerformed
 
     private void jComboBoxLessonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBoxLessonActionPerformed
-<<<<<<< HEAD
-                        //강의 선택 시
-        String selLesson = jComboBoxLesson.getSelectedItem().toString();
-        for (int i = 0; i < lesson.size(); i++) {
-            if(lesson.get(i).getName().equals(selLesson))
-                thisLesson.add(0, lesson.get(i));
-        }
-        int count = thisLesson.get(0).getStuName().size();
-        String[] selStu = new String [count];
-=======
         //강의 선택 시
         String selLesson = jComboBoxLesson.getSelectedItem().toString();
         for (int i = 0; i < lesson.size(); i++) {
@@ -185,7 +127,6 @@ public class RollUI extends javax.swing.JFrame {
         }
         int count = thisLesson.get(0).getStuName().size();
         String[] selStu = new String[count];
->>>>>>> 973819ee6e6c4532a12a2cf02bb3527f415334b9
 
         for (int i = 0; i < thisLesson.get(0).getStuName().size(); i++) {
             selStu[i] = thisLesson.get(0).getStuName().get(i);
@@ -213,9 +154,6 @@ public class RollUI extends javax.swing.JFrame {
     private javax.swing.JList<String> jListClassStuList;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JSeparator jSeparator1;
-<<<<<<< HEAD
-=======
     private javax.swing.JSeparator jSeparator2;
->>>>>>> 973819ee6e6c4532a12a2cf02bb3527f415334b9
     // End of variables declaration//GEN-END:variables
 }

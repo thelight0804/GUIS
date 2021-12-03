@@ -5,13 +5,6 @@ import cse.team8.lessonwork.LessonWork;
 import javax.swing.JOptionPane;
 
 public class LessonInputUI extends javax.swing.JFrame {
-<<<<<<< HEAD
-    FileIO fileIO = new FileIO();
-    LessonWork lessonWork = new LessonWork();
-    public LessonInputUI() {
-        initComponents();
-    }
-=======
 
     FileIO fileIO = new FileIO();
     LessonWork lessonWork = new LessonWork();
@@ -20,7 +13,6 @@ public class LessonInputUI extends javax.swing.JFrame {
         initComponents();
     }
 
->>>>>>> 973819ee6e6c4532a12a2cf02bb3527f415334b9
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -47,11 +39,8 @@ public class LessonInputUI extends javax.swing.JFrame {
         jComboBoxCredit = new javax.swing.JComboBox<>();
         jLabelBill = new javax.swing.JLabel();
         jTextFieldBill = new javax.swing.JTextField();
-<<<<<<< HEAD
-=======
         jSeparator10 = new javax.swing.JSeparator();
         jSeparator11 = new javax.swing.JSeparator();
->>>>>>> 973819ee6e6c4532a12a2cf02bb3527f415334b9
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -114,8 +103,6 @@ public class LessonInputUI extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(jButtExit))
                     .addGroup(layout.createSequentialGroup()
-<<<<<<< HEAD
-=======
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(jLabelBill)
                             .addComponent(jLabel8))
@@ -126,7 +113,6 @@ public class LessonInputUI extends javax.swing.JFrame {
                     .addComponent(jSeparator10)
                     .addComponent(jSeparator11)
                     .addGroup(layout.createSequentialGroup()
->>>>>>> 973819ee6e6c4532a12a2cf02bb3527f415334b9
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
@@ -145,41 +131,21 @@ public class LessonInputUI extends javax.swing.JFrame {
                                     .addComponent(jComboBoxCredit, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)))
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(jLabel6)
-<<<<<<< HEAD
-                                .addGap(18, 18, 18)
-=======
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
->>>>>>> 973819ee6e6c4532a12a2cf02bb3527f415334b9
                                 .addComponent(jTextFieldLesMin, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(jLabel7)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(jTextFieldLesMax, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)))
-<<<<<<< HEAD
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jLabelBill)
-                            .addComponent(jLabel8))
-                        .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jTextFieldProCharge)
-                            .addComponent(jTextFieldBill))))
-=======
                         .addGap(0, 0, Short.MAX_VALUE)))
->>>>>>> 973819ee6e6c4532a12a2cf02bb3527f415334b9
                 .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-<<<<<<< HEAD
-                .addGap(30, 30, 30)
-=======
                 .addContainerGap()
                 .addComponent(jSeparator10, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(10, 10, 10)
->>>>>>> 973819ee6e6c4532a12a2cf02bb3527f415334b9
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jTextFieldLesName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel2))
@@ -199,23 +165,6 @@ public class LessonInputUI extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel5)
                     .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE))
-<<<<<<< HEAD
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextFieldProCharge, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabelBill)
-                    .addComponent(jTextFieldBill, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel6)
-                    .addComponent(jTextFieldLesMin, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextFieldLesMax, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel7))
-                .addGap(18, 18, 18)
-=======
                 .addGap(9, 9, 9)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -233,7 +182,6 @@ public class LessonInputUI extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addComponent(jSeparator11, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 22, Short.MAX_VALUE)
->>>>>>> 973819ee6e6c4532a12a2cf02bb3527f415334b9
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jButtExit)
                     .addComponent(jButtonInput))
@@ -339,11 +287,8 @@ public class LessonInputUI extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabelBill;
     private javax.swing.JScrollPane jScrollPane2;
-<<<<<<< HEAD
-=======
     private javax.swing.JSeparator jSeparator10;
     private javax.swing.JSeparator jSeparator11;
->>>>>>> 973819ee6e6c4532a12a2cf02bb3527f415334b9
     private javax.swing.JTextArea jTextAreaLesInfo;
     private javax.swing.JTextField jTextFieldBill;
     private javax.swing.JTextField jTextFieldLesMax;

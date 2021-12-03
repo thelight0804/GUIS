@@ -1,10 +1,7 @@
 package cse.team8.academywork;
 
 import cse.team8.guis.FileIO;
-<<<<<<< HEAD
-=======
 import static cse.team8.guis.FileIO.professor;
->>>>>>> 973819ee6e6c4532a12a2cf02bb3527f415334b9
 import cse.team8.user.*;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -65,9 +62,6 @@ public class Search implements AcademyWork {
         }
         return result;
     }
-<<<<<<< HEAD
-    //TODO 교수 검색
-=======
 
     public ArrayList<String> proSearch(String base, String word) {
         //교수 검색
@@ -114,5 +108,4 @@ public class Search implements AcademyWork {
         }
         return result;
     }
->>>>>>> 973819ee6e6c4532a12a2cf02bb3527f415334b9
 }

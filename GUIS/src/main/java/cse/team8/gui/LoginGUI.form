@@ -28,42 +28,6 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
-<<<<<<< HEAD
-          <Group type="102" attributes="0">
-              <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" pref="41" max="-2" attributes="0"/>
-                      <Component id="jRadioButtonStudent" min="-2" pref="99" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
-                      <Component id="jRadioButtonProfessor" min="-2" pref="99" max="-2" attributes="0"/>
-                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                          <Component id="jRadioButtonLessonStaff" pref="113" max="32767" attributes="0"/>
-                          <Component id="jRadioButtonAcademyStaff" max="32767" attributes="0"/>
-                      </Group>
-                  </Group>
-                  <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" pref="113" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="1" attributes="0">
-                          <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
-                          <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                          <Component id="jTextFieldID" alignment="0" max="32767" attributes="0"/>
-                          <Component id="jTextFieldPW" alignment="0" min="-2" pref="143" max="-2" attributes="0"/>
-                      </Group>
-                  </Group>
-              </Group>
-              <EmptySpace min="0" pref="34" max="32767" attributes="0"/>
-          </Group>
-          <Group type="102" alignment="1" attributes="0">
-              <EmptySpace max="32767" attributes="0"/>
-              <Component id="loginButton" min="-2" max="-2" attributes="0"/>
-              <EmptySpace max="-2" attributes="0"/>
-              <Component id="jButton2" min="-2" max="-2" attributes="0"/>
-              <EmptySpace max="-2" attributes="0"/>
-=======
           <Group type="102" alignment="0" attributes="0">
               <EmptySpace min="-2" pref="113" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="1" attributes="0">
@@ -104,7 +68,6 @@
                   </Group>
               </Group>
               <EmptySpace pref="40" max="32767" attributes="0"/>
->>>>>>> 973819ee6e6c4532a12a2cf02bb3527f415334b9
           </Group>
       </Group>
     </DimensionLayout>
@@ -126,13 +89,9 @@
                       <Component id="jRadioButtonLessonStaff" min="-2" max="-2" attributes="0"/>
                   </Group>
               </Group>
-<<<<<<< HEAD
-              <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
-=======
               <EmptySpace min="-2" pref="14" max="-2" attributes="0"/>
               <Component id="jSeparator8" min="-2" pref="10" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
->>>>>>> 973819ee6e6c4532a12a2cf02bb3527f415334b9
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="jTextFieldID" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="jLabel1" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -142,22 +101,14 @@
                   <Component id="jTextFieldPW" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="jLabel2" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
-<<<<<<< HEAD
-              <EmptySpace min="-2" pref="38" max="-2" attributes="0"/>
-=======
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Component id="jSeparator9" min="-2" pref="10" max="-2" attributes="0"/>
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
->>>>>>> 973819ee6e6c4532a12a2cf02bb3527f415334b9
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="loginButton" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="jButton2" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
-<<<<<<< HEAD
-              <EmptySpace max="32767" attributes="0"/>
-=======
               <EmptySpace min="0" pref="10" max="32767" attributes="0"/>
->>>>>>> 973819ee6e6c4532a12a2cf02bb3527f415334b9
           </Group>
       </Group>
     </DimensionLayout>
@@ -249,12 +200,9 @@
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton2ActionPerformed"/>
       </Events>
     </Component>
-<<<<<<< HEAD
-=======
     <Component class="javax.swing.JSeparator" name="jSeparator8">
     </Component>
     <Component class="javax.swing.JSeparator" name="jSeparator9">
     </Component>
->>>>>>> 973819ee6e6c4532a12a2cf02bb3527f415334b9
   </SubComponents>
 </Form>

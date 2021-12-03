@@ -38,11 +38,8 @@ public class LessonClassUI extends javax.swing.JFrame {
         jComboBoxSubject = new javax.swing.JComboBox<>();
         jLabel3 = new javax.swing.JLabel();
         jComboBoxClassList = new javax.swing.JComboBox<>();
-<<<<<<< HEAD
-=======
         jSeparator11 = new javax.swing.JSeparator();
         jSeparator12 = new javax.swing.JSeparator();
->>>>>>> 973819ee6e6c4532a12a2cf02bb3527f415334b9
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -87,29 +84,11 @@ public class LessonClassUI extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-<<<<<<< HEAD
-                        .addGap(79, 79, 79)
-=======
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
->>>>>>> 973819ee6e6c4532a12a2cf02bb3527f415334b9
                         .addComponent(jButtonClassInput)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jButtExit))
                     .addGroup(layout.createSequentialGroup()
-<<<<<<< HEAD
-                        .addGap(12, 12, 12)
-                        .addComponent(jLabel3)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jComboBoxSubject, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(48, 48, 48)
-                        .addComponent(jComboBoxClassList, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(jLabel1)
-                .addGap(17, 17, 17))
-=======
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
                                 .addGap(12, 12, 12)
@@ -131,7 +110,6 @@ public class LessonClassUI extends javax.swing.JFrame {
                     .addComponent(jSeparator11)
                     .addComponent(jSeparator12))
                 .addContainerGap())
->>>>>>> 973819ee6e6c4532a12a2cf02bb3527f415334b9
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -141,12 +119,6 @@ public class LessonClassUI extends javax.swing.JFrame {
                     .addComponent(jLabel3)
                     .addComponent(jComboBoxSubject, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-<<<<<<< HEAD
-                .addComponent(jLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jComboBoxClassList, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 166, Short.MAX_VALUE)
-=======
                 .addComponent(jSeparator12, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(2, 2, 2)
                 .addComponent(jLabel1)
@@ -155,7 +127,6 @@ public class LessonClassUI extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 118, Short.MAX_VALUE)
                 .addComponent(jSeparator11, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(26, 26, 26)
->>>>>>> 973819ee6e6c4532a12a2cf02bb3527f415334b9
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButtonClassInput)
                     .addComponent(jButtExit))
@@ -176,11 +147,7 @@ public class LessonClassUI extends javax.swing.JFrame {
 
         for (int i = 0; i < chooseLesson.size(); i++) {
             jComboBoxClassList.addItem(chooseLesson.get(i).getName()); //ComboBox에 적용
-<<<<<<< HEAD
-        }        //TODO comboBox 오름차순 정렬
-=======
         }
->>>>>>> 973819ee6e6c4532a12a2cf02bb3527f415334b9
     }//GEN-LAST:event_jComboBoxSubjectActionPerformed
 
     private void jComboBoxClassListActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBoxClassListActionPerformed
@@ -255,10 +222,7 @@ public class LessonClassUI extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> jComboBoxSubject;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel3;
-<<<<<<< HEAD
-=======
     private javax.swing.JSeparator jSeparator11;
     private javax.swing.JSeparator jSeparator12;
->>>>>>> 973819ee6e6c4532a12a2cf02bb3527f415334b9
     // End of variables declaration//GEN-END:variables
 }

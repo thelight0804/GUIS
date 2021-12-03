@@ -42,8 +42,6 @@ public class StudentWork implements ClassWork {
             }
         }
     }
-<<<<<<< HEAD
-=======
 
     @Override
     public void delStudent(String name) { //학생 삭제
@@ -81,5 +79,4 @@ public class StudentWork implements ClassWork {
             Logger.getLogger(StudentWork.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
->>>>>>> 973819ee6e6c4532a12a2cf02bb3527f415334b9
 } //class 끝

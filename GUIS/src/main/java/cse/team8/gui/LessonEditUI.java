@@ -25,11 +25,7 @@ public class LessonEditUI extends javax.swing.JFrame {
     LessonWork lessonWork = new LessonWork();
     FileIO fileIO = new FileIO();
     String subject;
-<<<<<<< HEAD
-
-=======
     float credit;
->>>>>>> 973819ee6e6c4532a12a2cf02bb3527f415334b9
     int count;
     int classNum = 0;
 
@@ -77,10 +73,7 @@ public class LessonEditUI extends javax.swing.JFrame {
         jSeparator1 = new javax.swing.JSeparator();
         jTextFieldBill = new javax.swing.JTextField();
         jLabelBill = new javax.swing.JLabel();
-<<<<<<< HEAD
-=======
         jSeparator13 = new javax.swing.JSeparator();
->>>>>>> 973819ee6e6c4532a12a2cf02bb3527f415334b9
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -169,14 +162,8 @@ public class LessonEditUI extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-<<<<<<< HEAD
-            .addComponent(jSeparator1)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-=======
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(18, Short.MAX_VALUE)
->>>>>>> 973819ee6e6c4532a12a2cf02bb3527f415334b9
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jLabel9)
                     .addComponent(jLabel10))
@@ -185,50 +172,6 @@ public class LessonEditUI extends javax.swing.JFrame {
                     .addComponent(jComboBoxClassList, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jComboBoxSubject, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(150, 150, 150))
-<<<<<<< HEAD
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                                    .addComponent(jLabel2)
-                                    .addGap(18, 18, 18)
-                                    .addComponent(jTextFieldLesName))
-                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(jLabel8)
-                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                .addComponent(jLabel1)
-                                                .addComponent(jLabel3)
-                                                .addComponent(jLabel4))
-                                            .addComponent(jLabel5))
-                                        .addComponent(jLabelBill, javax.swing.GroupLayout.Alignment.TRAILING))
-                                    .addGap(18, 18, 18)
-                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                        .addComponent(jTextFieldBill)
-                                        .addComponent(jTextFieldLesNum)
-                                        .addComponent(jComboBoxLesSub, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addComponent(jScrollPane2)
-                                        .addComponent(jTextFieldProCharge, javax.swing.GroupLayout.DEFAULT_SIZE, 258, Short.MAX_VALUE)
-                                        .addComponent(jComboBoxCredit, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel6)
-                                .addGap(18, 18, 18)
-                                .addComponent(jTextFieldLesMax, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jLabel7)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jTextFieldLesMin, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(43, 43, 43))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(jButtonEdit)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jButtExit)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-=======
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
@@ -276,7 +219,6 @@ public class LessonEditUI extends javax.swing.JFrame {
                         .addGap(0, 0, Short.MAX_VALUE))
                     .addComponent(jSeparator13, javax.swing.GroupLayout.Alignment.LEADING))
                 .addContainerGap())
->>>>>>> 973819ee6e6c4532a12a2cf02bb3527f415334b9
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -315,11 +257,7 @@ public class LessonEditUI extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jTextFieldProCharge, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-<<<<<<< HEAD
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 10, Short.MAX_VALUE)
-=======
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
->>>>>>> 973819ee6e6c4532a12a2cf02bb3527f415334b9
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabelBill)
                     .addComponent(jTextFieldBill, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -329,13 +267,9 @@ public class LessonEditUI extends javax.swing.JFrame {
                     .addComponent(jTextFieldLesMin, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jTextFieldLesMax, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel7))
-<<<<<<< HEAD
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-=======
                 .addGap(14, 14, 14)
                 .addComponent(jSeparator13, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
->>>>>>> 973819ee6e6c4532a12a2cf02bb3527f415334b9
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButtonEdit)
                     .addComponent(jButtExit))
@@ -354,21 +288,13 @@ public class LessonEditUI extends javax.swing.JFrame {
         String myNum = jTextFieldLesNum.getText();
         String name = jTextFieldLesName.getText();
         String mySubject = jComboBoxLesSub.getSelectedItem().toString();
-<<<<<<< HEAD
-        float credit = Float.parseFloat(jComboBoxCredit.getSelectedItem().toString());
-=======
         credit = Float.parseFloat(jComboBoxCredit.getSelectedItem().toString());
->>>>>>> 973819ee6e6c4532a12a2cf02bb3527f415334b9
         String explain = jTextAreaLesInfo.getText();
         String proName = jTextFieldProCharge.getText();
         int minPeople = Integer.parseInt(jTextFieldLesMin.getText()); //string to int
         int maxPeople = Integer.parseInt(jTextFieldLesMax.getText());
         long bill = Long.parseLong(jTextFieldBill.getText());
-<<<<<<< HEAD
-        
-=======
 
->>>>>>> 973819ee6e6c4532a12a2cf02bb3527f415334b9
         int select = JOptionPane.showConfirmDialog(null, "변경 하시겠습니까?", "Confirm", JOptionPane.OK_CANCEL_OPTION); //확인, 취소 버튼 출력
         if (select == 0) { //확인 버튼 클릭 시
             lessonWork.delClass(count, classNum, chooseLesson);
@@ -398,11 +324,7 @@ public class LessonEditUI extends javax.swing.JFrame {
         jTextFieldLesMin.setEnabled(false);
         jTextFieldLesMax.setEnabled(false);
         jTextFieldBill.setEnabled(false);
-<<<<<<< HEAD
-        
-=======
 
->>>>>>> 973819ee6e6c4532a12a2cf02bb3527f415334b9
         jComboBoxSubjectActionPerformed(evt);
     }//GEN-LAST:event_jButtonEditActionPerformed
 
@@ -421,11 +343,7 @@ public class LessonEditUI extends javax.swing.JFrame {
 
         for (int i = 0; i < chooseLesson.size(); i++) {
             jComboBoxClassList.addItem(chooseLesson.get(i).getName()); //ComboBox에 적용
-<<<<<<< HEAD
-        }        //TODO comboBox 오름차순 정렬
-=======
         }
->>>>>>> 973819ee6e6c4532a12a2cf02bb3527f415334b9
     }//GEN-LAST:event_jComboBoxSubjectActionPerformed
 
     private void jComboBoxClassListActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBoxClassListActionPerformed
@@ -459,12 +377,8 @@ public class LessonEditUI extends javax.swing.JFrame {
             jTextFieldLesMax.setText(Integer.toString(chooseLesson.get(classNum).getMaxPeople()));
             jTextFieldLesMin.setText(Integer.toString(chooseLesson.get(classNum).getMinPeople()));
             jTextFieldBill.setText(Long.toString(chooseLesson.get(classNum).getBill()));
-<<<<<<< HEAD
-            //TODO 학점 동기화
-=======
             jComboBoxLesSub.setSelectedItem(subject); //ComboBox 순서 지정
             jComboBoxCredit.setSelectedItem(Float.toString(credit));
->>>>>>> 973819ee6e6c4532a12a2cf02bb3527f415334b9
             jTextAreaLesInfo.setText(chooseLesson.get(classNum).getExplain());
         }
     }//GEN-LAST:event_jComboBoxClassListActionPerformed
@@ -540,10 +454,7 @@ public class LessonEditUI extends javax.swing.JFrame {
     private javax.swing.JLabel jLabelBill;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JSeparator jSeparator1;
-<<<<<<< HEAD
-=======
     private javax.swing.JSeparator jSeparator13;
->>>>>>> 973819ee6e6c4532a12a2cf02bb3527f415334b9
     private javax.swing.JTextArea jTextAreaLesInfo;
     private javax.swing.JTextField jTextFieldBill;
     private javax.swing.JTextField jTextFieldLesMax;

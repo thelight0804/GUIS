@@ -5,16 +5,6 @@ import cse.team8.user.Student;
 import cse.team8.classwork.ProfessorWork;
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
-<<<<<<< HEAD
-public class GradeInputUI extends javax.swing.JFrame {
-    ArrayList<Student> studentResult = new ArrayList<>();
-    ArrayList<String> Result = new ArrayList<>();
-    
-    public GradeInputUI() {
-        initComponents();
-    }
-    
-=======
 
 public class GradeInputUI extends javax.swing.JFrame {
 
@@ -25,7 +15,6 @@ public class GradeInputUI extends javax.swing.JFrame {
         initComponents();
     }
 
->>>>>>> 973819ee6e6c4532a12a2cf02bb3527f415334b9
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -48,12 +37,9 @@ public class GradeInputUI extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jButtonChange = new javax.swing.JButton();
-<<<<<<< HEAD
-=======
         jSeparator13 = new javax.swing.JSeparator();
         jSeparator14 = new javax.swing.JSeparator();
         jSeparator15 = new javax.swing.JSeparator();
->>>>>>> 973819ee6e6c4532a12a2cf02bb3527f415334b9
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -123,22 +109,11 @@ public class GradeInputUI extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-<<<<<<< HEAD
-                .addGap(15, 15, 15)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(190, 190, 190)
-                        .addComponent(jLabel7)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-=======
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addGap(15, 15, 15)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jSeparator13, javax.swing.GroupLayout.Alignment.TRAILING)
->>>>>>> 973819ee6e6c4532a12a2cf02bb3527f415334b9
                             .addGroup(layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                     .addComponent(jLabel6)
@@ -153,14 +128,10 @@ public class GradeInputUI extends javax.swing.JFrame {
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                         .addComponent(jButtonSearch))))
                             .addGroup(layout.createSequentialGroup()
-<<<<<<< HEAD
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-=======
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(layout.createSequentialGroup()
                                         .addGap(190, 190, 190)
                                         .addComponent(jLabel7))
->>>>>>> 973819ee6e6c4532a12a2cf02bb3527f415334b9
                                     .addGroup(layout.createSequentialGroup()
                                         .addComponent(jLabel2)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -169,15 +140,7 @@ public class GradeInputUI extends javax.swing.JFrame {
                                     .addGroup(layout.createSequentialGroup()
                                         .addComponent(jLabel4)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-<<<<<<< HEAD
-                                        .addComponent(jTextFieldGrade, javax.swing.GroupLayout.PREFERRED_SIZE, 199, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(18, 18, 18)
-                                        .addComponent(jButtonChange)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addComponent(jButtonExit))
-=======
                                         .addComponent(jTextFieldGrade, javax.swing.GroupLayout.PREFERRED_SIZE, 199, javax.swing.GroupLayout.PREFERRED_SIZE))
->>>>>>> 973819ee6e6c4532a12a2cf02bb3527f415334b9
                                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                                         .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
                                             .addComponent(jLabel3)
@@ -187,10 +150,6 @@ public class GradeInputUI extends javax.swing.JFrame {
                                             .addComponent(jLabel1)
                                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                             .addComponent(jTextFieldNum, javax.swing.GroupLayout.PREFERRED_SIZE, 198, javax.swing.GroupLayout.PREFERRED_SIZE))))
-<<<<<<< HEAD
-                                .addGap(0, 0, Short.MAX_VALUE)))
-                        .addContainerGap())))
-=======
                                 .addGap(0, 0, Short.MAX_VALUE))))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -204,7 +163,6 @@ public class GradeInputUI extends javax.swing.JFrame {
                         .addContainerGap()
                         .addComponent(jSeparator15)))
                 .addContainerGap())
->>>>>>> 973819ee6e6c4532a12a2cf02bb3527f415334b9
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -218,12 +176,6 @@ public class GradeInputUI extends javax.swing.JFrame {
                     .addComponent(jButtonSearch)
                     .addComponent(jLabel5)
                     .addComponent(jTextFieldWord, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-<<<<<<< HEAD
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel7)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-=======
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jSeparator13, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(10, 10, 10)
@@ -232,7 +184,6 @@ public class GradeInputUI extends javax.swing.JFrame {
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(jSeparator15, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
->>>>>>> 973819ee6e6c4532a12a2cf02bb3527f415334b9
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jTextFieldName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -248,15 +199,11 @@ public class GradeInputUI extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jTextFieldGrade, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-<<<<<<< HEAD
-                    .addComponent(jLabel4)
-=======
                     .addComponent(jLabel4))
                 .addGap(14, 14, 14)
                 .addComponent(jSeparator14, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(20, 20, 20)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
->>>>>>> 973819ee6e6c4532a12a2cf02bb3527f415334b9
                     .addComponent(jButtonChange)
                     .addComponent(jButtonExit))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -280,11 +227,7 @@ public class GradeInputUI extends javax.swing.JFrame {
                 if (i == 0) {
                     listData[0] = Result.get(0) + " / " + Result.get(1) + " / " + Result.get(2);
                 } else if (i * 6 < Result.size()) {
-<<<<<<< HEAD
-                    listData[i] = Result.get(i * 6) + " / " + Result.get((i * 6)+1) + " / " + Result.get((i * 6)+2);
-=======
                     listData[i] = Result.get(i * 6) + " / " + Result.get((i * 6) + 1) + " / " + Result.get((i * 6) + 2);
->>>>>>> 973819ee6e6c4532a12a2cf02bb3527f415334b9
                 }
             }
         }
@@ -292,16 +235,9 @@ public class GradeInputUI extends javax.swing.JFrame {
             for (int i = 0; i < Result.size(); i++) { //학번만 추출
                 if (i == 0) {
                     listData[0] = Result.get(0) + " / " + Result.get(1) + " / " + Result.get(2);
-<<<<<<< HEAD
-                }
-                else if ((i*6)+1 < Result.size()) {
-                    //listData[i] = Result.get((i*5)+1) + " / " + Result.get((i * 5)+2) + " / " + Result.get((i * 5)+3);
-                    listData[i] = Result.get(i * 6) + " / " + Result.get((i * 6)+1) + " / " + Result.get((i * 6)+2);
-=======
                 } else if ((i * 6) + 1 < Result.size()) {
                     //listData[i] = Result.get((i*5)+1) + " / " + Result.get((i * 5)+2) + " / " + Result.get((i * 5)+3);
                     listData[i] = Result.get(i * 6) + " / " + Result.get((i * 6) + 1) + " / " + Result.get((i * 6) + 2);
->>>>>>> 973819ee6e6c4532a12a2cf02bb3527f415334b9
                 }
             }
         }
@@ -309,16 +245,9 @@ public class GradeInputUI extends javax.swing.JFrame {
             for (int i = 0; i < Result.size(); i++) { //학과만 추출
                 if (i == 0) {
                     listData[0] = Result.get(0) + " / " + Result.get(1) + " / " + Result.get(2);
-<<<<<<< HEAD
-                }
-                else if ((i*6)+1 < Result.size()) {
-                    //listData[i] = Result.get((i*5)+1) + " / " + Result.get((i * 5)+2) + " / " + Result.get((i * 5)+3);
-                    listData[i] = Result.get(i * 6) + " / " + Result.get((i * 6)+1) + " / " + Result.get((i * 6)+2);
-=======
                 } else if ((i * 6) + 1 < Result.size()) {
                     //listData[i] = Result.get((i*5)+1) + " / " + Result.get((i * 5)+2) + " / " + Result.get((i * 5)+3);
                     listData[i] = Result.get(i * 6) + " / " + Result.get((i * 6) + 1) + " / " + Result.get((i * 6) + 2);
->>>>>>> 973819ee6e6c4532a12a2cf02bb3527f415334b9
                 }
             }
         }
@@ -338,22 +267,12 @@ public class GradeInputUI extends javax.swing.JFrame {
             myNum = Result.get(1);
             mySubject = Result.get(2);
             grade = Result.get(5);
-<<<<<<< HEAD
-                    //5~11~17
-        }
-        else{
-            name = Result.get(select*6);
-            myNum = Result.get((select*6) + 1);
-            mySubject = Result.get((select*6) + 2);
-            grade = Result.get((select*6) + 5);
-=======
             //5~11~17
         } else {
             name = Result.get(select * 6);
             myNum = Result.get((select * 6) + 1);
             mySubject = Result.get((select * 6) + 2);
             grade = Result.get((select * 6) + 5);
->>>>>>> 973819ee6e6c4532a12a2cf02bb3527f415334b9
         }
 
         //Text Field 갱신
@@ -369,33 +288,12 @@ public class GradeInputUI extends javax.swing.JFrame {
     }//GEN-LAST:event_jButtonExitActionPerformed
 
     private void jTextFieldGradeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldGradeActionPerformed
-<<<<<<< HEAD
-        
-=======
 
->>>>>>> 973819ee6e6c4532a12a2cf02bb3527f415334b9
     }//GEN-LAST:event_jTextFieldGradeActionPerformed
 
     private void jButtonChangeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonChangeActionPerformed
         //변경 버튼
         ProfessorWork input = new ProfessorWork();
-<<<<<<< HEAD
-        
-        //List에서 선택한 이름만 골라서 메소드 호출
-        if (Float.parseFloat(jTextFieldGrade.getText()) >= 0.0 && Float.parseFloat(jTextFieldGrade.getText()) <= 4.0) {
-            if (jTextFieldGrade.getText() == "0") {
-                input.gradeInput(Result.get(0), Float.parseFloat(jTextFieldGrade.getText()));
-            } else {
-                input.gradeInput(Result.get(jListResult.getSelectedIndex() * 6), Float.parseFloat(jTextFieldGrade.getText()));
-            }
-            jButtonSearchActionPerformed(evt); //List 갱신
-            JOptionPane.showMessageDialog(null, "변경이 완료되었습니다");
-        }
-        else{
-            JOptionPane.showMessageDialog(null, "성적은 0.0~4.0 까지만 입력이 가능합니다");
-        }
-        //파일처리..!
-=======
         int select = JOptionPane.showConfirmDialog(null, "변경 하시겠습니까?", "Confirm", JOptionPane.OK_CANCEL_OPTION); //확인, 취소 버튼 출력
         if (select == 0) { //확인 버튼 클릭 시
             //List에서 선택한 이름만 골라서 메소드 호출
@@ -411,7 +309,6 @@ public class GradeInputUI extends javax.swing.JFrame {
                 JOptionPane.showMessageDialog(null, "성적은 0.0~4.0 까지만 입력이 가능합니다");
             }
         }
->>>>>>> 973819ee6e6c4532a12a2cf02bb3527f415334b9
     }//GEN-LAST:event_jButtonChangeActionPerformed
 
     /**
@@ -470,12 +367,9 @@ public class GradeInputUI extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JList<String> jListResult;
     private javax.swing.JScrollPane jScrollPane1;
-<<<<<<< HEAD
-=======
     private javax.swing.JSeparator jSeparator13;
     private javax.swing.JSeparator jSeparator14;
     private javax.swing.JSeparator jSeparator15;
->>>>>>> 973819ee6e6c4532a12a2cf02bb3527f415334b9
     private javax.swing.JTextField jTextFieldGrade;
     private javax.swing.JTextField jTextFieldName;
     private javax.swing.JTextField jTextFieldNum;

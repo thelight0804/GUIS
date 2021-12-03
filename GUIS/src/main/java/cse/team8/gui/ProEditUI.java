@@ -6,13 +6,10 @@
 package cse.team8.gui;
 
 import cse.team8.academywork.Search;
-<<<<<<< HEAD
-=======
 import cse.team8.classwork.ProfessorWork;
 import java.util.ArrayList;
 import cse.team8.user.Professor;
 import javax.swing.JOptionPane;
->>>>>>> 973819ee6e6c4532a12a2cf02bb3527f415334b9
 
 /**
  *
@@ -20,14 +17,11 @@ import javax.swing.JOptionPane;
  */
 public class ProEditUI extends javax.swing.JFrame {
 
-<<<<<<< HEAD
-=======
     ArrayList<Professor> professorResult = new ArrayList<>();
     ArrayList<String> Result = new ArrayList<>();
     ProfessorWork professorWork = new ProfessorWork();
     String name;
 
->>>>>>> 973819ee6e6c4532a12a2cf02bb3527f415334b9
     /**
      * Creates new form AcaProEdit
      */
@@ -46,12 +40,7 @@ public class ProEditUI extends javax.swing.JFrame {
 
         jTextFieldNum = new javax.swing.JTextField();
         jTextFieldName = new javax.swing.JTextField();
-<<<<<<< HEAD
-        jTextFieldRRN = new javax.swing.JTextField();
-        jComboBoxSubList = new javax.swing.JComboBox<>();
-=======
         jTextFieldFrontRRN = new javax.swing.JTextField();
->>>>>>> 973819ee6e6c4532a12a2cf02bb3527f415334b9
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
@@ -64,14 +53,6 @@ public class ProEditUI extends javax.swing.JFrame {
         jTextFieldWord = new javax.swing.JTextField();
         jComboBoxBase = new javax.swing.JComboBox<>();
         jLabel5 = new javax.swing.JLabel();
-<<<<<<< HEAD
-        jButtEdit = new javax.swing.JButton();
-        jButtExit = new javax.swing.JButton();
-        jLabel6 = new javax.swing.JLabel();
-
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-
-=======
         jButtonEdit = new javax.swing.JButton();
         jButtExit = new javax.swing.JButton();
         jLabel6 = new javax.swing.JLabel();
@@ -90,7 +71,6 @@ public class ProEditUI extends javax.swing.JFrame {
 
         jTextFieldFrontRRN.setEnabled(false);
 
->>>>>>> 973819ee6e6c4532a12a2cf02bb3527f415334b9
         jLabel2.setText("교수 번호");
 
         jLabel3.setText("이름");
@@ -104,14 +84,11 @@ public class ProEditUI extends javax.swing.JFrame {
             public int getSize() { return strings.length; }
             public String getElementAt(int i) { return strings[i]; }
         });
-<<<<<<< HEAD
-=======
         jListResult.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jListResultMouseClicked(evt);
             }
         });
->>>>>>> 973819ee6e6c4532a12a2cf02bb3527f415334b9
         jScrollPane1.setViewportView(jListResult);
 
         jLabel9.setText("검색 결과");
@@ -129,9 +106,6 @@ public class ProEditUI extends javax.swing.JFrame {
 
         jLabel5.setText("주민등록번호");
 
-<<<<<<< HEAD
-        jButtEdit.setText("수정 완료");
-=======
         jButtonEdit.setText("수정");
         jButtonEdit.setEnabled(false);
         jButtonEdit.addActionListener(new java.awt.event.ActionListener() {
@@ -139,7 +113,6 @@ public class ProEditUI extends javax.swing.JFrame {
                 jButtonEditActionPerformed(evt);
             }
         });
->>>>>>> 973819ee6e6c4532a12a2cf02bb3527f415334b9
 
         jButtExit.setText("취소");
         jButtExit.addActionListener(new java.awt.event.ActionListener() {
@@ -150,63 +123,16 @@ public class ProEditUI extends javax.swing.JFrame {
 
         jLabel6.setText("수정할 부분을 입력해주세요");
 
-<<<<<<< HEAD
-=======
         jTextFieldSub.setEnabled(false);
 
         jLabel1.setText("-");
 
         jTextFieldBackRRN.setEnabled(false);
 
->>>>>>> 973819ee6e6c4532a12a2cf02bb3527f415334b9
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-<<<<<<< HEAD
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(jButtEdit)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jButtExit))
-                    .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                                    .addComponent(jLabel5)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(jTextFieldRRN, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(jLabel2)
-                                        .addComponent(jLabel3)
-                                        .addComponent(jLabel4))
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(jComboBoxSubList, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addComponent(jTextFieldName)
-                                        .addComponent(jTextFieldNum))))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(190, 190, 190)
-                                .addComponent(jLabel9))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(jLabel8)
-                                    .addComponent(jLabel7))
-                                .addGap(6, 6, 6)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jComboBoxBase, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addComponent(jTextFieldWord, javax.swing.GroupLayout.PREFERRED_SIZE, 375, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(18, 18, 18)
-                                        .addComponent(jButtonSearch))))
-                            .addComponent(jLabel6)
-                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 485, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(0, 0, Short.MAX_VALUE)))
-=======
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(layout.createSequentialGroup()
@@ -257,7 +183,6 @@ public class ProEditUI extends javax.swing.JFrame {
                                 .addGap(0, 0, Short.MAX_VALUE))
                             .addComponent(jSeparator5, javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jSeparator6, javax.swing.GroupLayout.Alignment.LEADING))))
->>>>>>> 973819ee6e6c4532a12a2cf02bb3527f415334b9
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -272,13 +197,6 @@ public class ProEditUI extends javax.swing.JFrame {
                     .addComponent(jButtonSearch)
                     .addComponent(jLabel7)
                     .addComponent(jTextFieldWord, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-<<<<<<< HEAD
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel9)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 9, Short.MAX_VALUE)
-=======
                 .addGap(18, 18, 18)
                 .addComponent(jSeparator5, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(2, 2, 2)
@@ -288,7 +206,6 @@ public class ProEditUI extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addComponent(jSeparator6, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
->>>>>>> 973819ee6e6c4532a12a2cf02bb3527f415334b9
                 .addComponent(jLabel6)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -298,20 +215,6 @@ public class ProEditUI extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jTextFieldName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel3))
-<<<<<<< HEAD
-                .addGap(9, 9, 9)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel4)
-                    .addComponent(jComboBoxSubList, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(9, 9, 9)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextFieldRRN, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel5))
-                .addGap(30, 30, 30)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButtExit)
-                    .addComponent(jButtEdit))
-=======
                 .addGap(10, 10, 10)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel4)
@@ -328,35 +231,18 @@ public class ProEditUI extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButtExit)
                     .addComponent(jButtonEdit))
->>>>>>> 973819ee6e6c4532a12a2cf02bb3527f415334b9
                 .addContainerGap())
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-<<<<<<< HEAD
-    private void jButtonSearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonSearchActionPerformed
-        //검색 버튼
-=======
 
     private void jButtonSearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonSearchActionPerformed
->>>>>>> 973819ee6e6c4532a12a2cf02bb3527f415334b9
         String base = jComboBoxBase.getSelectedItem().toString(); //검색 분류 추출
         String word = jTextFieldWord.getText(); //검색어 추출
 
         Search search = new Search();
-<<<<<<< HEAD
-//        String result[] = search.stuSearch(base, word); //검색
-//        jListResult.setListData(result); //List 갱신
-    }//GEN-LAST:event_jButtonSearchActionPerformed
-
-    private void jButtExitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtExitActionPerformed
-        // TODO add your handling code here:
-        dispose();
-    }//GEN-LAST:event_jButtExitActionPerformed
-
-=======
 
         Result = search.proSearch(base, word); //검색 메소드
         String listData[] = new String[Result.size()];
@@ -454,7 +340,6 @@ public class ProEditUI extends javax.swing.JFrame {
         jTextFieldBackRRN.setText(backRRN);
     }//GEN-LAST:event_jListResultMouseClicked
 
->>>>>>> 973819ee6e6c4532a12a2cf02bb3527f415334b9
     /**
      * @param args the command line arguments
      */
@@ -498,19 +383,11 @@ public class ProEditUI extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-<<<<<<< HEAD
-    private javax.swing.JButton jButtEdit;
-    private javax.swing.JButton jButtExit;
-    private javax.swing.JButton jButtonSearch;
-    private javax.swing.JComboBox<String> jComboBoxBase;
-    private javax.swing.JComboBox<String> jComboBoxSubList;
-=======
     private javax.swing.JButton jButtExit;
     private javax.swing.JButton jButtonEdit;
     private javax.swing.JButton jButtonSearch;
     private javax.swing.JComboBox<String> jComboBoxBase;
     private javax.swing.JLabel jLabel1;
->>>>>>> 973819ee6e6c4532a12a2cf02bb3527f415334b9
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -521,11 +398,6 @@ public class ProEditUI extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel9;
     private javax.swing.JList<String> jListResult;
     private javax.swing.JScrollPane jScrollPane1;
-<<<<<<< HEAD
-    private javax.swing.JTextField jTextFieldName;
-    private javax.swing.JTextField jTextFieldNum;
-    private javax.swing.JTextField jTextFieldRRN;
-=======
     private javax.swing.JSeparator jSeparator19;
     private javax.swing.JSeparator jSeparator5;
     private javax.swing.JSeparator jSeparator6;
@@ -534,7 +406,6 @@ public class ProEditUI extends javax.swing.JFrame {
     private javax.swing.JTextField jTextFieldName;
     private javax.swing.JTextField jTextFieldNum;
     private javax.swing.JTextField jTextFieldSub;
->>>>>>> 973819ee6e6c4532a12a2cf02bb3527f415334b9
     private javax.swing.JTextField jTextFieldWord;
     // End of variables declaration//GEN-END:variables
 }
