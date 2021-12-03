@@ -42,4 +42,44 @@ public class StudentWork implements ClassWork {
             }
         }
     }
+<<<<<<< HEAD
+=======
+
+    @Override
+    public void delStudent(String name) { //학생 삭제
+        try {
+            student = fileIO.getStudent();
+        } catch (IOException ex) {
+            Logger.getLogger(StudentWork.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        for (int i = 0; i < student.size(); i++) {
+            if (student.get(i).getName().equals(name)) {
+                student.remove(i);
+            }
+        }
+        try {
+            fileIO.updateStudent(); //객체를 파일에 저장
+        } catch (IOException ex) {
+            Logger.getLogger(StudentWork.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+
+    public void inputStudent(String editName, String myNum, String mySubject, String frontRRN, String backRRN) { //학생 추가
+        try {
+            student = fileIO.getStudent();
+        } catch (IOException ex) {
+            Logger.getLogger(StudentWork.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        //String grade, Float credit, long bill, String name, String frontRRN, String backRRN, String myNum, String mySubject, boolean nowLogin, String PW
+        //이름2! S002! 전산학과! 111111! 00000002! E! 0.0! 0! 00000002
+        student.add(new Student("E", 0.0f, 0, editName, frontRRN, backRRN, myNum, mySubject, false, backRRN)); //강좌 객체 추가
+        //객체 생성에서는 'S'tudent 대문자 주의! / float 지정에는 0.0'f' 끝에 f를 붙어주어야 한다
+
+        try {
+            fileIO.updateStudent(); //객체를 파일에 저장
+        } catch (IOException ex) {
+            Logger.getLogger(StudentWork.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+>>>>>>> 973819ee6e6c4532a12a2cf02bb3527f415334b9
 } //class 끝

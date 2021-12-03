@@ -5,6 +5,11 @@
  */
 package cse.team8.gui;
 
+<<<<<<< HEAD
+=======
+import cse.team8.userwork.SystemLogin;
+import java.io.IOException;
+>>>>>>> 973819ee6e6c4532a12a2cf02bb3527f415334b9
 import javax.swing.JOptionPane;
 
 /**
@@ -12,6 +17,10 @@ import javax.swing.JOptionPane;
  * @author User
  */
 public class AcademyUI extends javax.swing.JFrame {
+<<<<<<< HEAD
+=======
+
+>>>>>>> 973819ee6e6c4532a12a2cf02bb3527f415334b9
     public AcademyUI() {
         initComponents();
         jRadioButtStudent.setSelected(true); //학생을 기본 선택으로
@@ -35,6 +44,12 @@ public class AcademyUI extends javax.swing.JFrame {
         jButtExit = new javax.swing.JButton();
         jRadioButtStudent = new javax.swing.JRadioButton();
         jRadioButtProfessor = new javax.swing.JRadioButton();
+<<<<<<< HEAD
+=======
+        jSeparator16 = new javax.swing.JSeparator();
+        jSeparator17 = new javax.swing.JSeparator();
+        jButtRogOut = new javax.swing.JButton();
+>>>>>>> 973819ee6e6c4532a12a2cf02bb3527f415334b9
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -100,12 +115,27 @@ public class AcademyUI extends javax.swing.JFrame {
             }
         });
 
+<<<<<<< HEAD
+=======
+        jButtRogOut.setFont(new java.awt.Font("맑은 고딕 Semilight", 0, 12)); // NOI18N
+        jButtRogOut.setText("로그아웃");
+        jButtRogOut.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtRogOutActionPerformed(evt);
+            }
+        });
+
+>>>>>>> 973819ee6e6c4532a12a2cf02bb3527f415334b9
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
+<<<<<<< HEAD
                 .addGap(0, 30, Short.MAX_VALUE)
+=======
+                .addGap(0, 99, Short.MAX_VALUE)
+>>>>>>> 973819ee6e6c4532a12a2cf02bb3527f415334b9
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jButtCreate, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jRadioButtStudent)
@@ -119,6 +149,7 @@ public class AcademyUI extends javax.swing.JFrame {
                         .addComponent(jButtEdit)
                         .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
+<<<<<<< HEAD
                         .addComponent(jRadioButtProfessor, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGap(50, 50, 50))))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
@@ -127,10 +158,31 @@ public class AcademyUI extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jButtExit)
                 .addGap(9, 9, 9))
+=======
+                        .addComponent(jRadioButtProfessor, javax.swing.GroupLayout.DEFAULT_SIZE, 117, Short.MAX_VALUE)
+                        .addGap(50, 50, 50))))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jButtPWchange)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jButtRogOut)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jButtExit)
+                .addGap(9, 9, 9))
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jSeparator17)
+                .addContainerGap())
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jSeparator16)
+                .addContainerGap())
+>>>>>>> 973819ee6e6c4532a12a2cf02bb3527f415334b9
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
+<<<<<<< HEAD
                 .addGap(30, 30, 30)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jRadioButtStudent, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -147,6 +199,30 @@ public class AcademyUI extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButtExit, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jButtPWchange, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+=======
+                .addGap(20, 20, 20)
+                .addComponent(jSeparator16, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jRadioButtProfessor, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jRadioButtStudent, javax.swing.GroupLayout.DEFAULT_SIZE, 64, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jButtCreate)
+                    .addComponent(jButtEdit))
+                .addGap(38, 38, 38)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jButtSearch, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jButtDel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(49, 49, 49)
+                .addComponent(jSeparator17, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jButtPWchange, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jButtExit, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jButtRogOut)))
+>>>>>>> 973819ee6e6c4532a12a2cf02bb3527f415334b9
                 .addContainerGap())
         );
 
@@ -158,6 +234,7 @@ public class AcademyUI extends javax.swing.JFrame {
     }//GEN-LAST:event_jRadioButtProfessorActionPerformed
 
     private void jButtExitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtExitActionPerformed
+<<<<<<< HEAD
 
         System.exit(0); //프로그램 종료
     }//GEN-LAST:event_jButtExitActionPerformed
@@ -177,19 +254,49 @@ public class AcademyUI extends javax.swing.JFrame {
         ProSearchUIWork.pack();
         ProSearchUIWork.setLocationRelativeTo(null);
         ProSearchUIWork.setVisible(true);
+=======
+        int select = JOptionPane.showConfirmDialog(null, "프로그램을 종료하시겠습니까?", "Confirm", JOptionPane.OK_CANCEL_OPTION); //확인, 취소 버튼 출력
+        if (select == 0) { //확인 버튼 클릭 시
+            System.exit(0); //프로그램 종료
+        }
+    }//GEN-LAST:event_jButtExitActionPerformed
+
+    private void jButtSearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtSearchActionPerformed
+        //검색 버튼
+        if (jRadioButtStudent.isSelected()) { //학생 선택 시
+            StuSearchUI StuSearchUIWork = new StuSearchUI();
+            StuSearchUIWork.setDefaultCloseOperation(StuSearchUI.EXIT_ON_CLOSE);
+            StuSearchUIWork.pack();
+            StuSearchUIWork.setLocationRelativeTo(null);
+            StuSearchUIWork.setVisible(true);
+        }
+        if (jRadioButtProfessor.isSelected()) { //교수 선택 시
+            ProSearchUI ProSearchUIWork = new ProSearchUI();
+            ProSearchUIWork.setDefaultCloseOperation(ProSearchUIWork.EXIT_ON_CLOSE);
+            ProSearchUIWork.pack();
+            ProSearchUIWork.setLocationRelativeTo(null);
+            ProSearchUIWork.setVisible(true);
+>>>>>>> 973819ee6e6c4532a12a2cf02bb3527f415334b9
         }
     }//GEN-LAST:event_jButtSearchActionPerformed
 
     private void jButtPWchangeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtPWchangeActionPerformed
+<<<<<<< HEAD
          //암호 변경 버튼
         changePW a = new changePW(); //changePW 창 호출
         a.setDefaultCloseOperation(changePW.EXIT_ON_CLOSE);
+=======
+        //암호 변경 버튼
+        ChangePW a = new ChangePW(); //changePW 창 호출
+        a.setDefaultCloseOperation(ChangePW.EXIT_ON_CLOSE);
+>>>>>>> 973819ee6e6c4532a12a2cf02bb3527f415334b9
         a.pack();
         a.setLocationRelativeTo(null);
         a.setVisible(true);
     }//GEN-LAST:event_jButtPWchangeActionPerformed
 
     private void jButtCreateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtCreateActionPerformed
+<<<<<<< HEAD
         // TODO add your handling code here:
         if (jRadioButtStudent.isSelected()) {
         StuCreateUI StuCreateUIWork = new StuCreateUI();
@@ -204,10 +311,27 @@ public class AcademyUI extends javax.swing.JFrame {
         ProCreateUIWork.pack();
         ProCreateUIWork.setLocationRelativeTo(null);
         ProCreateUIWork.setVisible(true);
+=======
+
+        if (jRadioButtStudent.isSelected()) {
+            StuCreateUI StuCreateUIWork = new StuCreateUI();
+            StuCreateUIWork.setDefaultCloseOperation(StuCreateUIWork.EXIT_ON_CLOSE);
+            StuCreateUIWork.pack();
+            StuCreateUIWork.setLocationRelativeTo(null);
+            StuCreateUIWork.setVisible(true);
+        }
+        if (jRadioButtProfessor.isSelected()) {
+            ProCreateUI ProCreateUIWork = new ProCreateUI();
+            ProCreateUIWork.setDefaultCloseOperation(ProCreateUI.EXIT_ON_CLOSE);
+            ProCreateUIWork.pack();
+            ProCreateUIWork.setLocationRelativeTo(null);
+            ProCreateUIWork.setVisible(true);
+>>>>>>> 973819ee6e6c4532a12a2cf02bb3527f415334b9
         }
     }//GEN-LAST:event_jButtCreateActionPerformed
 
     private void jButtEditActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtEditActionPerformed
+<<<<<<< HEAD
         // TODO add your handling code here:
         if (jRadioButtStudent.isSelected()) { //학생 선택 시
         StuEditUI StuEditUIWork = new StuEditUI();
@@ -222,10 +346,27 @@ public class AcademyUI extends javax.swing.JFrame {
         ProEditUIWork.pack();
         ProEditUIWork.setLocationRelativeTo(null);
         ProEditUIWork.setVisible(true);
+=======
+
+        if (jRadioButtStudent.isSelected()) { //학생 선택 시
+            StuEditUI StuEditUIWork = new StuEditUI();
+            StuEditUIWork.setDefaultCloseOperation(StuEditUIWork.EXIT_ON_CLOSE);
+            StuEditUIWork.pack();
+            StuEditUIWork.setLocationRelativeTo(null);
+            StuEditUIWork.setVisible(true);
+        }
+        if (jRadioButtProfessor.isSelected()) { //학생 선택 시
+            ProEditUI ProEditUIWork = new ProEditUI();
+            ProEditUIWork.setDefaultCloseOperation(ProEditUIWork.EXIT_ON_CLOSE);
+            ProEditUIWork.pack();
+            ProEditUIWork.setLocationRelativeTo(null);
+            ProEditUIWork.setVisible(true);
+>>>>>>> 973819ee6e6c4532a12a2cf02bb3527f415334b9
         }
     }//GEN-LAST:event_jButtEditActionPerformed
 
     private void jButtDelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtDelActionPerformed
+<<<<<<< HEAD
         // TODO add your handling code here:
         if (jRadioButtStudent.isSelected()) { //학생 선택 시
         StuDelUI StuDelUIWork = new StuDelUI();
@@ -243,6 +384,45 @@ public class AcademyUI extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_jButtDelActionPerformed
 
+=======
+
+        if (jRadioButtStudent.isSelected()) { //학생 선택 시
+            StuDelUI StuDelUIWork = new StuDelUI();
+            StuDelUIWork.setDefaultCloseOperation(StuDelUIWork.EXIT_ON_CLOSE);
+            StuDelUIWork.pack();
+            StuDelUIWork.setLocationRelativeTo(null);
+            StuDelUIWork.setVisible(true);
+        }
+        if (jRadioButtProfessor.isSelected()) { //학생 선택 시
+            ProDelUI ProDelUIWork = new ProDelUI();
+            ProDelUIWork.setDefaultCloseOperation(ProDelUIWork.EXIT_ON_CLOSE);
+            ProDelUIWork.pack();
+            ProDelUIWork.setLocationRelativeTo(null);
+            ProDelUIWork.setVisible(true);
+        }
+    }//GEN-LAST:event_jButtDelActionPerformed
+
+    private void jButtRogOutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtRogOutActionPerformed
+        //로그아웃 버튼
+        int select = JOptionPane.showConfirmDialog(null, "로그아웃 하시겠습니까?", "Confirm", JOptionPane.OK_CANCEL_OPTION); //확인, 취소 버튼 출력
+        if (select == 0) { //확인 버튼 클릭 시
+            SystemLogin systemLogin = new SystemLogin();
+            try {
+                systemLogin.logOut();
+            } catch (IOException ex) {
+                System.out.println("systemLogin.logOut() 예외 발생");
+            }
+            LoginGUI login = new LoginGUI();
+            login.setDefaultCloseOperation(LoginGUI.EXIT_ON_CLOSE);
+            login.pack();
+            login.setLocationRelativeTo(null);
+            login.setVisible(true);
+
+            dispose();
+        }
+    }//GEN-LAST:event_jButtRogOutActionPerformed
+
+>>>>>>> 973819ee6e6c4532a12a2cf02bb3527f415334b9
     /**
      * @param args the command line arguments
      */
@@ -292,8 +472,17 @@ public class AcademyUI extends javax.swing.JFrame {
     private javax.swing.JButton jButtEdit;
     private javax.swing.JButton jButtExit;
     private javax.swing.JButton jButtPWchange;
+<<<<<<< HEAD
     private javax.swing.JButton jButtSearch;
     private javax.swing.JRadioButton jRadioButtProfessor;
     private javax.swing.JRadioButton jRadioButtStudent;
+=======
+    private javax.swing.JButton jButtRogOut;
+    private javax.swing.JButton jButtSearch;
+    private javax.swing.JRadioButton jRadioButtProfessor;
+    private javax.swing.JRadioButton jRadioButtStudent;
+    private javax.swing.JSeparator jSeparator16;
+    private javax.swing.JSeparator jSeparator17;
+>>>>>>> 973819ee6e6c4532a12a2cf02bb3527f415334b9
     // End of variables declaration//GEN-END:variables
 }

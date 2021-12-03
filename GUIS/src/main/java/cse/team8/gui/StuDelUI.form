@@ -23,10 +23,21 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
+<<<<<<< HEAD
           <Group type="102" attributes="0">
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" attributes="0">
+=======
+          <Group type="102" alignment="0" attributes="0">
+              <EmptySpace max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" attributes="0">
+                      <Component id="jSeparator4" max="32767" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                  </Group>
+                  <Group type="102" attributes="0">
+>>>>>>> 973819ee6e6c4532a12a2cf02bb3527f415334b9
                       <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                       <Component id="jButtDel" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
@@ -60,7 +71,15 @@
                           </Group>
                           <Component id="jScrollPane1" alignment="0" min="-2" pref="485" max="-2" attributes="0"/>
                       </Group>
+<<<<<<< HEAD
                       <EmptySpace pref="23" max="32767" attributes="0"/>
+=======
+                      <EmptySpace max="32767" attributes="0"/>
+                  </Group>
+                  <Group type="102" alignment="1" attributes="0">
+                      <Component id="jSeparator3" max="32767" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+>>>>>>> 973819ee6e6c4532a12a2cf02bb3527f415334b9
                   </Group>
               </Group>
           </Group>
@@ -80,11 +99,23 @@
                   <Component id="jLabel5" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="jTextFieldWord" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
+<<<<<<< HEAD
               <EmptySpace max="-2" attributes="0"/>
               <Component id="jLabel7" min="-2" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
               <Component id="jScrollPane1" min="-2" max="-2" attributes="0"/>
               <EmptySpace pref="30" max="32767" attributes="0"/>
+=======
+              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <Component id="jSeparator3" min="-2" pref="10" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="2" max="-2" attributes="0"/>
+              <Component id="jLabel7" min="-2" max="-2" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
+              <Component id="jScrollPane1" min="-2" max="-2" attributes="0"/>
+              <EmptySpace pref="14" max="32767" attributes="0"/>
+              <Component id="jSeparator4" min="-2" pref="10" max="-2" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
+>>>>>>> 973819ee6e6c4532a12a2cf02bb3527f415334b9
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="jButtExit" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="jButtDel" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -105,8 +136,17 @@
     </Component>
     <Component class="javax.swing.JButton" name="jButtDel">
       <Properties>
+<<<<<<< HEAD
         <Property name="text" type="java.lang.String" value="&#xc0ad;&#xc81c;&#xd558;&#xae30;"/>
       </Properties>
+=======
+        <Property name="text" type="java.lang.String" value="&#xc0ad;&#xc81c;"/>
+        <Property name="enabled" type="boolean" value="false"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButtDelActionPerformed"/>
+      </Events>
+>>>>>>> 973819ee6e6c4532a12a2cf02bb3527f415334b9
     </Component>
     <Component class="javax.swing.JTextField" name="jTextFieldWord">
     </Component>
@@ -143,7 +183,15 @@
                 <StringItem index="0" value="&#xac80;&#xc0c9; &#xbc84;&#xd2bc;&#xc744; &#xd074;&#xb9ad;&#xd558;&#xc138;&#xc694;"/>
               </StringArray>
             </Property>
+<<<<<<< HEAD
           </Properties>
+=======
+            <Property name="enabled" type="boolean" value="false"/>
+          </Properties>
+          <Events>
+            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jListResultMouseClicked"/>
+          </Events>
+>>>>>>> 973819ee6e6c4532a12a2cf02bb3527f415334b9
           <AuxValues>
             <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
           </AuxValues>
@@ -168,5 +216,12 @@
         <Property name="text" type="java.lang.String" value="&#xac80;&#xc0c9;&#xc5b4;"/>
       </Properties>
     </Component>
+<<<<<<< HEAD
+=======
+    <Component class="javax.swing.JSeparator" name="jSeparator3">
+    </Component>
+    <Component class="javax.swing.JSeparator" name="jSeparator4">
+    </Component>
+>>>>>>> 973819ee6e6c4532a12a2cf02bb3527f415334b9
   </SubComponents>
 </Form>

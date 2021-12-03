@@ -6,12 +6,22 @@ package cse.team8.userwork;
 import cse.team8.gui.*;
 import cse.team8.user.*;
 import cse.team8.guis.FileIO;
+<<<<<<< HEAD
 import cse.team8.userwork.userWork;
+=======
+import cse.team8.userwork.UserWork;
+>>>>>>> 973819ee6e6c4532a12a2cf02bb3527f415334b9
 import java.io.IOException;
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
 
+<<<<<<< HEAD
 public class SystemLogin extends userWork {
+=======
+public class SystemLogin extends UserWork {
+
+    FileIO fileIO = new FileIO();
+>>>>>>> 973819ee6e6c4532a12a2cf02bb3527f415334b9
 
     public SystemLogin() {
     }
@@ -53,8 +63,13 @@ public class SystemLogin extends userWork {
         }
         return pass;
     }
+<<<<<<< HEAD
     
     public boolean loginAcademyStaffDistinguish (String inputID, String inputPW, ArrayList<academyStaff> academyStaff){ //학사 담당자 로그인 성공 여부 확인
+=======
+
+    public boolean loginAcademyStaffDistinguish(String inputID, String inputPW, ArrayList<AcademyStaff> academyStaff) { //학사 담당자 로그인 성공 여부 확인
+>>>>>>> 973819ee6e6c4532a12a2cf02bb3527f415334b9
         boolean pass = false; //로그인 성공 여부
         for (int i = 0; i < academyStaff.size(); i++) {
             if (inputID.equals(academyStaff.get(i).getMyNum()) && inputPW.equals(academyStaff.get(i).getPW())) { //교수 로그인 성공 여부 확인
@@ -71,8 +86,13 @@ public class SystemLogin extends userWork {
         }
         return pass;
     }
+<<<<<<< HEAD
     
     public boolean loginLessonStaffDistinguish (String inputID, String inputPW, ArrayList<lessonStaff> lessonStaff){ //수업 담당자 로그인 성공 여부 확인
+=======
+
+    public boolean loginLessonStaffDistinguish(String inputID, String inputPW, ArrayList<LessonStaff> lessonStaff) { //수업 담당자 로그인 성공 여부 확인
+>>>>>>> 973819ee6e6c4532a12a2cf02bb3527f415334b9
         boolean pass = false; //로그인 성공 여부
         for (int i = 0; i < lessonStaff.size(); i++) {
             if (inputID.equals(lessonStaff.get(i).getMyNum()) && inputPW.equals(lessonStaff.get(i).getPW())) { //교수 로그인 성공 여부 확인
@@ -89,16 +109,26 @@ public class SystemLogin extends userWork {
         }
         return pass;
     }
+<<<<<<< HEAD
     
     public void loginAcademyStaffPass(){ //학사담당자 로그인 성공
+=======
+
+    public void loginAcademyStaffPass() { //학사담당자 로그인 성공
+>>>>>>> 973819ee6e6c4532a12a2cf02bb3527f415334b9
         AcademyUI AcademyWork = new AcademyUI();
         AcademyWork.setDefaultCloseOperation(AcademyUI.EXIT_ON_CLOSE);
         AcademyWork.pack();
         AcademyWork.setLocationRelativeTo(null);
         AcademyWork.setVisible(true);
     }
+<<<<<<< HEAD
     
      public void loginLessonStaffPass(){ //수업담당자 로그인 성공
+=======
+
+    public void loginLessonStaffPass() { //수업담당자 로그인 성공
+>>>>>>> 973819ee6e6c4532a12a2cf02bb3527f415334b9
         LessonUI LessonWork = new LessonUI();
         LessonWork.setDefaultCloseOperation(LessonUI.EXIT_ON_CLOSE);
         LessonWork.pack();
@@ -119,7 +149,11 @@ public class SystemLogin extends userWork {
         ProfessorUI professorWork = new ProfessorUI();
         professorWork.setDefaultCloseOperation(ProfessorUI.EXIT_ON_CLOSE);
         professorWork.pack();
+<<<<<<< HEAD
         professorWork.setLocationRelativeTo(null);        
+=======
+        professorWork.setLocationRelativeTo(null);
+>>>>>>> 973819ee6e6c4532a12a2cf02bb3527f415334b9
         professorWork.setVisible(true);
     }
 
@@ -130,23 +164,66 @@ public class SystemLogin extends userWork {
         FileIO a = new FileIO();
         a.updateStudent(); //변경된 객체를 파일에 저장
     }
+<<<<<<< HEAD
         public void changeProfessorPW(String inputPW, ArrayList<Professor> professor, int count) throws IOException { //교수 암호 변경
+=======
+
+    public void changeProfessorPW(String inputPW, ArrayList<Professor> professor, int count) throws IOException { //교수 암호 변경
+>>>>>>> 973819ee6e6c4532a12a2cf02bb3527f415334b9
         //count : 해당 번호의 arraylist 데이터
         professor.get(count).setPW(inputPW); //객체 PW 변경
         FileIO a = new FileIO();
         a.updateProfessor();//변경된 객체를 파일에 저장
     }
+<<<<<<< HEAD
         public void changeAcademyStaffPW(String inputPW, ArrayList<academyStaff> academyStaff, int count) throws IOException { //학사담당자 암호 변경
+=======
+
+    public void changeAcademyStaffPW(String inputPW, ArrayList<AcademyStaff> academyStaff, int count) throws IOException { //학사담당자 암호 변경
+>>>>>>> 973819ee6e6c4532a12a2cf02bb3527f415334b9
         //count : 해당 번호의 arraylist 데이터
         academyStaff.get(count).setPW(inputPW); //객체 PW 변경
         FileIO a = new FileIO();
         a.updateAcademyStaff();//변경된 객체를 파일에 저장
     }
+<<<<<<< HEAD
         public void changeLessonStaffPW(String inputPW, ArrayList<lessonStaff> lessonStaff, int count) throws IOException { //수업담당자 암호 변경
+=======
+
+    public void changeLessonStaffPW(String inputPW, ArrayList<LessonStaff> lessonStaff, int count) throws IOException { //수업담당자 암호 변경
+>>>>>>> 973819ee6e6c4532a12a2cf02bb3527f415334b9
         //count : 해당 번호의 arraylist 데이터
         lessonStaff.get(count).setPW(inputPW); //객체 PW 변경
         FileIO a = new FileIO();
         a.updateLessonStaff();//변경된 객체를 파일에 저장
     }
 
+<<<<<<< HEAD
+=======
+    public void logOut() throws IOException {
+        ArrayList<Student> student = new ArrayList<>();
+        ArrayList<Professor> professor = new ArrayList<>();
+        ArrayList<AcademyStaff> academyStaff = new ArrayList<>();
+        ArrayList<LessonStaff> lessonStaff = new ArrayList<>();
+
+        student = fileIO.getStudent();
+        professor = fileIO.getProfessor();
+        academyStaff = fileIO.getAcademyStaff();
+        lessonStaff = fileIO.getLessonStaff();
+
+        for (int i = 0; i < student.size(); i++) {
+            student.get(i).setNowLogin(false);
+        }
+        for (int i = 0; i < professor.size(); i++) {
+            student.get(i).setNowLogin(false);
+        }
+        for (int i = 0; i < academyStaff.size(); i++) {
+            student.get(i).setNowLogin(false);
+        }
+        for (int i = 0; i < lessonStaff.size(); i++) {
+            student.get(i).setNowLogin(false);
+        }
+    }
+
+>>>>>>> 973819ee6e6c4532a12a2cf02bb3527f415334b9
 } //class SystemLogin 끝

@@ -6,6 +6,11 @@
 package cse.team8.gui;
 
 import cse.team8.academywork.Search;
+<<<<<<< HEAD
+=======
+import cse.team8.user.Professor;
+import java.util.ArrayList;
+>>>>>>> 973819ee6e6c4532a12a2cf02bb3527f415334b9
 
 /**
  *
@@ -13,6 +18,12 @@ import cse.team8.academywork.Search;
  */
 public class ProSearchUI extends javax.swing.JFrame {
 
+<<<<<<< HEAD
+=======
+    ArrayList<Professor> professorResult = new ArrayList<>();
+    ArrayList<String> Result = new ArrayList<>();
+
+>>>>>>> 973819ee6e6c4532a12a2cf02bb3527f415334b9
     /**
      * Creates new form AcaProSearch
      */
@@ -37,7 +48,10 @@ public class ProSearchUI extends javax.swing.JFrame {
         jTextFieldNum = new javax.swing.JTextField();
         jTextFieldName = new javax.swing.JTextField();
         jTextFieldWord = new javax.swing.JTextField();
+<<<<<<< HEAD
         jComboBoxSubList = new javax.swing.JComboBox<>();
+=======
+>>>>>>> 973819ee6e6c4532a12a2cf02bb3527f415334b9
         jComboBoxBase = new javax.swing.JComboBox<>();
         jLabel6 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
@@ -45,7 +59,17 @@ public class ProSearchUI extends javax.swing.JFrame {
         jLabel7 = new javax.swing.JLabel();
         jButtonSearch = new javax.swing.JButton();
         jLabel5 = new javax.swing.JLabel();
+<<<<<<< HEAD
         jTextFieldRRN = new javax.swing.JTextField();
+=======
+        jTextFieldFrontRRN = new javax.swing.JTextField();
+        jSeparator4 = new javax.swing.JSeparator();
+        jSeparator5 = new javax.swing.JSeparator();
+        jSeparator19 = new javax.swing.JSeparator();
+        jTextFieldSub = new javax.swing.JTextField();
+        jLabel8 = new javax.swing.JLabel();
+        jTextFieldBackRRN = new javax.swing.JTextField();
+>>>>>>> 973819ee6e6c4532a12a2cf02bb3527f415334b9
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -73,6 +97,14 @@ public class ProSearchUI extends javax.swing.JFrame {
             public int getSize() { return strings.length; }
             public String getElementAt(int i) { return strings[i]; }
         });
+<<<<<<< HEAD
+=======
+        jListResult.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jListResultMouseClicked(evt);
+            }
+        });
+>>>>>>> 973819ee6e6c4532a12a2cf02bb3527f415334b9
         jScrollPane1.setViewportView(jListResult);
 
         jLabel7.setText("검색 결과");
@@ -86,12 +118,23 @@ public class ProSearchUI extends javax.swing.JFrame {
 
         jLabel5.setText("검색어");
 
+<<<<<<< HEAD
         jTextFieldRRN.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextFieldRRNActionPerformed(evt);
             }
         });
 
+=======
+        jTextFieldFrontRRN.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextFieldFrontRRNActionPerformed(evt);
+            }
+        });
+
+        jLabel8.setText("-");
+
+>>>>>>> 973819ee6e6c4532a12a2cf02bb3527f415334b9
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -125,6 +168,7 @@ public class ProSearchUI extends javax.swing.JFrame {
                                         .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
                                             .addComponent(jLabel4)
                                             .addGap(18, 18, 18)
+<<<<<<< HEAD
                                             .addComponent(jTextFieldRRN))
                                         .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
                                             .addComponent(jLabel3)
@@ -146,6 +190,40 @@ public class ProSearchUI extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jButtExit)
+=======
+                                            .addComponent(jTextFieldFrontRRN, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                            .addComponent(jLabel8)
+                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                            .addComponent(jTextFieldBackRRN, javax.swing.GroupLayout.DEFAULT_SIZE, 79, Short.MAX_VALUE))
+                                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                    .addGroup(layout.createSequentialGroup()
+                                                        .addComponent(jLabel1)
+                                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED))
+                                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                                        .addComponent(jLabel2)
+                                                        .addGap(36, 36, 36)))
+                                                .addGroup(layout.createSequentialGroup()
+                                                    .addComponent(jLabel3)
+                                                    .addGap(36, 36, 36)))
+                                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                                .addComponent(jTextFieldNum, javax.swing.GroupLayout.DEFAULT_SIZE, 198, Short.MAX_VALUE)
+                                                .addComponent(jTextFieldName, javax.swing.GroupLayout.DEFAULT_SIZE, 198, Short.MAX_VALUE)
+                                                .addComponent(jTextFieldSub)))))
+                                .addGap(0, 0, Short.MAX_VALUE)))
+                        .addContainerGap())))
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(jButtExit))
+                    .addComponent(jSeparator4)
+                    .addComponent(jSeparator5)
+                    .addComponent(jSeparator19))
+>>>>>>> 973819ee6e6c4532a12a2cf02bb3527f415334b9
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -160,11 +238,23 @@ public class ProSearchUI extends javax.swing.JFrame {
                     .addComponent(jButtonSearch)
                     .addComponent(jLabel5)
                     .addComponent(jTextFieldWord, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+<<<<<<< HEAD
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel7)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 30, Short.MAX_VALUE)
+=======
+                .addGap(12, 12, 12)
+                .addComponent(jSeparator4, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(9, 9, 9)
+                .addComponent(jLabel7)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jSeparator5, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 14, Short.MAX_VALUE)
+>>>>>>> 973819ee6e6c4532a12a2cf02bb3527f415334b9
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jTextFieldNum, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel1))
@@ -172,6 +262,7 @@ public class ProSearchUI extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
                     .addComponent(jTextFieldName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+<<<<<<< HEAD
                 .addGap(12, 12, 12)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3)
@@ -181,6 +272,21 @@ public class ProSearchUI extends javax.swing.JFrame {
                     .addComponent(jTextFieldRRN, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel4))
                 .addGap(30, 30, 30)
+=======
+                .addGap(13, 13, 13)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel3)
+                    .addComponent(jTextFieldSub, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jTextFieldFrontRRN, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel4)
+                    .addComponent(jLabel8)
+                    .addComponent(jTextFieldBackRRN, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(20, 20, 20)
+                .addComponent(jSeparator19, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(10, 10, 10)
+>>>>>>> 973819ee6e6c4532a12a2cf02bb3527f415334b9
                 .addComponent(jButtExit)
                 .addContainerGap())
         );
@@ -194,6 +300,7 @@ public class ProSearchUI extends javax.swing.JFrame {
         String word = jTextFieldWord.getText(); //검색어 추출
 
         Search search = new Search();
+<<<<<<< HEAD
 //        String result[] = search.stuSearch(base, word); //검색
 //        jListResult.setListData(result); //List 갱신
     }//GEN-LAST:event_jButtonSearchActionPerformed
@@ -207,6 +314,85 @@ public class ProSearchUI extends javax.swing.JFrame {
         dispose();
     }//GEN-LAST:event_jButtExitActionPerformed
 
+=======
+
+        Result = search.proSearch(base, word); //검색 메소드
+        String listData[] = new String[Result.size()];
+
+        if (base == "이름") {
+            for (int i = 0; i < Result.size(); i++) { //이름만 추출
+                if (i == 0) {
+                    listData[0] = Result.get(0) + " / " + Result.get(1) + " / " + Result.get(2);
+                } else if (i * 5 < Result.size()) {
+                    listData[i] = Result.get(i * 5) + " / " + Result.get((i * 5) + 1) + " / " + Result.get((i * 5) + 3);
+                }
+            }
+        }
+        if (base == "학번") {
+            for (int i = 0; i < Result.size(); i++) { //학번만 추출
+                if (i == 0) {
+                    listData[0] = Result.get(0) + " / " + Result.get(1) + " / " + Result.get(2);
+                } else if ((i * 5) + 1 < Result.size()) {
+                    //listData[i] = Result.get((i*5)+1) + " / " + Result.get((i * 5)+2) + " / " + Result.get((i * 5)+3);
+                    listData[i] = Result.get(i * 5) + " / " + Result.get((i * 5) + 1) + " / " + Result.get((i * 5) + 3);
+                }
+            }
+        }
+        if (base == "학과") {
+            for (int i = 0; i < Result.size(); i++) { //학과만 추출
+                if (i == 0) {
+                    listData[0] = Result.get(0) + " / " + Result.get(1) + " / " + Result.get(2);
+                } else if ((i * 5) + 1 < Result.size()) {
+                    //listData[i] = Result.get((i*5)+1) + " / " + Result.get((i * 5)+2) + " / " + Result.get((i * 5)+3);
+                    listData[i] = Result.get(i * 5) + " / " + Result.get((i * 5) + 1) + " / " + Result.get((i * 5) + 3);
+                }
+            }
+        }
+
+        jListResult.setListData(listData); //List 갱신
+    }//GEN-LAST:event_jButtonSearchActionPerformed
+
+    private void jTextFieldFrontRRNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldFrontRRNActionPerformed
+
+    }//GEN-LAST:event_jTextFieldFrontRRNActionPerformed
+
+    private void jButtExitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtExitActionPerformed
+
+        dispose();
+    }//GEN-LAST:event_jButtExitActionPerformed
+
+    private void jListResultMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jListResultMouseClicked
+
+        //List 클릭 이벤트
+        int select = jListResult.getSelectedIndex();
+        String name;
+        String myNum;
+        String mySubject;
+        String frontRRN;
+        String backRRN;
+        if (select == 0) {
+            name = Result.get(0);
+            myNum = Result.get(1);
+            mySubject = Result.get(2);
+            frontRRN = Result.get(3);
+            backRRN = Result.get(4);
+        } else {
+            name = Result.get(select * 6);
+            myNum = Result.get((select * 6) + 1);
+            mySubject = Result.get((select * 6) + 2);
+            frontRRN = Result.get((select * 6) + 3);
+            backRRN = Result.get((select * 6) + 4);
+        }
+
+        //Text Field 갱신
+        jTextFieldName.setText(name);
+        jTextFieldNum.setText(myNum);
+        jTextFieldSub.setText(mySubject);
+        jTextFieldFrontRRN.setText(frontRRN);
+        jTextFieldBackRRN.setText(backRRN);
+    }//GEN-LAST:event_jListResultMouseClicked
+
+>>>>>>> 973819ee6e6c4532a12a2cf02bb3527f415334b9
     /**
      * @param args the command line arguments
      */
@@ -253,7 +439,10 @@ public class ProSearchUI extends javax.swing.JFrame {
     private javax.swing.JButton jButtExit;
     private javax.swing.JButton jButtonSearch;
     private javax.swing.JComboBox<String> jComboBoxBase;
+<<<<<<< HEAD
     private javax.swing.JComboBox<String> jComboBoxSubList;
+=======
+>>>>>>> 973819ee6e6c4532a12a2cf02bb3527f415334b9
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -261,11 +450,25 @@ public class ProSearchUI extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
+<<<<<<< HEAD
     private javax.swing.JList<String> jListResult;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextField jTextFieldName;
     private javax.swing.JTextField jTextFieldNum;
     private javax.swing.JTextField jTextFieldRRN;
+=======
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JList<String> jListResult;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JSeparator jSeparator19;
+    private javax.swing.JSeparator jSeparator4;
+    private javax.swing.JSeparator jSeparator5;
+    private javax.swing.JTextField jTextFieldBackRRN;
+    private javax.swing.JTextField jTextFieldFrontRRN;
+    private javax.swing.JTextField jTextFieldName;
+    private javax.swing.JTextField jTextFieldNum;
+    private javax.swing.JTextField jTextFieldSub;
+>>>>>>> 973819ee6e6c4532a12a2cf02bb3527f415334b9
     private javax.swing.JTextField jTextFieldWord;
     // End of variables declaration//GEN-END:variables
 }

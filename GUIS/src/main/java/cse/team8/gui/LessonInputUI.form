@@ -36,6 +36,22 @@
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Component id="jButtExit" min="-2" max="-2" attributes="0"/>
                   </Group>
+<<<<<<< HEAD
+=======
+                  <Group type="102" alignment="0" attributes="0">
+                      <Group type="103" groupAlignment="1" attributes="0">
+                          <Component id="jLabelBill" min="-2" max="-2" attributes="0"/>
+                          <Component id="jLabel8" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="jTextFieldProCharge" max="32767" attributes="0"/>
+                          <Component id="jTextFieldBill" max="32767" attributes="0"/>
+                      </Group>
+                  </Group>
+                  <Component id="jSeparator10" alignment="0" max="32767" attributes="0"/>
+                  <Component id="jSeparator11" alignment="0" max="32767" attributes="0"/>
+>>>>>>> 973819ee6e6c4532a12a2cf02bb3527f415334b9
                   <Group type="102" attributes="0">
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" alignment="0" attributes="0">
@@ -59,7 +75,11 @@
                           </Group>
                           <Group type="102" alignment="0" attributes="0">
                               <Component id="jLabel6" min="-2" max="-2" attributes="0"/>
+<<<<<<< HEAD
                               <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
+=======
+                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+>>>>>>> 973819ee6e6c4532a12a2cf02bb3527f415334b9
                               <Component id="jTextFieldLesMin" min="-2" pref="40" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
                               <Component id="jLabel7" min="-2" max="-2" attributes="0"/>
@@ -69,6 +89,7 @@
                       </Group>
                       <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                   </Group>
+<<<<<<< HEAD
                   <Group type="102" alignment="0" attributes="0">
                       <Group type="103" groupAlignment="1" attributes="0">
                           <Component id="jLabelBill" min="-2" max="-2" attributes="0"/>
@@ -80,6 +101,8 @@
                           <Component id="jTextFieldBill" max="32767" attributes="0"/>
                       </Group>
                   </Group>
+=======
+>>>>>>> 973819ee6e6c4532a12a2cf02bb3527f415334b9
               </Group>
               <EmptySpace max="-2" attributes="0"/>
           </Group>
@@ -88,7 +111,13 @@
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
+<<<<<<< HEAD
               <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
+=======
+              <EmptySpace max="-2" attributes="0"/>
+              <Component id="jSeparator10" min="-2" pref="10" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
+>>>>>>> 973819ee6e6c4532a12a2cf02bb3527f415334b9
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="jTextFieldLesName" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="jLabel2" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -113,16 +142,25 @@
                   <Component id="jLabel5" min="-2" max="-2" attributes="0"/>
                   <Component id="jScrollPane2" min="-2" pref="130" max="-2" attributes="0"/>
               </Group>
+<<<<<<< HEAD
               <EmptySpace max="-2" attributes="0"/>
+=======
+              <EmptySpace min="-2" pref="9" max="-2" attributes="0"/>
+>>>>>>> 973819ee6e6c4532a12a2cf02bb3527f415334b9
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="jLabel8" alignment="3" min="-2" pref="21" max="-2" attributes="0"/>
                   <Component id="jTextFieldProCharge" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
+<<<<<<< HEAD
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
+=======
+              <EmptySpace min="-2" pref="9" max="-2" attributes="0"/>
+>>>>>>> 973819ee6e6c4532a12a2cf02bb3527f415334b9
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="jLabelBill" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="jTextFieldBill" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
+<<<<<<< HEAD
               <EmptySpace max="32767" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="jLabel6" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -131,6 +169,18 @@
                   <Component id="jLabel7" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="separate" max="-2" attributes="0"/>
+=======
+              <EmptySpace min="-2" pref="9" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="jTextFieldLesMin" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jTextFieldLesMax" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jLabel7" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jLabel6" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <Component id="jSeparator11" min="-2" pref="10" max="-2" attributes="0"/>
+              <EmptySpace pref="22" max="32767" attributes="0"/>
+>>>>>>> 973819ee6e6c4532a12a2cf02bb3527f415334b9
               <Group type="103" groupAlignment="0" attributes="0">
                   <Component id="jButtExit" min="-2" max="-2" attributes="0"/>
                   <Component id="jButtonInput" alignment="0" min="-2" max="-2" attributes="0"/>
@@ -269,5 +319,12 @@
     </Component>
     <Component class="javax.swing.JTextField" name="jTextFieldBill">
     </Component>
+<<<<<<< HEAD
+=======
+    <Component class="javax.swing.JSeparator" name="jSeparator10">
+    </Component>
+    <Component class="javax.swing.JSeparator" name="jSeparator11">
+    </Component>
+>>>>>>> 973819ee6e6c4532a12a2cf02bb3527f415334b9
   </SubComponents>
 </Form>

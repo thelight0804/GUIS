@@ -5,6 +5,13 @@
  */
 package cse.team8.gui;
 
+<<<<<<< HEAD
+=======
+import cse.team8.userwork.SystemLogin;
+import java.io.IOException;
+import javax.swing.JOptionPane;
+
+>>>>>>> 973819ee6e6c4532a12a2cf02bb3527f415334b9
 /**
  *
  * @author User
@@ -35,6 +42,12 @@ public class LessonUI extends javax.swing.JFrame {
         jButtPWchange = new javax.swing.JButton();
         jButtExit = new javax.swing.JButton();
         jButton1 = new javax.swing.JButton();
+<<<<<<< HEAD
+=======
+        jSeparator9 = new javax.swing.JSeparator();
+        jSeparator10 = new javax.swing.JSeparator();
+        jButtRogOut = new javax.swing.JButton();
+>>>>>>> 973819ee6e6c4532a12a2cf02bb3527f415334b9
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -101,11 +114,23 @@ public class LessonUI extends javax.swing.JFrame {
             }
         });
 
+<<<<<<< HEAD
+=======
+        jButtRogOut.setFont(new java.awt.Font("맑은 고딕 Semilight", 0, 12)); // NOI18N
+        jButtRogOut.setText("로그아웃");
+        jButtRogOut.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtRogOutActionPerformed(evt);
+            }
+        });
+
+>>>>>>> 973819ee6e6c4532a12a2cf02bb3527f415334b9
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+<<<<<<< HEAD
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(156, 156, 156)
@@ -124,11 +149,45 @@ public class LessonUI extends javax.swing.JFrame {
                             .addComponent(jButtLessonDel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
                 .addGap(20, 20, 20))
+=======
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jButtLessonInput, javax.swing.GroupLayout.DEFAULT_SIZE, 172, Short.MAX_VALUE)
+                    .addComponent(jButtLessonClass, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jButtLessonEdit, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jButtBillissue, javax.swing.GroupLayout.DEFAULT_SIZE, 172, Short.MAX_VALUE)
+                    .addComponent(jButtLessonDel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(20, 20, 20))
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(jButtPWchange)
+                        .addGap(140, 140, 140)
+                        .addComponent(jButtRogOut)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jButtExit)
+                        .addGap(0, 8, Short.MAX_VALUE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jSeparator9)
+                            .addComponent(jSeparator10))
+                        .addContainerGap())))
+>>>>>>> 973819ee6e6c4532a12a2cf02bb3527f415334b9
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
+<<<<<<< HEAD
                 .addGap(38, 38, 38)
+=======
+                .addGap(30, 30, 30)
+                .addComponent(jSeparator9, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+>>>>>>> 973819ee6e6c4532a12a2cf02bb3527f415334b9
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButtLessonInput, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jButtLessonDel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -141,10 +200,20 @@ public class LessonUI extends javax.swing.JFrame {
                     .addComponent(jButtBillissue, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jButtLessonEdit, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(18, 18, 18)
+<<<<<<< HEAD
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButtPWchange, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jButtExit))
                 .addGap(27, 27, 27))
+=======
+                .addComponent(jSeparator10, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 20, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jButtExit)
+                    .addComponent(jButtPWchange, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jButtRogOut))
+                .addContainerGap())
+>>>>>>> 973819ee6e6c4532a12a2cf02bb3527f415334b9
         );
 
         pack();
@@ -152,15 +221,27 @@ public class LessonUI extends javax.swing.JFrame {
 
     private void jButtPWchangeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtPWchangeActionPerformed
         //암호 변경 버튼
+<<<<<<< HEAD
         changePW a = new changePW(); //changePW 창 호출
         a.setDefaultCloseOperation(changePW.EXIT_ON_CLOSE);
+=======
+        ChangePW a = new ChangePW(); //changePW 창 호출
+        a.setDefaultCloseOperation(ChangePW.EXIT_ON_CLOSE);
+>>>>>>> 973819ee6e6c4532a12a2cf02bb3527f415334b9
         a.pack();
         a.setLocationRelativeTo(null);
         a.setVisible(true);
     }//GEN-LAST:event_jButtPWchangeActionPerformed
 
     private void jButtExitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtExitActionPerformed
+<<<<<<< HEAD
         System.exit(0); //프로그램 종료
+=======
+        int select = JOptionPane.showConfirmDialog(null, "프로그램을 종료하시겠습니까?", "Confirm", JOptionPane.OK_CANCEL_OPTION); //확인, 취소 버튼 출력
+        if (select == 0) { //확인 버튼 클릭 시
+            System.exit(0); //프로그램 종료
+        }
+>>>>>>> 973819ee6e6c4532a12a2cf02bb3527f415334b9
     }//GEN-LAST:event_jButtExitActionPerformed
 
     private void jButtBillissueActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtBillissueActionPerformed
@@ -216,6 +297,29 @@ public class LessonUI extends javax.swing.JFrame {
         call.setVisible(true);
     }//GEN-LAST:event_jButtLessonDelActionPerformed
 
+<<<<<<< HEAD
+=======
+    private void jButtRogOutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtRogOutActionPerformed
+        //로그아웃 버튼
+        int select = JOptionPane.showConfirmDialog(null, "로그아웃 하시겠습니까?", "Confirm", JOptionPane.OK_CANCEL_OPTION); //확인, 취소 버튼 출력
+        if (select == 0) { //확인 버튼 클릭 시
+            SystemLogin systemLogin = new SystemLogin();
+            try {
+                systemLogin.logOut();
+            } catch (IOException ex) {
+                System.out.println("systemLogin.logOut() 예외 발생");
+            }
+            LoginGUI login = new LoginGUI();
+            login.setDefaultCloseOperation(LoginGUI.EXIT_ON_CLOSE);
+            login.pack();
+            login.setLocationRelativeTo(null);
+            login.setVisible(true);
+
+            dispose();
+        }
+    }//GEN-LAST:event_jButtRogOutActionPerformed
+
+>>>>>>> 973819ee6e6c4532a12a2cf02bb3527f415334b9
     /**
      * @param args the command line arguments
      */
@@ -262,6 +366,13 @@ public class LessonUI extends javax.swing.JFrame {
     private javax.swing.JButton jButtLessonEdit;
     private javax.swing.JButton jButtLessonInput;
     private javax.swing.JButton jButtPWchange;
+<<<<<<< HEAD
     private javax.swing.JButton jButton1;
+=======
+    private javax.swing.JButton jButtRogOut;
+    private javax.swing.JButton jButton1;
+    private javax.swing.JSeparator jSeparator10;
+    private javax.swing.JSeparator jSeparator9;
+>>>>>>> 973819ee6e6c4532a12a2cf02bb3527f415334b9
     // End of variables declaration//GEN-END:variables
 }

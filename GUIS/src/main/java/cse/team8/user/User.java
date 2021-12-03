@@ -1,6 +1,10 @@
 package cse.team8.user;
 
 public class User {
+<<<<<<< HEAD
+=======
+
+>>>>>>> 973819ee6e6c4532a12a2cf02bb3527f415334b9
     protected String name; //이름
     private String PW; //비밀번호
     private String frontRRN; //앞 주민번호
@@ -15,7 +19,13 @@ public class User {
     * */
     protected String mySubject; //자신의 수강 과목
 
+<<<<<<< HEAD
     public User() {  }
+=======
+    public User() {
+    }
+
+>>>>>>> 973819ee6e6c4532a12a2cf02bb3527f415334b9
     public User(String name, String frontRRN, String backRRN, String myNum, String mySubject, boolean nowLogin, String PW) {
         this.name = name;
         this.frontRRN = frontRRN;
@@ -61,5 +71,9 @@ public class User {
     public String getPW() {
         return PW;
     }
+<<<<<<< HEAD
     
+=======
+
+>>>>>>> 973819ee6e6c4532a12a2cf02bb3527f415334b9
 }

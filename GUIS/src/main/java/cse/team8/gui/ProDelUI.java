@@ -6,6 +6,12 @@
 package cse.team8.gui;
 
 import cse.team8.academywork.Search;
+<<<<<<< HEAD
+=======
+import cse.team8.classwork.ProfessorWork;
+import java.util.ArrayList;
+import javax.swing.JOptionPane;
+>>>>>>> 973819ee6e6c4532a12a2cf02bb3527f415334b9
 
 /**
  *
@@ -13,6 +19,13 @@ import cse.team8.academywork.Search;
  */
 public class ProDelUI extends javax.swing.JFrame {
 
+<<<<<<< HEAD
+=======
+    ArrayList<String> Result = new ArrayList<>();
+    String name;
+    ProfessorWork professorWork = new ProfessorWork();
+
+>>>>>>> 973819ee6e6c4532a12a2cf02bb3527f415334b9
     /**
      * Creates new form AcaProDel
      */
@@ -39,6 +52,11 @@ public class ProDelUI extends javax.swing.JFrame {
         jButtonSearch = new javax.swing.JButton();
         jLabel5 = new javax.swing.JLabel();
         jTextFieldWord = new javax.swing.JTextField();
+<<<<<<< HEAD
+=======
+        jSeparator6 = new javax.swing.JSeparator();
+        jSeparator7 = new javax.swing.JSeparator();
+>>>>>>> 973819ee6e6c4532a12a2cf02bb3527f415334b9
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -51,6 +69,14 @@ public class ProDelUI extends javax.swing.JFrame {
             public int getSize() { return strings.length; }
             public String getElementAt(int i) { return strings[i]; }
         });
+<<<<<<< HEAD
+=======
+        jListResult.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jListResultMouseClicked(evt);
+            }
+        });
+>>>>>>> 973819ee6e6c4532a12a2cf02bb3527f415334b9
         jScrollPane1.setViewportView(jListResult);
 
         jButtExit.setText("취소");
@@ -62,7 +88,17 @@ public class ProDelUI extends javax.swing.JFrame {
 
         jLabel7.setText("검색 결과");
 
+<<<<<<< HEAD
         jButtDel.setText("삭제하기");
+=======
+        jButtDel.setText("삭제");
+        jButtDel.setEnabled(false);
+        jButtDel.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtDelActionPerformed(evt);
+            }
+        });
+>>>>>>> 973819ee6e6c4532a12a2cf02bb3527f415334b9
 
         jButtonSearch.setText("검색");
         jButtonSearch.addActionListener(new java.awt.event.ActionListener() {
@@ -81,6 +117,15 @@ public class ProDelUI extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
+<<<<<<< HEAD
+=======
+                        .addComponent(jSeparator6)
+                        .addContainerGap())
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jSeparator7)
+                        .addContainerGap())
+                    .addGroup(layout.createSequentialGroup()
+>>>>>>> 973819ee6e6c4532a12a2cf02bb3527f415334b9
                         .addGap(0, 0, Short.MAX_VALUE)
                         .addComponent(jButtDel)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -101,8 +146,13 @@ public class ProDelUI extends javax.swing.JFrame {
                                 .addComponent(jButtonSearch)))
                         .addContainerGap())
                     .addGroup(layout.createSequentialGroup()
+<<<<<<< HEAD
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
+=======
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+>>>>>>> 973819ee6e6c4532a12a2cf02bb3527f415334b9
                                 .addGap(190, 190, 190)
                                 .addComponent(jLabel7))
                             .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 485, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -120,11 +170,22 @@ public class ProDelUI extends javax.swing.JFrame {
                     .addComponent(jButtonSearch)
                     .addComponent(jLabel5)
                     .addComponent(jTextFieldWord, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+<<<<<<< HEAD
+=======
+                .addGap(14, 14, 14)
+                .addComponent(jSeparator7, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
+>>>>>>> 973819ee6e6c4532a12a2cf02bb3527f415334b9
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel7)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+<<<<<<< HEAD
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 30, Short.MAX_VALUE)
+=======
+                .addGap(18, 18, 18)
+                .addComponent(jSeparator6, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 37, Short.MAX_VALUE)
+>>>>>>> 973819ee6e6c4532a12a2cf02bb3527f415334b9
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButtExit)
                     .addComponent(jButtDel))
@@ -140,15 +201,85 @@ public class ProDelUI extends javax.swing.JFrame {
         String word = jTextFieldWord.getText(); //검색어 추출
 
         Search search = new Search();
+<<<<<<< HEAD
+=======
+
+        Result = search.proSearch(base, word); //검색 메소드
+        String listData[] = new String[Result.size()];
+
+        if (base == "이름") {
+            for (int i = 0; i < Result.size(); i++) { //이름만 추출
+                if (i == 0) {
+                    listData[0] = Result.get(0) + " / " + Result.get(1) + " / " + Result.get(2);
+                } else if (i * 6 < Result.size()) {
+                    listData[i] = Result.get(i * 6) + " / " + Result.get((i * 6) + 1) + " / " + Result.get((i * 6) + 2);
+                }
+            }
+        }
+        if (base == "학번") {
+            for (int i = 0; i < Result.size(); i++) { //학번만 추출
+                if (i == 0) {
+                    listData[0] = Result.get(0) + " / " + Result.get(1) + " / " + Result.get(2);
+                } else if ((i * 6) + 1 < Result.size()) {
+                    //listData[i] = Result.get((i*5)+1) + " / " + Result.get((i * 5)+2) + " / " + Result.get((i * 5)+3);
+                    listData[i] = Result.get(i * 6) + " / " + Result.get((i * 6) + 1) + " / " + Result.get((i * 6) + 2);
+                }
+            }
+        }
+        if (base == "학과") {
+            for (int i = 0; i < Result.size(); i++) { //학과만 추출
+                if (i == 0) {
+                    listData[0] = Result.get(0) + " / " + Result.get(1) + " / " + Result.get(2);
+                } else if ((i * 6) + 1 < Result.size()) {
+                    //listData[i] = Result.get((i*5)+1) + " / " + Result.get((i * 5)+2) + " / " + Result.get((i * 5)+3);
+                    listData[i] = Result.get(i * 6) + " / " + Result.get((i * 6) + 1) + " / " + Result.get((i * 6) + 2);
+                }
+            }
+        }
+
+        jListResult.setListData(listData); //List 갱신
+
+        jListResult.setEnabled(true);
+        jButtDel.setEnabled(true);
+>>>>>>> 973819ee6e6c4532a12a2cf02bb3527f415334b9
 //        String result[] = search.stuSearch(base, word); //검색
 //        jListResult.setListData(result); //List 갱신
     }//GEN-LAST:event_jButtonSearchActionPerformed
 
     private void jButtExitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtExitActionPerformed
+<<<<<<< HEAD
         // TODO add your handling code here:
         dispose();
     }//GEN-LAST:event_jButtExitActionPerformed
 
+=======
+
+        dispose();
+    }//GEN-LAST:event_jButtExitActionPerformed
+
+    private void jButtDelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtDelActionPerformed
+
+        // 삭제 버튼
+        int select = JOptionPane.showConfirmDialog(null, "삭제 하시겠습니까?", "Confirm", JOptionPane.OK_CANCEL_OPTION); //확인, 취소 버튼 출력
+        if (select == 0) { //확인 버튼 클릭 시
+            professorWork.delProfessor(name); //학생 객체 및 데이터 제거
+            JOptionPane.showMessageDialog(null, "삭제가 완료되었습니다");
+        }
+    }//GEN-LAST:event_jButtDelActionPerformed
+
+    private void jListResultMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jListResultMouseClicked
+
+        //list 클릭 시
+        int select = jListResult.getSelectedIndex();
+
+        //선택한 이름 지정
+        if (select == 0)
+            name = Result.get(0);
+        else
+            name = Result.get(select * 6);
+    }//GEN-LAST:event_jListResultMouseClicked
+
+>>>>>>> 973819ee6e6c4532a12a2cf02bb3527f415334b9
     /**
      * @param args the command line arguments
      */
@@ -201,6 +332,11 @@ public class ProDelUI extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JList<String> jListResult;
     private javax.swing.JScrollPane jScrollPane1;
+<<<<<<< HEAD
+=======
+    private javax.swing.JSeparator jSeparator6;
+    private javax.swing.JSeparator jSeparator7;
+>>>>>>> 973819ee6e6c4532a12a2cf02bb3527f415334b9
     private javax.swing.JTextField jTextFieldWord;
     // End of variables declaration//GEN-END:variables
 }

@@ -1,6 +1,10 @@
 package cse.team8.academywork;
 
 import cse.team8.guis.FileIO;
+<<<<<<< HEAD
+=======
+import static cse.team8.guis.FileIO.professor;
+>>>>>>> 973819ee6e6c4532a12a2cf02bb3527f415334b9
 import cse.team8.user.*;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -61,5 +65,54 @@ public class Search implements AcademyWork {
         }
         return result;
     }
+<<<<<<< HEAD
     //TODO 교수 검색
+=======
+
+    public ArrayList<String> proSearch(String base, String word) {
+        //교수 검색
+        //base = 검색 분류, word = 검색어
+        try {
+            professor = fileIO.getProfessor();
+        } catch (IOException ex) {
+            Logger.getLogger(Search.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        ArrayList<String> result = new ArrayList<>();
+
+        if (base == "이름") { //이름으로 검색
+            for (int i = 0; i < professor.size(); i++) {
+                if (professor.get(i).getName().contains(word)) { //검색 결과가 동일하다면
+                    result.add(professor.get(i).getName());
+                    result.add(professor.get(i).getMyNum());
+                    result.add(professor.get(i).getMySubject());
+                    result.add(professor.get(i).getFrontRRN());
+                    result.add(professor.get(i).getBackRRN());
+                }
+            }
+        }
+        if (base == "학번") { //학번으로 검색
+            for (int i = 0; i < professor.size(); i++) {
+                if (professor.get(i).getMyNum().contains(word)) {
+                    result.add(professor.get(i).getName());
+                    result.add(professor.get(i).getMyNum());
+                    result.add(professor.get(i).getMySubject());
+                    result.add(professor.get(i).getFrontRRN());
+                    result.add(professor.get(i).getBackRRN());
+                }
+            }
+        }
+        if (base == "학과") { //학번으로 검색
+            for (int i = 0; i < professor.size(); i++) {
+                if (professor.get(i).getMySubject().contains(word)) {
+                    result.add(professor.get(i).getName());
+                    result.add(professor.get(i).getMyNum());
+                    result.add(professor.get(i).getMySubject());
+                    result.add(professor.get(i).getFrontRRN());
+                    result.add(professor.get(i).getBackRRN());
+                }
+            }
+        }
+        return result;
+    }
+>>>>>>> 973819ee6e6c4532a12a2cf02bb3527f415334b9
 }

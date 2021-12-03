@@ -43,6 +43,11 @@ public class StuCreateUI extends javax.swing.JFrame {
         jComboBoxSubList = new javax.swing.JComboBox<>();
         jTextFieldBackRRN = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
+<<<<<<< HEAD
+=======
+        jSeparator2 = new javax.swing.JSeparator();
+        jSeparator3 = new javax.swing.JSeparator();
+>>>>>>> 973819ee6e6c4532a12a2cf02bb3527f415334b9
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -78,6 +83,7 @@ public class StuCreateUI extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
+<<<<<<< HEAD
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
@@ -85,6 +91,15 @@ public class StuCreateUI extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jButtExit))
                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+=======
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(jButtCreate)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jButtExit))
+                    .addGroup(layout.createSequentialGroup()
+>>>>>>> 973819ee6e6c4532a12a2cf02bb3527f415334b9
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
                                 .addComponent(jLabel4)
@@ -107,13 +122,25 @@ public class StuCreateUI extends javax.swing.JFrame {
                                     .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                     .addComponent(jTextFieldName))))
+<<<<<<< HEAD
                         .addGap(0, 0, Short.MAX_VALUE)))
+=======
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addComponent(jSeparator2)
+                    .addComponent(jSeparator3, javax.swing.GroupLayout.Alignment.TRAILING))
+>>>>>>> 973819ee6e6c4532a12a2cf02bb3527f415334b9
                 .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
+<<<<<<< HEAD
                 .addGap(39, 39, 39)
+=======
+                .addContainerGap(18, Short.MAX_VALUE)
+                .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+>>>>>>> 973819ee6e6c4532a12a2cf02bb3527f415334b9
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1)
                     .addComponent(jTextFieldNum, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -131,12 +158,21 @@ public class StuCreateUI extends javax.swing.JFrame {
                     .addComponent(jTextFieldFrontRRN, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jTextFieldBackRRN, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel5))
+<<<<<<< HEAD
                 .addContainerGap(70, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButtExit)
                     .addComponent(jButtCreate))
+=======
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 27, Short.MAX_VALUE)
+                .addComponent(jSeparator3, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jButtCreate)
+                    .addComponent(jButtExit))
+>>>>>>> 973819ee6e6c4532a12a2cf02bb3527f415334b9
                 .addContainerGap())
         );
 
@@ -144,6 +180,7 @@ public class StuCreateUI extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButtCreateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtCreateActionPerformed
+<<<<<<< HEAD
         // TODO add your handling code here:
         String myNum=jTextFieldNum.getText();
         String name=jTextFieldName.getText();
@@ -165,11 +202,37 @@ public class StuCreateUI extends javax.swing.JFrame {
         catch(Exception e)
         {
             JOptionPane.showMessageDialog(null,"Error");
+=======
+
+        String myNum = jTextFieldNum.getText();
+        String name = jTextFieldName.getText();
+        String mySubject = jComboBoxSubList.getSelectedItem().toString();
+        String frontRRN = jTextFieldFrontRRN.getText();
+        String backRRN = jTextFieldBackRRN.getText();
+        String grade = "E";
+        String credit = "0.0";
+        String bill = "0";
+        int select = JOptionPane.showConfirmDialog(null, "학생을 등록 하시겠습니까?", "Confirm", JOptionPane.OK_CANCEL_OPTION); //확인, 취소 버튼 출력
+        if (select == 0) { //확인 버튼 클릭 시
+            try {
+                FileWriter Writer = new FileWriter("C:\\Temp\\GUIS\\StudentData.txt", true);
+                Writer.write(name + "!" + myNum + "!" + mySubject + "!" + frontRRN + "!" + backRRN + "!" + grade + "!" + credit + "!" + bill + "!" + backRRN);
+                Writer.write(System.getProperty("line.separator"));
+                Writer.close();
+                JOptionPane.showMessageDialog(null, "학생 등록이 완료되었습니다"); //팝업 메시지 창
+            } catch (Exception e) {
+                JOptionPane.showMessageDialog(null, "Error");
+            }
+>>>>>>> 973819ee6e6c4532a12a2cf02bb3527f415334b9
         }
     }//GEN-LAST:event_jButtCreateActionPerformed
 
     private void jButtExitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtExitActionPerformed
+<<<<<<< HEAD
         // TODO add your handling code here:
+=======
+
+>>>>>>> 973819ee6e6c4532a12a2cf02bb3527f415334b9
         dispose();
     }//GEN-LAST:event_jButtExitActionPerformed
 
@@ -224,6 +287,11 @@ public class StuCreateUI extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
+<<<<<<< HEAD
+=======
+    private javax.swing.JSeparator jSeparator2;
+    private javax.swing.JSeparator jSeparator3;
+>>>>>>> 973819ee6e6c4532a12a2cf02bb3527f415334b9
     private javax.swing.JTextField jTextFieldBackRRN;
     private javax.swing.JTextField jTextFieldFrontRRN;
     private javax.swing.JTextField jTextFieldName;
